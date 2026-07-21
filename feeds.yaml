@@ -1,0 +1,47 @@
+# Curated RSS sources for the trend radar. Edit freely — this file is the whole
+# configuration surface for the feed tool. `name` is only used for attribution
+# in the radar output.
+#
+# Keep the list short enough that a run stays cheap: every feed costs a request,
+# and the model pays for every headline it reads.
+
+# Note: Anthropic publishes no public RSS feed (every documented path 404s as
+# of July 2026). Its announcements arrive here second-hand via Simon Willison,
+# Import AI and Latent Space.
+
+feeds:
+  - name: "OpenAI"
+    url: "https://openai.com/news/rss.xml"
+
+  - name: "Google DeepMind"
+    url: "https://deepmind.google/blog/rss.xml"
+
+  - name: "Simon Willison"
+    url: "https://simonwillison.net/atom/everything/"
+
+  - name: "Import AI"
+    url: "https://importai.substack.com/feed"
+
+  - name: "Hugging Face Blog"
+    url: "https://huggingface.co/blog/feed.xml"
+
+  - name: "arXiv cs.CL"
+    url: "https://rss.arxiv.org/rss/cs.CL"
+
+  - name: "arXiv cs.AI"
+    url: "https://rss.arxiv.org/rss/cs.AI"
+
+  - name: "Sebastian Raschka"
+    url: "https://magazine.sebastianraschka.com/feed"
+
+  - name: "Lil'Log"
+    url: "https://lilianweng.github.io/index.xml"
+
+  - name: "Latent Space"
+    url: "https://www.latent.space/feed"
+
+  - name: "Interconnects"
+    url: "https://www.interconnects.ai/feed"
+
+  - name: "Berkeley BAIR"
+    url: "https://bair.berkeley.edu/blog/feed.xml"
