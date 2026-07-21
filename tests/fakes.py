@@ -25,6 +25,7 @@ class FakeProvider:
         self.calls = 0
         self.last_messages: list[Message] | None = None
         self.last_force_json: bool | None = None
+        self.last_max_tokens: int | None = None
 
     def generate(
         self,
@@ -37,6 +38,7 @@ class FakeProvider:
         self.calls += 1
         self.last_messages = messages
         self.last_force_json = force_json
+        self.last_max_tokens = max_tokens
 
         entry = self._script[min(self._index, len(self._script) - 1)]
         self._index += 1
