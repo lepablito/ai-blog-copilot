@@ -128,13 +128,18 @@ def test_plain_string_results_are_wrapped_as_untrusted():
 
 def test_results_are_capped():
     """Twelve feeds over 48h return hundreds of items. Unbounded, one
-    observation would dwarf the rest of the conversation."""
+    observation would dwarf the rest of the conversation.
+
+    Asserts the count, not which items survive: with equal scores the tie
+    breaks on recency, and how finely two items' timestamps differ is a
+    property of the platform clock, not of this code.
+    """
     registry = registry_of(fetch_things=lambda: [item(f"post {n}") for n in range(100)])
 
     observation = registry.call("fetch_things", {}, nonce=NONCE)
 
-    assert "post 99" not in observation
-    assert "[6]" not in observation, "max_items=5"
+    assert observation.count("    url: ") == 5, "max_items=5"
+    assert "[6]" not in observation
 
 
 def test_the_cap_keeps_the_highest_scoring_items():

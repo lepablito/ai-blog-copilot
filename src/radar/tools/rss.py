@@ -7,7 +7,7 @@ costs that blog: only a total wipeout is worth raising.
 """
 
 import calendar
-from datetime import datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import feedparser
@@ -100,22 +100,32 @@ def _to_items(entries: list, feed_name: str, since: float) -> list[Item]:
 def _published_at(entry) -> datetime | None:
     """Feeds disagree on which date field they populate; try both.
 
-    Two traps here, both found against live feeds rather than fixtures:
+    Three traps here, all found by running rather than by reading:
 
     * feedparser normalises `*_parsed` to UTC, so `time.mktime` — which reads a
       struct as *local* time — shifts every entry by the machine's offset. On a
       48-hour window that is a real distortion. `calendar.timegm` is the UTC
       counterpart.
     * Feeds in the wild carry dates like year 9999. `timegm` is pure arithmetic
-      and returns them happily; the conversion to a datetime is what blows up.
-      So the two steps stay together and one unusable date costs one entry.
+      and returns them happily; converting to a datetime is what blows up, so
+      the two steps stay together.
+    * That conversion only blows up on *some* platforms. Windows rejects year
+      9999; Linux accepts it, and a future date is always inside the window, so
+      one corrupt entry would resurface in every run forever. The range check
+      below is therefore explicit rather than a side effect of the platform.
     """
     for key in ("published_parsed", "updated_parsed"):
         parsed = entry.get(key)
         if not parsed:
             continue
         try:
-            return utc_from_epoch(calendar.timegm(parsed))
+            published = utc_from_epoch(calendar.timegm(parsed))
         except (OverflowError, ValueError, OSError):
             return None
+
+        # Publishers' clocks drift; an hour of slack absorbs that without
+        # admitting dates that are plainly wrong.
+        if published > datetime.now(UTC) + timedelta(hours=1):
+            return None
+        return published
     return None

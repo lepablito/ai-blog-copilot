@@ -142,6 +142,43 @@ def test_absurd_publication_date_is_skipped_not_crashed(tmp_path):
     assert [i.title for i in items] == ["fine"]
 
 
+def test_future_dated_entries_are_rejected(tmp_path):
+    """A date in the future is always "inside the window", so one bad entry
+    would resurface in every run forever.
+
+    Year 9999 happens to overflow datetime on Windows and not on Linux, which
+    masked this until CI ran on Ubuntu. A nearer future date overflows nowhere,
+    so the check has to be explicit rather than incidental.
+    """
+    path = write_feeds(tmp_path, [("Blog", "https://b.example/rss")])
+    body = f"""<?xml version="1.0"?>
+    <rss version="2.0"><channel><title>t</title>
+      <item><title>from the future</title><link>https://b.example/future</link>
+        <pubDate>Wed, 01 Jan 2099 00:00:00 GMT</pubDate></item>
+      <item><title>fine</title><link>https://b.example/fine</link>
+        <pubDate>{formatdate(time.time())}</pubDate></item>
+    </channel></rss>"""
+
+    items = fetch_rss(feeds_from=path, fetch=lambda _url, **_kw: body)
+
+    assert [i.title for i in items] == ["fine"]
+
+
+def test_a_slightly_future_timestamp_is_tolerated(tmp_path):
+    """Feeds are published by machines with imperfect clocks; a few minutes of
+    skew is not the same as a corrupt date."""
+    path = write_feeds(tmp_path, [("Blog", "https://b.example/rss")])
+    body = f"""<?xml version="1.0"?>
+    <rss version="2.0"><channel><title>t</title>
+      <item><title>just published</title><link>https://b.example/now</link>
+        <pubDate>{formatdate(time.time() + 120)}</pubDate></item>
+    </channel></rss>"""
+
+    items = fetch_rss(feeds_from=path, fetch=lambda _url, **_kw: body)
+
+    assert [i.title for i in items] == ["just published"]
+
+
 def test_publication_dates_are_read_as_utc(tmp_path):
     """feedparser hands back UTC. Reading it as local time silently shifts every
     entry by the machine's offset — and the whole point is a 48-hour window."""
