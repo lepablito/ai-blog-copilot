@@ -1,10 +1,13 @@
 name: Daily radar
 
 on:
-  schedule:
-    # 06:00 UTC — after the US evening and before the European working day, so
-    # a full 24h of both timezones' output is in the window.
-    - cron: "0 6 * * *"
+  # Manual only, deliberately. Unattended daily runs spend API credit with
+  # nobody watching, so the schedule stays off until a few dispatched runs have
+  # shown what a pass actually costs. To enable it, uncomment the two lines
+  # below — 06:00 UTC catches a full day of both US and European output.
+  #
+  # schedule:
+  #   - cron: "0 6 * * *"
   workflow_dispatch:
     inputs:
       hours:
