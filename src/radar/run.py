@@ -11,10 +11,11 @@ import argparse
 import json
 import os
 import sys
+from datetime import UTC, datetime
 
 from dotenv import load_dotenv
 
-from llm.calls_log import CallLog
+from llm.calls_log import CallLog, format_summary
 from llm.client import AllProvidersFailed, LLMClient
 from llm.config import NoProvidersConfigured, build_chain
 
@@ -77,6 +78,17 @@ def run_agent(*, max_steps: int, max_items: int, db_path: str, goal: str) -> Run
     return agent.run(goal)
 
 
+def _report_providers(db_path: str, since: str) -> None:
+    """Print which tier actually answered, to stderr so it never pollutes the
+    JSON on stdout.
+
+    In a workflow run the database is a cache nobody opens, so without this a
+    chain that silently fell through to its second tier would keep the run
+    green and tell no one.
+    """
+    print(format_summary(CallLog(db_path).summary_by_provider(since=since)), file=sys.stderr)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="radar.run", description="Run one trend radar pass.")
     parser.add_argument("--hours", type=int, default=48, help="how far back to look")
@@ -91,6 +103,7 @@ def main(argv: list[str] | None = None) -> int:
 
     goal = args.goal or DEFAULT_GOAL.format(hours=args.hours)
     store = Store(args.db)
+    started_at = datetime.now(UTC).isoformat(timespec="seconds")
     run_id = store.start_run(goal=goal, hours=args.hours)
 
     try:
@@ -104,6 +117,7 @@ def main(argv: list[str] | None = None) -> int:
         # Expected operating conditions, not bugs. A traceback would bury the
         # one line saying what to fix.
         store.finish_run(run_id, status="failed", steps_used=0, stopped_because=type(exc).__name__)
+        _report_providers(args.db, started_at)
         print(f"radar failed: {exc}", file=sys.stderr)
         return 1
 
@@ -116,6 +130,8 @@ def main(argv: list[str] | None = None) -> int:
     )
     if args.export:
         store.export_json(args.export)
+
+    _report_providers(args.db, started_at)
 
     print(
         json.dumps(

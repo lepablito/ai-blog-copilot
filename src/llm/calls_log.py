@@ -85,3 +85,55 @@ class CallLog:
                     estimate_cost_usd(model, prompt_tokens, completion_tokens),
                 ),
             )
+
+    def summary_by_provider(self, *, since: str | None = None) -> list[dict]:
+        """Aggregate calls per provider, newest tier first.
+
+        `since` scopes it to a single pass. Without it the whole history is
+        summarised, which is what the cost dashboard wants and the workflow
+        does not.
+        """
+        query = """
+            SELECT provider,
+                   COUNT(*)                        AS calls,
+                   SUM(CASE WHEN ok = 0 THEN 1 ELSE 0 END) AS failures,
+                   SUM(prompt_tokens)              AS prompt_tokens,
+                   SUM(completion_tokens)          AS completion_tokens,
+                   SUM(est_cost_usd)               AS est_cost_usd,
+                   MAX(latency_ms)                 AS max_latency_ms
+            FROM llm_calls
+        """
+        parameters: list[object] = []
+        if since:
+            query += " WHERE created_at >= ?"
+            parameters.append(since)
+        query += " GROUP BY provider ORDER BY provider"
+
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            return [dict(row) for row in conn.execute(query, parameters)]
+
+
+def format_summary(rows: list[dict]) -> str:
+    """One line per provider, for the CI log.
+
+    In a workflow run the database lives in an Actions cache and nobody ever
+    looks at it, so a chain that silently degraded to its second tier would go
+    unnoticed for weeks. This puts it in the log where a green run still shows
+    what actually answered.
+    """
+    if not rows:
+        return "LLM calls: no calls recorded."
+
+    lines = ["LLM calls this run:"]
+    for row in rows:
+        call_word = "call" if row["calls"] == 1 else "calls"
+        detail = (
+            f"  {row['provider']:<8} {row['calls']} {call_word}"
+            f", {row['failures']} failed"
+            f", {row['prompt_tokens']:,} in / {row['completion_tokens']:,} out"
+        )
+        if row["est_cost_usd"]:
+            detail += f", ~${row['est_cost_usd']:.4f}"
+        lines.append(detail)
+    return "\n".join(lines)

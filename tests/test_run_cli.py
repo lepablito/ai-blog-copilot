@@ -114,6 +114,74 @@ def test_export_is_written_when_asked(monkeypatch, tmp_path):
     assert json.loads(export.read_text(encoding="utf-8"))["topics"][0]["title"] == "Exported"
 
 
+def test_the_run_reports_which_provider_answered(monkeypatch, tmp_path, capsys):
+    """In CI the database goes to a cache nobody reads. A chain that quietly
+    degraded to its second tier has to be visible in the log itself."""
+    from llm.calls_log import CallLog
+    from radar.agent import RunResult
+    from radar.schema import Topic
+
+    db = tmp_path / "radar.db"
+    topic = Topic(
+        title="T",
+        summary="s",
+        sources=["https://example.com/a"],
+        why_now="w",
+        angle="practical",
+        suggested_outline=["One"],
+    )
+
+    def fake_run(**_kwargs):
+        CallLog(db).record(
+            provider="nim",
+            model="meta/llama-3.3-70b-instruct",
+            purpose="radar:step",
+            ok=True,
+            error_type=None,
+            latency_ms=900,
+            prompt_tokens=1200,
+            completion_tokens=300,
+        )
+        return RunResult([topic], 1, "final_answer", [])
+
+    monkeypatch.setattr("radar.run.run_agent", fake_run)
+
+    main(["--db", str(db)])
+
+    reported = capsys.readouterr().err
+    assert "nim" in reported
+    assert "1,200 in" in reported
+
+
+def test_the_provider_summary_is_printed_even_when_the_run_fails(monkeypatch, tmp_path, capsys):
+    """A failed run is precisely when you want to know who was asked."""
+    from llm.calls_log import CallLog
+    from radar.agent import AgentFailed
+
+    db = tmp_path / "radar.db"
+
+    def boom(**_kwargs):
+        CallLog(db).record(
+            provider="gemini",
+            model="gemini-2.5-flash",
+            purpose="radar:step",
+            ok=False,
+            error_type="FatalError",
+            latency_ms=10,
+            prompt_tokens=100,
+            completion_tokens=0,
+        )
+        raise AgentFailed("no valid answer")
+
+    monkeypatch.setattr("radar.run.run_agent", boom)
+
+    main(["--db", str(db)])
+
+    reported = capsys.readouterr().err
+    assert "gemini" in reported
+    assert "1 failed" in reported
+
+
 def test_main_reports_a_failed_run_without_a_traceback(monkeypatch, capsys):
     from radar.agent import AgentFailed
 
