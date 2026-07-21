@@ -1,6 +1,6 @@
 """The shape every source collapses into.
 
-Hacker News, Reddit and RSS disagree about almost everything — field names,
+Hacker News and RSS disagree about almost everything — field names,
 timestamp formats, what counts as a score. Normalising at the edge means the
 agent loop reasons about one kind of thing, and adding a fourth source later
 costs one adapter rather than a change to the prompt.

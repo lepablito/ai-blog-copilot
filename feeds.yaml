@@ -8,6 +8,10 @@
 # Note: Anthropic publishes no public RSS feed (every documented path 404s as
 # of July 2026). Its announcements arrive here second-hand via Simon Willison,
 # Import AI and Latent Space.
+#
+# Reddit is not a source. Its .json endpoints were shut down in May 2026, new
+# OAuth credentials sit behind a manual approval gate, and robots.txt is a
+# blanket Disallow for every agent. Three signals pointing the same way.
 
 feeds:
   - name: "OpenAI"

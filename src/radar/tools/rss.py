@@ -2,8 +2,8 @@
 
 feedparser is deliberately forgiving about malformed XML, which is the right
 default for the open web but means "it parsed" is not the same as "it worked".
-A feed that yields no entries is skipped rather than trusted, and — as with
-Reddit — only a total wipeout is worth raising.
+A feed that yields no entries is skipped rather than trusted, and one dead blog
+costs that blog: only a total wipeout is worth raising.
 """
 
 import calendar

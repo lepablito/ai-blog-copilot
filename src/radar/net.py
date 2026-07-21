@@ -2,7 +2,8 @@
 
 Everything here exists because of one uncomfortable fact: the URLs this module
 fetches are chosen by an LLM that has just read attacker-controlled text from
-Reddit and Hacker News. A URL being present in the model's output says nothing
+Hacker News and a dozen syndicated blogs. A URL appearing in the model's output
+says nothing
 about whether it is safe to request.
 
 So every request is checked before it leaves the machine, and — the part that
@@ -113,39 +114,6 @@ def fetch_text(
         return body
 
     raise ToolError(f"more than {max_redirects} redirects starting from {url!r}")
-
-
-def post_form(
-    url: str,
-    *,
-    data: dict[str, str],
-    auth: tuple[str, str] | None = None,
-    timeout: float = DEFAULT_TIMEOUT,
-    resolve: Resolver = _default_resolve,
-) -> str:
-    """POST a form and return the body.
-
-    Used for OAuth token exchange. It goes through `check_url` like everything
-    else — credentials must never be posted to an address that failed the
-    guard, whatever the caller believes the URL to be.
-    """
-    check_url(url, resolve=resolve)
-
-    try:
-        response = httpx.post(
-            url,
-            data=data,
-            auth=auth,
-            headers={"User-Agent": USER_AGENT},
-            timeout=timeout,
-        )
-    except httpx.TransportError as exc:
-        raise ToolError(f"network failure for {url!r}: {exc}") from exc
-
-    if response.status_code >= 400:
-        raise ToolError(f"HTTP {response.status_code} from {url!r}: {response.text[:200]}")
-
-    return response.text
 
 
 def _read_capped(response: httpx.Response, max_bytes: int) -> str:
