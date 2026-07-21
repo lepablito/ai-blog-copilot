@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "permissions": {
+    "allow": [
+      "Bash(uv sync*)",
+      "Bash(uv add*)",
+      "Bash(uv lock*)",
+      "Bash(uv run pytest*)",
+      "Bash(uv run ruff*)",
+      "Bash(uv run python -m radar.run*)",
+      "Bash(python -m radar.run*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(gh auth status*)",
+      "Bash(gh repo view*)",
+      "Bash(gh run list*)",
+      "Bash(gh run view*)",
+      "Bash(gh workflow list*)",
+      "Bash(gh workflow view*)",
+      "Bash(gh secret list*)",
+
+      "PowerShell(uv sync*)",
+      "PowerShell(uv add*)",
+      "PowerShell(uv lock*)",
+      "PowerShell(uv run pytest*)",
+      "PowerShell(uv run ruff*)",
+      "PowerShell(uv run python -m radar.run*)",
+      "PowerShell(python -m radar.run*)",
+      "PowerShell(git status*)",
+      "PowerShell(git diff*)",
+      "PowerShell(git log*)",
+      "PowerShell(git show*)",
+      "PowerShell(git branch*)",
+      "PowerShell(gh auth status*)",
+      "PowerShell(gh repo view*)",
+      "PowerShell(gh run list*)",
+      "PowerShell(gh run view*)",
+      "PowerShell(gh workflow list*)",
+      "PowerShell(gh workflow view*)",
+      "PowerShell(gh secret list*)"
+    ]
+  }
+}

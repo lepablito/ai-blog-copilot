@@ -1,0 +1,3 @@
+# Normalize to LF in the repository. Development happens on Windows, CI runs
+# on Ubuntu — without this, committed CRLF breaks the workflow scripts.
+* text=auto eol=lf
