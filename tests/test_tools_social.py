@@ -118,8 +118,16 @@ def test_hackernews_unexpected_shape_raises_tool_error():
 # --- Reddit ---
 
 
+# The rich JSON listing is only reachable with a token, so every test that
+# exercises it passes one. TOKEN's value is irrelevant — the fake fetcher never
+# checks it; test_reddit_auth.py covers the header itself.
+TOKEN = "test-token"
+
+
 def test_reddit_normalises_posts_into_items():
-    items = fetch_reddit(["LocalLLaMA"], fetch=fetcher(reddit_payload([reddit_post()])))
+    items = fetch_reddit(
+        ["LocalLLaMA"], token=TOKEN, fetch=fetcher(reddit_payload([reddit_post()]))
+    )
 
     (item,) = items
     assert item.source == "reddit"
@@ -132,7 +140,7 @@ def test_reddit_normalises_posts_into_items():
 def test_reddit_skips_stickied_announcements():
     posts = [reddit_post(stickied=True), reddit_post(title="real post")]
 
-    items = fetch_reddit(["LocalLLaMA"], fetch=fetcher(reddit_payload(posts)))
+    items = fetch_reddit(["LocalLLaMA"], token=TOKEN, fetch=fetcher(reddit_payload(posts)))
 
     assert [i.title for i in items] == ["real post"]
 
@@ -140,14 +148,18 @@ def test_reddit_skips_stickied_announcements():
 def test_reddit_drops_posts_older_than_the_window():
     posts = [reddit_post(created_utc=time.time() - 100 * HOUR), reddit_post(title="fresh")]
 
-    items = fetch_reddit(["LocalLLaMA"], hours=48, fetch=fetcher(reddit_payload(posts)))
+    items = fetch_reddit(
+        ["LocalLLaMA"], hours=48, token=TOKEN, fetch=fetcher(reddit_payload(posts))
+    )
 
     assert [i.title for i in items] == ["fresh"]
 
 
 def test_reddit_queries_every_subreddit():
     urls: list[str] = []
-    fetch_reddit(["MachineLearning", "LocalLLaMA"], fetch=fetcher(reddit_payload([]), urls))
+    fetch_reddit(
+        ["MachineLearning", "LocalLLaMA"], token=TOKEN, fetch=fetcher(reddit_payload([]), urls)
+    )
 
     assert any("MachineLearning" in u for u in urls)
     assert any("LocalLLaMA" in u for u in urls)
@@ -161,7 +173,7 @@ def test_one_failing_subreddit_does_not_lose_the_others():
             raise ToolError("HTTP 403")
         return reddit_payload([reddit_post(title="survived")])
 
-    items = fetch_reddit(["Banned", "LocalLLaMA"], fetch=fetch)
+    items = fetch_reddit(["Banned", "LocalLLaMA"], token=TOKEN, fetch=fetch)
 
     assert [i.title for i in items] == ["survived"]
 
@@ -180,16 +192,12 @@ def reddit_rss(entries):
     <feed xmlns="http://www.w3.org/2005/Atom"><title>r/x</title>{body}</feed>"""
 
 
-def test_json_403_falls_back_to_the_public_rss_listing():
-    """Reddit 403s the .json endpoints outright; old.reddit's .rss still answers,
-    so a blocked listing costs metadata rather than the whole source."""
+def test_unauthenticated_run_reads_the_public_rss_listing():
     recent = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%S+00:00")
     calls: list[str] = []
 
     def fetch(url, **_kwargs):
         calls.append(url)
-        if ".json" in url:
-            raise ToolError("HTTP 403")
         return reddit_rss([{"title": "via rss", "link": "https://redd.it/1", "when": recent}])
 
     items = fetch_reddit(["LocalLLaMA"], fetch=fetch)
@@ -198,12 +206,10 @@ def test_json_403_falls_back_to_the_public_rss_listing():
     assert any("old.reddit.com" in c and ".rss" in c for c in calls)
 
 
-def test_rss_fallback_items_carry_no_invented_score():
+def test_rss_items_carry_no_invented_score():
     recent = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%S+00:00")
 
-    def fetch(url, **_kwargs):
-        if ".json" in url:
-            raise ToolError("HTTP 403")
+    def fetch(_url, **_kwargs):
         return reddit_rss([{"title": "via rss", "link": "https://redd.it/1", "when": recent}])
 
     (item,) = fetch_reddit(["LocalLLaMA"], fetch=fetch)
@@ -231,6 +237,6 @@ def test_every_subreddit_failing_raises_tool_error():
 def test_reddit_post_without_external_url_uses_its_permalink():
     post = reddit_post(url="", permalink="/r/x/comments/abc/title/")
 
-    items = fetch_reddit(["x"], fetch=fetcher(reddit_payload([post])))
+    items = fetch_reddit(["x"], token=TOKEN, fetch=fetcher(reddit_payload([post])))
 
     assert items[0].url == "https://www.reddit.com/r/x/comments/abc/title/"
