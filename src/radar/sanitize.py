@@ -103,4 +103,4 @@ def render_items(items: Iterable[Item], *, nonce: str, source: str = "tool-resul
 def _attr(value: str) -> str:
     """Source labels are ours, not the network's — but quote-strip anyway so a
     future caller cannot inject an attribute."""
-    return re.sub(r'[^a-zA-Z0-9_.:/-]', "", value)[:40]
+    return re.sub(r"[^a-zA-Z0-9_.:/-]", "", value)[:40]

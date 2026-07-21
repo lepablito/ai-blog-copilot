@@ -21,8 +21,7 @@ import httpx
 from .errors import ToolError, UnsafeURL
 
 USER_AGENT = (
-    "ai-blog-copilot/0.1 (+https://github.com/lepablito/ai-blog-copilot) "
-    "personal trend-radar bot"
+    "ai-blog-copilot/0.1 (+https://github.com/lepablito/ai-blog-copilot) personal trend-radar bot"
 )
 
 DEFAULT_TIMEOUT = 20.0

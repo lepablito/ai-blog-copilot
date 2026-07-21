@@ -1,8 +1,10 @@
 """CLI entry point: `python -m radar.run`.
 
-Wires the three sources to the loop and prints the result as JSON. Persistence
-and the daily workflow come later; keeping this a pure stdout tool means it
-composes with anything, and the failure modes stay legible.
+Wires the three sources to the loop, persists the outcome, and prints JSON.
+
+The run row is opened *before* the agent starts and closed whatever happens, so
+a failed pass leaves a record rather than a silence. When the daily job starts
+misbehaving, the rows saying "failed, step_limit" are the ones worth reading.
 """
 
 import argparse
@@ -18,6 +20,7 @@ from llm.config import NoProvidersConfigured, build_chain
 
 from .agent import DEFAULT_MAX_STEPS, Agent, AgentFailed, RunResult
 from .registry import ToolRegistry, ToolSpec
+from .store import Store
 from .tools.article import fetch_article_text
 from .tools.hackernews import fetch_hackernews
 from .tools.rss import fetch_rss
@@ -27,6 +30,8 @@ DEFAULT_GOAL = (
     "{hours} hours that are worth a technical post on a practitioner's blog. "
     "Cover both theoretical and practical angles where the evidence allows."
 )
+
+EXPECTED_FAILURES = (AgentFailed, AllProvidersFailed, NoProvidersConfigured)
 
 
 def build_registry(*, max_items: int = 25) -> ToolRegistry:
@@ -65,12 +70,11 @@ def _fetch_rss_for_agent(hours: int = 48):
     return fetch_rss(hours=hours)
 
 
-def execute(*, hours: int, max_steps: int, max_items: int, db_path: str, goal: str) -> RunResult:
+def run_agent(*, max_steps: int, max_items: int, db_path: str, goal: str) -> RunResult:
     load_dotenv()
-    chain = build_chain(os.environ)
-    client = LLMClient(chain, recorder=CallLog(db_path).record)
+    client = LLMClient(build_chain(os.environ), recorder=CallLog(db_path).record)
     agent = Agent(client, build_registry(max_items=max_items), max_steps=max_steps)
-    return agent.run(goal or DEFAULT_GOAL.format(hours=hours))
+    return agent.run(goal)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -80,23 +84,38 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--max-items", type=int, default=25, help="items per observation handed to the model"
     )
-    parser.add_argument("--db", default="radar.db", help="where call logs are written")
+    parser.add_argument("--db", default="radar.db", help="history and call log")
+    parser.add_argument("--export", default="", help="also write the history to this JSON file")
     parser.add_argument("--goal", default="", help="override the default goal")
     args = parser.parse_args(argv)
 
+    goal = args.goal or DEFAULT_GOAL.format(hours=args.hours)
+    store = Store(args.db)
+    run_id = store.start_run(goal=goal, hours=args.hours)
+
     try:
-        result = execute(
-            hours=args.hours,
+        result = run_agent(
             max_steps=args.max_steps,
             max_items=args.max_items,
             db_path=args.db,
-            goal=args.goal,
+            goal=goal,
         )
-    except (AgentFailed, AllProvidersFailed, NoProvidersConfigured) as exc:
-        # These are expected operating conditions, not bugs. A traceback would
-        # bury the one line that says what to fix.
+    except EXPECTED_FAILURES as exc:
+        # Expected operating conditions, not bugs. A traceback would bury the
+        # one line saying what to fix.
+        store.finish_run(run_id, status="failed", steps_used=0, stopped_because=type(exc).__name__)
         print(f"radar failed: {exc}", file=sys.stderr)
         return 1
+
+    store.save_topics(run_id, result.topics)
+    store.finish_run(
+        run_id,
+        status="ok",
+        steps_used=result.steps_used,
+        stopped_because=result.stopped_because,
+    )
+    if args.export:
+        store.export_json(args.export)
 
     print(
         json.dumps(

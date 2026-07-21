@@ -15,10 +15,10 @@ def rss_feed(entries):
     body = "".join(
         f"""
         <item>
-          <title>{e['title']}</title>
-          <link>{e['link']}</link>
-          <pubDate>{formatdate(e['when'])}</pubDate>
-          <description>{e.get('summary', 'a summary')}</description>
+          <title>{e["title"]}</title>
+          <link>{e["link"]}</link>
+          <pubDate>{formatdate(e["when"])}</pubDate>
+          <description>{e.get("summary", "a summary")}</description>
         </item>
         """
         for e in entries

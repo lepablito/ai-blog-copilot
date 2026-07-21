@@ -1,4 +1,4 @@
-﻿"""A ReAct loop, written out by hand.
+"""A ReAct loop, written out by hand.
 
 Thought → Action → Observation, with no agent framework underneath. The whole
 point of building it this way is that the failure handling is visible rather
@@ -72,9 +72,7 @@ class Agent:
         self._nonce = nonce or new_nonce()
 
     def _ask(self, messages: list[Message], purpose: str) -> Any:
-        return self._client.generate_json(
-            messages, max_tokens=self._max_tokens, purpose=purpose
-        )
+        return self._client.generate_json(messages, max_tokens=self._max_tokens, purpose=purpose)
 
     def run(self, goal: str) -> RunResult:
         messages: list[Message] = [
@@ -138,14 +136,10 @@ class Agent:
             return parse_topics(answer)
         except InvalidTopics as first_error:
             messages.append({"role": "assistant", "content": _as_text(answer)})
-            messages.append(
-                {"role": "user", "content": prompts.REPAIR.format(error=first_error)}
-            )
+            messages.append({"role": "user", "content": prompts.REPAIR.format(error=first_error)})
             repaired = self._ask(messages, "radar:repair")
             candidate = (
-                repaired.get("final_answer", repaired)
-                if isinstance(repaired, dict)
-                else repaired
+                repaired.get("final_answer", repaired) if isinstance(repaired, dict) else repaired
             )
             try:
                 return parse_topics(candidate)
@@ -159,4 +153,3 @@ def _as_text(value: Any) -> str:
     import json
 
     return json.dumps(value, ensure_ascii=False)
-

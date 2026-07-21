@@ -116,9 +116,7 @@ def test_opening_the_same_database_twice_is_safe(tmp_path):
 
 def test_client_logs_one_row_per_attempt_including_failures(log):
     provider = FakeProvider("gemini", [RetryableError("429"), RetryableError("429"), "ok"])
-    client = LLMClient(
-        [provider], max_attempts=3, sleep=lambda _s: None, recorder=log.record
-    )
+    client = LLMClient([provider], max_attempts=3, sleep=lambda _s: None, recorder=log.record)
 
     client.generate(PROMPT, purpose="radar")
 

@@ -95,8 +95,7 @@ class ToolRegistry:
             # Say so explicitly: a silently truncated list invites the model to
             # conclude the window was quiet when it was the opposite.
             rendered = (
-                f"Showing the {len(shown)} highest-signal of {len(items)} items found.\n"
-                + rendered
+                f"Showing the {len(shown)} highest-signal of {len(items)} items found.\n" + rendered
             )
         return rendered
 

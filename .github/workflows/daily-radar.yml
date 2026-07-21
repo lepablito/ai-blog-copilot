@@ -1,0 +1,78 @@
+name: Daily radar
+
+on:
+  schedule:
+    # 06:00 UTC — after the US evening and before the European working day, so
+    # a full 24h of both timezones' output is in the window.
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      hours:
+        description: "How far back to look"
+        default: "48"
+      max_steps:
+        description: "Step limit for the ReAct loop"
+        default: "8"
+
+# Two runs writing data/topics.json at once would race on the commit.
+concurrency:
+  group: daily-radar
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --extra radar
+
+      - name: Restore history
+        uses: actions/cache@v4
+        with:
+          # radar.db is not committed — it is a binary that would grow a diff
+          # every day. The cache keeps history across runs; data/topics.json is
+          # the durable, reviewable copy.
+          path: radar.db
+          key: radar-db-${{ github.run_id }}
+          restore-keys: radar-db-
+
+      - name: Run the radar
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NVIDIA_NIM_API_KEY: ${{ secrets.NVIDIA_NIM_API_KEY }}
+          # No Ollama on a runner, so the chain here is Gemini -> NIM. If both
+          # fail the step exits non-zero and nothing is committed: a bad run
+          # must not overwrite a good file.
+        run: |
+          uv run python -m radar.run \
+            --hours "${{ github.event.inputs.hours || 48 }}" \
+            --max-steps "${{ github.event.inputs.max_steps || 8 }}" \
+            --export data/topics.json
+
+      - name: Commit if the topics changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Stage first, then compare against the index: `git diff` alone is
+          # blind to an untracked file, so on the very first run — the one that
+          # creates data/topics.json — it would report no change and skip the
+          # commit entirely.
+          git add data/topics.json
+          if git diff --cached --quiet -- data/topics.json; then
+            echo "No new topics today — nothing to commit."
+            exit 0
+          fi
+
+          git commit -m "Daily radar: $(date -u +%Y-%m-%d)"
+          git push

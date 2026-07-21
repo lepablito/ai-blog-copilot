@@ -19,9 +19,7 @@ from .base import FatalError, LLMResponse, Message, RetryableError
 RETRYABLE_STATUS = {408, 429}
 
 
-def _post(
-    url: str, *, payload: dict, headers: dict[str, str], timeout: float
-) -> tuple[dict, int]:
+def _post(url: str, *, payload: dict, headers: dict[str, str], timeout: float) -> tuple[dict, int]:
     """POST JSON and return (decoded body, latency in ms).
 
     Raises RetryableError or FatalError — never a raw httpx exception, so
