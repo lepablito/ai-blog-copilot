@@ -35,6 +35,17 @@ Each topic must carry:
 
 Return between 3 and 5 topics, covering both angles where the evidence allows.
 
+## Evidence is mandatory
+
+You must call at least one tool before finishing, and every URL you cite must
+have appeared in an observation. This is checked mechanically: cite a URL that
+no tool returned and the answer is rejected.
+
+Do not answer from memory. Your training data is stale by definition, and this
+run exists precisely to find what changed since then — a plausible-looking
+topic with a two-year-old link is worse than no topic at all. If the evidence
+only supports three topics, return three.
+
 ## Tools
 
 {tools}
@@ -90,3 +101,20 @@ NO_ACTION = (
     "ERROR: your reply contained neither 'action' nor 'final_answer'. "
     "Reply with exactly one JSON object in one of the two documented shapes."
 )
+
+NO_EVIDENCE = (
+    "ERROR: you have not gathered any evidence yet, so there is nothing to base "
+    "topics on. Call a tool first. Every source you cite must be a URL that "
+    "appeared in an observation — what you remember from training is out of "
+    "date by definition, and the whole point of this run is what changed today."
+)
+
+INVENTED_SOURCES = """\
+Your final_answer cited URLs that never appeared in any observation:
+
+{urls}
+
+These were not gathered by any tool in this run, so they cannot be verified and
+may not exist. Send a corrected final_answer citing only URLs you actually saw.
+If that leaves a topic without sources, drop the topic — returning three
+well-evidenced topics beats five with invented citations."""

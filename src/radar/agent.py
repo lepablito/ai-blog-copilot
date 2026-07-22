@@ -14,8 +14,15 @@ than inherited, and every one of these cases is load-bearing:
 * The final answer fails validation → the schema error goes back as a repair
   prompt, once. Twice and it raises, because a model that cannot produce the
   contract twice will not produce it on the fifth attempt either.
+* The answer cites something no tool returned → rejected. A run in CI once
+  finished at step one and produced three convincing topics, sourced to Hacker
+  News IDs from two years earlier, straight out of training data. It passed
+  schema validation and was committed. So evidence is now checked against what
+  the tools actually returned, not requested in the prompt and hoped for.
 """
 
+import json
+import re
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -89,17 +96,24 @@ class Agent:
         ]
 
         transcript: list[Step] = []
+        seen_urls: set[str] = set()
 
         for step in range(1, self._max_steps + 1):
             reply = self._ask(messages, "radar:step")
             thought = str(reply.get("thought") or "") if isinstance(reply, dict) else ""
 
             if isinstance(reply, dict) and "final_answer" in reply:
-                topics = self._finalise(reply["final_answer"], messages)
-                transcript.append(Step(thought, None, None, "final answer accepted"))
-                return RunResult(topics, step, "final_answer", transcript)
+                if seen_urls:
+                    topics = self._finalise(reply["final_answer"], messages, seen_urls)
+                    transcript.append(Step(thought, None, None, "final answer accepted"))
+                    return RunResult(topics, step, "final_answer", transcript)
 
-            observation, tool, args = self._act(reply)
+                # Answering before reading anything means answering from
+                # training data. Refuse and keep going.
+                observation, tool, args = prompts.NO_EVIDENCE, None, None
+            else:
+                observation, tool, args = self._act(reply)
+                seen_urls |= _urls_in(observation)
             transcript.append(Step(thought, tool, args, observation))
             messages.append({"role": "assistant", "content": _as_text(reply)})
             messages.append({"role": "user", "content": observation})
@@ -108,9 +122,15 @@ class Agent:
         messages.append(
             {"role": "user", "content": prompts.CLOSING.format(max_steps=self._max_steps)}
         )
+        if not seen_urls:
+            raise AgentFailed(
+                f"no evidence gathered in {self._max_steps} steps — every tool call failed "
+                "or returned nothing. Refusing to produce topics from training data."
+            )
+
         reply = self._ask(messages, "radar:closing")
         answer = reply.get("final_answer", reply) if isinstance(reply, dict) else reply
-        topics = self._finalise(answer, messages)
+        topics = self._finalise(answer, messages, seen_urls)
         transcript.append(Step("forced close", None, None, "final answer accepted"))
         return RunResult(topics, self._max_steps, "step_limit", transcript)
 
@@ -131,9 +151,11 @@ class Agent:
         observation = self._registry.call(tool, args, nonce=self._nonce)
         return observation, tool, args if isinstance(args, dict) else None
 
-    def _finalise(self, answer: Any, messages: list[Message]) -> list[Topic]:
+    def _finalise(self, answer: Any, messages: list[Message], seen: set[str]) -> list[Topic]:
         try:
-            return parse_topics(answer)
+            topics = parse_topics(answer)
+            _reject_invented_sources(topics, seen)
+            return topics
         except InvalidTopics as first_error:
             messages.append({"role": "assistant", "content": _as_text(answer)})
             messages.append({"role": "user", "content": prompts.REPAIR.format(error=first_error)})
@@ -142,14 +164,55 @@ class Agent:
                 repaired.get("final_answer", repaired) if isinstance(repaired, dict) else repaired
             )
             try:
-                return parse_topics(candidate)
+                topics = parse_topics(candidate)
+                _reject_invented_sources(topics, seen)
+                return topics
             except InvalidTopics as second_error:
                 raise AgentFailed(
                     f"final answer failed validation twice: {second_error}"
                 ) from second_error
 
 
-def _as_text(value: Any) -> str:
-    import json
+URL_PATTERN = re.compile(r"https?://[^\s\"'<>)\]]+")
 
+
+def _urls_in(observation: str) -> set[str]:
+    """Every URL the agent has actually been shown.
+
+    Deliberately generous — it picks up links inside fetched article text as
+    well as item URLs, because citing something you read *in* a page is
+    legitimate. The point is not to be strict about provenance, only to make
+    "I remember this from training" impossible to pass off as evidence.
+    """
+    return {_normalise(url) for url in URL_PATTERN.findall(observation)}
+
+
+def _normalise(url: str) -> str:
+    """Models reformat URLs. A trailing slash is not an invention."""
+    return url.rstrip("/.,;").split("#", 1)[0].lower()
+
+
+def _reject_invented_sources(topics: list[Topic], seen: set[str]) -> None:
+    """The hard check behind the prompt's instruction to cite only what it saw.
+
+    A live run once answered at step one and produced three plausible topics
+    citing Hacker News IDs from two years earlier. It passed schema validation
+    and was committed. Asking the model nicely is not a control; comparing
+    against what the tools actually returned is.
+    """
+    invented = sorted(
+        {
+            url
+            for topic in topics
+            for url in (*topic.sources, *topic.citations)
+            if _normalise(url) not in seen
+        }
+    )
+    if invented:
+        raise InvalidTopics(
+            prompts.INVENTED_SOURCES.format(urls="\n".join(f"  - {u}" for u in invented))
+        )
+
+
+def _as_text(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False)
