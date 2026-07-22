@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from llm.calls_log import CallLog  # noqa: E402
 from llm.client import LLMClient  # noqa: E402
 from llm.config import build_chain  # noqa: E402
+from studio.views import costs as costs_view  # noqa: E402
 from studio.views import radar as radar_view  # noqa: E402
 from studio.views import studio as studio_view  # noqa: E402
 
@@ -48,7 +49,7 @@ def main() -> None:
     with studio_tab:
         studio_view.render(client_factory)
     with costs_tab:
-        st.info("Coming next: what the fallback chain has cost.")
+        costs_view.render(DB_PATH)
 
 
 main()
