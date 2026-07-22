@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T15:17:37+00:00",
+  "generated_at": "2026-07-22T22:43:49+00:00",
   "topics": [
     {
       "angle": "practical",
@@ -24,6 +24,27 @@
       "summary": "This study reveals a critical, often overlooked, aspect of LLM behavior: simply requesting structured output (e.g., JSON) dramatically reduces the diversity of answers, even without schema enforcement or constrained decoding. Re-running the 'One-Word Census' across 44 models, the research shows a sharp convergence towards modal answers, especially impacting models that were previously more distinctive. This has profound implications for engineers relying on LLMs for creative generation, data extraction, or any task where answer variety is desired or assumed.",
       "title": "Structured Output Request Significantly Reduces LLM Answer Diversity",
       "why_now": "Released within the last 24 hours on arXiv, this paper uncovers a fundamental behavioral shift in LLMs due to a common prompting technique. This insight is immediately actionable for practitioners designing prompts and evaluating outputs, preventing unintended consequences of structured output requests."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.18358",
+        "https://arxiv.org/abs/2607.18438"
+      ],
+      "date": "2026-07-22",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2607.18358",
+        "https://arxiv.org/abs/2607.18438"
+      ],
+      "suggested_outline": [
+        "Introduction to Self-Improving LLMs",
+        "Methods for Autonomous Retraining",
+        "Applications and Future Directions"
+      ],
+      "summary": "Researchers have proposed methods for self-improving LLMs through autonomous retraining, which enables the models to continuously learn and improve from their own outputs. This approach has shown potential in reducing the need for manual labeling and improving model performance over time.",
+      "title": "Self-Improving LLMs through Autonomous Retraining",
+      "why_now": "The recent development of self-improving LLMs makes this topic relevant and timely, with potential applications in various industries."
     },
     {
       "angle": "practical",
@@ -100,6 +121,27 @@
     {
       "angle": "theoretical",
       "citations": [
+        "https://arxiv.org/abs/2607.18413",
+        "https://arxiv.org/abs/2607.18481"
+      ],
+      "date": "2026-07-22",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2607.18413",
+        "https://arxiv.org/abs/2607.18481"
+      ],
+      "suggested_outline": [
+        "Introduction to Convolutional Layers in LLMs",
+        "Integration of Convolutional Layers into LLMs",
+        "Results and Future Directions"
+      ],
+      "summary": "The use of convolutional layers in LLMs has been explored as a means to improve model performance, particularly in tasks that require local token interactions. Recent studies have shown that convolutional layers can be effectively integrated into LLMs, leading to improved results on various benchmarks.",
+      "title": "Convolutional Layers in LLMs for Improved Performance",
+      "why_now": "The recent publication of studies on convolutional layers in LLMs makes this topic timely and relevant, with potential applications in improving model performance."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
         "https://arxiv.org/abs/2607.18413"
       ],
       "date": "2026-07-22",
@@ -120,6 +162,27 @@
       "summary": "This research investigates the benefits of integrating lightweight depthwise convolutions into Transformer-based Large Language Models (LLMs). By strategically applying convolutions to projected queries, keys, and values before attention, the study demonstrates improved average accuracy on downstream benchmarks with minimal parameter increase. This suggests that convolutions can provide a valuable local inductive bias, complementing self-attention for modeling short-range token interactions and potentially leading to more efficient or performant LLMs.",
       "title": "Convolution for LLMs: Enhancing Locality in Transformer Architectures",
       "why_now": "Newly published on arXiv, this paper offers a concrete, low-cost architectural modification to Transformer models, which could be directly applicable to improving existing LLMs. It challenges the pure attention paradigm by re-introducing a classic neural network component."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.18413",
+        "https://arxiv.org/abs/2607.18615"
+      ],
+      "date": "2026-07-22",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.18413",
+        "https://arxiv.org/abs/2607.18615"
+      ],
+      "suggested_outline": [
+        "Introduction to Multimodal Learning",
+        "Applications of LLMs in Multimodal Learning",
+        "Future Directions and Challenges"
+      ],
+      "summary": "Recent studies have explored the use of large language models (LLMs) in multimodal learning, including applications in vision-language models and multimodal unlearning. These advancements have shown promise in improving the performance and efficiency of LLMs in various tasks.",
+      "title": "Advances in LLMs for Multimodal Learning",
+      "why_now": "The recent publication of several studies on multimodal learning and LLMs makes this topic timely and relevant."
     }
   ]
 }
