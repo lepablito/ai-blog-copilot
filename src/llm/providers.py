@@ -14,6 +14,12 @@ import httpx
 
 from .base import FatalError, LLMResponse, Message, RetryableError
 
+# Late in an agent run the prompt carries every observation gathered so far —
+# 20k tokens is normal — and a 70B model does not answer that inside a
+# chat-sized minute. Measured, not guessed: NIM timed out on all three attempts
+# in CI at 60s while working locally on shorter prompts.
+HOSTED_TIMEOUT = 180.0
+
 # 408 and 429 are the 4xx codes worth waiting out; every 5xx is the server's
 # problem, not the request's.
 RETRYABLE_STATUS = {408, 429}
@@ -53,7 +59,9 @@ class GeminiProvider:
     name = "gemini"
     BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
 
-    def __init__(self, api_key: str, model: str = "gemini-2.5-flash", *, timeout: float = 60.0):
+    def __init__(
+        self, api_key: str, model: str = "gemini-2.5-flash", *, timeout: float = HOSTED_TIMEOUT
+    ):
         self.api_key = api_key
         self.model = model
         self._timeout = timeout
@@ -120,7 +128,7 @@ class NimProvider:
         base_url: str = "https://integrate.api.nvidia.com/v1",
         model: str = "meta/llama-3.3-70b-instruct",
         *,
-        timeout: float = 60.0,
+        timeout: float = HOSTED_TIMEOUT,
     ):
         self.api_key = api_key
         self.base_url = base_url.rstrip("/")

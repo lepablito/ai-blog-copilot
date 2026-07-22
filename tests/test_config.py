@@ -35,6 +35,17 @@ def test_llm_only_naming_a_tier_without_credentials_fails_loudly():
         build_chain({"LLM_ONLY": "gemini"})
 
 
+def test_hosted_providers_get_a_timeout_that_fits_a_full_agent_step():
+    """NIM timed out on all three attempts in CI, returning zero tokens, while
+    working locally on smaller prompts. By late in a run the prompt carries
+    every observation so far — 20k tokens — and a 70B model does not answer
+    that inside a chat-sized 60 seconds."""
+    gemini, nim, _ollama = build_chain(FULL_ENV)
+
+    assert nim._timeout >= 120
+    assert gemini._timeout >= 120
+
+
 def test_models_come_from_the_environment():
     chain = build_chain({**FULL_ENV, "GEMINI_MODEL": "gemini-2.5-pro"})
 
