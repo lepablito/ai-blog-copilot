@@ -101,9 +101,7 @@ class Store:
                 ],
             )
 
-    def recent_topics(
-        self, *, angle: str | None = None, since: str | None = None, limit: int = 200
-    ) -> list[Topic]:
+    def _select(self, *, angle: str | None, since: str | None, limit: int) -> list[sqlite3.Row]:
         query = "SELECT * FROM topics"
         conditions, parameters = [], []
         if angle:
@@ -119,16 +117,27 @@ class Store:
 
         with sqlite3.connect(self.db_path) as conn:
             conn.row_factory = sqlite3.Row
-            return [_to_topic(row) for row in conn.execute(query, parameters)]
+            return conn.execute(query, parameters).fetchall()
+
+    def recent_topics(
+        self, *, angle: str | None = None, since: str | None = None, limit: int = 200
+    ) -> list[Topic]:
+        return [_to_topic(row) for row in self._select(angle=angle, since=since, limit=limit)]
+
+    def recent_records(
+        self, *, angle: str | None = None, since: str | None = None, limit: int = 200
+    ) -> list[dict]:
+        """Topics as plain dicts, carrying the date of the run that found them.
+
+        `Topic` deliberately has no date field — it is the agent's output
+        contract, and the agent does not decide when it ran. The date belongs
+        to the row, so anything that displays history reads it from here.
+        """
+        rows = self._select(angle=angle, since=since, limit=limit)
+        return [{"date": row["date"], **_to_topic(row).as_dict()} for row in rows]
 
     def export_records(self, *, limit: int = 1000) -> list[dict]:
-        """Topics as plain dicts, carrying the date the run happened."""
-        with sqlite3.connect(self.db_path) as conn:
-            conn.row_factory = sqlite3.Row
-            rows = conn.execute(
-                "SELECT * FROM topics ORDER BY id DESC LIMIT ?", (limit,)
-            ).fetchall()
-        return [{"date": row["date"], **_to_topic(row).as_dict()} for row in rows]
+        return self.recent_records(limit=limit)
 
     def export_json(self, path: Path | str, *, generated_at: str | None = None) -> Path:
         """Write the history as JSON for the daily workflow to commit.
