@@ -28,7 +28,17 @@ class LLMError(Exception):
 
 
 class RetryableError(LLMError):
-    """Transient: timeouts, connection resets, 429, 5xx. Worth another attempt."""
+    """Transient: timeouts, connection resets, 429, 5xx. Worth another attempt.
+
+    `retry_after` carries how long to wait, in seconds, when the failure itself
+    says so — a rate limit knows its own window and guessing at it is strictly
+    worse. None means "no idea", and the client falls back to exponential
+    backoff, which is the right answer for a struggling server.
+    """
+
+    def __init__(self, message: str, *, retry_after: float | None = None):
+        super().__init__(message)
+        self.retry_after = retry_after
 
 
 class FatalError(LLMError):

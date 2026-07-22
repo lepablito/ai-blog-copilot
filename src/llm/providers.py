@@ -24,6 +24,17 @@ HOSTED_TIMEOUT = 180.0
 # problem, not the request's.
 RETRYABLE_STATUS = {408, 429}
 
+# How long to wait after a 429 that carries no Retry-After. Quotas are measured
+# per minute, so the default second-scale backoff would burn every attempt
+# inside the same window and abandon the tier without ever really retrying.
+# Twelve seconds clears a 5-requests-per-minute limit; twenty leaves margin.
+RATE_LIMIT_DELAY = 20.0
+
+# Gemini's free tier allows 5 requests per minute. One call every 12 seconds
+# sits exactly on that line, which is the point: the quota is small enough
+# (20 requests per day) that leaving headroom would waste it.
+GEMINI_MIN_INTERVAL = 12.0
+
 
 def _post(url: str, *, payload: dict, headers: dict[str, str], timeout: float) -> tuple[dict, int]:
     """POST JSON and return (decoded body, latency in ms).
@@ -40,7 +51,10 @@ def _post(url: str, *, payload: dict, headers: dict[str, str], timeout: float) -
 
     status = response.status_code
     if status in RETRYABLE_STATUS or status >= 500:
-        raise RetryableError(f"HTTP {status}: {response.text[:200]}")
+        raise RetryableError(
+            f"HTTP {status}: {response.text[:200]}",
+            retry_after=_retry_after(response) if status == 429 else None,
+        )
     if status >= 400:
         raise FatalError(f"HTTP {status}: {response.text[:200]}")
 
@@ -60,11 +74,20 @@ class GeminiProvider:
     BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
 
     def __init__(
-        self, api_key: str, model: str = "gemini-2.5-flash", *, timeout: float = HOSTED_TIMEOUT
+        self,
+        api_key: str,
+        model: str = "gemini-2.5-flash",
+        *,
+        timeout: float = HOSTED_TIMEOUT,
+        min_interval: float = GEMINI_MIN_INTERVAL,
     ):
         self.api_key = api_key
         self.model = model
         self._timeout = timeout
+        # Declared here, enforced by LLMClient: the quota belongs to the
+        # account, but all the waiting lives in one place where it can be
+        # driven by a fake clock.
+        self.min_interval = min_interval
 
     def generate(
         self,
@@ -129,11 +152,13 @@ class NimProvider:
         model: str = "meta/llama-3.3-70b-instruct",
         *,
         timeout: float = HOSTED_TIMEOUT,
+        min_interval: float = 0.0,
     ):
         self.api_key = api_key
         self.base_url = base_url.rstrip("/")
         self.model = model
         self._timeout = timeout
+        self.min_interval = min_interval
 
     def generate(
         self,
@@ -186,6 +211,7 @@ class OllamaProvider:
         self.base_url = base_url.rstrip("/")
         self.model = model
         self._timeout = timeout
+        self.min_interval = 0.0  # your own GPU has no quota
 
     def generate(
         self,
@@ -236,6 +262,19 @@ class OllamaProvider:
             latency_ms=latency_ms,
             raw=data,
         )
+
+
+def _retry_after(response: httpx.Response) -> float:
+    """Seconds to wait, from the server if it said so.
+
+    Retry-After may legally be an HTTP date instead of a count of seconds.
+    Parsing one is not worth the code, and failing the call over it certainly
+    is not — either way the fallback is a wait sized for a per-minute quota.
+    """
+    try:
+        return float(response.headers.get("Retry-After", ""))
+    except ValueError:
+        return RATE_LIMIT_DELAY
 
 
 def _gemini_text(data: dict) -> str:

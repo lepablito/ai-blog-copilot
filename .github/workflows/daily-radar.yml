@@ -1,10 +1,15 @@
 name: Daily radar
 
 on:
-  # Manual only, deliberately. Unattended daily runs spend API credit with
-  # nobody watching, so the schedule stays off until a few dispatched runs have
-  # shown what a pass actually costs. To enable it, uncomment the two lines
-  # below — 06:00 UTC catches a full day of both US and European output.
+  # Manual only, deliberately. The reason is no longer cost — a pass runs to
+  # about $0.02 — it is quota. Gemini's free tier allows 20 requests per day
+  # and a pass makes 9 to 11 of them, so a schedule plus a single manual
+  # dispatch spends the entire daily budget and the second one falls through
+  # to NIM. Calls are also paced 12s apart to respect the 5 rpm limit, which
+  # adds a couple of minutes to a run.
+  #
+  # To enable it, uncomment the two lines below — 06:00 UTC catches a full day
+  # of both US and European output.
   #
   # schedule:
   #   - cron: "0 6 * * *"

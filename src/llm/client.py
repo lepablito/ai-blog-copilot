@@ -48,6 +48,7 @@ class LLMClient:
         base_delay: float = 1.0,
         jitter: float = 0.25,
         sleep: Callable[[float], None] = time.sleep,
+        clock: Callable[[], float] = time.monotonic,
         recorder: Callable[..., None] | None = None,
     ):
         self._providers = providers
@@ -55,7 +56,9 @@ class LLMClient:
         self._base_delay = base_delay
         self._jitter = jitter
         self._sleep = sleep
+        self._clock = clock
         self._recorder = recorder
+        self._last_call: dict[str, float] = {}
 
     @property
     def provider_names(self) -> list[str]:
@@ -74,6 +77,7 @@ class LLMClient:
 
         for provider in self._providers:
             for attempt in range(1, self._max_attempts + 1):
+                self._pace(provider)
                 try:
                     response = provider.generate(
                         messages,
@@ -89,7 +93,7 @@ class LLMClient:
                     failures[provider.name] = str(exc)
                     self._record(provider, purpose, ok=False, error=exc)
                     if attempt < self._max_attempts:
-                        self._sleep(self._backoff(attempt))
+                        self._sleep(self._backoff(attempt, exc))
                 else:
                     self._record(provider, purpose, ok=True, response=response)
                     return response
@@ -139,7 +143,37 @@ class LLMClient:
                     f"invalid JSON after one repair attempt: {second_error}"
                 ) from second_error
 
-    def _backoff(self, attempt: int) -> float:
+    def _pace(self, provider: Provider) -> None:
+        """Wait until this provider's own rate limit allows another call.
+
+        Enforced here rather than inside each provider so that every wait in
+        the system goes through one injected sleep, and so that a chain that
+        falls through to a second tier does not inherit the first one's clock.
+
+        Time already spent counts: the model takes seconds to answer and the
+        agent spends more running tools, so sleeping a full interval on top of
+        that would pace the run at half the rate the quota allows.
+        """
+        interval = getattr(provider, "min_interval", 0.0)
+        if not interval:
+            return
+
+        last = self._last_call.get(provider.name)
+        if last is not None:
+            remaining = interval - (self._clock() - last)
+            if remaining > 0:
+                self._sleep(remaining)
+        self._last_call[provider.name] = self._clock()
+
+    def _backoff(self, attempt: int, error: RetryableError | None = None) -> float:
+        """How long to wait before trying the same provider again.
+
+        A rate limit knows its own window, so when the error carries one that
+        number wins outright. Exponential backoff is for the case nobody knows:
+        a struggling server, a dropped connection.
+        """
+        if error is not None and error.retry_after is not None:
+            return error.retry_after
         return self._base_delay * (2 ** (attempt - 1)) + random.uniform(0, self._jitter)
 
     def _record(
