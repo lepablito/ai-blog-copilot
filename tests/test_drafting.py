@@ -120,6 +120,17 @@ def test_revision_sends_the_draft_and_the_instruction():
     assert "make it shorter" in prompt
 
 
+def test_a_section_gets_a_budget_that_leaves_room_for_reasoning():
+    """Ollama counts thinking tokens against the same num_predict budget as the
+    answer. At 2048 a reasoning model deliberated until the budget ran out and
+    returned nothing at all — the answer needs headroom above the prose."""
+    client, provider = client_for("Section text.")
+
+    draft_section(client, topic=TOPIC, heading="H", outline=["H"], so_far="")
+
+    assert provider.last_max_tokens >= 4096
+
+
 def test_a_revision_that_comes_back_empty_leaves_the_draft_alone():
     """Losing a draft to a blank reply is the one failure here that costs real
     work. Better to return what we had and let the user try again."""

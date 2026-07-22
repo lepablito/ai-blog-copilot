@@ -196,3 +196,35 @@ def test_force_json_asks_each_provider_for_json():
         provider.generate(PROMPT, force_json=True)
         body = route.calls.last.request.read().decode().replace(" ", "")
         assert marker.replace(" ", "") in body
+
+
+@respx.mock
+def test_a_reply_that_is_all_reasoning_and_no_answer_is_an_error():
+    """Ollama''s num_predict budget covers the thinking tokens too. A reasoning
+    model on a long prompt can spend the whole budget deliberating and return
+    an empty `content` alongside a full `thinking` -- a 200 OK carrying nothing.
+    Passing that on as "" made the Studio draft a section, log 2048 completion
+    tokens, and display an empty box."""
+    provider, url = make_ollama()
+    respx.post(url).mock(
+        return_value=httpx.Response(
+            200,
+            json={
+                "message": {"content": "", "thinking": "Let me consider the structure..."},
+                "eval_count": 2048,
+            },
+        )
+    )
+
+    with pytest.raises(FatalError, match="reasoning"):
+        provider.generate(PROMPT, max_tokens=2048)
+
+
+@respx.mock
+def test_an_empty_reply_with_no_reasoning_behind_it_is_left_alone():
+    """A model that simply had nothing to say is not the same failure, and the
+    callers that ask for JSON already handle an unparseable empty string."""
+    provider, url = make_ollama()
+    respx.post(url).mock(return_value=httpx.Response(200, json={"message": {"content": ""}}))
+
+    assert provider.generate(PROMPT).text == ""

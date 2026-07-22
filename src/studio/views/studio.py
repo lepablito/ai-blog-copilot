@@ -71,6 +71,12 @@ def _drafting_stage(client_factory, topic: dict) -> None:
     outline = st.session_state["outline"]
 
     for index, heading in enumerate(outline):
+        # Keyed on the heading, not just the position: after a revision the
+        # outline collapses to a single "Draft", and a key of "text-0" would
+        # hand the new box the old section's leftover state.
+        box = f"text-{index}-{heading}"
+        st.session_state.setdefault(box, sections.get(heading, ""))
+
         with st.expander(heading, expanded=not sections.get(heading)):
             if st.button("Draft this section", key=f"draft-{index}"):
                 # Earlier sections only: a section should not be written around
@@ -91,11 +97,16 @@ def _drafting_stage(client_factory, topic: dict) -> None:
                         )
                     )
                 if text:
+                    # Written into the widget's own state and rerun, not passed
+                    # as `value=`. A keyed widget takes its content from session
+                    # state and ignores `value` once that key exists, so the
+                    # obvious version drafted the section, logged the tokens,
+                    # and displayed an empty box.
+                    st.session_state[box] = text
                     sections[heading] = text
+                    st.rerun()
 
-            sections[heading] = st.text_area(
-                "Text", value=sections.get(heading, ""), height=220, key=f"text-{index}"
-            )
+            sections[heading] = st.text_area("Text", height=220, key=box)
 
     _revision_box(client_factory)
 

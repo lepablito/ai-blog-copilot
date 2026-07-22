@@ -211,8 +211,24 @@ class OllamaProvider:
             timeout=self._timeout,
         )
 
+        message = data.get("message") or {}
+        text = message.get("content") or ""
+
+        # `num_predict` is a budget for *all* generated tokens, and a reasoning
+        # model spends thinking tokens out of the same pot. On a long prompt it
+        # can deliberate until the budget runs out and return a 200 carrying an
+        # empty `content` next to a full `thinking`. Passing that on as "" made
+        # the Studio draft a section, log the tokens and show an empty box.
+        # Fatal rather than retryable: the same budget produces the same
+        # outcome, so the answer is a larger one or a different model.
+        if not text.strip() and (message.get("thinking") or "").strip():
+            raise FatalError(
+                f"{self.model} spent its entire {max_tokens}-token budget on reasoning "
+                "and returned no answer — raise max_tokens or use a non-reasoning model"
+            )
+
         return LLMResponse(
-            text=(data.get("message") or {}).get("content", ""),
+            text=text,
             provider=self.name,
             model=self.model,
             prompt_tokens=data.get("prompt_eval_count", 0),

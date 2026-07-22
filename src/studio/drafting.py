@@ -80,7 +80,10 @@ def draft_section(
         # section one already introduced.
         messages.append({"role": "user", "content": f"The draft so far:\n\n{so_far.strip()}"})
 
-    return client.generate(messages, max_tokens=2048, purpose="studio:section").text.strip()
+    # Headroom, not generosity: Ollama counts a reasoning model's thinking
+    # tokens against the same budget as its answer, and at 2048 qwen3 spent the
+    # lot deliberating and returned nothing.
+    return client.generate(messages, max_tokens=4096, purpose="studio:section").text.strip()
 
 
 def revise(client: LLMClient, *, draft: str, instruction: str) -> str:
