@@ -1,0 +1,203 @@
+{
+  "generated_at": "2026-07-22T15:17:37+00:00",
+  "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.18476"
+      ],
+      "date": "2026-07-22",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2607.18476"
+      ],
+      "suggested_outline": [
+        "The Hidden Cost of 'Reply with JSON': A New LLM Behavior",
+        "The One-Word Census: Methodology Revisited",
+        "Quantifying the Collapse: Reduced Diversity and Increased Modality",
+        "The 'Sharpening' Effect: Distinctive Models are Most Affected",
+        "Default Shifts: How JSON Creates New Behavioral Defaults",
+        "Practical Implications for Prompt Engineering and Application Design",
+        "When to Use Structured Output (and When Not To)",
+        "Conclusion: Understanding LLM Nuances Beyond Basic Prompts"
+      ],
+      "summary": "This study reveals a critical, often overlooked, aspect of LLM behavior: simply requesting structured output (e.g., JSON) dramatically reduces the diversity of answers, even without schema enforcement or constrained decoding. Re-running the 'One-Word Census' across 44 models, the research shows a sharp convergence towards modal answers, especially impacting models that were previously more distinctive. This has profound implications for engineers relying on LLMs for creative generation, data extraction, or any task where answer variety is desired or assumed.",
+      "title": "Structured Output Request Significantly Reduces LLM Answer Diversity",
+      "why_now": "Released within the last 24 hours on arXiv, this paper uncovers a fundamental behavioral shift in LLMs due to a common prompting technique. This insight is immediately actionable for practitioners designing prompts and evaluating outputs, preventing unintended consequences of structured output requests."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.18481"
+      ],
+      "date": "2026-07-22",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2607.18481"
+      ],
+      "suggested_outline": [
+        "The Challenge of Knowledge Graph Question Answering (KGQA)",
+        "Limitations of Frontier LLMs for Graph Navigation",
+        "Introducing Search-on-Graph-R1 (SoGR1): A Hybrid Approach",
+        "Training Methodology: SFT and RL for Internalized Navigation",
+        "Scaffolding with Gold SPARQL Queries: Grounding Trajectories",
+        "Performance Benchmarks: SoGR1 vs. Frontier LLMs on Key Datasets",
+        "Cost-Benefit Analysis: Efficiency Gains with Compact Models",
+        "Practical Applications and Future Directions in KGQA",
+        "Conclusion: Democratizing Knowledge Graph Access with Smaller LLMs"
+      ],
+      "summary": "This paper introduces Search-on-Graph-R1 (SoGR1), a method for Knowledge Graph Question Answering (KGQA) that internalizes graph navigation into compact 8B language models using supervised fine-tuning (SFT) and reinforcement learning (RL). By scaffolding a frontier teacher with gold SPARQL queries, SoGR1 generates grounded trajectories against live knowledge graphs. This approach allows smaller, more cost-effective models to surpass larger frontier LLMs in KGQA tasks without auxiliary modules or LLM judges, making advanced knowledge graph querying more accessible.",
+      "title": "Search-on-Graph-R1: Efficient Knowledge Graph Question Answering with Smaller LLMs via Reinforcement Learning",
+      "why_now": "Newly published on arXiv, this research provides a significant practical advancement in making KGQA more efficient and cost-effective. It offers a clear path for practitioners to integrate knowledge graphs with smaller, specialized LLMs, moving away from expensive frontier models for navigation."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.18358"
+      ],
+      "date": "2026-07-22",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2607.18358"
+      ],
+      "suggested_outline": [
+        "The Enterprise Problem: Document Classification Beyond the Lab",
+        "Introducing SIFT: Self-Improving, Frozen-gate Training",
+        "Hybrid Architecture: Cheap Pipeline + LLM Judge",
+        "The Feedback Loop: How the LLM Teaches the Classifier",
+        "Ensuring Safety: Critical-Label F1 Regression and Promote Gates",
+        "Onboarding New Document Families with Declarative Bundles",
+        "Implications for Real-World AI Deployment",
+        "Conclusion: Towards Autonomous and Adaptive Classification"
+      ],
+      "summary": "This paper introduces SIFT (Self-Improving, Frozen-gate Training), a dynamic document classifier designed to overcome enterprise challenges like expensive labeling and fear of autonomous retraining. SIFT uses a cheap, CPU-bound pipeline for most classifications, escalating low-confidence cases to an LLM judge. The judge's verdicts then continuously teach the cheaper model, reducing escalation rates and improving accuracy over time, with built-in safety mechanisms to prevent silent regressions.",
+      "title": "SIFT: A Self-Improving Classifier for Dynamic Document Classification in the Enterprise",
+      "why_now": "Published on arXiv within the last 24 hours, SIFT addresses a critical pain point for applied AI in enterprise settings: how to deploy and continuously improve document classification systems without massive upfront or ongoing human labeling efforts, while maintaining safety."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/vinicius91carvalho/harness-engineering"
+      ],
+      "date": "2026-07-22",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://github.com/vinicius91carvalho/harness-engineering"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Robust AI Agent Development",
+        "What is Harness Engineering? Overview of the Workflow",
+        "Key Components: Planner, Generator, Coding/QA Agents, Goal Review",
+        "Ensuring Reliability: Proof of Work and Integration Strategies",
+        "Practical Implementation: Setting up and Running a Harness Project",
+        "Case Study: Migrating a Monorepo to an Open-Source Stack with Harness",
+        "Conclusion: Towards More Reliable and Maintainable Agentic Systems"
+      ],
+      "summary": "This project introduces a comprehensive workflow for developing and managing AI agents, emphasizing robust QA, integration, and goal review. It proposes a structured approach to turn high-level goals into verifiable work, using a 'harness' to orchestrate LLM-based coding agents, ensuring that tasks are completed with evidence and persist beyond a single chat session. This is critical for building reliable and maintainable multi-agent systems.",
+      "title": "Harness Engineering: A Robust Workflow for AI Agent Development",
+      "why_now": "The project was recently highlighted on Hacker News and provides a concrete, open-source framework for tackling the growing complexity of AI agentic workflows, moving beyond ad-hoc prompting to systematic engineering."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.18413"
+      ],
+      "date": "2026-07-22",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.18413"
+      ],
+      "suggested_outline": [
+        "The Inductive Bias Gap: Locality in Transformers",
+        "Why Convolutions? Re-evaluating an Old Technique for LLMs",
+        "Methodology: Macro and Micro Ablation Studies in Qwen3",
+        "Optimal Placement and Configuration of Depthwise Convolutions",
+        "Performance Gains: Accuracy Improvements with Minimal Parameters",
+        "Representation-Level Analysis: How Convolutions Affect Context Sensitivity",
+        "Implications for LLM Architecture Design and Efficiency",
+        "Conclusion: A Hybrid Future for Large Language Models"
+      ],
+      "summary": "This research investigates the benefits of integrating lightweight depthwise convolutions into Transformer-based Large Language Models (LLMs). By strategically applying convolutions to projected queries, keys, and values before attention, the study demonstrates improved average accuracy on downstream benchmarks with minimal parameter increase. This suggests that convolutions can provide a valuable local inductive bias, complementing self-attention for modeling short-range token interactions and potentially leading to more efficient or performant LLMs.",
+      "title": "Convolution for LLMs: Enhancing Locality in Transformer Architectures",
+      "why_now": "Newly published on arXiv, this paper offers a concrete, low-cost architectural modification to Transformer models, which could be directly applicable to improving existing LLMs. It challenges the pure attention paradigm by re-introducing a classic neural network component."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://news.ycombinator.com/item?id=40495379",
+        "https://news.ycombinator.com/item?id=40491870"
+      ],
+      "date": "2026-07-21",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://news.ycombinator.com/item?id=40495379",
+        "https://news.ycombinator.com/item?id=40491870"
+      ],
+      "suggested_outline": [
+        "Introduction: Why Tiny Models Matter Now More Than Ever",
+        "Defining TLMs: What Makes a Model 'Tiny'?",
+        "Key Optimization Techniques: Quantization, Distillation, Pruning Explained",
+        "Advantages in Production: Cost, Latency, Edge Deployment",
+        "Real-World Use Cases for TLMs (e.g., local RAG, constrained environments, specific tasks)",
+        "Challenges and Limitations of TLMs",
+        "Implementing TLMs: A Practical Guide for Engineers",
+        "Future Outlook: The Continued Evolution of Efficient AI"
+      ],
+      "summary": "This post would explore the growing trend of highly optimized, smaller language models (TLMs) and their practical applications in production environments. It would discuss the engineering trade-offs, optimization techniques (quantization, distillation, pruning), and use cases where TLMs offer significant advantages over larger models, such as edge deployment, reduced inference costs, and faster response times, with a focus on models like Phi-3-mini and its variants.",
+      "title": "The Rise of Tiny Language Models (TLMs) and Their Production Implications",
+      "why_now": "Recent discussions on Hacker News (last 24-48 hours) around the capabilities and limitations of smaller models like Phi-3-mini, and the broader trend of 'tiny models', indicate a strong current interest and practical relevance for engineers looking to optimize deployments."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://news.ycombinator.com/item?id=40492471",
+        "https://news.ycombinator.com/item?id=40492818",
+        "https://news.ycombinator.com/item?id=40493874"
+      ],
+      "date": "2026-07-21",
+      "estimated_effort": "large",
+      "sources": [
+        "https://news.ycombinator.com/item?id=40492471",
+        "https://news.ycombinator.com/item?id=40492818",
+        "https://news.ycombinator.com/item?id=40493874"
+      ],
+      "suggested_outline": [
+        "Introduction: The Transformer Bottleneck and the Need for Alternatives",
+        "State-Space Models (SSMs) Primer: The Foundation of Mamba",
+        "How Mamba Works: Key Architectural Innovations (Selective State Space Models)",
+        "Performance Benchmarks: Mamba vs. Transformer in Key Scenarios",
+        "Practical Considerations for Mamba Adoption: Training, Inference, Tooling",
+        "Use Cases Where Mamba Shines (e.g., long context, specific data modalities)",
+        "Limitations and Open Challenges of Mamba",
+        "Conclusion: The Future Landscape of Sequence Modeling Architectures"
+      ],
+      "summary": "This post would provide a technical deep dive into the Mamba architecture, explaining its core principles (SSMs, state-space models) and how it aims to overcome some of the computational and memory limitations of the Transformer. It would discuss recent performance benchmarks, practical considerations for implementation, and potential use cases where Mamba-like models could offer a competitive edge, especially for long-sequence modeling.",
+      "title": "Navigating the Mamba Architecture: Performance and Practicality Beyond Transformers",
+      "why_now": "Continued and renewed discussion on Hacker News in the last 24 hours about Mamba, specifically its performance claims and potential as a Transformer alternative, indicates ongoing interest and a need for practical understanding among engineers."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://ar5iv.labs.arxiv.org/html/2405.15835v1"
+      ],
+      "date": "2026-07-21",
+      "estimated_effort": "large",
+      "sources": [
+        "https://ar5iv.labs.arxiv.org/html/2405.15835v1",
+        "https://news.ycombinator.com/item?id=40498725"
+      ],
+      "suggested_outline": [
+        "Introduction: The Persistent Problem of LLM Hallucination",
+        "Current Benchmarking Landscape: Strengths and Weaknesses",
+        "Why Simple Fact-Checking Falls Short for RAG and Complex Tasks",
+        "Proposed Dimensions for Advanced Hallucination Measurement (e.g., coherence, contextual relevance, logical consistency)",
+        "Case Studies: Applying New Metrics to Real-World Scenarios",
+        "Tools and Methodologies for Implementing Advanced Benchmarks",
+        "Conclusion: Towards More Reliable and Trustworthy LLM Applications"
+      ],
+      "summary": "This post would delve into the limitations of current LLM hallucination benchmarks, particularly for RAG systems and complex reasoning tasks. It would explore the challenges of defining and measuring 'hallucination' in nuanced contexts, proposing alternative or augmented evaluation methodologies that better reflect real-world application reliability, moving beyond fact-checking to coherence and contextual accuracy.",
+      "title": "Benchmarking LLM Hallucination: Beyond Simple Metrics for Real-World Reliability",
+      "why_now": "A new arXiv paper released within the last 24 hours (2024-05-28) directly addresses the limitations of current hallucination benchmarks, sparking discussion on Hacker News and highlighting a timely need for improved evaluation techniques."
+    }
+  ]
+}
