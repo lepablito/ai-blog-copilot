@@ -16,22 +16,21 @@ class NoProvidersConfigured(LLMError):
 
 
 def build_chain(env: Mapping[str, str]) -> list[Provider]:
-    """Return the fallback chain in priority order: Gemini → NIM → Ollama.
+    """Return the fallback chain in priority order: NIM → Gemini → Ollama.
+
+    NIM leads on purpose. Gemini's free tier allows 20 requests a day and a
+    radar pass makes 9 to 11, so leading with Gemini would spend the whole
+    daily budget on one run and leave nothing for the next. Held as the second
+    tier it becomes the reserve that catches NIM when NIM is down — which is
+    what a fallback is for. It also sidesteps the 12s pacing Gemini needs for
+    its 5-per-minute limit, roughly two minutes of waiting per pass that the
+    common path now avoids.
 
     `LLM_ONLY` pins the chain to a single tier, which is how the test suite and
     the CI workflow avoid spending API credits when they only need one.
     """
     only = (env.get("LLM_ONLY") or "").strip().lower()
     chain: list[Provider] = []
-
-    gemini_key = (env.get("GEMINI_API_KEY") or "").strip()
-    if gemini_key:
-        chain.append(
-            GeminiProvider(
-                api_key=gemini_key,
-                model=env.get("GEMINI_MODEL") or "gemini-2.5-flash",
-            )
-        )
 
     nim_key = (env.get("NVIDIA_NIM_API_KEY") or "").strip()
     if nim_key:
@@ -40,6 +39,15 @@ def build_chain(env: Mapping[str, str]) -> list[Provider]:
                 api_key=nim_key,
                 base_url=env.get("NVIDIA_NIM_BASE_URL") or "https://integrate.api.nvidia.com/v1",
                 model=env.get("NVIDIA_NIM_MODEL") or "meta/llama-3.3-70b-instruct",
+            )
+        )
+
+    gemini_key = (env.get("GEMINI_API_KEY") or "").strip()
+    if gemini_key:
+        chain.append(
+            GeminiProvider(
+                api_key=gemini_key,
+                model=env.get("GEMINI_MODEL") or "gemini-2.5-flash",
             )
         )
 

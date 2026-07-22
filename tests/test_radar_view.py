@@ -6,7 +6,7 @@ the result. A test that needed a running server to check a date filter would
 not be worth writing.
 """
 
-from datetime import date
+from datetime import UTC, date, datetime
 
 import pytest
 
@@ -57,7 +57,9 @@ def test_topics_carry_the_date_of_the_run_that_found_them(db):
     [record] = load_topics(db)
 
     assert record["title"] == "Speculative decoding"
-    assert record["date"] == date.today().isoformat()
+    # The store stamps the date in UTC; comparing to a local `date.today()`
+    # flakes for the hours the two calendars disagree.
+    assert record["date"] == datetime.now(UTC).date().isoformat()
 
 
 def test_angle_filter_narrows_the_list(db):

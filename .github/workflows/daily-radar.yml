@@ -58,7 +58,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NVIDIA_NIM_API_KEY: ${{ secrets.NVIDIA_NIM_API_KEY }}
-          # No Ollama on a runner, so the chain here is Gemini -> NIM. If both
+          # No Ollama on a runner, so the chain here is NIM -> Gemini. If both
           # fail the step exits non-zero and nothing is committed: a bad run
           # must not overwrite a good file.
         run: |

@@ -68,7 +68,7 @@ def _post(url: str, *, payload: dict, headers: dict[str, str], timeout: float) -
 
 
 class GeminiProvider:
-    """Tier 1. Native Google REST API — its own message format."""
+    """Reserve tier. Native Google REST API — its own message format."""
 
     name = "gemini"
     BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
@@ -141,7 +141,7 @@ class GeminiProvider:
 
 
 class NimProvider:
-    """Tier 2. NVIDIA NIM speaks the OpenAI chat-completions dialect."""
+    """Primary tier. NVIDIA NIM speaks the OpenAI chat-completions dialect."""
 
     name = "nim"
 
@@ -197,7 +197,7 @@ class NimProvider:
 
 
 class OllamaProvider:
-    """Tier 3. Local models — no key, and the only tier that survives no network."""
+    """Floor tier. Local models — no key, and the only tier that survives no network."""
 
     name = "ollama"
 

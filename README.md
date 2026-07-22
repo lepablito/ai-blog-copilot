@@ -128,9 +128,15 @@ refused, not fetched.
 
 ## The provider chain
 
-`Gemini → NVIDIA NIM → Ollama`, all over plain REST with `httpx`. No vendor
+`NVIDIA NIM → Gemini → Ollama`, all over plain REST with `httpx`. No vendor
 SDKs: three wire formats is little enough code to own outright, and owning it
 keeps the whole chain mockable with one tool and free of dependency drift.
+
+NIM leads, not Gemini. Gemini's free tier is 20 requests a day and a radar pass
+makes 9 to 11 of them, so leading with it would spend the whole daily budget on
+one run. Held as the second tier it is the reserve that catches NIM when NIM
+fails — which is what a fallback is for — and the common path skips the 12s
+pacing Gemini needs for its per-minute limit.
 
 The error hierarchy is what everything else keys off:
 
