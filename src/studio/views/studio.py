@@ -18,7 +18,14 @@ import streamlit as st
 
 from llm.client import AllProvidersFailed
 from studio.drafting import draft_section, generate_outline, revise
-from studio.export import assemble, known_projects, render_post, write_post
+from studio.export import (
+    assemble,
+    known_projects,
+    list_posts,
+    render_post,
+    split_front_matter,
+    write_post,
+)
 
 OUTPUT_DIR = Path("output/posts")
 
@@ -27,17 +34,19 @@ def render(client_factory) -> None:
     st.subheader("Turn a topic into a draft")
 
     topic = st.session_state.get("selected_topic")
-    if not topic:
+    if topic:
+        st.markdown(f"**{topic['title']}**")
+        st.caption(topic["why_now"])
+
+        _outline_stage(client_factory, topic)
+        if st.session_state.get("outline"):
+            _drafting_stage(client_factory, topic)
+            _export_stage(topic)
+    else:
         st.info("Pick a topic in the Radar tab first — its 'Write this one' button lands here.")
-        return
 
-    st.markdown(f"**{topic['title']}**")
-    st.caption(topic["why_now"])
-
-    _outline_stage(client_factory, topic)
-    if st.session_state.get("outline"):
-        _drafting_stage(client_factory, topic)
-        _export_stage(topic)
+    # Independent of any draft in progress: what has already been written out.
+    _exported_posts()
 
 
 def _outline_stage(client_factory, topic: dict) -> None:
@@ -192,6 +201,40 @@ def _export_stage(topic: dict) -> None:
             "Exported as a draft. Copying it into the portfolio and committing "
             "it is a step you take yourself."
         )
+
+
+def _exported_posts() -> None:
+    st.divider()
+    st.markdown("### Exported posts")
+
+    posts = list_posts(OUTPUT_DIR)
+    if not posts:
+        st.caption(f"Nothing written yet. Exported posts land in `{OUTPUT_DIR}/`.")
+        return
+
+    labels = {f"{p['title']}  ·  {p['date'] or 'no date'}": p for p in posts}
+    chosen = labels[st.selectbox("Pick a post to read", list(labels))]
+
+    raw = Path(chosen["path"]).read_text(encoding="utf-8")
+    fields, body = split_front_matter(raw)
+
+    if fields.get("description"):
+        st.caption(fields["description"])
+
+    # The body came from a model that read untrusted pages, so it is rendered
+    # as Markdown with HTML left inert — `st.markdown` escapes it unless asked
+    # not to, and it is not asked. Same trust boundary as the Radar tab.
+    st.markdown(body)
+
+    with st.expander("Raw file"):
+        st.code(raw, language="markdown")
+    st.download_button(
+        "Download .md",
+        data=raw,
+        file_name=Path(chosen["path"]).name,
+        mime="text/markdown",
+    )
+    st.caption(f"On disk at `{chosen['path']}`. Copying it into the blog is a step you take.")
 
 
 def _guarded(action):

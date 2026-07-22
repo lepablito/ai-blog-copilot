@@ -117,6 +117,68 @@ def write_post(
     return path
 
 
+def split_front_matter(text: str) -> tuple[dict, str]:
+    """Split a post into its front-matter fields and its body.
+
+    Only the fence at the very top counts: `---` is also a Markdown horizontal
+    rule, and one further down belongs to the body. Values are decoded as JSON
+    where they can be — the exporter writes them that way — so a quoted title
+    comes back a string and `tags: [...]` comes back a list, with the raw text
+    kept as a fallback for anything hand-edited into a looser shape.
+    """
+    if not text.startswith("---"):
+        return {}, text
+
+    lines = text.splitlines(keepends=True)
+    end = next((i for i in range(1, len(lines)) if lines[i].rstrip("\n") == "---"), None)
+    if end is None:
+        return {}, text
+
+    fields: dict = {}
+    for line in lines[1:end]:
+        stripped = line.rstrip("\n")
+        if not stripped.strip() or ":" not in stripped:
+            continue
+        key, _, rest = stripped.partition(":")
+        rest = rest.strip()
+        try:
+            value = json.loads(rest)
+        except ValueError:
+            value = rest
+        fields[key.strip()] = value
+
+    return fields, "".join(lines[end + 1 :]).lstrip("\n")
+
+
+def list_posts(output_dir: Path | str) -> list[dict]:
+    """Exported posts as `{slug, path, title, date, description}`, newest first.
+
+    A missing directory reads as empty — the studio has simply not written
+    anything yet. Title and date come from the front matter when present and
+    fall back to the filename, so a hand-edited post never vanishes from the
+    list just because someone reshaped its header.
+    """
+    directory = Path(output_dir)
+    if not directory.is_dir():
+        return []
+
+    posts = []
+    for path in directory.glob("*.md"):
+        fields, _ = split_front_matter(path.read_text(encoding="utf-8"))
+        posts.append(
+            {
+                "slug": path.stem,
+                "path": path,
+                "title": str(fields.get("title") or path.stem),
+                "date": str(fields.get("date") or ""),
+                "description": str(fields.get("description") or ""),
+            }
+        )
+
+    posts.sort(key=lambda post: (post["date"], post["slug"]), reverse=True)
+    return posts
+
+
 def _yaml(value: str) -> str:
     """Quote a scalar for YAML.
 

@@ -11,7 +11,76 @@ from datetime import date
 
 import pytest
 
-from studio.export import assemble, known_projects, render_post, slugify, write_post
+from studio.export import (
+    assemble,
+    known_projects,
+    list_posts,
+    render_post,
+    slugify,
+    split_front_matter,
+    write_post,
+)
+
+
+def test_split_front_matter_separates_the_yaml_from_the_body():
+    text = '---\ntitle: "A post"\ndate: "2026-07-22"\n---\n\nThe body.\n'
+
+    fields, body = split_front_matter(text)
+
+    assert fields == {"title": "A post", "date": "2026-07-22"}
+    assert body == "The body.\n"
+
+
+def test_a_body_horizontal_rule_is_not_mistaken_for_the_fence():
+    """`---` is also a Markdown horizontal rule. Only the first pair, at the
+    very top, delimits front matter — a rule further down must stay in the
+    body untouched."""
+    text = '---\ntitle: "T"\n---\n\nOne.\n\n---\n\nTwo.\n'
+
+    fields, body = split_front_matter(text)
+
+    assert fields == {"title": "T"}
+    assert body == "One.\n\n---\n\nTwo.\n"
+
+
+def test_text_with_no_front_matter_is_all_body():
+    fields, body = split_front_matter("Just prose, no fence.\n")
+
+    assert fields == {}
+    assert body == "Just prose, no fence.\n"
+
+
+def test_front_matter_values_decode_json_scalars_and_arrays():
+    text = '---\ntitle: "Quoted: colon"\ntags: ["a", "b"]\ndraft: true\n---\nBody\n'
+
+    fields, _ = split_front_matter(text)
+
+    assert fields["title"] == "Quoted: colon"
+    assert fields["tags"] == ["a", "b"]
+    assert fields["draft"] is True
+
+
+def test_listing_posts_reads_title_and_date_newest_first(tmp_path):
+    write_post(tmp_path, title="Older", description="d", tags=[], body="b", today=date(2026, 7, 20))
+    write_post(tmp_path, title="Newer", description="d", tags=[], body="b", today=date(2026, 7, 22))
+
+    posts = list_posts(tmp_path)
+
+    assert [p["title"] for p in posts] == ["Newer", "Older"]
+    assert posts[0]["date"] == "2026-07-22"
+    assert posts[0]["slug"] == "newer"
+
+
+def test_a_post_missing_its_title_falls_back_to_the_slug(tmp_path):
+    (tmp_path / "hand-written.md").write_text("no front matter here\n", encoding="utf-8")
+
+    [post] = list_posts(tmp_path)
+
+    assert post["title"] == "hand-written"
+
+
+def test_listing_a_directory_that_does_not_exist_is_empty(tmp_path):
+    assert list_posts(tmp_path / "nowhere") == []
 
 
 def test_assemble_puts_each_section_under_its_heading():

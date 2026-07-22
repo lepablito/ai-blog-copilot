@@ -12,3 +12,6 @@ radar.db-journal
 output/posts/*.md
 
 .claude/settings.local.json
+
+# Personal Windows launcher, not part of the project
+run.bat
