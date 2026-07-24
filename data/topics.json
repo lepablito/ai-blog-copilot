@@ -1,6 +1,66 @@
 {
-  "generated_at": "2026-07-22T22:43:49+00:00",
+  "generated_at": "2026-07-24T23:24:49+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/neural-maze/production-ocr-course"
+      ],
+      "date": "2026-07-24",
+      "estimated_effort": "small",
+      "sources": [
+        "https://github.com/neural-maze/production-ocr-course"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "Methodology",
+        "Results",
+        "Conclusion"
+      ],
+      "summary": "A production-grade OCR pipeline on Kubernetes with vLLM and Rust, demonstrating the potential of LLMs in real-world applications.",
+      "title": "LLM-Powered OCR Pipeline on Kubernetes",
+      "why_now": "The pipeline showcases the practical applications of LLMs, which is relevant to the current interest in LLMs."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.20425"
+      ],
+      "date": "2026-07-24",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.20425"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "Methodology",
+        "Results",
+        "Discussion"
+      ],
+      "summary": "A two-study investigation of how reasoning-enabled LLMs evaluate literary quality, revealing that LLM judgments of writing quality are holistic, author-specific, and more sensitive to structural than lexical features.",
+      "title": "Evaluating Literary Quality with LLMs",
+      "why_now": "The article provides new insights into how LLMs evaluate literary quality, which is relevant to the current development of LLMs."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/khalid-src/corv-client"
+      ],
+      "date": "2026-07-24",
+      "estimated_effort": "small",
+      "sources": [
+        "https://github.com/khalid-src/corv-client"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "Methodology",
+        "Results",
+        "Conclusion"
+      ],
+      "summary": "A solution to the problem of SSH execution for AI agents, providing a layer specialized around SSH that handles the parts that are problematic for AI agents.",
+      "title": "Corv: Solving SSH Execution for AI Agents",
+      "why_now": "The solution addresses a significant challenge in the development of AI agents, which is relevant to the current progress in AI research."
+    },
     {
       "angle": "practical",
       "citations": [
