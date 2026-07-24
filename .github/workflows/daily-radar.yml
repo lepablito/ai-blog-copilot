@@ -1,18 +1,20 @@
 name: Daily radar
 
 on:
-  # Manual only, deliberately. The reason is no longer cost — a pass runs to
-  # about $0.02 — it is quota. Gemini's free tier allows 20 requests per day
-  # and a pass makes 9 to 11 of them, so a schedule plus a single manual
-  # dispatch spends the entire daily budget and the second one falls through
-  # to NIM. Calls are also paced 12s apart to respect the 5 rpm limit, which
-  # adds a couple of minutes to a run.
+  # Nightly. 01:00 UTC is roughly 03:00 in Madrid and 21:00 the previous day on
+  # the US east coast, so a pass lands after both a European and an American
+  # working day and the topics are waiting by breakfast.
   #
-  # To enable it, uncomment the two lines below — 06:00 UTC catches a full day
-  # of both US and European output.
+  # Cron here is always UTC and GitHub does not follow daylight saving, so this
+  # drifts an hour against local time between summer and winter. That is fine
+  # at 3am; it would not be if the slot were near a boundary.
   #
-  # schedule:
-  #   - cron: "0 6 * * *"
+  # Quota is no longer the reason to hold back — NIM leads the chain and its
+  # free tier absorbs a daily pass. Gemini is the reserve tier and only sees
+  # traffic when NIM fails, which keeps its 20-requests-a-day budget intact for
+  # manual dispatches. Calls are paced 12s apart, so a run takes a few minutes.
+  schedule:
+    - cron: "0 1 * * *"
   workflow_dispatch:
     inputs:
       hours:
