@@ -1,6 +1,77 @@
 {
-  "generated_at": "2026-07-25T01:09:43+00:00",
+  "generated_at": "2026-07-25T04:36:28+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.20437"
+      ],
+      "date": "2026-07-25",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.20437"
+      ],
+      "suggested_outline": [
+        "Introduction to RAG Systems and Their Vulnerabilities",
+        "Understanding Split-Knowledge Attacks",
+        "Limitations of Existing Document Filters (e.g., LlamaGuard)",
+        "TopoGuard: A Graph Theory Approach to Attack Detection",
+        "How TopoGuard Builds and Analyzes Semantic Similarity Graphs",
+        "Effectiveness and Robustness of TopoGuard",
+        "Implementing TopoGuard for Secure RAG",
+        "Conclusion: Building More Trustworthy RAG Systems"
+      ],
+      "summary": "Retrieval Augmented Generation (RAG) systems are vulnerable to 'split-knowledge attacks' where individually benign documents, when combined, create false associations. TopoGuard introduces a family of graph theory-based methods to detect these attacks by analyzing the semantic similarity graph of retrieved documents. This is a critical practical development for enhancing the security and trustworthiness of RAG deployments.",
+      "title": "TopoGuard: Graph Theory Defenses Against Split-Knowledge Attacks on RAG Systems",
+      "why_now": "A new arXiv paper introduces TopoGuard, a novel graph theory-based defense mechanism specifically designed to counter previously undetected split-knowledge attacks in RAG systems."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.20434"
+      ],
+      "date": "2026-07-25",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2607.20434"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for LLM Compression",
+        "Overview of Low-Rank Decomposition and Quantization",
+        "The Orthogonality Assumption and Its Flaws",
+        "Mathematical Proof of Non-Orthogonality",
+        "Experimental Validation on Large Language Models",
+        "Implications for Combining Compression Techniques",
+        "Strategies for Breaking the Compression Bottleneck",
+        "Conclusion: Towards More Effective LLM Optimization"
+      ],
+      "summary": "Contrary to common assumptions, low-rank decomposition and quantization methods for LLM compression are mathematically proven to be non-orthogonal. This means their combined application introduces errors that are not simply additive, challenging existing practices in model optimization. A technical post would explain the theoretical proof and experimental validation, guiding practitioners on how to more effectively combine these techniques to 'break through the compression bottleneck' without significant performance degradation.",
+      "title": "The Non-Orthogonality of Low-Rank Decomposition and Quantization for LLM Compression",
+      "why_now": "A new arXiv paper provides the first mathematical proof and experimental validation that low-rank decomposition and quantization are non-orthogonal, offering critical insights for advanced LLM compression strategies."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://vettedconsumer.com/speculative-decoding-explained-the-free-speed-toggle-your-local-llm-is-probably-not-using/"
+      ],
+      "date": "2026-07-25",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://vettedconsumer.com/speculative-decoding-explained-the-free-speed-toggle-your-local-llm-is-probably-not-using/"
+      ],
+      "suggested_outline": [
+        "Introduction to LLM Inference Speed Challenges",
+        "What is Speculative Decoding?",
+        "How Speculative Decoding Works (Draft Model, Verification, Acceptance)",
+        "Benefits: Speed, Efficiency, and Resource Usage",
+        "Implementing Speculative Decoding in Practice (Libraries, Frameworks)",
+        "Potential Limitations and Trade-offs",
+        "Conclusion: Unlocking Faster Local LLM Experiences"
+      ],
+      "summary": "Speculative decoding is presented as a 'free speed toggle' for local LLMs, offering significant performance improvements without additional computational cost. A technical post would explain how this method works by using a smaller, faster draft model to predict tokens, which are then verified by the larger target model, thus accelerating generation. This is a practical optimization for deploying LLMs efficiently on local hardware.",
+      "title": "Speculative Decoding: A Practical Speed Toggle for Local LLMs",
+      "why_now": "A recent article explicitly highlights speculative decoding as an underutilized, free performance gain for local LLMs, making it timely for practitioners seeking to optimize their deployments."
+    },
     {
       "angle": "practical",
       "citations": [
@@ -38,6 +109,29 @@
       "summary": "Hallucinations in LLMs remain a significant challenge. Recent research has proposed various methods to mitigate these hallucinations, including contrastive decoding and expert-aware adaptive contrast decoding. This topic reviews these advances and their potential impact on LLM reliability.",
       "title": "Mitigating Hallucinations in LLMs: Recent Advances",
       "why_now": "The ongoing issue of hallucinations in LLMs and recent research efforts to address it make this a relevant and timely topic."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.20425"
+      ],
+      "date": "2026-07-25",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2607.20425"
+      ],
+      "suggested_outline": [
+        "Introduction: The Elusive Definition of 'Good Writing' for LLMs",
+        "Methodology: Constructing a Quality Benchmark and Degrading Passages",
+        "LLM's Implicit Theory: Intentionality, Craft, Depth, Voice",
+        "Empirical Findings: Structural vs. Lexical Sensitivity",
+        "Implications for Automated Writing Feedback Systems",
+        "Understanding Computational Aesthetics and LLM Bias",
+        "Future Research Directions"
+      ],
+      "summary": "Research indicates that LLMs' judgments of writing quality are holistic and more sensitive to structural and voice elements than mere vocabulary. A deep dive would explore how LLMs develop an 'implicit theory' of quality, prioritizing craft, depth, and distinctive voice, and how systematic degradation of text reveals the hierarchy of features important to LLM evaluations. This has implications for automated writing feedback and understanding computational aesthetics.",
+      "title": "LLM Perceptions of Literary Quality: Beyond Lexical Features",
+      "why_now": "A new arXiv paper details a two-study investigation into how reasoning-enabled LLMs evaluate literary quality, revealing novel insights into their implicit theories and the features they prioritize."
     },
     {
       "angle": "practical",
