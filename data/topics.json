@@ -1,6 +1,82 @@
 {
-  "generated_at": "2026-07-24T23:24:49+00:00",
+  "generated_at": "2026-07-25T01:09:43+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://news.ycombinator.com/item?id=49024620"
+      ],
+      "date": "2026-07-25",
+      "estimated_effort": "small",
+      "sources": [
+        "https://news.ycombinator.com/item?id=49024620"
+      ],
+      "suggested_outline": [
+        "Introduction to Screenpipe",
+        "Technical Overview",
+        "Applications and Future Potential"
+      ],
+      "summary": "Screenpipe is a tool designed to record and manage AI agent workflows, aiming to improve efficiency and reduce errors. This topic explores the development and application of Screenpipe, as well as its potential to enhance AI workflow management.",
+      "title": "Screenpipe and Agent Workflow Management",
+      "why_now": "The introduction of Screenpipe as a solution for AI agent workflow management is timely and relevant to current challenges in AI development."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.20426"
+      ],
+      "date": "2026-07-25",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.20426"
+      ],
+      "suggested_outline": [
+        "Introduction to Hallucinations in LLMs",
+        "Recent Mitigation Techniques",
+        "Future Directions"
+      ],
+      "summary": "Hallucinations in LLMs remain a significant challenge. Recent research has proposed various methods to mitigate these hallucinations, including contrastive decoding and expert-aware adaptive contrast decoding. This topic reviews these advances and their potential impact on LLM reliability.",
+      "title": "Mitigating Hallucinations in LLMs: Recent Advances",
+      "why_now": "The ongoing issue of hallucinations in LLMs and recent research efforts to address it make this a relevant and timely topic."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://news.ycombinator.com/item?id=49026810"
+      ],
+      "date": "2026-07-25",
+      "estimated_effort": "small",
+      "sources": [
+        "https://news.ycombinator.com/item?id=49026810"
+      ],
+      "suggested_outline": [
+        "Introduction to Echo",
+        "Technical Overview",
+        "Applications and Future Directions"
+      ],
+      "summary": "Echo represents a novel approach to AI system design by combining multiple open-weight models to achieve better performance at lower computational costs. This topic delves into the design and implementation of Echo, its benefits, and potential applications.",
+      "title": "Echo: Combining Open-Weight Models for Efficient Inference",
+      "why_now": "The introduction of Echo as a new AI system that leverages open-weight models for efficient inference is timely and relevant."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.20427"
+      ],
+      "date": "2026-07-25",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.20427"
+      ],
+      "suggested_outline": [
+        "Introduction to MoE Architectures",
+        "Recent Advancements",
+        "Practical Applications"
+      ],
+      "summary": "Recent research has shown significant improvements in MoE architectures, particularly in how they allocate expert resources and handle complex tasks. This topic explores the theoretical underpinnings and practical applications of these advancements.",
+      "title": "Advancements in Mixture-of-Experts Architectures",
+      "why_now": "The recent publication of papers on MoE architectures highlights the current interest and progress in this area."
+    },
     {
       "angle": "practical",
       "citations": [
