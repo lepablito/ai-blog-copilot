@@ -19,7 +19,7 @@ def test_every_registered_tool_is_described_for_the_prompt():
     assert "hours" in described, "the model needs to know it can set the window"
 
 
-def test_main_prints_topics_as_json(monkeypatch, capsys):
+def test_main_prints_topics_as_json(monkeypatch, tmp_path, capsys):
     from radar.agent import RunResult
     from radar.schema import Topic
 
@@ -37,7 +37,7 @@ def test_main_prints_topics_as_json(monkeypatch, capsys):
         lambda **_kwargs: RunResult([topic], 2, "final_answer", []),
     )
 
-    exit_code = main(["--hours", "24"])
+    exit_code = main(["--hours", "24", "--db", str(tmp_path / "radar.db")])
 
     payload = json.loads(capsys.readouterr().out)
     assert exit_code == 0
@@ -182,7 +182,7 @@ def test_the_provider_summary_is_printed_even_when_the_run_fails(monkeypatch, tm
     assert "1 failed" in reported
 
 
-def test_main_reports_a_failed_run_without_a_traceback(monkeypatch, capsys):
+def test_main_reports_a_failed_run_without_a_traceback(monkeypatch, tmp_path, capsys):
     from radar.agent import AgentFailed
 
     def boom(**_kwargs):
@@ -190,13 +190,13 @@ def test_main_reports_a_failed_run_without_a_traceback(monkeypatch, capsys):
 
     monkeypatch.setattr("radar.run.run_agent", boom)
 
-    exit_code = main([])
+    exit_code = main(["--db", str(tmp_path / "radar.db")])
 
     assert exit_code == 1
     assert "never produced a valid answer" in capsys.readouterr().err
 
 
-def test_main_reports_a_dead_provider_chain_without_a_traceback(monkeypatch, capsys):
+def test_main_reports_a_dead_provider_chain_without_a_traceback(monkeypatch, tmp_path, capsys):
     from llm.client import AllProvidersFailed
 
     def boom(**_kwargs):
@@ -204,7 +204,7 @@ def test_main_reports_a_dead_provider_chain_without_a_traceback(monkeypatch, cap
 
     monkeypatch.setattr("radar.run.run_agent", boom)
 
-    exit_code = main([])
+    exit_code = main(["--db", str(tmp_path / "radar.db")])
 
     assert exit_code == 1
     assert "connection refused" in capsys.readouterr().err
