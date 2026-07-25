@@ -44,12 +44,22 @@ CREATE TABLE IF NOT EXISTS topics (
     angle             TEXT    NOT NULL,
     estimated_effort  TEXT    NOT NULL,
     suggested_outline TEXT    NOT NULL,
-    citations         TEXT    NOT NULL
+    citations         TEXT    NOT NULL,
+    -- NULL means live. A dismissed topic keeps its row: deleting it would let
+    -- `import_json` insert it again on the next fetch, since it recognises a
+    -- topic it already has by (date, title) being present at all.
+    dismissed_at      TEXT
 );
 
 CREATE INDEX IF NOT EXISTS idx_topics_date ON topics(date);
 CREATE INDEX IF NOT EXISTS idx_topics_angle ON topics(angle);
 """
+
+# Columns added to `topics` after the first radar.db was written. The statements
+# above leave an existing table exactly as they found it, so without this a
+# database from before one of these columns existed keeps its old shape and
+# every read fails on the column it lacks. Names are ours, not anyone's input.
+LATER_COLUMNS = {"dismissed_at": "TEXT"}
 
 
 class Store:
@@ -58,6 +68,7 @@ class Store:
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         with sqlite3.connect(self.db_path) as conn:
             conn.executescript(SCHEMA)
+            _add_later_columns(conn)
 
     def start_run(self, *, goal: str, hours: int) -> int:
         with sqlite3.connect(self.db_path) as conn:
@@ -105,9 +116,34 @@ class Store:
                 ],
             )
 
+    def dismiss(self, *, date: str, title: str) -> int:
+        """Hide a topic from every read. Returns how many rows were marked.
+
+        Identified by `(date, title)` — the same identity `export_json` merges
+        on and `import_json` deduplicates on. A third way of naming a topic
+        would be a fourth thing to keep in agreement.
+
+        The row survives, which is what makes the dismissal stick: `import_json`
+        takes a `(date, title)` already present as a topic it need not insert,
+        and looks at every row rather than only the live ones.
+
+        Dismissing something that is not there returns 0 rather than raising.
+        Two tabs open on one database is enough to reach that.
+        """
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.execute(
+                "UPDATE topics SET dismissed_at = ? "
+                "WHERE date = ? AND title = ? AND dismissed_at IS NULL",
+                (_now(), date, title),
+            )
+            return cursor.rowcount
+
     def _select(self, *, angle: str | None, since: str | None, limit: int) -> list[sqlite3.Row]:
         query = "SELECT * FROM topics"
-        conditions, parameters = [], []
+        # Every read in the application comes through here, so one condition
+        # hides dismissed topics from the tab, the drafting picker and the
+        # export alike.
+        conditions, parameters = ["dismissed_at IS NULL"], []
         if angle:
             conditions.append("angle = ?")
             parameters.append(angle)
@@ -264,6 +300,19 @@ class Store:
 
         self.finish_run(run_id, status="imported", steps_used=0, stopped_because="import")
         return len(fresh)
+
+
+def _add_later_columns(conn: sqlite3.Connection) -> None:
+    """Bring an older `topics` table up to the current shape.
+
+    Runs on every open and does nothing once there is nothing left to add,
+    which is what makes it safe to call unconditionally. SQLite has no
+    `ADD COLUMN IF NOT EXISTS`, so the check is a read of the table's shape.
+    """
+    present = {row[1] for row in conn.execute("PRAGMA table_info(topics)")}
+    for name, kind in LATER_COLUMNS.items():
+        if name not in present:
+            conn.execute(f"ALTER TABLE topics ADD COLUMN {name} {kind}")
 
 
 def _existing_topics(path: Path) -> list[dict]:

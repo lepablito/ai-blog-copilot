@@ -24,6 +24,9 @@ ANGLE_LABELS = {"All angles": None, "Theoretical": "theoretical", "Practical": "
 # the database behind this tab.
 TOPICS_JSON = Path("data") / "topics.json"
 
+# Holds the (date, title) of the one topic awaiting a dismissal confirmation.
+PENDING_DISMISSAL = "pending_dismissal"
+
 
 def render(db_path: Path | str) -> None:
     st.subheader("Topics the radar found")
@@ -48,7 +51,7 @@ def render(db_path: Path | str) -> None:
     for day, topics in group_by_date(records):
         st.markdown(f"### {day}")
         for index, topic in enumerate(topics):
-            _topic_card(topic, key=f"{day}-{index}")
+            _topic_card(topic, db_path=db_path, key=f"{day}-{index}")
 
 
 def _controls(db_path: Path | str) -> None:
@@ -102,7 +105,7 @@ def _filters() -> tuple[str | None, str]:
     return since_for(preset), angle
 
 
-def _topic_card(topic: dict, *, key: str) -> None:
+def _topic_card(topic: dict, *, db_path: Path | str, key: str) -> None:
     with st.container(border=True):
         st.markdown(f"**{topic['title']}**")
         st.caption(f"{topic['angle']} · effort: {topic['estimated_effort']}")
@@ -117,6 +120,46 @@ def _topic_card(topic: dict, *, key: str) -> None:
             for url in all_links(topic):
                 st.markdown(f"- {url}")
 
-        if st.button("Write this one", key=f"write-{key}"):
+        write, dismiss = st.columns(2)
+
+        if write.button("Write this one", key=f"write-{key}"):
             st.session_state["selected_topic"] = topic
             st.success("Loaded into the Studio tab.")
+
+        _dismiss_control(dismiss, topic, db_path=db_path, key=key)
+
+
+def _dismiss_control(column, topic: dict, *, db_path: Path | str, key: str) -> None:
+    """Dismiss, behind a confirmation. A dismissal cannot be undone from here.
+
+    Which card is awaiting confirmation is held in one slot naming the topic,
+    rather than a flag per card. Card keys carry the row's position in the day,
+    and positions shift as soon as something is dismissed — a per-card flag
+    would be left pointing at whichever topic moved into that slot. It also
+    means opening a second confirmation quietly closes the first, which is what
+    someone changing their mind about which topic to drop would expect.
+    """
+    identity = (topic["date"], topic["title"])
+
+    if st.session_state.get(PENDING_DISMISSAL) != identity:
+        if column.button("Dismiss", key=f"dismiss-{key}"):
+            st.session_state[PENDING_DISMISSAL] = identity
+            # The Dismiss button has already been drawn this pass, so without a
+            # rerun the question would not appear until the next click.
+            st.rerun()
+        return
+
+    column.caption("Dismiss this topic?")
+    yes, no = column.columns(2)
+
+    if yes.button("Yes", key=f"yes-{key}", type="primary"):
+        Store(db_path).dismiss(date=topic["date"], title=topic["title"])
+        st.session_state.pop(PENDING_DISMISSAL, None)
+        # Needed here, unlike the fetch button above: the cards are drawn after
+        # `load_topics` has already read the database, so this pass still holds
+        # the dismissed topic and would leave the card on screen.
+        st.rerun()
+
+    if no.button("No", key=f"no-{key}"):
+        st.session_state.pop(PENDING_DISMISSAL, None)
+        st.rerun()

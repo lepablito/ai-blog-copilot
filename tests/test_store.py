@@ -410,3 +410,145 @@ def test_export_then_import_into_a_fresh_database_round_trips(store, tmp_path):
     assert fresh.import_json(target) == 2
 
     assert fresh.recent_records() == store.recent_records()
+
+
+# --- dismissing a topic ---
+
+
+def dismissable(store, title="A topic", *, date="2026-07-24", angle="practical"):
+    """A topic in the database under a date we control, so it can be named."""
+    run_id = store.start_run(goal="g", hours=48)
+    store.save_topics(run_id, [topic(title, angle)])
+    with sqlite3.connect(store.db_path) as conn:
+        conn.execute("UPDATE topics SET date = ? WHERE title = ?", (date, title))
+    return date, title
+
+
+def test_a_dismissed_topic_is_no_longer_listed(store):
+    date, title = dismissable(store, "Not worth writing")
+
+    assert store.dismiss(date=date, title=title) == 1
+
+    assert store.recent_records() == []
+
+
+def test_dismissing_one_topic_leaves_its_neighbours_alone(store):
+    date, title = dismissable(store, "Goes")
+    dismissable(store, "Stays", date=date)
+
+    store.dismiss(date=date, title=title)
+
+    assert [r["title"] for r in store.recent_records()] == ["Stays"]
+
+
+def test_a_dismissed_topic_stays_gone_under_an_angle_filter(store):
+    """The angle filter builds a different WHERE clause, so it is a different
+    query and needs its own proof."""
+    date, title = dismissable(store, "Attention maths", angle="theoretical")
+
+    store.dismiss(date=date, title=title)
+
+    assert store.recent_records(angle="theoretical") == []
+
+
+def test_dismissing_a_topic_that_is_not_there_changes_nothing(store):
+    """Two tabs open on the same database is enough to reach this."""
+    assert store.dismiss(date="2026-07-24", title="Never existed") == 0
+
+
+def test_a_dismissed_topic_does_not_come_back_when_the_export_is_imported(store, tmp_path):
+    """The whole point of a tombstone over a DELETE. `import_json` skips it
+    because its duplicate check reads every row rather than going through
+    `_select` — if that query is ever "tidied up" to use `_select`, every
+    dismissed topic silently returns on the next fetch. This test is what
+    turns that into a red build."""
+    date, title = dismissable(store, "Dismissed but archived")
+    target = written_export(tmp_path / "topics.json", record(title, date=date))
+    store.dismiss(date=date, title=title)
+
+    assert store.import_json(target) == 0
+
+    assert store.recent_records() == []
+
+
+def test_exporting_does_not_drop_a_dismissed_topic_from_the_archive(store, tmp_path):
+    """A dismissal is local to this Studio. The committed file is the durable
+    copy and must not lose a topic because someone hid it from their own view."""
+    date, title = dismissable(store, "Archived anyway")
+    target = tmp_path / "topics.json"
+    store.export_json(target)
+
+    store.dismiss(date=date, title=title)
+    store.export_json(target)
+
+    titles = [t["title"] for t in json.loads(target.read_text(encoding="utf-8"))["topics"]]
+    assert title in titles
+
+
+# --- opening a database written before dismissals existed ---
+
+
+OLD_TOPICS_TABLE = """
+CREATE TABLE topics (
+    id                INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id            INTEGER NOT NULL REFERENCES runs(id),
+    date              TEXT    NOT NULL,
+    created_at        TEXT    NOT NULL,
+    title             TEXT    NOT NULL,
+    summary           TEXT    NOT NULL,
+    sources           TEXT    NOT NULL,
+    why_now           TEXT    NOT NULL,
+    angle             TEXT    NOT NULL,
+    estimated_effort  TEXT    NOT NULL,
+    suggested_outline TEXT    NOT NULL,
+    citations         TEXT    NOT NULL
+);
+"""
+
+
+def old_database(path):
+    """A radar.db from before the dismissed_at column existed.
+
+    Built by hand rather than by checking out an old revision, so it keeps
+    describing the shape it is meant to describe when SCHEMA moves on.
+    """
+    with sqlite3.connect(path) as conn:
+        conn.executescript(OLD_TOPICS_TABLE)
+        conn.execute(
+            """
+            INSERT INTO topics (
+                run_id, date, created_at, title, summary, sources, why_now,
+                angle, estimated_effort, suggested_outline, citations
+            ) VALUES (1, '2026-07-24', '2026-07-24T00:00:00+00:00', 'Older topic',
+                      's', '[]', 'w', 'practical', 'medium', '[]', '[]')
+            """
+        )
+    return path
+
+
+def test_an_existing_database_gains_the_column_when_opened(tmp_path):
+    """radar.db already exists on the machines that matter, and
+    CREATE TABLE IF NOT EXISTS will not add a column to a table already there."""
+    path = old_database(tmp_path / "radar.db")
+
+    store = Store(path)
+
+    assert [r["title"] for r in store.recent_records()] == ["Older topic"]
+
+
+def test_a_topic_from_an_older_database_can_be_dismissed(tmp_path):
+    store = Store(old_database(tmp_path / "radar.db"))
+
+    assert store.dismiss(date="2026-07-24", title="Older topic") == 1
+
+    assert store.recent_records() == []
+
+
+def test_opening_a_migrated_database_twice_is_harmless(tmp_path):
+    """The migration runs on every open. A second ALTER TABLE would raise."""
+    path = old_database(tmp_path / "radar.db")
+
+    Store(path)
+    store = Store(path)
+
+    assert len(store.recent_records()) == 1
