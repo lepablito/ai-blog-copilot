@@ -12,21 +12,35 @@ from pathlib import Path
 
 import streamlit as st
 
+from radar.schema import InvalidTopics
+from radar.store import Store
+from studio import repo_ops
 from studio.radar_data import PRESETS, all_links, group_by_date, load_topics, since_for
 
 ANGLE_LABELS = {"All angles": None, "Theoretical": "theoretical", "Practical": "practical"}
 
+# What the workflow commits. radar.db is gitignored and on a runner lives only
+# as an Actions cache, so this file is the whole route from a nightly run to
+# the database behind this tab.
+TOPICS_JSON = Path("data") / "topics.json"
+
 
 def render(db_path: Path | str) -> None:
     st.subheader("Topics the radar found")
+
+    # Drawn before the query below, which is what lets an import show up in the
+    # same pass: Streamlit reruns the script on a click, the rows land here,
+    # and `load_topics` a few lines down already sees them. Calling `st.rerun`
+    # instead would repaint correctly but wipe the message saying what happened.
+    _controls(db_path)
 
     window, angle = _filters()
     records = load_topics(db_path, angle=ANGLE_LABELS[angle], since=window)
 
     if not records:
         st.info(
-            "Nothing here yet. Run `uv run python -m radar.run --hours 24` "
-            "or dispatch the Daily radar workflow, then reload."
+            "Nothing here yet. Run `uv run python -m radar.run --hours 24`, "
+            "or launch a run above and fetch it when it finishes."
         )
         return
 
@@ -35,6 +49,50 @@ def render(db_path: Path | str) -> None:
         st.markdown(f"### {day}")
         for index, topic in enumerate(topics):
             _topic_card(topic, key=f"{day}-{index}")
+
+
+def _controls(db_path: Path | str) -> None:
+    launch, fetch = st.columns(2)
+
+    if launch.button("Launch a radar run", use_container_width=True):
+        outcome = repo_ops.dispatch_radar()
+        _report(outcome)
+        if outcome.ok:
+            st.markdown(f"[Follow it on GitHub]({repo_ops.ACTIONS_URL})")
+
+    if fetch.button("Fetch the latest topics", use_container_width=True):
+        _fetch(db_path)
+
+
+def _fetch(db_path: Path | str) -> None:
+    outcome = repo_ops.pull()
+    if not outcome.ok:
+        _report(outcome)
+        return
+
+    try:
+        added = Store(db_path).import_json(TOPICS_JSON)
+    except (ValueError, InvalidTopics) as exc:
+        # A corrupt or hand-mangled export. Saying which is more use than a
+        # traceback, and nothing has been written at this point.
+        st.error(f"{TOPICS_JSON} could not be read: {exc}")
+        return
+
+    if added:
+        st.success(f"{added} new topic(s).")
+    else:
+        st.info("Nothing new — the radar has not committed anything since the last fetch.")
+
+
+def _report(outcome: repo_ops.Outcome) -> None:
+    if outcome.ok:
+        st.success(outcome.message)
+        return
+
+    st.error(outcome.message)
+    if outcome.detail:
+        with st.expander("What it said"):
+            st.code(outcome.detail)
 
 
 def _filters() -> tuple[str | None, str]:

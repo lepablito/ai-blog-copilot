@@ -14,7 +14,11 @@ from collections.abc import Iterable
 from datetime import UTC, datetime
 from pathlib import Path
 
-from .schema import Topic
+from .schema import Topic, parse_topics
+
+# Written into the goal of the synthetic run an import opens, so a row that came
+# from a file stays tellable from one the agent actually produced.
+IMPORT_GOAL = "imported from an export"
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS runs (
@@ -178,6 +182,88 @@ class Store:
             encoding="utf-8",
         )
         return path
+
+    def import_json(self, path: Path | str) -> int:
+        """Read an export back in, inserting only what this database lacks.
+
+        The inverse of `export_json` and keyed the same way, on `(date, title)`.
+        The workflow commits the JSON and leaves radar.db in an Actions cache
+        nobody downloads, so this is the only route by which a run on a runner
+        reaches a Studio on a laptop.
+
+        Returns the number of topics inserted.
+        """
+        records = _existing_topics(Path(path))
+        if not records:
+            # Also the empty-file case, and the reason for checking before
+            # parsing: `parse_topics` treats an empty list as a failed answer,
+            # which is right for the agent and wrong for an import.
+            return 0
+
+        # The same gate the agent's own output goes through. An export is a file
+        # on disk that anyone can edit, and a hand-written `javascript:` source
+        # should not reach the Studio just because it arrived by another door.
+        topics = parse_topics(records)
+        dates = [str(record.get("date", "")) for record in records]
+
+        with sqlite3.connect(self.db_path) as conn:
+            known = {(row[0], row[1]) for row in conn.execute("SELECT date, title FROM topics")}
+
+        # Every row, not `recent_records` — its limit would let anything older
+        # than the last 200 topics back in as a duplicate.
+        fresh = [
+            (date, topic)
+            for date, topic in zip(dates, topics, strict=True)
+            if (date, topic.title) not in known
+        ]
+        if not fresh:
+            return 0
+
+        # Oldest first, so that a rising id keeps meaning "newer" — the
+        # assumption `_select` encodes by ordering on id alone. An export is
+        # sorted newest-first, so inserting it as it comes would give the oldest
+        # day the highest id, and the LIMIT on that query would then cut away
+        # the newest topics instead of the oldest. Sorted here rather than
+        # trusted from the file: a hand-edited export need not be in any order.
+        fresh.sort(key=lambda pair: (pair[0], pair[1].title))
+
+        # Opened only once there is something to record. A run row per click
+        # would fill the table with rows describing no work at all.
+        run_id = self.start_run(goal=IMPORT_GOAL, hours=0)
+        now = _now()
+        with sqlite3.connect(self.db_path) as conn:
+            conn.executemany(
+                """
+                INSERT INTO topics (
+                    run_id, date, created_at, title, summary, sources, why_now,
+                    angle, estimated_effort, suggested_outline, citations
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                [
+                    (
+                        run_id,
+                        # The record's own date, not today's: `save_topics`
+                        # stamps the current day because the agent does not
+                        # choose when it ran, but an imported topic already
+                        # knows. `created_at` stays now — that is when the row
+                        # entered *this* database.
+                        date,
+                        now,
+                        topic.title,
+                        topic.summary,
+                        json.dumps(topic.sources, ensure_ascii=False),
+                        topic.why_now,
+                        topic.angle,
+                        topic.estimated_effort,
+                        json.dumps(topic.suggested_outline, ensure_ascii=False),
+                        json.dumps(topic.citations, ensure_ascii=False),
+                    )
+                    for date, topic in fresh
+                ],
+            )
+
+        self.finish_run(run_id, status="imported", steps_used=0, stopped_because="import")
+        return len(fresh)
 
 
 def _existing_topics(path: Path) -> list[dict]:

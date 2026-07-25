@@ -3,7 +3,7 @@ import sqlite3
 
 import pytest
 
-from radar.schema import Topic
+from radar.schema import InvalidTopics, Topic
 from radar.store import Store
 
 
@@ -286,3 +286,127 @@ def test_export_ends_with_a_newline(store, tmp_path):
     store.export_json(target)
 
     assert target.read_text(encoding="utf-8").endswith("\n")
+
+
+# --- reading that export back in ---
+
+
+def written_export(path, *topics):
+    """A topics.json shaped exactly like the one the workflow commits."""
+    path.write_text(
+        json.dumps({"generated_at": "2026-07-24T23:24:49+00:00", "topics": list(topics)}),
+        encoding="utf-8",
+    )
+    return path
+
+
+def record(title="A topic", *, date="2026-07-24", angle="practical"):
+    return {"date": date, **topic(title, angle).as_dict()}
+
+
+def test_import_inserts_the_topics_it_finds(store, tmp_path):
+    target = written_export(tmp_path / "topics.json", record("Speculative decoding"))
+
+    assert store.import_json(target) == 1
+    assert [r["title"] for r in store.recent_records()] == ["Speculative decoding"]
+
+
+def test_imported_topics_keep_their_own_date(store, tmp_path):
+    """`save_topics` stamps the current day, which is right for a live pass and
+    wrong here: the date belongs to the run that found the topic. Restamping it
+    would file yesterday's topics under today and, worse, change the (date,
+    title) key so the next import would insert them all over again."""
+    target = written_export(tmp_path / "topics.json", record(date="2026-07-24"))
+
+    store.import_json(target)
+
+    (row,) = store.recent_records()
+    assert row["date"] == "2026-07-24"
+
+
+def test_importing_the_same_file_twice_inserts_nothing_the_second_time(store, tmp_path):
+    target = written_export(tmp_path / "topics.json", record("Only once"))
+    store.import_json(target)
+
+    assert store.import_json(target) == 0
+    assert len(store.recent_records()) == 1
+
+
+def test_an_import_with_nothing_new_opens_no_run(store, tmp_path):
+    """A run row per click would fill the runs table with rows that recorded
+    no work at all."""
+    target = written_export(tmp_path / "topics.json", record())
+    store.import_json(target)
+    before = len(rows(store, "runs"))
+
+    store.import_json(target)
+
+    assert len(rows(store, "runs")) == before
+
+
+def test_a_missing_file_imports_nothing_and_opens_no_run(store, tmp_path):
+    assert store.import_json(tmp_path / "absent.json") == 0
+    assert rows(store, "runs") == []
+
+
+def test_an_unreadable_file_stops_the_import(store, tmp_path):
+    target = tmp_path / "topics.json"
+    target.write_text("{ this is not json", encoding="utf-8")
+
+    with pytest.raises(ValueError):
+        store.import_json(target)
+
+
+def test_an_import_is_distinguishable_from_a_real_pass(store, tmp_path):
+    target = written_export(tmp_path / "topics.json", record())
+
+    store.import_json(target)
+
+    (run,) = rows(store, "runs")
+    assert run["status"] == "imported"
+
+
+def test_a_topic_with_a_non_http_source_never_reaches_the_database(store, tmp_path):
+    """topics.json is a file on disk that anyone can edit. The schema is the
+    same gate the agent's output goes through, and it applies here too."""
+    poisoned = record()
+    poisoned["sources"] = ["javascript:alert(1)"]
+    target = written_export(tmp_path / "topics.json", poisoned)
+
+    with pytest.raises(InvalidTopics):
+        store.import_json(target)
+
+    assert store.recent_records() == []
+
+
+def test_an_import_of_several_days_still_reads_back_newest_first(store, tmp_path):
+    """`recent_records` orders by id, taking a higher id to mean newer. An
+    export is sorted newest-first, so inserting it in file order would give the
+    oldest day the highest id — and because the query carries a LIMIT, a large
+    import would then truncate away the newest topics rather than the oldest."""
+    target = written_export(
+        tmp_path / "topics.json",
+        record("Newest", date="2026-07-24"),
+        record("Middle", date="2026-07-23"),
+        record("Oldest", date="2026-07-22"),
+    )
+
+    store.import_json(target)
+
+    assert [r["date"] for r in store.recent_records()] == [
+        "2026-07-24",
+        "2026-07-23",
+        "2026-07-22",
+    ]
+
+
+def test_export_then_import_into_a_fresh_database_round_trips(store, tmp_path):
+    run_id = store.start_run(goal="g", hours=48)
+    store.save_topics(run_id, [topic("a"), topic("b", angle="theoretical")])
+    target = tmp_path / "topics.json"
+    store.export_json(target)
+
+    fresh = Store(tmp_path / "fresh.db")
+    assert fresh.import_json(target) == 2
+
+    assert fresh.recent_records() == store.recent_records()
