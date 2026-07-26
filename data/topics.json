@@ -1,6 +1,63 @@
 {
-  "generated_at": "2026-07-25T04:36:28+00:00",
+  "generated_at": "2026-07-26T04:47:58+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://docs.astral.sh/ruff/rules/load-before-global-declaration"
+      ],
+      "date": "2026-07-26",
+      "estimated_effort": "small",
+      "sources": [
+        "https://astral.sh/blog/ruff-v0.16.0"
+      ],
+      "suggested_outline": [
+        "Introduction to Ruff and its Updates",
+        "New Default Rules and Their Impact",
+        "Using Ruff for Improved Code Quality"
+      ],
+      "summary": "Ruff is a Python linting tool that has updated its default rules to enable 413 checks, up from 59 in previous versions. This improvement aims to catch severe issues, including syntax errors and immediate runtime errors.",
+      "title": "Ruff: A Python Linting Tool with Improved Default Rules",
+      "why_now": "The update was recently announced and affects various CI jobs."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://twitter.com/artificialanlys/status/2080777718933995967"
+      ],
+      "date": "2026-07-26",
+      "estimated_effort": "small",
+      "sources": [
+        "https://www.anthropic.com/news/claude-opus-5"
+      ],
+      "suggested_outline": [
+        "Introduction to Claude Opus 5",
+        "Key Features and Improvements",
+        "Comparison to Fable 5"
+      ],
+      "summary": "Claude Opus 5 is a new AI model that offers Fable-level performance at half the price. It is described as a thoughtful and proactive model that comes close to the frontier intelligence of Claude Fable 5.",
+      "title": "Claude Opus 5: A New AI Model with Fable-Level Performance",
+      "why_now": "The model was recently released and is currently leading the Artificial Analysis leaderboard."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://danluu.com/ai-coding/"
+      ],
+      "date": "2026-07-26",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://danluu.com/ai-coding/"
+      ],
+      "suggested_outline": [
+        "Introduction to Agentic Coding",
+        "LLM Variance and Its Implications",
+        "Strategies for Managing Variance"
+      ],
+      "summary": "Agentic coding involves using AI agents to generate code, which can introduce variance in the coding process. Understanding and managing this variance is crucial for reliable software development.",
+      "title": "Agentic Coding and LLM Variance",
+      "why_now": "The topic is relevant due to the increasing use of AI in coding and the need to address the challenges it presents."
+    },
     {
       "angle": "practical",
       "citations": [
