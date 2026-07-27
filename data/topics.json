@@ -1,6 +1,63 @@
 {
-  "generated_at": "2026-07-26T04:47:58+00:00",
+  "generated_at": "2026-07-27T04:56:13+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.21962"
+      ],
+      "date": "2026-07-27",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2607.21962"
+      ],
+      "suggested_outline": [
+        "Introduction to agent memory and its importance",
+        "Description of the longitudinal evaluation instrument",
+        "Discussion of the results and their implications for agent memory research"
+      ],
+      "summary": "The paper presents a longitudinal evaluation instrument for agent memory, focusing on the development and spread of toxicity in Mastodon. The results offer insights into the challenges of detecting and mitigating toxic content in decentralized social networks.",
+      "title": "Ground Truth First: Evaluating Agent Memory",
+      "why_now": "The increasing importance of agent memory and the need for effective evaluation instruments make this research timely and relevant."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.21980"
+      ],
+      "date": "2026-07-27",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2607.21980"
+      ],
+      "suggested_outline": [
+        "Introduction to Mastodon and its community",
+        "Description of the methodology used to analyze toxic behavior",
+        "Discussion of the results and their implications for community health"
+      ],
+      "summary": "The paper analyzes toxic behavior in the Mastodon community, utilizing machine learning methods to examine user posts. The results offer clarity on toxicity trends and their implications for community health and decentralized governance.",
+      "title": "Evaluating Toxic Behavior in Mastodon",
+      "why_now": "The growing concern about online toxicity and the need for effective moderation strategies make this research relevant and timely."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.21619"
+      ],
+      "date": "2026-07-27",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.21619"
+      ],
+      "suggested_outline": [
+        "Introduction to MLLMs and their vulnerabilities",
+        "Description of the ASO module and its functionality",
+        "Discussion of the implications of ASO for MLLM safety and security"
+      ],
+      "summary": "The paper presents a novel approach to amplify existing visual jailbreaks in MLLMs by exploiting stylistic inconsistencies. The proposed ASO module fine-tunes an image-editing model to superimpose optimized stylistic modifications onto adversarial images.",
+      "title": "Adversarial Style Optimization for MLLMs",
+      "why_now": "The recent development of MLLMs has led to increased concerns about their safety and security, making this research timely and relevant."
+    },
     {
       "angle": "practical",
       "citations": [
