@@ -1,6 +1,69 @@
 {
-  "generated_at": "2026-07-27T04:56:13+00:00",
+  "generated_at": "2026-07-28T04:42:07+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.22546"
+      ],
+      "date": "2026-07-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://matthewsaltz.com/blog/using-an-open-model-feels-surprisingly-good/"
+      ],
+      "suggested_outline": [
+        "Introduction to open-source models",
+        "Benefits of using open-source models",
+        "Challenges and limitations",
+        "Case studies and examples",
+        "Conclusion"
+      ],
+      "summary": "This post would explore the benefits of using open-source models in AI/LLM engineering, including cost savings, customization, and community support. It would also discuss the potential drawbacks and challenges of using open-source models.",
+      "title": "The Benefits of Using Open-Source Models in AI/LLM Engineering",
+      "why_now": "The recent launch of Kimi K3 on managed endpoints and the success of open-source models in various applications make this topic timely and relevant."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.22622"
+      ],
+      "date": "2026-07-28",
+      "estimated_effort": "large",
+      "sources": [
+        "https://fermisense.com/when-machines-take-the-wheel/"
+      ],
+      "suggested_outline": [
+        "Introduction to reinforcement learning",
+        "Benefits and challenges of reinforcement learning",
+        "Recent successes and failures",
+        "Potential applications and future directions",
+        "Conclusion"
+      ],
+      "summary": "This post would discuss the use of reinforcement learning in real-world applications, including its benefits, challenges, and potential applications. It would also explore the recent successes and failures of reinforcement learning in various domains.",
+      "title": "Reinforcement Learning for Real-World Applications",
+      "why_now": "The recent successes of reinforcement learning in various applications, such as game playing and robotics, make this topic timely and relevant."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.22925"
+      ],
+      "date": "2026-07-28",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2607.22884"
+      ],
+      "suggested_outline": [
+        "Introduction to language normalization",
+        "Benefits and challenges of language normalization",
+        "Recent advances and techniques",
+        "Potential applications and future directions",
+        "Conclusion"
+      ],
+      "summary": "This post would explore the importance of language normalization in AI/LLM engineering, including its benefits, challenges, and potential applications. It would also discuss recent advances and techniques in language normalization.",
+      "title": "Language Normalization for Improved AI/LLM Performance",
+      "why_now": "The recent advances in language normalization and its potential applications in various domains make this topic timely and relevant."
+    },
     {
       "angle": "theoretical",
       "citations": [
