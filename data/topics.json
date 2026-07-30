@@ -1,6 +1,77 @@
 {
-  "generated_at": "2026-07-28T04:42:07+00:00",
+  "generated_at": "2026-07-30T04:47:54+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.26228"
+      ],
+      "date": "2026-07-30",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.26228"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Instruction Hierarchies in LLMs",
+        "Understanding the Problem: When User Inputs Override System Prompts",
+        "V-Steer Explained: How Inference-Time Edits Restore Control",
+        "Technical Deep Dive: Value Vectors, Logit Attribution, and Multiplicative Edits",
+        "Performance and Compatibility: Results Across Model Sizes and Backends",
+        "Implications for LLM Safety, Reliability, and Trustworthy AI",
+        "Conclusion: A New Tool for Robust LLM Deployment"
+      ],
+      "summary": "This post will introduce V-Steer, a novel training-free inference-time method designed to enforce instruction hierarchies in Large Language Models (LLMs). It will explain how V-Steer identifies and edits cached value vectors at prompt positions to boost privileged system prompts and suppress conflicting user inputs, significantly improving safety and reliability. The post will detail the technical approach, its compatibility with existing backends, and its demonstrated effectiveness across various model sizes in controlled role conflict benchmarks.",
+      "title": "V-Steer: Restoring Control and Safety in LLMs by Steering Instruction Hierarchies at Inference Time",
+      "why_now": "The paper was submitted to arXiv on July 30, 2026, offering a very recent and practical method (V-Steer) to address a critical safety and control issue in LLMs without requiring retraining, making it highly relevant for engineers deploying these models."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.26375"
+      ],
+      "date": "2026-07-30",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.26375",
+        "https://news.ycombinator.com/item?id=49104392"
+      ],
+      "suggested_outline": [
+        "Introduction: The AI Productivity Promise in Coding",
+        "The Study: Quantifying Productivity vs. Comprehension",
+        "Why Understanding Suffers: Low-Effort Interaction and Black-Box Generation",
+        "Long-Term Consequences: Skill Decay, Debugging Challenges, and Code Ownership",
+        "Strategies for 'Paired Programming' with AI: Active Engagement and Critical Review",
+        "Designing Better AI Coding Tools: Focus on Explainability and Learning",
+        "Conclusion: Balancing Speed and Skill in the Age of AI"
+      ],
+      "summary": "This post would analyze recent research indicating that while AI coding agents significantly boost developer productivity, they can also harm code comprehension and the ability to extend code independently. It would explore the mechanisms behind this trade-off, such as low-effort prompting and auto-accepted edits, and discuss the implications for developer skill development, code quality, and long-term project maintainability. The post would also suggest strategies for mitigating these negative effects.",
+      "title": "The Double-Edged Sword of AI Coding Agents: Productivity Gains vs. Understanding Erosion",
+      "why_now": "A new arXiv paper (submitted July 29, 2026) directly addresses the critical practical concern of AI coding agents' impact on developer understanding, a topic frequently discussed among practitioners."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://firstprinciples.com/blog-article/ai-system-theo-conjecture-solves-35-year-old-math-conjecture"
+      ],
+      "date": "2026-07-30",
+      "estimated_effort": "large",
+      "sources": [
+        "https://firstprinciples.com/blog-article/ai-system-theo-conjecture-solves-35-year-old-math-conjecture",
+        "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research"
+      ],
+      "suggested_outline": [
+        "Introduction: The Enduring Mystery of Conjecture 448",
+        "The Math Behind the Mystery: Common-Divisor Graphs and Independent Sets",
+        "Graffiti, Erdős, and the Birth of the Residue Conjecture",
+        "Enter Theo-Conjecture: An AI System for Mathematical Discovery",
+        "The Unforeseen Term: What the AI Discovered Beyond the Proof",
+        "Implications for Human-AI Collaboration in Pure Mathematics",
+        "Conclusion: Beyond Proofs, Towards Novelty"
+      ],
+      "summary": "This post would delve into the technical details of Theo-Conjecture, an AI system that, in collaboration with human mathematicians, proved a 35-year-old conjecture by Paul Erdős related to prime numbers and graph theory. It would explain the mathematical problem, the 'residue' concept, and how the AI system not only confirmed the long-held hypothesis but also discovered an 'unexpected extra term' no one predicted. The post would explore the implications of such human-AI collaborative discovery in pure mathematics.",
+      "title": "AI's Unpredicted Discoveries: How Theo-Conjecture Solved a 35-Year-Old Math Problem with a Novel Term",
+      "why_now": "The article was published recently (July 29, 2026), detailing a significant mathematical breakthrough enabled by an AI system, including an unexpected discovery. This highlights a new frontier in AI's capability beyond mere prediction or automation."
+    },
     {
       "angle": "practical",
       "citations": [
