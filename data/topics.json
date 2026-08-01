@@ -1,6 +1,70 @@
 {
-  "generated_at": "2026-07-31T04:52:28+00:00",
+  "generated_at": "2026-08-01T04:47:38+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Jul/31/deepseek-v4-flash-0731/#atom-everything",
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
+      ],
+      "date": "2026-08-01",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Jul/31/deepseek-v4-flash-0731/#atom-everything",
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
+      ],
+      "suggested_outline": [
+        "Introduction to DeepSeek V4-Flash 0731",
+        "Technical Overview of the Model",
+        "Performance Comparison with Other Models",
+        "Pricing and Cost-Effectiveness",
+        "Potential Applications and Future Directions"
+      ],
+      "summary": "This post would explore the recent release of DeepSeek V4-Flash 0731, its substantially enhanced agentic capabilities, and its potential impact on the LLM landscape. It would also discuss the model's performance, pricing, and how it compares to other models like MiniMax M3.",
+      "title": "The Rise of DeepSeek V4-Flash 0731: A New Era for LLMs?",
+      "why_now": "The recent release of DeepSeek V4-Flash 0731 and its impressive performance have generated significant interest in the AI community, making it a timely topic for discussion."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://www.latent.space/p/ontologies-agentic-systems"
+      ],
+      "date": "2026-08-01",
+      "estimated_effort": "small",
+      "sources": [
+        "https://www.latent.space/p/ontologies-agentic-systems"
+      ],
+      "suggested_outline": [
+        "Introduction to Ontologies in AI Agents",
+        "Technical Overview of Ontologies",
+        "Potential Applications and Implications"
+      ],
+      "summary": "This post would explore the growing importance of ontologies in AI agents, including their role in keeping probabilistic agents inside deterministic boundaries. It would also discuss the potential applications and implications of ontologies in AI.",
+      "title": "The Revival of Ontologies in AI Agents",
+      "why_now": "The recent interest in ontologies in AI agents has generated significant discussion in the AI community, making it a timely topic for exploration."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+        "https://simonwillison.net/2026/Jul/30/luna-price-drop/#atom-everything"
+      ],
+      "date": "2026-08-01",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+        "https://simonwillison.net/2026/Jul/30/luna-price-drop/#atom-everything"
+      ],
+      "suggested_outline": [
+        "Introduction to GPT-5.6 and its Advancements",
+        "Technical Overview of the Model",
+        "Pricing and Cost-Effectiveness",
+        "Potential Applications and Future Directions"
+      ],
+      "summary": "This post would delve into the recent advancements in GPT-5.6, including its lower pricing for Luna and Terra, and how OpenAI's more efficient models are helping enterprises deploy AI workflows at scale. It would also explore the potential implications of these advancements on the AI landscape.",
+      "title": "Advancing the Price-Performance Frontier with GPT-5.6",
+      "why_now": "The recent price drop of GPT-5.6 and its enhanced efficiency have significant implications for the AI community, making it a timely topic for discussion."
+    },
     {
       "angle": "practical",
       "citations": [
