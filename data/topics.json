@@ -1,6 +1,44 @@
 {
-  "generated_at": "2026-08-01T04:47:38+00:00",
+  "generated_at": "2026-08-02T04:31:45+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://openai.com/index/ten-advances-in-mathematics"
+      ],
+      "date": "2026-08-02",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://openai.com/index/ten-advances-in-mathematics"
+      ],
+      "suggested_outline": [
+        "Introduction to AI in Mathematics",
+        "Overview of Recent Advances",
+        "Technical Details of the Solutions"
+      ],
+      "summary": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity. The solutions were obtained using an internal version of Astra, their next major model, with less than $2,000 spent on GPT-5.6 Sol token prices for each problem.",
+      "title": "Recent Advances in AI Mathematics",
+      "why_now": "The recent publication of OpenAI's results on long-standing open problems in mathematics and theoretical computer science makes this topic timely and relevant."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
+      ],
+      "date": "2026-08-02",
+      "estimated_effort": "small",
+      "sources": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
+      ],
+      "suggested_outline": [
+        "Introduction to DeepSeek V4 Flash 0731",
+        "Performance Benchmarks",
+        "Comparison with Other Models"
+      ],
+      "summary": "The latest release in DeepSeek's V4 family, with substantially enhanced agentic capabilities, achieving state-of-the-art results in certain benchmarks while being more affordable than other models of similar capability.",
+      "title": "DeepSeek V4 Flash 0731 Model Release",
+      "why_now": "The recent release of DeepSeek V4 Flash 0731 and its performance in benchmarks make it a noteworthy development in the field of AI."
+    },
     {
       "angle": "practical",
       "citations": [
