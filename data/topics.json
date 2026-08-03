@@ -1,6 +1,63 @@
 {
-  "generated_at": "2026-08-02T04:31:45+00:00",
+  "generated_at": "2026-08-03T04:44:28+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.28640"
+      ],
+      "date": "2026-08-03",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.28640"
+      ],
+      "suggested_outline": [
+        "Introduction to multimodal LLMs and the modality gap",
+        "TokenSwap methodology and results",
+        "Implications for multimodal LLM performance"
+      ],
+      "summary": "The article introduces TokenSwap, a method for benchmarking and reducing the modality gap in multimodal large language models (LLMs).",
+      "title": "TokenSwap: Benchmarking and Reducing the Modality Gap in Multimodal LLMs",
+      "why_now": "The modality gap in multimodal LLMs is a significant challenge, and TokenSwap offers a potential solution, making it a timely and relevant topic for discussion."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2607.28634"
+      ],
+      "date": "2026-08-03",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2607.28634"
+      ],
+      "suggested_outline": [
+        "Introduction to LLMs and item difficulty levels",
+        "Summary of the study's findings",
+        "Implications of LLMs' limitations for automated item generation"
+      ],
+      "summary": "The article discusses the limitations of large language models (LLMs) in understanding item difficulty levels, which is crucial for automated item generation in assessments. The study found that LLMs, including advanced models like GPT-5.4, struggle to label hard items and tend to underestimate item difficulty levels.",
+      "title": "LLMs' Limitations in Understanding Item Difficulty Levels",
+      "why_now": "The study's findings have significant implications for using LLMs in generating items with targeted difficulty levels, making it a timely and relevant topic for discussion."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2607.28658"
+      ],
+      "date": "2026-08-03",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2607.28658"
+      ],
+      "suggested_outline": [
+        "Introduction to federated pre-training",
+        "Evaluation methodology and results",
+        "Implications for model performance and bias reduction"
+      ],
+      "summary": "The article discusses the evaluation of federated pre-training for large language models (LLMs) and its implications for improving model performance and reducing bias.",
+      "title": "Evaluating Federated Pre-Training for LLMs",
+      "why_now": "Federated pre-training has gained significant attention in recent years as a way to improve model performance and reduce bias, making it a relevant topic for discussion."
+    },
     {
       "angle": "theoretical",
       "citations": [
