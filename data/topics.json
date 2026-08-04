@@ -1,6 +1,69 @@
 {
-  "generated_at": "2026-08-03T04:44:28+00:00",
+  "generated_at": "2026-08-04T04:43:46+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.00023"
+      ],
+      "date": "2026-08-04",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.00023"
+      ],
+      "suggested_outline": [
+        "Introduction: The need for human-like language models in social simulations",
+        "Background: Traditional language models and their limitations",
+        "The proposed approach: Role steering",
+        "Experimental results: Comparison with baseline language models",
+        "Conclusion: Role steering for social simulations"
+      ],
+      "summary": "This post would discuss the use of role steering to enable language models to exhibit more human-like behaviors in social simulations. The article 'Role Steering of Language Models for Social Simulations' provides a detailed analysis of this topic.",
+      "title": "Role Steering of Language Models for Social Simulations",
+      "why_now": "The recent article on 'Role Steering of Language Models for Social Simulations' makes this topic highly relevant for building more realistic social simulations."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.00007"
+      ],
+      "date": "2026-08-04",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.00007"
+      ],
+      "suggested_outline": [
+        "Introduction: The need for human-like LLM agents",
+        "Background: Traditional prompt-based methods and their limitations",
+        "The proposed approach: Memory-based conditioning",
+        "Experimental results: Comparison with descriptive conditioning baselines",
+        "Conclusion: MemoryForge for human-like LLM agents"
+      ],
+      "summary": "This post would explore the use of memory-based conditioning to equip LLMs with human-like personas, which can enable them to exhibit more human-like behaviors. The article 'MemoryForge: Synthesize Lifelong Memory for Human-Like LLM Agents' provides a detailed analysis of this topic.",
+      "title": "MemoryForge: Synthesize Lifelong Memory for Human-Like LLM Agents",
+      "why_now": "The recent article on 'MemoryForge: Synthesize Lifelong Memory for Human-Like LLM Agents' makes this topic highly relevant for building more human-like LLM agents."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.00004"
+      ],
+      "date": "2026-08-04",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.00004"
+      ],
+      "suggested_outline": [
+        "Introduction: The need for cost-effective LLM evaluation",
+        "Background: Traditional LLM judges and their limitations",
+        "The proposed approach: Cheap open-weight models",
+        "Experimental results: Comparison with frontier LLM judges",
+        "Conclusion: Cost-effective automated judging of natural-language mathematical proofs"
+      ],
+      "summary": "This post would discuss the use of cheap open-weight models as reliable judges for natural-language mathematical proofs, which can be a cost-effective alternative to frontier LLM judges. The article 'Cost-Effective Automated Judging of Natural-Language Mathematical Proofs' provides a detailed analysis of this topic.",
+      "title": "Cost-Effective Automated Judging of Natural-Language Mathematical Proofs",
+      "why_now": "The recent article on 'Cost-Effective Automated Judging of Natural-Language Mathematical Proofs' makes this topic highly relevant for optimizing LLM evaluation costs and speeds."
+    },
     {
       "angle": "practical",
       "citations": [
