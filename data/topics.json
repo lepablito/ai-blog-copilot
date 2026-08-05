@@ -1,6 +1,63 @@
 {
-  "generated_at": "2026-08-04T04:43:46+00:00",
+  "generated_at": "2026-08-05T04:29:26+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.02609"
+      ],
+      "date": "2026-08-05",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.02609"
+      ],
+      "suggested_outline": [
+        "Introduction to Mesopotamian writing",
+        "Overview of TabletCraft",
+        "Technical details of the system"
+      ],
+      "summary": "TabletCraft is an open-source system that enables bidirectional interaction with Mesopotamian writing, allowing users to read ancient tablets and compose new messages as cuneiform clay tablets. The system integrates a ByT5-based translation model, a cuneiform sign converter, and a visual tablet renderer.",
+      "title": "TabletCraft: Bridging a 4,000-Year Cultural Gap with Bidirectional Akkadian NMT and Cuneiform Rendering",
+      "why_now": "The recent development of TabletCraft has made it possible for non-specialist users to engage with ancient Mesopotamian culture in a more interactive and immersive way."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.02613"
+      ],
+      "date": "2026-08-05",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.02613"
+      ],
+      "suggested_outline": [
+        "Introduction to on-device personal memory assistants",
+        "Overview of MemArena",
+        "Technical details of the benchmark"
+      ],
+      "summary": "MemArena is a benchmark for evaluating the performance of on-device agentic personal memory assistants, focusing on activity-dense interaction, ego-centric perspective, and coherent multi-session worlds. The benchmark evaluates five open-weight readers with different memory backends.",
+      "title": "MemArena: An Ego-Centric Benchmark for On-Device Agentic Personal Memory Assistants at Scale",
+      "why_now": "The increasing importance of on-device personal memory assistants has made MemArena a timely and relevant benchmark for evaluating their performance."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.02612"
+      ],
+      "date": "2026-08-05",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2608.02612"
+      ],
+      "suggested_outline": [
+        "Introduction to black-box optimization",
+        "Overview of BBOWP-Bench",
+        "Technical details of the benchmark"
+      ],
+      "summary": "BBOWP-Bench is a benchmark for evaluating the performance of large language models on black-box optimization word problems, which require inferring both a search space and an optimization algorithm from a natural-language description.",
+      "title": "BBOWP-Bench: Evaluating LLMs on Black-Box Optimization Word Problems",
+      "why_now": "The growing need for automated optimization solutions has made BBOWP-Bench a relevant benchmark for evaluating the capabilities of large language models."
+    },
     {
       "angle": "practical",
       "citations": [
