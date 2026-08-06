@@ -1,6 +1,63 @@
 {
-  "generated_at": "2026-08-05T04:29:26+00:00",
+  "generated_at": "2026-08-06T04:32:07+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.02609"
+      ],
+      "date": "2026-08-06",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.02609"
+      ],
+      "suggested_outline": [
+        "Introduction to TabletCraft",
+        "Technical Overview of the System",
+        "Applications and Implications"
+      ],
+      "summary": "The TabletCraft system enables bidirectional interaction with Mesopotamian writing, allowing users to read ancient tablets and compose new messages in cuneiform. This breakthrough has significant implications for the study and preservation of ancient cultures.",
+      "title": "TabletCraft: Bridging the 4,000-Year Cultural Gap with Bidirectional Akkadian NMT and Cuneiform Rendering",
+      "why_now": "The recent development of the TabletCraft system makes it a timely and relevant topic for discussion in the AI community."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.02620"
+      ],
+      "date": "2026-08-06",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.02620"
+      ],
+      "suggested_outline": [
+        "Introduction to JudgeArena",
+        "Technical Overview of the Framework",
+        "Applications and Implications"
+      ],
+      "summary": "The JudgeArena framework provides a unified approach to evaluating LLM-judge models, enabling more accurate and reproducible results. This topic is relevant to the current state of AI research and its applications in natural language processing.",
+      "title": "JudgeArena: A Unified Framework for Reproducible LLM-Judge Evaluation",
+      "why_now": "The recent development of the JudgeArena framework makes it a timely and relevant topic for discussion in the AI community."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.02616"
+      ],
+      "date": "2026-08-06",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.02616"
+      ],
+      "suggested_outline": [
+        "Introduction to OpenAI's Privacy Filter",
+        "Methodology and Results of the Evaluation",
+        "Implications and Future Directions"
+      ],
+      "summary": "The evaluation of OpenAI's Privacy Filter across 42 benchmarks provides valuable insights into the performance of PII detection models in various languages and domains. This topic is relevant to the current state of AI research and its applications in privacy and security.",
+      "title": "Evaluating OpenAI's Privacy Filter: Cross-Lingual, Cross-Domain PII Detection Across 42 Benchmarks",
+      "why_now": "The recent evaluation of OpenAI's Privacy Filter makes it a timely and relevant topic for discussion in the AI community."
+    },
     {
       "angle": "theoretical",
       "citations": [
