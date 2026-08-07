@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-08-06T04:32:07+00:00",
+  "generated_at": "2026-08-07T04:22:23+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.05151"
+      ],
+      "date": "2026-08-07",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.05151"
+      ],
+      "suggested_outline": [
+        "Introduction to Large Language Models and Their Applications",
+        "The Importance of Grounding Models in Simulator Data",
+        "Methods for Grounding Models: Live Simulator Oracle, Structured Parameter Injection, and Decoupled Recall-Reasoning Retriever",
+        "Results and Discussion: Improvements in Model Performance",
+        "Conclusion: Future Directions for Research and Applications"
+      ],
+      "summary": "This post would discuss the application of large language models in industrial settings, specifically in wastewater treatment decision support. It would highlight the importance of grounding these models in simulator data to provide more accurate and relevant answers to causal questions. The post would also explore the three methods presented in the article for achieving this grounding: a live simulator oracle, structured parameter injection, and a Decoupled Recall-Reasoning retriever.",
+      "title": "Simulator-Grounded Large Language Models for Industrial Causal Reasoning",
+      "why_now": "The article was submitted on May 20, 2026, and the topic is highly relevant to current research in AI and its applications in industrial settings."
+    },
     {
       "angle": "practical",
       "citations": [
