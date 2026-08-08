@@ -1,6 +1,63 @@
 {
-  "generated_at": "2026-08-07T04:22:23+00:00",
+  "generated_at": "2026-08-08T03:00:43+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.05157"
+      ],
+      "date": "2026-08-08",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.05157"
+      ],
+      "suggested_outline": [
+        "Introduction to double-blind review",
+        "The vulnerability to large language models",
+        "Implications and potential solutions"
+      ],
+      "summary": "Double-blind peer review is vulnerable to automated semantic inference, which can reveal authorship and compromise anonymity. This topic discusses the implications of this vulnerability and potential solutions.",
+      "title": "The Vulnerability of Double-Blind Review to Large Language Models",
+      "why_now": "The increasing use of large language models in research and academia makes this topic timely and relevant."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.05161"
+      ],
+      "date": "2026-08-08",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2608.05161"
+      ],
+      "suggested_outline": [
+        "Introduction to semi-adapt-instruct",
+        "The modular framework and its components",
+        "Potential applications and implications"
+      ],
+      "summary": "This topic discusses the idea of semi-adapt-instruct, a modular framework that discovers latent instruction domains and trains per-domain adapters in parallel. It explores the potential of this approach in enabling extensible NLP systems.",
+      "title": "SemiAdapt-Instruct: Extensible Instruction Tuning via Latent Domain-Specialised Adapters",
+      "why_now": "The increasing demand for more flexible and adaptable NLP systems makes this topic timely and relevant."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.05158"
+      ],
+      "date": "2026-08-08",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.05158"
+      ],
+      "suggested_outline": [
+        "Introduction to self-evolution algorithms",
+        "The concept of safe evolution with circuit anchors",
+        "Implications and potential applications"
+      ],
+      "summary": "This topic discusses the concept of safe evolution with circuit anchors, which proposes a new approach to self-evolution algorithms for large language models. It explores the idea of anchoring core regulatory genes while allowing peripheral genes to adapt freely.",
+      "title": "Safe Evolution with Circuit Anchors",
+      "why_now": "The need for more efficient and safe self-evolution algorithms in large language models makes this topic relevant."
+    },
     {
       "angle": "practical",
       "citations": [
