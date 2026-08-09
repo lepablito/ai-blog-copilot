@@ -1,6 +1,25 @@
 {
-  "generated_at": "2026-08-08T03:00:43+00:00",
+  "generated_at": "2026-08-09T03:20:54+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://curtispoe.org/paad/"
+      ],
+      "date": "2026-08-09",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://curtispoe.org/paad/"
+      ],
+      "suggested_outline": [
+        "Introduction to PAAD",
+        "The Benefits of Engineering-Driven AI",
+        "Example Use Cases"
+      ],
+      "summary": "This post would delve into the details of PAAD, an open-source system of AI agent skills designed to keep the developer in control. It would explore the benefits of engineering-driven AI and provide examples of how PAAD can be used in practice.",
+      "title": "Engineering-Driven AI: The PAAD Approach",
+      "why_now": "The recent emphasis on AI safety and responsible development practices makes this topic timely and relevant."
+    },
     {
       "angle": "theoretical",
       "citations": [
