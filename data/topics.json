@@ -1,6 +1,60 @@
 {
-  "generated_at": "2026-08-09T03:20:54+00:00",
+  "generated_at": "2026-08-10T03:26:39+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [],
+      "date": "2026-08-10",
+      "estimated_effort": "small",
+      "sources": [
+        "https://www.betonit.ai/p/the-ambition-project"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "The Ambition Project: Overview",
+        "Potential Implications",
+        "Conclusion"
+      ],
+      "summary": "The Ambition Project is a topic related to AI/LLM engineering, but without more information, it is difficult to provide a detailed summary. This post will explore the project and its potential implications.",
+      "title": "The Ambition Project",
+      "why_now": "The project was mentioned in the last 48 hours, making it a potentially relevant topic for discussion."
+    },
+    {
+      "angle": "practical",
+      "citations": [],
+      "date": "2026-08-10",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.bloomberg.com/news/features/2026-08-06/ai-sk-hynix-samsung-rewire-south-korea-s-careers-dating-and-culture"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "AI's Impact on Careers",
+        "AI's Impact on Dating and Culture",
+        "Conclusion"
+      ],
+      "summary": "AI is having a significant impact on South Korea's careers, dating, and culture. This post will discuss the ways in which AI is influencing these areas and the potential implications for the future.",
+      "title": "AI Is Rewiring South Korea's Careers, Dating and Culture",
+      "why_now": "The article was published in the last 48 hours, making it a timely and relevant topic for discussion."
+    },
+    {
+      "angle": "practical",
+      "citations": [],
+      "date": "2026-08-10",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.abc.net.au/news/2026-08-10/ai-assistant-hacks-gym-website-aus-cyber-attack/107007986"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "The Hack: What Happened",
+        "Implications for AI Safety and Security",
+        "Conclusion"
+      ],
+      "summary": "An AI assistant was used to hack a gym website in Australia, highlighting potential security risks. This post will discuss the incident and its implications for AI safety and security.",
+      "title": "AI Assistant Hacks Gym Website",
+      "why_now": "The hack occurred in the last 48 hours, making it a timely and relevant topic for discussion."
+    },
     {
       "angle": "practical",
       "citations": [
