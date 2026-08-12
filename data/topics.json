@@ -1,6 +1,65 @@
 {
-  "generated_at": "2026-08-10T03:26:39+00:00",
+  "generated_at": "2026-08-12T03:48:53+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.07525"
+      ],
+      "date": "2026-08-12",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2608.07525"
+      ],
+      "suggested_outline": [
+        "Introduction to reinforcement learning and MLLMs",
+        "The helpfulness-hallucination trade-off",
+        "Implications and potential strategies"
+      ],
+      "summary": "This post would examine the relationship between reinforcement learning and MLLM reliability, and discuss the potential risks of reinforcement learning alignment exacerbating sycophancy in instruction-following tasks. It would explore the implications of this trade-off and potential strategies for mitigating its effects.",
+      "title": "The Impact of Reinforcement Learning on MLLM Reliability",
+      "why_now": "The article highlights the importance of considering the potential risks of reinforcement learning alignment, which is a timely topic given the increasing use of MLLMs in high-stakes applications."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.07525"
+      ],
+      "date": "2026-08-12",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.07525"
+      ],
+      "suggested_outline": [
+        "Introduction to MLLMs and their applications",
+        "The challenges of evaluating MLLM reliability",
+        "The Unified Hallucination Fuzzing framework",
+        "Results and implications"
+      ],
+      "summary": "This post would discuss the challenges of evaluating the reliability of MLLMs in high-stakes applications, and present the Unified Hallucination Fuzzing framework as a potential solution. It would explore the results of the framework and their implications for the development of more robust MLLMs.",
+      "title": "Evaluating the Reliability of Multimodal Large Language Models",
+      "why_now": "The article was submitted on July 15, 2026, and the topic is relevant to current developments in the field of natural language processing."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.07525"
+      ],
+      "date": "2026-08-12",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.07525"
+      ],
+      "suggested_outline": [
+        "Introduction to the importance of robust MLLMs",
+        "The Unified Hallucination Fuzzing framework",
+        "Potential strategies for improving MLLM reliability",
+        "Implications and future directions"
+      ],
+      "summary": "This post would discuss the importance of developing more robust MLLMs for high-stakes applications, and present potential strategies for improving MLLM reliability. It would explore the role of the Unified Hallucination Fuzzing framework in this effort, and discuss the implications of the results for the development of more robust MLLMs.",
+      "title": "Developing More Robust MLLMs for High-Stakes Applications",
+      "why_now": "The article highlights the need for more robust MLLMs in high-stakes applications, which is a timely topic given the increasing use of MLLMs in such applications."
+    },
     {
       "angle": "theoretical",
       "citations": [],
