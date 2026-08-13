@@ -1,6 +1,105 @@
 {
-  "generated_at": "2026-08-12T03:48:53+00:00",
+  "generated_at": "2026-08-13T04:25:07+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.09942"
+      ],
+      "date": "2026-08-13",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.09942"
+      ],
+      "suggested_outline": [
+        "Introduction: The Hype and Reality of Chain-of-Thought",
+        "The Serial-Depth Bottleneck: Understanding LLM Limitations",
+        "Empirical Evidence: CoT's Impact Across Task Complexities",
+        "When CoT Shines: High-Depth Reasoning Tasks (e.g., Math, GSM8K)",
+        "When CoT is Redundant or Less Effective: Shallow Tasks",
+        "Practical Implications for Prompt Engineering Strategies",
+        "Beyond CoT: Other Techniques for Complex Reasoning",
+        "Conclusion: A Nuanced Approach to LLM Prompting"
+      ],
+      "summary": "This post would move beyond the common assumption that Chain-of-Thought (CoT) prompting universally improves LLM reasoning. Based on recent empirical investigations, it would explain the 'serial-depth bottleneck' and demonstrate how CoT's effectiveness varies with task complexity (depth). Practitioners would gain a nuanced understanding of when to apply CoT for maximal benefit and when it might be redundant or even detrimental.",
+      "title": "When Chain-of-Thought Prompting Helps and When It Hurts: An Empirical Look",
+      "why_now": "A new arXiv paper (within 48 hours) empirically investigates the conditions under which CoT prompting is beneficial, revealing a 'serial-depth bottleneck' that challenges universal assumptions and provides actionable insights for prompt engineering."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.09941",
+        "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b"
+      ],
+      "date": "2026-08-13",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.09941",
+        "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b"
+      ],
+      "suggested_outline": [
+        "Introduction: The Necessity of Quantization for Edge AI",
+        "Understanding the 'Quantization Tax' for SLMs",
+        "Multilingual Challenges: Typological Fragility and Performance Collapse",
+        "The Home Language Fragility Paradox: Unexpected Vulnerabilities",
+        "Strategies for Mitigating Quantization Degradation in Multilingual SLMs",
+        "Evaluation Metrics and Benchmarking for Quantized Multilingual Models",
+        "Case Study/Implications: Vision Models on Edge (LFM2.5-VL-3B)",
+        "Conclusion: Towards Globally Deployable Edge SLMs"
+      ],
+      "summary": "This post would delve into the practical and theoretical challenges of quantizing Small Language Models (SLMs) for deployment on edge devices, specifically focusing on the performance degradation observed across typologically diverse languages. It would discuss phenomena like 'Typological Fragility' and 'Home Language Fragility Paradox', offering insights into the impact of quantization on multilingual capabilities and strategies for mitigating the 'quantization tax'.",
+      "title": "The Multilingual Quantization Tax: Deploying SLMs on Edge Devices",
+      "why_now": "A brand new arXiv paper (within 48 hours) provides an in-depth empirical study on the severe and asymmetric performance degradation of 4-bit quantized SLMs across diverse languages, making this a critical and timely topic for edge AI engineers. Additionally, a Hugging Face blog post highlights new small vision models for the edge, reinforcing the relevance of efficient edge deployment."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.10021"
+      ],
+      "date": "2026-08-13",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.10021"
+      ],
+      "suggested_outline": [
+        "Introduction: The Importance of Position in Sequence Models",
+        "The Evolution of Position Encoding: Absolute vs. Relative",
+        "Rotary Position Embeddings (RoPE): Mechanics and Advantages",
+        "Comparing Position Encoding Methods: Cost, Caching, Extrapolation",
+        "Long-Context Scaling Techniques: Position Interpolation, NTK-aware, YaRN, LongRoPE",
+        "Implementation Considerations and Best Practices",
+        "Future Directions in Position Encoding Research",
+        "Conclusion: Mastering Context in Transformers"
+      ],
+      "summary": "This post would offer a comprehensive technical survey of position encoding methods in Transformers, from absolute and relative approaches to Rotary Position Embeddings (RoPE). It would detail how these methods enable long-context scaling, comparing their computational costs, KV caching compatibility, and extrapolation capabilities. The post would be valuable for engineers looking to optimize or understand the fundamental architectural choices behind long-context LLMs.",
+      "title": "Position Encoding and Long-Context Scaling: A Deep Dive for Transformer Engineers",
+      "why_now": "A new arXiv technical survey (within 48 hours) provides a unified account of various position encoding techniques and their role in long-context scaling, making it a timely resource for understanding the core mechanics of modern LLMs."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.09934",
+        "https://arxiv.org/abs/2608.10216"
+      ],
+      "date": "2026-08-13",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.09934",
+        "https://arxiv.org/abs/2608.10216"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Perils of LLM Agents",
+        "LLM Agents Factory: Scaling Agent Creation with Retrieval",
+        "Architectural Deep Dive: How Retrieval-Based Agent Systems Work",
+        "The Hidden Flaw: Auditing Embedding-Cosine Similarity Gates for Agent Safety",
+        "Case Studies: When Similarity Gates Fail (and Why)",
+        "Building Robust Agents: Best Practices for Retrieval and Safety",
+        "Conclusion: Towards Production-Ready and Secure LLM Agents"
+      ],
+      "summary": "This post would explore the technical advancements and challenges in building robust Large Language Model (LLM) agents, moving beyond simple prompting to retrieval-based agent factories and critical safety considerations. It would cover architectures for creating domain-specific agents on demand and audit the reliability of common safety mechanisms like embedding-cosine similarity gates, which are crucial for production deployment.",
+      "title": "Advanced LLM Agents: Retrieval, Factories, and Robustness",
+      "why_now": "Recent research (within 48 hours) introduces a retrieval-based framework for LLM agents and simultaneously exposes critical vulnerabilities in widely used similarity-based safety checks in agent systems, highlighting an urgent need for robust engineering practices."
+    },
     {
       "angle": "theoretical",
       "citations": [
