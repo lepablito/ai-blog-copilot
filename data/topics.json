@@ -1,6 +1,63 @@
 {
-  "generated_at": "2026-08-13T04:25:07+00:00",
+  "generated_at": "2026-08-14T04:07:15+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.11350"
+      ],
+      "date": "2026-08-14",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.11350"
+      ],
+      "suggested_outline": [
+        "Introduction to Self-Evolving Embodied Agents",
+        "Theoretical Background",
+        "Implications for AI Development"
+      ],
+      "summary": "Self-evolving embodied agents are a theoretical concept that involves the evolution of agents through their interactions with the environment. This topic is related to the development of more advanced AI systems.",
+      "title": "Self-Evolving Embodied Agents: A Theoretical Perspective",
+      "why_now": "The topic is relevant to the development of more advanced AI systems, and its theoretical nature makes it a good fit for a technical post."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/MHaghighian/MLSecOps"
+      ],
+      "date": "2026-08-14",
+      "estimated_effort": "large",
+      "sources": [
+        "https://github.com/MHaghighian/MLSecOps"
+      ],
+      "suggested_outline": [
+        "Introduction to MLSecOps",
+        "Topics Covered in the Guide",
+        "Using the Guide for AI Security"
+      ],
+      "summary": "The MLSecOps Practical Reference Guide is an open-source handbook for AI security, machine learning security, and secure MLOps. It covers various topics including LLM security, RAG security, agentic AI, and DevSecOps patterns for production AI systems.",
+      "title": "MLSecOps Practical Reference Guide: A Handbook for AI Security",
+      "why_now": "The guide is a valuable resource for security engineers, ML/MLOps teams, architects, and risk owners, and its open-source nature makes it a timely topic for a technical post."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://deepmind.google/blog/introducing-gemini-3-7-flash/"
+      ],
+      "date": "2026-08-14",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://deepmind.google/blog/introducing-gemini-3-7-flash/"
+      ],
+      "suggested_outline": [
+        "Introduction to Gemini 3.7 Flash",
+        "Improvements in Coding and Agentic Workflows",
+        "Pricing and Availability"
+      ],
+      "summary": "Gemini 3.7 Flash is a new model release that improves coding and agentic workflows, with substantial gains in software engineering, knowledge work, and web development. It is available at an introductory price of half the original 3.6 Flash cost per million tokens.",
+      "title": "Gemini 3.7 Flash: Improving Coding and Agentic Workflows",
+      "why_now": "The model was recently released, and its improvements make it a timely topic for a technical post."
+    },
     {
       "angle": "practical",
       "citations": [
