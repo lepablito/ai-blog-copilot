@@ -1,6 +1,120 @@
 {
-  "generated_at": "2026-08-14T04:07:15+00:00",
+  "generated_at": "2026-08-15T03:02:05+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.11219"
+      ],
+      "date": "2026-08-15",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.11219"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Monolithic Prompt Optimization",
+        "Understanding SAPO: Segment-level Decomposition",
+        "The Optimization Loop: Diagnosis, Recommendation, and Synthesis",
+        "Case Studies: SAPO in Action (SQuADv2, TweetEval, etc.)",
+        "Implementing SAPO in Your Projects: Best Practices",
+        "Conclusion: Towards More Robust and Maintainable Prompts"
+      ],
+      "summary": "This post would explore SAPO, a new method for Automatic Prompt Optimization that decomposes prompts into segments (role, context, tasks, output format) for targeted improvements. Unlike monolithic approaches, SAPO uses an LLM with meta-prompts to diagnose weaknesses at a segment level and synthesize optimized candidates, leading to more stable and effective prompt engineering across diverse tasks. This offers a practical way to enhance LLM reliability and performance.",
+      "title": "Segment-level Automatic Prompt Optimization for Robust LLM Performance",
+      "why_now": "The introduction of SAPO in the last 48 hours provides a novel and effective approach to prompt optimization, addressing the common issue of monolithic prompt changes degrading some behaviors while improving others. This is a direct practical improvement for LLM engineers."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.11215"
+      ],
+      "date": "2026-08-15",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.11215"
+      ],
+      "suggested_outline": [
+        "Introduction: The Cost Barrier of LLM Agent Simulations",
+        "The Core Idea: Surrogate Models for LLM Agents",
+        "Interaction Order x Memory Taxonomy: Predicting Surrogate Error",
+        "Validation and Case Studies: From EconAgent to Other Simulations",
+        "Implementing Low-Cost Agent Simulations: A Step-by-Step Guide",
+        "Limitations and Future Directions",
+        "Conclusion: Democratizing Agentic AI Research"
+      ],
+      "summary": "This post would delve into a novel method for simulating large societies of LLM agents efficiently on consumer hardware. By replacing each LLM agent with a low-parameter surrogate model, fitted from a small number of queries, practitioners can analyze macroscopic behaviors and scaling trends without the prohibitive cost of running many full LLMs. It introduces an interaction order x memory taxonomy to predict surrogate error trends, offering a cost-effective way to research agent societies.",
+      "title": "Poor Man's Agentic Modeling: Simulating LLM Societies on a Laptop",
+      "why_now": "The paper, published in the last 48 hours, addresses a significant practical barrier—computational cost—for researchers and engineers looking to experiment with and understand LLM agent societies. This makes it highly relevant for practitioners seeking to innovate without massive budgets."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.11224"
+      ],
+      "date": "2026-08-15",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.11224"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for Lifelong Learning in Scientific AI",
+        "The Self-Evolving Memory Framework: Facts and Executable Skills",
+        "How Memory Enhances Reproducibility and Knowledge Transfer",
+        "Case Studies: Memory in Computational Materials Science",
+        "Implementing Persistent Memory for AI Agents",
+        "Challenges and Future of Memory-Augmented Agents",
+        "Conclusion: Towards 'Experienced' AI Partners"
+      ],
+      "summary": "This post will discuss a self-evolving memory framework that allows AI agents to store and retrieve scientific experience as inspectable facts and executable skills. This approach enables lifelong learning for AI partners, critical for fields like materials science where accumulated experience (scripts, protocols, warnings) is vital for reproducibility and knowledge transfer. The framework enhances task success significantly by making observations, failure boundaries, protocols, and validation checks portable and revisable across different models without requiring model parameter updates.",
+      "title": "Harnessing Agent Memory: Building Lifelong AI Partners for Materials Science",
+      "why_now": "The concept of persistent, self-evolving memory for AI agents, particularly in scientific domains, is a significant step towards more reliable and 'experienced' AI. The paper's recent publication and strong empirical results make it a timely topic for applied AI engineers looking to build robust, long-term AI solutions."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.11207"
+      ],
+      "date": "2026-08-15",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.11207"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Conflicting LLM Agent Objectives",
+        "The Experience Orchestrator (EO) Framework: An Overview",
+        "Key Mechanisms: Contextual Bandits, PID Control, and POMDP Belief Tracking",
+        "Simulated Financial Services Environment: A Case Study",
+        "Quantitative Results and Impact on Advisor Contact Rates",
+        "Implications for Designing Robust Multi-Agent Systems",
+        "Conclusion: Towards Coherent and Goal-Oriented Agent Interactions"
+      ],
+      "summary": "This post will explore a control-theoretic governance layer, the Experience Orchestrator (EO), designed to manage multi-LLM agent interactions, particularly when agents have opposed objectives. By using a Contextual Bandit for content selection, a PID controller for behavioral consistency, and a POMDP belief tracker for intent, EO can substitute for a missing shared goal function. This significantly improves collaborative conversational outcomes and prevents agent interactions from collapsing, offering a robust framework for complex agent systems.",
+      "title": "Dynamic Governance for Multi-LLM Agent Systems: Preventing Conversational Collapse",
+      "why_now": "Published recently, this paper introduces a crucial theoretical framework and empirical validation for overcoming common failures in multi-agent LLM systems where agents lack a shared goal, a problem frequently encountered in practical deployments."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.11212"
+      ],
+      "date": "2026-08-15",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.11212"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of MoE and the Challenge of Quantization",
+        "Understanding Route Flips in MoE Architectures",
+        "Causal Apparatus: Quantifying Route-Mediated Damage (RMF)",
+        "The Detection Barrier: Why Identifying Harmful Flips is Difficult",
+        "Implications for MoE Quantization and Deployment Strategies",
+        "Potential Avenues for Future Mitigation",
+        "Conclusion: Navigating the Trade-offs in MoE Optimization"
+      ],
+      "summary": "This post will analyze the impact of quantization on Mixture-of-Experts (MoE) models, specifically focusing on how numerical disturbances (e.g., 4-bit KV-cache quantization) can 'flip' expert routing decisions. It introduces a causal apparatus to quantify the 'route-mediated fraction' (RMF) of quantization damage. Crucially, while a deployable router margin can detect when a flip occurs, the paper finds no reliable inference-observable predictor for whether a flip is harmful or helpful. This highlights a significant challenge in selectively repairing quantization damage in MoE models.",
+      "title": "Causal Route-Mediated Damage in Quantized Mixture-of-Experts: Detection vs. Mitigation",
+      "why_now": "As MoE models become more prevalent and quantization is essential for efficient deployment, understanding the specific failure modes and their detectability (or lack thereof) is critical for applied AI engineers. This paper, published recently, provides new insights into a complex problem in model optimization."
+    },
     {
       "angle": "theoretical",
       "citations": [
