@@ -1,6 +1,105 @@
 {
-  "generated_at": "2026-08-15T03:02:05+00:00",
+  "generated_at": "2026-08-16T02:43:21+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.12426"
+      ],
+      "date": "2026-08-16",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.12426"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise vs. Reality of LLM Instruction Following",
+        "Defining Compositional Constraints and the CSE Benchmark",
+        "The 'Phase Transition': How Performance Collapses with More Constraints",
+        "Analysis: Why Different Constraint Types Degrade Differently",
+        "Practical Implications for AI Agent Design and Prompt Engineering",
+        "Mitigation Strategies: Architectural Patterns, Fine-tuning, and Verification",
+        "Future Research Directions: Overcoming Constraint Saturation",
+        "Conclusion: Building More Reliable and Governed AI Systems"
+      ],
+      "summary": "This post would explore the newly identified 'Constraint Saturation Evaluation' (CSE) benchmark, highlighting that while LLMs handle individual constraints well, their performance collapses rapidly when asked to satisfy multiple, compositional constraints simultaneously. It would discuss the implications of this 'phase transition' for building robust and reliable AI agents, emphasizing the need for new architectural patterns or fine-tuning strategies to mitigate this limitation in practical applications.",
+      "title": "The 'Constraint Saturation' Problem: Why LLMs Fail at Many Instructions Simultaneously",
+      "why_now": "A new arXiv paper introduces a systematic benchmark (CSE) that quantifies and characterizes the 'constraint saturation' problem in LLMs, making it a timely topic for engineers designing complex AI agents that require adherence to multiple rules."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.12476",
+        "https://temporalstore.ai/blog-context-management.html"
+      ],
+      "date": "2026-08-16",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.12476",
+        "https://temporalstore.ai/blog-context-management.html"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for Robust Memory in Long-Horizon Agents",
+        "Limitations of Traditional LLM Memory and Context Management",
+        "Introducing Governed Persistent Memory (GPM): Core Concepts",
+        "Key Architectural Components: Bitemporal State, Source-Binding, Fail-Closed Release",
+        "Ensuring Integrity: Conflict Isolation and Non-Revival",
+        "Real-World Applications and Use Cases for GPM",
+        "Implementation Challenges and Best Practices",
+        "Conclusion: Towards Auditable and Trustworthy AI Agent Systems"
+      ],
+      "summary": "This post would examine Governed Persistent Memory (GPM) as a critical component for long-horizon AI agents, moving beyond simple select-store-retrieve mechanisms. It would detail GPM's auditable bitemporal state-transition model, source-bound admission, and fail-closed structured release, emphasizing how these features ensure integrity, prevent contradictory states, and enable verifiable claims. The post would outline its architecture and demonstrate its necessity for building agents in high-stakes environments.",
+      "title": "Governed Persistent Memory: Architecting Trustworthy Long-Horizon AI Agents",
+      "why_now": "The recent arXiv paper introducing Governed Persistent Memory directly addresses the challenge of building reliable, auditable, and trustworthy long-term memory for AI agents, which is crucial as agents become more autonomous and operate over extended periods."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.12385"
+      ],
+      "date": "2026-08-16",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.12385"
+      ],
+      "suggested_outline": [
+        "Introduction: The Growing Challenge of LLM Inference Costs",
+        "Understanding LLM Inference Phases: Prefill vs. Decode",
+        "The Dual-Flow Transformer Architecture: A Deep Dive",
+        "Key Innovations: Decoupling Computation and Shared Components",
+        "Performance Implications: Cost Reduction and Throughput Improvements",
+        "Implementation Considerations for Production Systems",
+        "Future Directions and Potential for Further Optimization",
+        "Conclusion: A Step Towards Sustainable LLM Serving"
+      ],
+      "summary": "This post would delve into the technical details of Dual-Flow Transformers, a novel architecture designed to optimize LLM inference costs. It focuses on how this approach decouples the compute-bound prompt prefill phase from the memory-bandwidth-bound autoregressive decode phase, allowing for more efficient allocation of learned computation and potentially significant cost reductions for LLM serving infrastructure. It would analyze the architectural changes and their practical benefits.",
+      "title": "Dual-Flow Transformers: Decoupling Prefill and Decode for Efficient LLM Inference",
+      "why_now": "The introduction of the Dual-Flow Transformer architecture in a recent arXiv paper provides a concrete, novel method for addressing a critical bottleneck in LLM deployment – inference cost. This is a direct engineering problem for practitioners."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians",
+        "https://arxiv.org/abs/2608.12428"
+      ],
+      "date": "2026-08-16",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians",
+        "https://arxiv.org/abs/2608.12428"
+      ],
+      "suggested_outline": [
+        "Introduction: The 'Intelligence' Fallacy – Is it Reasoning or Memory?",
+        "Human Working Memory: Limitations and Mathematical Performance",
+        "The LLM Context Window: A Gigantic External Notebook",
+        "Case Study: Mathematical Problem Solving – An 'Out-Remembering' Advantage",
+        "Implications for AI Engineering: Designing Prompts and Agent Architectures",
+        "Rethinking Evaluation: What Are We Really Measuring?",
+        "Conclusion: Beyond Brute Force – Understanding the True Nature of LLM 'Cognition'"
+      ],
+      "summary": "This post would argue that a significant portion of AI's perceived 'intelligence' in complex tasks, especially mathematics, stems not from superior reasoning but from its virtually unlimited symbolic working memory (the context window). It would explore how this capacity fundamentally changes problem-solving paradigms compared to human cognition, and discuss the implications for prompt engineering, agent design, and how we evaluate LLM capabilities.",
+      "title": "Beyond Reasoning: How LLMs Leverage 'Out-Remembering' with Vast Context Windows",
+      "why_now": "The recent Hacker News discussion and an arXiv paper explicitly highlight the 'working memory' aspect of LLMs as a key differentiator, moving beyond the common narrative of advanced reasoning, making it timely for a re-evaluation of LLM strengths."
+    },
     {
       "angle": "practical",
       "citations": [
