@@ -1,6 +1,76 @@
 {
-  "generated_at": "2026-08-16T02:43:21+00:00",
+  "generated_at": "2026-08-17T03:17:07+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Aug/16/qwen-38-27b/"
+      ],
+      "date": "2026-08-17",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Aug/16/qwen-38-27b/"
+      ],
+      "suggested_outline": [
+        "Introduction: Qwen 3.8 27B's Potential and Its Quirky Default",
+        "The 'Overthinking' Problem: Examples of 'xhigh' Reasoning Gone Wild",
+        "Performance Implications: Token Usage, Latency, and Cost",
+        "Understanding `reasoning_effort`: xhigh, medium, low, and off",
+        "Practical Solutions: How to Adjust Reasoning for Different Use Cases",
+        "Case Study: Bounding Box Detection - When Reasoning Helps (and doesn't)",
+        "Conclusion: Balancing Capability with Practicality in LLM Deployment"
+      ],
+      "summary": "The newly released Qwen 3.8 27B, a powerful vision-capable LLM, defaults to an 'xhigh' reasoning effort, leading to excessive token usage, long generation times, and often over-engineered responses. This post will explore how this default impacts practical deployment, provide examples of its 'overthinking' behavior, and offer concrete strategies for adjusting the `reasoning_effort` parameter to optimize for speed, cost, and desired output quality on local hardware.",
+      "title": "Taming the Overthinking LLM: Practical Strategies for Configuring Qwen 3.8 27B's Reasoning Effort",
+      "why_now": "Qwen 3.8 27B was released yesterday, and its default 'xhigh' reasoning setting presents an immediate practical challenge and learning opportunity for practitioners looking to run it efficiently."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://www.latent.space/p/flue-2"
+      ],
+      "date": "2026-08-17",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.latent.space/p/flue-2"
+      ],
+      "suggested_outline": [
+        "Introduction: The Evolving Landscape of AI Agent Frameworks",
+        "From Static to Dynamic: Why Agents Need React-style Composability",
+        "Understanding Flue 2's Agent Hooks: `useSkill()`, `useTool()`, `useSubagent()` and Custom Hooks",
+        "The 'Harness' Concept: Why Agents are Defined by Their Environment",
+        "Building Adaptable Agents: Real-world Scenarios for Dynamic Capability Loading",
+        "Flue vs. Other Frameworks: Where it Fits in the Agent Stack",
+        "Conclusion: Applying Familiar Patterns to a New Frontier"
+      ],
+      "summary": "Flue 2 introduces React-inspired 'Agent Hooks' for building dynamic and composable AI agents. This post will delve into the architectural shift from static, file-based agents to stateful, adaptable agents using hooks like `useSkill()`, `useTool()`, and `useSubagent()`. It will explain how these patterns enable agents to manage state, respond to lifecycle events, and dynamically acquire capabilities at runtime, drawing parallels to familiar web development paradigms.",
+      "title": "React for Agents: Composable AI Agent Architecture with Flue 2's Hooks",
+      "why_now": "Flue 2, with its stable release and introduction of Agent Hooks, was just released, offering a new, developer-friendly paradigm for AI agent construction."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://magazine.sebastianraschka.com/p/ai-detector-from-scratch"
+      ],
+      "date": "2026-08-17",
+      "estimated_effort": "large",
+      "sources": [
+        "https://magazine.sebastianraschka.com/p/ai-detector-from-scratch"
+      ],
+      "suggested_outline": [
+        "Introduction: The Resurgence of AI Text Detection and Its Stakes",
+        "Architecting the Detector: Overview of Classifier-based Approaches",
+        "Dataset Construction: Curating Human vs. AI-Generated Text",
+        "Model Training: Fine-tuning DistilBERT for Text Classification",
+        "Evaluation and Metrics: Beyond Simple Accuracy",
+        "The 'Cat-and-Mouse' Game: Limitations and Evasion Strategies",
+        "Ethical Considerations and False Positives",
+        "Conclusion: The Role of Verifiers in a Mixed-Content World"
+      ],
+      "summary": "This post will walk through the process of building a functional AI text detector from scratch, focusing on the underlying machine learning principles, dataset construction, and model training (e.g., fine-tuning DistilBERT). Beyond the implementation, it will critically examine the inherent challenges of AI detection, such as the 'cat-and-mouse' game with evolving LLMs, the potential for false positives, and how such a verifier can be used to guide LLM output to avoid detection.",
+      "title": "Deconstructing AI Text Detection: Building a Classifier from Scratch and Understanding its Limits",
+      "why_now": "The article was published yesterday, providing a timely, in-depth guide to building AI text detectors, a topic gaining renewed interest with recent platform integrations (like Substack's feature)."
+    },
     {
       "angle": "practical",
       "citations": [
