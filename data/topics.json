@@ -1,6 +1,46 @@
 {
-  "generated_at": "2026-08-17T03:17:07+00:00",
+  "generated_at": "2026-08-18T03:04:03+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.13571"
+      ],
+      "date": "2026-08-18",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.13571"
+      ],
+      "suggested_outline": [
+        "Introduction to agentic LLM systems and token inflation",
+        "The InflationAgent and its components",
+        "Experimental results and analysis",
+        "Conclusion and future directions"
+      ],
+      "summary": "This post delves into the concept of token inflation in agentic LLM systems, where the cost of retrying queries can significantly impact the overall efficiency of the system. It introduces the InflationAgent, a novel approach to mitigating token inflation by predicting query difficulty and optimizing model selection.",
+      "title": "Token Inflation in Agentic LLM Systems",
+      "why_now": "As LLM systems become increasingly prevalent, understanding and addressing token inflation is crucial for improving their efficiency and reducing operational costs."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2"
+      ],
+      "date": "2026-08-18",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2"
+      ],
+      "suggested_outline": [
+        "Introduction to GPU clusters and their importance in AI computing",
+        "Current challenges in GPU cluster utilization",
+        "Constraint-aware allocators and dynamic scheduling techniques",
+        "Case studies and results"
+      ],
+      "summary": "This post explores strategies for maximizing GPU utilization in clusters, including the use of constraint-aware allocators and dynamic scheduling techniques. It discusses how these approaches can lead to significant improvements in cluster efficiency and productivity.",
+      "title": "Optimizing GPU Cluster Utilization",
+      "why_now": "Recent advancements in GPU technology and the growing demand for efficient AI computing make optimizing GPU cluster utilization a timely and important topic."
+    },
     {
       "angle": "practical",
       "citations": [
