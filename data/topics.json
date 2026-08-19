@@ -1,6 +1,82 @@
 {
-  "generated_at": "2026-08-18T03:04:03+00:00",
+  "generated_at": "2026-08-19T02:27:56+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.14626"
+      ],
+      "date": "2026-08-19",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.14626"
+      ],
+      "suggested_outline": [
+        "Introduction to LLM Safety Alignment",
+        "Methodology",
+        "Results and Discussion"
+      ],
+      "summary": "LLM safety alignment in low-resource languages is a critical issue, and recent research has been conducted to address this problem. The study has identified key factors that contribute to safety degradation in underrepresented languages.",
+      "title": "LLM Safety Alignment in Low-Resource Languages",
+      "why_now": "The study has been recently published, and the issue of LLM safety alignment in low-resource languages is a timely and important topic."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.14629"
+      ],
+      "date": "2026-08-19",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.14629"
+      ],
+      "suggested_outline": [
+        "Introduction to Adversarial Political Bias",
+        "Methodology",
+        "Results and Discussion"
+      ],
+      "summary": "Adversarial political bias in large language models is a significant problem, and recent research has been conducted to mitigate this issue. The study has proposed a framework for inference-time mitigation of adversarial political bias.",
+      "title": "Inference-Time Mitigation of Adversarial Political Bias in Large Language Models",
+      "why_now": "The study has been recently published, and the issue of adversarial political bias in large language models is a timely and important topic."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://artificialanalysis.ai/models/glm-5-3"
+      ],
+      "date": "2026-08-19",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://artificialanalysis.ai/models/glm-5-3"
+      ],
+      "suggested_outline": [
+        "Introduction to GLM-5.3",
+        "Performance Benchmarks",
+        "Comparison to Other Models"
+      ],
+      "summary": "The GLM-5.3 model has been released, and its performance has been benchmarked. The model has shown to be amongst the leading models in intelligence and reasonably priced when comparing to other models of similar price.",
+      "title": "GLM-5.3 Artificial Analysis Benchmarks",
+      "why_now": "The model has been recently released, and its performance has been benchmarked, making it a timely topic for a technical post."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.14693"
+      ],
+      "date": "2026-08-19",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.14693"
+      ],
+      "suggested_outline": [
+        "Introduction to Domain Agnostic Text Redaction",
+        "Methodology",
+        "Results and Discussion"
+      ],
+      "summary": "Domain agnostic text redaction is a critical issue, and recent research has been conducted to address this problem. The study has proposed a framework for domain agnostic text redaction using instruction tuning.",
+      "title": "Domain Agnostic Text Redaction from Natural Language Rules using Instruction Tuning",
+      "why_now": "The study has been recently published, and the issue of domain agnostic text redaction is a timely and important topic."
+    },
     {
       "angle": "theoretical",
       "citations": [
