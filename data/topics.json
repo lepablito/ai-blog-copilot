@@ -1,6 +1,69 @@
 {
-  "generated_at": "2026-08-19T02:27:56+00:00",
+  "generated_at": "2026-08-20T02:54:00+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Aug/19/smolmachines-untrusted-sandbox/"
+      ],
+      "date": "2026-08-20",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Aug/19/smolmachines-untrusted-sandbox/"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "Background",
+        "Methodology",
+        "Results",
+        "Conclusion"
+      ],
+      "summary": "This article explores the use of smolmachines as a fast and secure sandbox for running untrusted Python and JavaScript code, with limitations on RAM and CPU time usage and no network access. The author demonstrates a creative solution to environmental limits using GitHub Actions runners.",
+      "title": "smolmachines / smolvm as a sandbox for untrusted Python & JavaScript",
+      "why_now": "The article was published on August 19, 2026, and presents a novel approach to sandboxing untrusted code."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.17153"
+      ],
+      "date": "2026-08-20",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.17153"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "Background",
+        "Methodology",
+        "Results",
+        "Conclusion"
+      ],
+      "summary": "This paper proposes a refined security principle for Retrieval-Augmented Generation (RAG) systems, where only agents capable of deliberative System 2 reasoning may access untrusted documents. The authors evaluate state-of-the-art reasoning language models and demonstrate their robustness to knowledge-poisoning attacks.",
+      "title": "Towards Safer RAG: Only Agents Capable of System 2 Thinking may Access Untrusted Documents",
+      "why_now": "The paper was published on August 19, 2026, and presents a significant advancement in RAG system security."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.09867"
+      ],
+      "date": "2026-08-20",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.09867"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "Background",
+        "Methodology",
+        "Results",
+        "Conclusion"
+      ],
+      "summary": "This paper presents a vulnerability in proprietary LLM APIs that allows attackers to steal reasoning traces, which can be used to extract sensitive information or execute malicious code. The authors propose concrete cryptographic and system-level mitigations to secure client-side reasoning.",
+      "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+      "why_now": "The paper was submitted on August 10, 2026, and the vulnerability it presents is highly relevant to current AI/LLM developments."
+    },
     {
       "angle": "theoretical",
       "citations": [
