@@ -1,6 +1,67 @@
 {
-  "generated_at": "2026-08-20T02:54:00+00:00",
+  "generated_at": "2026-08-21T02:38:37+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.18082"
+      ],
+      "date": "2026-08-21",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.18082"
+      ],
+      "suggested_outline": [
+        "Introduction to LongNovel",
+        "Construction of the benchmark",
+        "Experimental results and analysis",
+        "Conclusion and future work"
+      ],
+      "summary": "The article presents a new benchmark for detecting hallucinations in long-context novel summarization. The benchmark is constructed from 29 Chinese novels and chapter-level data from the BookSum dataset, and it includes 8 hallucination types. The experimental results demonstrate that LongNovel is a challenging benchmark, and it is released for future research.",
+      "title": "LongNovel: A Multi-Scale Benchmark for Hallucination Detection in Long-Context Novel Summarization",
+      "why_now": "The article was recently published and presents a new benchmark for hallucination detection in long-context novel summarization, which is a relevant topic in AI/LLM engineering."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.18083"
+      ],
+      "date": "2026-08-21",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2608.18083"
+      ],
+      "suggested_outline": [
+        "Introduction to entity tracking",
+        "Entity tracking in language models",
+        "Conclusion and future work"
+      ],
+      "summary": "Entity tracking is an important aspect of natural language processing, and recent studies have shown that language models can perform entity tracking in a human-like fashion. However, there is still much to be learned about how entity tracking works in language models and how it can be improved.",
+      "title": "Entity Tracking in Language Models",
+      "why_now": "The recent publication of a study on entity tracking in language models highlights the need for ongoing research in this area."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.18093",
+        "https://arxiv.org/abs/2608.18095"
+      ],
+      "date": "2026-08-21",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.18093",
+        "https://arxiv.org/abs/2608.18095"
+      ],
+      "suggested_outline": [
+        "Introduction to language model safety",
+        "Backdoor attacks and other safety concerns",
+        "New methods and frameworks for improving safety",
+        "Conclusion and future work"
+      ],
+      "summary": "Recent studies have shown that language models can be vulnerable to backdoor attacks and other safety concerns. New methods and frameworks are being developed to address these concerns and improve the safety of language models.",
+      "title": "Advances in Language Model Safety",
+      "why_now": "The recent publication of several studies on language model safety highlights the need for ongoing research and development in this area."
+    },
     {
       "angle": "practical",
       "citations": [
