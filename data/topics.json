@@ -1,6 +1,96 @@
 {
-  "generated_at": "2026-08-21T02:38:37+00:00",
+  "generated_at": "2026-08-22T02:50:19+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+        "https://github.com/proliferate-ai/proliferate",
+        "https://epho.io"
+      ],
+      "date": "2026-08-22",
+      "estimated_effort": "large",
+      "sources": [
+        "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+        "https://github.com/proliferate-ai/proliferate",
+        "https://epho.io",
+        "https://github.com/deepseek-ai/deepseek-harness"
+      ],
+      "suggested_outline": [
+        "Introduction: The Shifting Focus from Models to Orchestration",
+        "What is an AI 'Harness' and Why Does it Matter?",
+        "Case Study: Nvidia's ARC-AGI-3 Breakthrough with AVO",
+        "Key Components of an Effective Harness: Memory, Tools, and Supervisor Agents",
+        "Practical Implications for AI Engineers: Design Patterns and Best Practices",
+        "Cost Efficiency and Performance: The Databricks Perspective",
+        "Emerging Tools and Frameworks for Harness Development",
+        "Conclusion: Embracing the Harness-First Approach"
+      ],
+      "summary": "Recent research from Nvidia demonstrates that the 'harness'—the software wrapper, tools, memory management, and rules around an AI model—is significantly more impactful than the base model itself for achieving high performance in complex, long-horizon tasks. This post would delve into the components of an effective harness, including supervisor agents, and discuss how engineers can optimize these systems for better results and cost efficiency, moving beyond mere model-centric thinking.",
+      "title": "The AI Harness: Why Orchestration is Overtaking Model Selection for Agentic Performance",
+      "why_now": "Nvidia's breakthrough achievement of 100% on the ARC-AGI-3 benchmark using a custom harness, coupled with new practical tools and platforms emerging (e.g., Proliferate, Epho) that emphasize harness development, underscores a critical shift in AI engineering focus."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://ozbrain.com",
+        "https://www.netic.ai/blog/replacing-node-agent-graph-with-open-source-llm",
+        "https://www.praxos.ai/",
+        "https://arxiv.org/abs/2608.19206"
+      ],
+      "date": "2026-08-22",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://ozbrain.com",
+        "https://www.netic.ai/blog/replacing-node-agent-graph-with-open-source-llm",
+        "https://www.praxos.ai/",
+        "https://www.latent.space/p/simile",
+        "https://arxiv.org/abs/2608.19206"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of Agentic AI and its Challenges",
+        "The Problem of Scattered Context and Ephemeral Interactions",
+        "Shared Knowledge Bases: The 'Brain' for Your Agents (e.g., OzBrain)",
+        "Multi-Agent Orchestration: Designing for Collaboration and Conflict Resolution",
+        "Case Study: Simplifying Complex Agent Graphs",
+        "Practical Tools for Building Persistent Agentic Workflows",
+        "Future Directions: Simulation and Digital Twins in Agent Development",
+        "Conclusion: Towards More Intelligent and Autonomous Systems"
+      ],
+      "summary": "As AI agents become more sophisticated, the challenge shifts from single-turn interactions to managing persistent knowledge, resolving conflicts, and enabling complex, long-running workflows. This post will explore architectural patterns for building robust agentic systems, focusing on shared knowledge bases, multi-agent orchestration, and mechanisms for maintaining context and consistency across diverse AI-driven tasks.",
+      "title": "Beyond the Prompt: Architecting Persistent Knowledge and Multi-Agent Systems",
+      "why_now": "The emergence of 'shared brain' platforms like OzBrain and Praxos, alongside research into multi-agent architectures for scientific hypothesis generation, indicates a growing need for robust frameworks to manage the complexity of interconnected AI agents and their knowledge."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.19207",
+        "https://arxiv.org/abs/2608.19208",
+        "https://arxiv.org/abs/2608.19211",
+        "https://arxiv.org/abs/2608.19218"
+      ],
+      "date": "2026-08-22",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.19207",
+        "https://arxiv.org/abs/2608.19208",
+        "https://arxiv.org/abs/2608.19211",
+        "https://arxiv.org/abs/2608.19218"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Perils of Multimodal LLMs",
+        "The Challenge of System Message Compliance in MLLMs",
+        "VSysBench: A New Benchmark for Multimodal Instruction Adherence",
+        "The Impact of Irrelevant Context: Affine Margin Shifts Explained",
+        "Beyond Text: Prosodic Underuse in Audio-Language Models",
+        "Grounding MLLMs: Time-Series Retrieval for Domain-Specific Tasks",
+        "Practical Takeaways for MLLM Developers and Evaluators",
+        "Conclusion: Building Trustworthy Multimodal AI Systems"
+      ],
+      "summary": "Multimodal Large Language Models (MLLMs) are powerful, but their behavior can be unpredictable under complex system messages or when exposed to irrelevant textual context. This post will examine new research and benchmarks, such as VSysBench, that shed light on how MLLMs comply with instructions, how their core capabilities are affected, and the surprising 'affine margin shifts' caused by seemingly innocuous inputs. It will discuss implications for reliable MLLM deployment and safety.",
+      "title": "Benchmarking Multimodal LLMs: Navigating System Messages and Irrelevant Context",
+      "why_now": "New arXiv papers introducing benchmarks like VSysBench and detailed analyses of MLLM sensitivity to irrelevant text and system messages provide critical insights for engineers looking to deploy these models reliably and safely in real-world applications."
+    },
     {
       "angle": "theoretical",
       "citations": [
