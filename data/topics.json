@@ -1,6 +1,63 @@
 {
-  "generated_at": "2026-08-22T02:50:19+00:00",
+  "generated_at": "2026-08-24T02:50:05+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://www.ft.com/content/5ee49718-c258-4f01-aa32-7e5b76ae5245"
+      ],
+      "date": "2026-08-24",
+      "estimated_effort": "small",
+      "sources": [
+        "https://www.ft.com/content/5ee49718-c258-4f01-aa32-7e5b76ae5245"
+      ],
+      "suggested_outline": [
+        "Introduction to AI tools",
+        "The rise of cheaper AI tools",
+        "Impact on the market"
+      ],
+      "summary": "Cheaper AI tools are thriving, and Anthropic's best AI model is struggling to attract users. This shift in the market could lead to increased adoption of AI technology.",
+      "title": "The Rise of Cheaper AI Tools",
+      "why_now": "The recent surge in AI development has led to a proliferation of cheaper tools, making them more accessible to a wider range of users."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://www.latent.space/p/attention-interface"
+      ],
+      "date": "2026-08-24",
+      "estimated_effort": "large",
+      "sources": [
+        "https://www.latent.space/p/attention-interface"
+      ],
+      "suggested_outline": [
+        "Introduction to agent harnesses",
+        "The evolution of agent harnesses",
+        "Potential implications for AI development"
+      ],
+      "summary": "The concept of agent harnesses is evolving, with models absorbing the harness into their weights. This development could lead to significant changes in the way we interact with AI systems.",
+      "title": "The Evolution of Agent Harnesses",
+      "why_now": "The recent advancements in AI technology have led to a greater understanding of how agent harnesses can be improved."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Aug/22/llm/"
+      ],
+      "date": "2026-08-24",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Aug/22/llm/"
+      ],
+      "suggested_outline": [
+        "Introduction to AI-assisted programming",
+        "The latest developments in AI-assisted programming",
+        "Potential impact on the programming industry"
+      ],
+      "summary": "AI-assisted programming is becoming increasingly popular, with tools like llm 0.33 being released. This technology has the potential to revolutionize the way we write code.",
+      "title": "AI-Assisted Programming",
+      "why_now": "The recent advancements in AI technology have made it possible to develop more sophisticated AI-assisted programming tools."
+    },
     {
       "angle": "practical",
       "citations": [
