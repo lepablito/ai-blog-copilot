@@ -1,6 +1,63 @@
 {
-  "generated_at": "2026-08-24T02:50:05+00:00",
+  "generated_at": "2026-08-25T02:24:38+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.20344"
+      ],
+      "date": "2026-08-25",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2608.20344"
+      ],
+      "suggested_outline": [
+        "Introduction to persona information",
+        "Importance of structuring persona information",
+        "Best practices for structuring persona information"
+      ],
+      "summary": "Structuring persona information is critical for the accuracy and effectiveness of LLM-based digital twins. This post could explore the reasons behind this importance and discuss best practices for structuring persona information.",
+      "title": "The Importance of Structuring Persona Information",
+      "why_now": "The recent article on arXiv highlights the importance of structuring persona information, making this a timely topic for discussion."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.20344"
+      ],
+      "date": "2026-08-25",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.20344"
+      ],
+      "suggested_outline": [
+        "Introduction to persona extraction",
+        "Limitations of current methods",
+        "New approaches and techniques"
+      ],
+      "summary": "Persona extraction is a crucial component of LLM-based digital twins. This post could delve into the latest techniques and models for improving persona extraction, including the use of hand-crafted schemas and automatic structure-discovery pipelines.",
+      "title": "Improvements in Persona Extraction",
+      "why_now": "The recent article on arXiv discusses the limitations of current persona extraction methods and proposes new approaches, making this a relevant topic for discussion."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.20344"
+      ],
+      "date": "2026-08-25",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.20344"
+      ],
+      "suggested_outline": [
+        "Introduction to LLM-based digital twins",
+        "Importance of structuring persona information",
+        "Recent advancements and techniques"
+      ],
+      "summary": "Recent developments in LLM-based digital twins have shown promise in simulating individual behavior in new environments. However, the key limitation lies in the structural organization of persona information. This post could explore the latest advancements and techniques for improving digital twins.",
+      "title": "Advances in LLM-Based Digital Twins",
+      "why_now": "The recent article on arXiv highlights the importance of structuring persona information for LLM-based digital twins, making this a timely topic for discussion."
+    },
     {
       "angle": "practical",
       "citations": [
