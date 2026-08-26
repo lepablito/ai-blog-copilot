@@ -1,6 +1,65 @@
 {
-  "generated_at": "2026-08-25T02:24:38+00:00",
+  "generated_at": "2026-08-26T02:30:42+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://huggingface.co/blog/ibm-granite/granite-4-2"
+      ],
+      "date": "2026-08-26",
+      "estimated_effort": "large",
+      "sources": [
+        "https://huggingface.co/blog/ibm-granite/granite-4-2"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "Reinforcement Learning",
+        "Agentic RL",
+        "Applications"
+      ],
+      "summary": "The Granite 4.2 LLMs use a multi-stage reinforcement learning pipeline to teach the models to operate as agents and call tools inside real environments. This pipeline includes agentic RL, which runs for the 8B and 30B models only.",
+      "title": "Reinforcement Learning for Agentic Behavior in LLMs",
+      "why_now": "The use of reinforcement learning for agentic behavior in LLMs is a relatively new development, and the release of the Granite 4.2 LLMs provides a new opportunity to explore this topic in more depth."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://huggingface.co/blog/ibm-granite/granite-4-2"
+      ],
+      "date": "2026-08-26",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://huggingface.co/blog/ibm-granite/granite-4-2"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "Architecture",
+        "Training",
+        "Applications"
+      ],
+      "summary": "The Granite 4.2 LLMs are built on a decoder-only dense transformer architecture and are trained from scratch on approximately 15 trillion tokens. The models are designed to be strong reasoners and instruction followers, and are trained using a five-phase strategy that extends the context window to 512K tokens.",
+      "title": "Architecture and Training of Granite 4.2 LLMs",
+      "why_now": "The release of the Granite 4.2 LLMs provides a new opportunity to explore the architecture and training of these models, and to discuss their potential applications in various domains."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://huggingface.co/blog/ibm-granite/granite-4-2"
+      ],
+      "date": "2026-08-26",
+      "estimated_effort": "small",
+      "sources": [
+        "https://huggingface.co/blog/ibm-granite/granite-4-2"
+      ],
+      "suggested_outline": [
+        "Introduction",
+        "Applications",
+        "Benefits and Challenges"
+      ],
+      "summary": "The Granite 4.2 LLMs have potential applications in various domains, including software engineering, terminal use, and web search. The models are designed to be strong reasoners and instruction followers, and can be used to automate tasks and provide insights in these domains.",
+      "title": "Applications of Granite 4.2 LLMs in Various Domains",
+      "why_now": "The release of the Granite 4.2 LLMs provides a new opportunity to explore their potential applications in various domains, and to discuss the benefits and challenges of using these models in practice."
+    },
     {
       "angle": "theoretical",
       "citations": [
