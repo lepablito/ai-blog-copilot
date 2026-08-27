@@ -1,6 +1,121 @@
 {
-  "generated_at": "2026-08-26T02:30:42+00:00",
+  "generated_at": "2026-08-27T11:07:47+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.24982"
+      ],
+      "date": "2026-08-27",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.24982"
+      ],
+      "suggested_outline": [
+        "Introduction: The Labeling Bottleneck in Foundation Model Adaptation",
+        "What is Unsupervised Post-Training (UPT)?",
+        "A Taxonomy of UPT Methods: Signal Sources and Learning Mechanisms",
+        "The Peril and Promise: When UPT Improves vs. Amplifies Errors",
+        "Framework for UPT Selection and Evaluation",
+        "Practical Applications and Future Research Directions",
+        "Conclusion: Unlocking Cost-Effective Model Customization"
+      ],
+      "summary": "This post would survey the emerging field of Unsupervised Post-Training (UPT) for foundation models. It would categorize 80 UPT methods based on how they derive learning signals from internal model artifacts, rather than external human labels, and discuss how the choice of internal signal and task structure influences whether UPT improves the model or amplifies errors.",
+      "title": "Unsupervised Post-Training: Adapting Foundation Models Without Human Labels",
+      "why_now": "A comprehensive survey on Unsupervised Post-Training (UPT) was published, consolidating current methods and offering a framework for understanding and applying this crucial technique for cost-effective model adaptation."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.24988"
+      ],
+      "date": "2026-08-27",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.24988"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Maintaining LLM Alignment Post-Deployment",
+        "Activation Steering: Embedding Alignment into Model Weights",
+        "The Fine-Tuning Dilemma: Will Our Interventions Survive?",
+        "Behavioral Degradation vs. Mechanistic Persistence: A Surprising Disconnect",
+        "Implications for Model Safety, Control, and Continuous Learning",
+        "Strategies for Robust Alignment in Dynamic Environments",
+        "Conclusion: Understanding the Deep Mechanics of Model Evolution"
+      ],
+      "summary": "This post would explore the stability of 'activation steering' (embedding alignment into model weights) when models undergo subsequent fine-tuning. It would discuss findings that while desired behaviors might degrade if fine-tuning data contradicts them, the underlying weight edits from steering remain largely untouched, suggesting fine-tuning achieves behavioral shifts without reversing the original mechanistic intervention.",
+      "title": "The Persistence of Alignment: Do Fine-Tuning Updates Undo Embedded Steering?",
+      "why_now": "New research in the last 48 hours investigates the critical question of how embedded alignment mechanisms (activation steering) persist or degrade after fine-tuning, which is vital for robust model development."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.24920"
+      ],
+      "date": "2026-08-27",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2608.24920"
+      ],
+      "suggested_outline": [
+        "Introduction: The Illusion of Consistent LLM Responses",
+        "The Problem of Semantic Variability: Why Models Differ",
+        "Impact of Model Choice and Conversational Context",
+        "Challenges for Conversation-Based Assessment and Application Design",
+        "Strategies for Maintaining Response Consistency: Prompting, Infrastructure, and Beyond",
+        "Measuring and Monitoring Semantic Drift",
+        "Conclusion: Building Robust and Reliable LLM Experiences"
+      ],
+      "summary": "This topic addresses the practical challenge of semantic inconsistency in LLM-generated replies across different models and conversational contexts. It would discuss research showing that model choice and chat history significantly affect response similarity, emphasizing the need for robust infrastructure and design strategies to maintain stable and comparable LLM responses amidst continuous model evolution.",
+      "title": "Semantic Variability Across LLMs: Designing for Consistency in Conversational AI",
+      "why_now": "A new study in the last 48 hours directly quantifies and discusses the implications of semantic variability across LLMs, a crucial practical concern for developers building consistent conversational AI applications."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.25115"
+      ],
+      "date": "2026-08-27",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.25115"
+      ],
+      "suggested_outline": [
+        "Introduction: The Ubiquitous RAG and Its Hidden Performance Traps",
+        "Understanding RAG Bottlenecks: When Reranking Becomes the Problem",
+        "Introducing PACE: Evidence Frontloading for Smarter Retrieval",
+        "Pressure-Adaptive Budgeting: Dynamic Allocation for Peak Efficiency",
+        "Implementation Details and Practical Considerations",
+        "Benchmarking Results and Real-World Impact",
+        "Conclusion: Building More Resilient and Efficient RAG Systems"
+      ],
+      "summary": "This post would delve into the RAG system's efficiency challenges, highlighting how bottlenecks can shift between reranking and generation. It would explain PACE, a training-free framework that uses evidence frontloading and pressure-adaptive budgeting to improve recall and efficiency, showing how to prioritize relevant and complementary documents for multi-hop reasoning.",
+      "title": "Optimizing RAG: Overcoming Bottlenecks with Evidence Frontloading and Adaptive Budgeting",
+      "why_now": "The paper 'Less can be More: Relieving RAG Bottlenecks via Evidence Frontloading and Pressure-Adaptive Budgeting' was published in the last 48 hours, providing a new, practical framework for RAG optimization."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.25061"
+      ],
+      "date": "2026-08-27",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.25061"
+      ],
+      "suggested_outline": [
+        "Introduction: The Unseen Bottleneck in GPU-Accelerated Databases",
+        "The Rise of LLMs in Code Generation: Beyond ML Operators",
+        "DataKernelBench: A Benchmark for LLM-Driven Query Optimization",
+        "How LLMs Optimize: Kernel Fusion and Execution Strategy Changes",
+        "Case Studies: TPC-H Performance with LLM-Generated Kernels",
+        "Challenges and Future Directions for LLM-Optimized Databases",
+        "Conclusion: Towards Self-Optimizing Data Systems"
+      ],
+      "summary": "This topic explores the novel application of LLMs to optimize database queries for GPU acceleration. It would discuss DataKernelBench, a new benchmark that translates SQL into PyTorch TorchPlan programs, and how LLMs can achieve significant speedups by generating optimized CUDA or Triton kernels, particularly through kernel fusion and execution-strategy changes.",
+      "title": "LLMs as GPU Database Query Optimizers: A New Frontier for Performance",
+      "why_now": "The introduction of DataKernelBench in the last 48 hours demonstrates a new, high-impact practical use case for LLMs in database systems, specifically for GPU performance optimization."
+    },
     {
       "angle": "practical",
       "citations": [
