@@ -1,6 +1,98 @@
 {
-  "generated_at": "2026-08-27T11:07:47+00:00",
+  "generated_at": "2026-08-28T12:39:51+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.26112"
+      ],
+      "date": "2026-08-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.26112"
+      ],
+      "suggested_outline": [
+        "Introduction to Speculative Decoding and its Limitations",
+        "The Dilemma of Single-Drafter Methods",
+        "How TreeGraft's Multi-Drafter Framework Works",
+        "Adaptive Scheduling for Drafter Selection",
+        "Performance Gains and Benchmarks",
+        "Practical Implications for LLM Deployment",
+        "Code Walkthrough (if applicable)"
+      ],
+      "summary": "This paper introduces TreeGraft, a multi-drafter framework for speculative decoding that significantly accelerates large language model inference. By dynamically combining drafters of different sizes and costs, TreeGraft constructs higher-quality draft trees and improves accepted token length without incurring high latency, offering up to a 26.6% speedup over single-drafter methods. This has direct implications for reducing the computational cost and latency of LLM deployments.",
+      "title": "TreeGraft: Adaptive Multi-Drafter Grafting for Faster LLM Speculative Decoding",
+      "why_now": "The paper was published on arXiv in the last 48 hours, presenting a novel approach to a critical bottleneck (LLM inference speed) that outperforms existing methods."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.26121"
+      ],
+      "date": "2026-08-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.26121"
+      ],
+      "suggested_outline": [
+        "The Problem of LLM Hallucination",
+        "Traditional Approaches to Abstention (and their costs)",
+        "The 'Free' Signal: Model Confidence",
+        "How Label-Free Abstention Tuning Works (LoRA application)",
+        "Experimental Results: Matching Labeled Performance",
+        "Limitations and Blind Spots (e.g., confidently wrong facts)",
+        "Practical Applications for Deploying More Reliable LLMs"
+      ],
+      "summary": "This research demonstrates that LLMs can be fine-tuned to abstain from answering when their internal confidence is low, effectively catching their own hallucinations without requiring a labeled dataset of correct/incorrect answers. By training models (via LoRA) to say 'I'm not sure' based solely on their internal probability scores, the method achieves abstention performance comparable to label-supervised approaches, offering a 'free' and scalable way to improve factual reliability.",
+      "title": "Label-Free Hallucination Detection: Training LLMs to Abstain Using Self-Confidence",
+      "why_now": "The arXiv paper was released within the last 48 hours, detailing a novel, label-free method for a persistent LLM challenge (hallucination), making it highly relevant for practitioners."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.26118"
+      ],
+      "date": "2026-08-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.26118"
+      ],
+      "suggested_outline": [
+        "The Challenge of Long-Form Factuality Evaluation",
+        "Limitations of Current Decompose-Retrieve-Verify Pipelines",
+        "Introducing ElementCheck: Element Graphs and Complexity Awareness",
+        "How ElementCheck Performs Targeted Verification",
+        "The FastFact-Sent Benchmark and Experimental Results",
+        "Comparing Accuracy and Cost-Efficiency",
+        "Integrating ElementCheck into LLM Evaluation Workflows"
+      ],
+      "summary": "ElementCheck is a new framework for evaluating the factuality of long-form LLM generated text. Unlike methods that uniformly decompose sentences into sub-claims, ElementCheck extracts entity pairs as 'elements' and organizes them into an element graph. This allows for complexity-aware verification, directly checking simple sentences and performing targeted, element-level refinement for complex ones. It significantly improves factuality verification across models while maintaining a good accuracy-cost trade-off.",
+      "title": "ElementCheck: Complexity-Aware Factuality Evaluation for Long-Form LLM Text",
+      "why_now": "The paper was published on arXiv within the last 48 hours, introducing a refined and more effective method for a common problem in LLM applications: accurately assessing the factuality of generated long-form content."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.26130"
+      ],
+      "date": "2026-08-28",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2608.26130"
+      ],
+      "suggested_outline": [
+        "The Rise of LLM Agents and Tool Use",
+        "The Hidden Problem: Why Agents Ignore Pagination",
+        "Defining 'First-Chunk Selection' and Precision-at-1",
+        "Benchmarking Value Functions for First-Chunk Optimization",
+        "Surprising Results: p1 vs. Downstream Accuracy",
+        "Implications for Tool Design and Agent Prompting",
+        "Best Practices for Structuring Tool Outputs"
+      ],
+      "summary": "A study reveals that LLM-based coding agents rarely paginate tool responses, meaning they primarily act on the first chunk of information. This highlights a critical need to optimize the 'precision-at-1' for tool outputs. While raising this precision doesn't systematically boost downstream accuracy across all models, the findings emphasize the importance of intelligent first-chunk selection strategies for effective tool use in agentic systems, particularly when token budgets are limited.",
+      "title": "Agents Don't Paginate: Optimizing First-Chunk Selection for LLM Tool Responses",
+      "why_now": "This arXiv paper, published in the last 48 hours, identifies a specific, overlooked behavior in LLM agents (lack of pagination) and provides empirical data on its impact, offering actionable insights for agent developers."
+    },
     {
       "angle": "theoretical",
       "citations": [
