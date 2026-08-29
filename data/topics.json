@@ -1,6 +1,76 @@
 {
-  "generated_at": "2026-08-28T12:39:51+00:00",
+  "generated_at": "2026-08-29T07:49:00+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/"
+      ],
+      "date": "2026-08-29",
+      "estimated_effort": "large",
+      "sources": [
+        "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Trust in AI Benchmarking (Benchmark Contamination)",
+        "The Concept of Double-Blind Evaluation in AI",
+        "DeepMind's Pilot: Methodology and Partnerships",
+        "Technical Deep Dive: How Confidential Computing Enables Double-Blindness (cryptographic verification, secure enclaves)",
+        "Benefits: Preventing Contamination, Protecting IP, Enhancing Trust",
+        "Implications for AI Safety, Policy, and Industry Standards",
+        "Challenges and Future Directions",
+        "Conclusion: A New Era for AI Evaluation Integrity"
+      ],
+      "summary": "DeepMind has piloted the world's first double-blind evaluation of a proprietary, frontier AI model, using cryptographically secure environments to prevent benchmark contamination. This post will explore the methodology behind these evaluations, detailing how Confidential Computing allows independent testing without revealing proprietary model weights or sensitive evaluation prompts. It will argue that this approach sets a new standard for building trust and ensuring the integrity of AI model benchmarks, especially for high-stakes applications.",
+      "title": "Double-Blind AI Evaluations: A New Standard for Trust and Benchmark Integrity",
+      "why_now": "DeepMind recently announced the successful pilot of the world's first double-blind AI evaluations, partnering with several institutions to test a Gemini Flash Lite model."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/"
+      ],
+      "date": "2026-08-29",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Peril of AI Agent Safety Features",
+        "Understanding Claude Code's Auto Mode",
+        "The Attack Vector: How to Break Auto Mode (Detailed walkthrough of the zip archive/import trick)",
+        "When Safety Becomes a Liability: Auto Mode blocking cleanup",
+        "Beyond Model-Level Defenses: The Case for Sandboxing",
+        "Practical Sandboxing Strategies: Containers, VMs, network restrictions, credential isolation",
+        "Conclusion: Building Resilient AI Agent Systems"
+      ],
+      "summary": "This post will deep dive into a recent prompt injection attack that successfully bypassed Anthropic's Claude Code Opus 5's 'auto mode,' a safety feature designed to protect users. It will detail how a clever trick involving zip archives and local file imports allowed malicious code execution, even demonstrating instances where auto mode prevented the agent from cleaning up the compromise. The core argument will be that robust sandboxing, not just model-level safety features, is indispensable for secure AI agent deployment.",
+      "title": "Bypassing Claude Code Opus 5 Auto Mode: The Imperative of Agent Sandboxing",
+      "why_now": "A prominent prompt injection researcher, Johann Rehberger, recently published a detailed attack against Claude Code's auto mode, which Anthropic had made the default and made strong claims about its effectiveness."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/"
+      ],
+      "date": "2026-08-29",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/"
+      ],
+      "suggested_outline": [
+        "Introduction: The AI-driven acceleration of exploit discovery",
+        "Case Studies: OCaml and rclone maintainers' experiences",
+        "How AI Agents Find Flaws: Mechanism and speed",
+        "The Problem with Current Security Embargoes",
+        "Proposed Solutions: Faster patching, AI-assisted triage, new disclosure models",
+        "Implications for Open Source Maintenance and Security Teams",
+        "Conclusion: Adapting to the new security reality"
+      ],
+      "summary": "Modern coding agents are dramatically speeding up the discovery of software vulnerabilities, with some open-source projects seeing exploit attempts within minutes of patches being discussed publicly. This post will argue that existing open-source security embargo practices are becoming obsolete, and new processes, possibly involving AI tools for faster triage and patching, are urgently needed to cope with this accelerated threat landscape.",
+      "title": "AI Agents Accelerate Exploit Discovery: A New Threat to Open Source Security",
+      "why_now": "Recent reports from maintainers of projects like OCaml and rclone confirm a dramatic increase in security disclosures and exploit probes, directly attributed to the capabilities of AI coding agents."
+    },
     {
       "angle": "practical",
       "citations": [
