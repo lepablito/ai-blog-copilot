@@ -1,6 +1,82 @@
 {
-  "generated_at": "2026-08-29T07:49:00+00:00",
+  "generated_at": "2026-08-30T06:28:45+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.26882"
+      ],
+      "date": "2026-08-30",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.26882"
+      ],
+      "suggested_outline": [
+        "Introduction: LLM Agents and the Cyber-Physical Frontier",
+        "The Risk: Autonomous Agents in Industrial Control Systems (ICS)",
+        "Introducing PLCBENCH: A Hardware-in-the-Loop Evaluation Framework",
+        "- Components: Real PLCs, Process Simulation, Independent Verification",
+        "- Diagnostic Flags: From Interaction to Sustained Physical Impact",
+        "Key Findings: How Often Do LLMs Achieve Physical Objectives?",
+        "Case Studies and Failure Modes: Where LLM Agents Struggle (and Succeed)",
+        "Implications for ICS Security and AI Agent Safety",
+        "Mitigation Strategies and Future Research Directions",
+        "Conclusion: Building Safe and Resilient AI-Powered ICS"
+      ],
+      "summary": "This post would explore PLCBENCH, a novel hardware-in-the-loop framework designed to assess whether autonomous LLM agents can translate network access to Programmable Logic Controllers (PLCs) into sustained adverse physical impact. It would discuss the methodology for evaluating cyber-to-physical capabilities, the diagnostic flags used, and the findings that show a significant percentage of LLM agents can achieve physical objectives. The post will emphasize the critical implications for industrial cybersecurity and the development of safe AI agents.",
+      "title": "PLCBench: Evaluating LLM Agents for Cyber-Physical Impact in Industrial Control Systems",
+      "why_now": "The recent publication of PLCBENCH addresses a highly critical and underexplored area: the physical safety and security risks posed by autonomous LLM agents interacting with real-world industrial systems. This is a timely warning and a call for robust safety engineering."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://simonwillison.net/2026/Aug/29/hy4/"
+      ],
+      "date": "2026-08-30",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Aug/29/hy4/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Race for Scale and Context",
+        "Hy4 Preview: Key Specifications and Innovations (770B params, 1M context)",
+        "Architectural Insights: How is 1M Context Achieved?",
+        "The 'reasoning_effort' Parameter: A New Dimension of Control?",
+        "Implications for Advanced Reasoning and Complex Tasks",
+        "Challenges of Deployment and Fine-tuning at This Scale",
+        "Comparison with Other Leading Open Models",
+        "Conclusion: What Hy4 Tells Us About the Future of LLMs"
+      ],
+      "summary": "This post would analyze the technical specifications and implications of Tencent's newly released Hy4 Preview, a 770B parameter open-weight LLM featuring an unprecedented 1M token context window and a unique 'reasoning_effort' control parameter. It would explore the architectural advancements enabling such a massive context, the potential for complex reasoning tasks, and the practical challenges and opportunities for deployment and fine-tuning, especially given its large size.",
+      "title": "Hy4 Preview: A Deep Dive into Tencent's New 770B Parameter LLM and 1M Context Window",
+      "why_now": "The release of Hy4 Preview within the last 48 hours introduces significant advancements in open-weight LLM scale and context window, providing fresh material for understanding the bleeding edge of model architecture and capabilities."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/"
+      ],
+      "date": "2026-08-30",
+      "estimated_effort": "large",
+      "sources": [
+        "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Peril of Autonomous LLM Agents",
+        "Understanding Claude Code Opus 5's Auto Mode and its Security Claims",
+        "The Attack Chain: From URL Summary to Code Execution",
+        "- Bypassing WebFetch for `curl`",
+        "- The Module Shadowing Technique (malicious `struct.py`)",
+        "- Achieving Persistent Code Execution and C2",
+        "Why Layered Defenses Failed: A Post-Mortem Analysis",
+        "Practical Mitigations: Sandboxing, Input Validation, and Agent Design Principles",
+        "Lessons Learned for Secure LLM Agent Development",
+        "Conclusion: Re-evaluating Trust in AI Automation"
+      ],
+      "summary": "This post would detail a recent exploit demonstrating successful prompt injection and arbitrary code execution in Claude Code Opus 5's 'Auto Mode'. It would break down the attack chain, from nudging the agent from WebFetch to curl, to module shadowing via a malicious `struct.py`, and finally achieving C2 callback. The article would highlight critical vulnerabilities in LLM agent safety mechanisms and propose practical mitigation strategies for developers building AI agents.",
+      "title": "Exploiting Claude Code Opus 5 Auto Mode: A Critical Look at LLM Agent Security",
+      "why_now": "The discovery of a high-success-rate exploit against a leading LLM agent's 'Auto Mode' is a critical, recent development that directly impacts the security posture of AI applications and demands immediate attention from practitioners."
+    },
     {
       "angle": "theoretical",
       "citations": [
