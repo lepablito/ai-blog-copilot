@@ -1,6 +1,105 @@
 {
-  "generated_at": "2026-08-30T06:28:45+00:00",
+  "generated_at": "2026-08-31T06:54:26+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.27514"
+      ],
+      "date": "2026-08-31",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.27514"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of Diffusion Language Models",
+        "Understanding dLLM Generation: Iterative Denoising",
+        "The Challenge: Parallel Token Generation in dLLMs",
+        "Speculative Decoding: From Autoregressive to Trajectory-Level",
+        "Technical Deep Dive: Confidence-Stratified Tree Exploration",
+        "Inter-Block Speculation and Bidirectional Attention Masking",
+        "Measuring Efficiency: Denoising Iterations and Tokens-Per-Step",
+        "Implications for dLLM Deployment and Research",
+        "Conclusion: Unlocking the Potential of Diffusion LMs"
+      ],
+      "summary": "This topic explores a new speculative decoding framework tailored for diffusion-based language models (dLLMs), which traditionally struggle with efficient parallel token generation. Unlike autoregressive models, dLLMs require speculation over denoising trajectories. The paper introduces a method that constructs draft denoising trajectories via confidence-stratified tree exploration and verifies them with blockwise parallel evaluation, significantly reducing denoising iterations and increasing tokens-per-step, leading to 7-14x speedups. This presents a major advancement in making dLLMs more practically viable for high-throughput generation.",
+      "title": "Speculative Decoding for Diffusion Language Models: Trajectory-Level Optimization",
+      "why_now": "Diffusion models for text are an emerging area, and this paper addresses a core efficiency challenge, making them more competitive with autoregressive models for certain applications. This is a timely technical deep dive into a new frontier of LLM inference."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.27505"
+      ],
+      "date": "2026-08-31",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.27505"
+      ],
+      "suggested_outline": [
+        "Introduction: Beyond Scalar Rewards in LLM Alignment",
+        "The Limitations of Traditional RLHF",
+        "Rubric-Guided RL: A Paradigm Shift",
+        "A Bayesian Framework for Constitutions and Rubrics",
+        "Taxonomy of Rubric-Guided Methods: From Constitutional AI to Self-Evolving Rubrics",
+        "Linguistic Analysis: Granularity, Semantic Drift, and Reward Hacking",
+        "Practical Implications for Designing Alignment Strategies",
+        "Challenges and Future Research Directions",
+        "Conclusion: Crafting More Aligned and Interpretable LLMs"
+      ],
+      "summary": "This post would survey the landscape of rubric-guided reinforcement learning, a significant evolution from traditional RLHF for aligning LLMs with human preferences. It explains how using structured, interpretable evaluation criteria (rubrics) as the basis for reward design and policy optimization overcomes the limitations of scalar reward signals. The post would introduce a Bayesian framework for understanding constitutions and rubrics, present a taxonomy of existing methods (constitutional AI, instance-specific rubrics, self-evolving rubrics), and analyze linguistic factors like granularity and semantic drift, providing a comprehensive theoretical overview for practitioners looking to build more robust and interpretable aligned LLMs.",
+      "title": "Rubric-Guided Reinforcement Learning: A New Paradigm for LLM Alignment",
+      "why_now": "RLHF is a cornerstone of current LLM alignment, and rubric-guided approaches represent a significant theoretical and practical refinement, offering more control and interpretability. This survey provides a timely, structured understanding of these advanced techniques."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.27661"
+      ],
+      "date": "2026-08-31",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.27661"
+      ],
+      "suggested_outline": [
+        "Introduction: The Trust Problem in RAG",
+        "Why LLMs Struggle with 'I Don't Know'",
+        "The 'Knowing Before Answering' Framework: A Three-Way Classification",
+        "Leveraging Internal Signals: Hidden Activations and Attention Features",
+        "Building the Router: Training and Evaluation",
+        "Practical Implementation: Integrating into RAG Pipelines",
+        "Case Studies and Performance Gains",
+        "Challenges and Future Directions for Reliable RAG",
+        "Conclusion: Towards More Trustworthy AI"
+      ],
+      "summary": "This post would delve into a critical challenge in Retrieval-Augmented Generation (RAG) systems: enabling LLMs to discern when retrieved information is insufficient or conflicting, rather than hallucinating or providing unreliable answers. It would discuss a method using internal model signals (hidden activations, attention-derived features) to train a lightweight router that classifies retrieval outcomes as 'sufficient,' 'insufficient,' or 'conflicting,' outperforming prompting-based baselines across various models. This is key for building trustworthy RAG applications.",
+      "title": "Enhancing RAG Reliability: Knowing When LLMs Can't Answer",
+      "why_now": "The proliferation of RAG systems makes reliability and hallucination mitigation paramount. This paper offers a concrete, feature-based solution to a persistent problem, making it highly relevant for practitioners."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.27460"
+      ],
+      "date": "2026-08-31",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.27460"
+      ],
+      "suggested_outline": [
+        "Introduction: The LLM Inference Bottleneck",
+        "Understanding Output Embeddings and Their Cost",
+        "The Vector Index Approach: HNSW for Token Selection",
+        "Technical Deep Dive: How it Works",
+        "Performance Gains: Benchmarks and Real-World Impact",
+        "Implementation Considerations for Applied Engineers",
+        "Limitations and Future Work",
+        "Conclusion: A Practical Path to Faster LLMs"
+      ],
+      "summary": "This topic would explore a novel method to accelerate LLM inference by replacing the dense vocabulary projection with an HNSW-based vector index for top-k token selection. It argues that this approach significantly reduces memory bandwidth bottlenecks, especially for compact LLMs with large vocabularies, leading to substantial throughput improvements (up to 82% reported) while maintaining generation quality. The post would detail the technical implementation and its practical implications for deploying latency-sensitive LLM applications.",
+      "title": "Boosting LLM Inference: Vector Index for Output Embeddings",
+      "why_now": "The paper introduces a new, highly effective technique for LLM inference optimization, directly addressing a critical bottleneck in deploying LLMs efficiently, making it a timely practical development."
+    },
     {
       "angle": "practical",
       "citations": [
