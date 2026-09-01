@@ -1,6 +1,98 @@
 {
-  "generated_at": "2026-08-31T06:54:26+00:00",
+  "generated_at": "2026-09-01T06:13:03+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.28614"
+      ],
+      "date": "2026-09-01",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.28614"
+      ],
+      "suggested_outline": [
+        "The Need for Interpretable GEC: Beyond Simple Edits",
+        "Introduction to STAGEET: Stage-wise Typed Edit Tagging",
+        "Decomposing Correction: Multi-Stage Architecture and Typed Label Spaces",
+        "Model Instantiations: Shared Encoder vs. Specialized Taggers",
+        "Performance and Interpretability Gains (Case Study: Arabic GEC)",
+        "Practical Applications and Customization for Specific Error Types",
+        "Challenges and Future Work in Structured GEC"
+      ],
+      "summary": "This topic discusses STAGEET, a novel stage-wise typed edit-tagging framework for Grammatical Error Correction (GEC). It reconfigures sequence-to-edit supervision into an ordered sequence of medium-grained, typed stages, each predicting from its own label space and rewriting the hypothesis before passing it to the next. This approach not only maintains competitive GEC performance but significantly enhances interpretability by exposing correction categories, offering a more inspectable and efficient method compared to traditional single-edit vocabulary approaches.",
+      "title": "STAGEET: Enhancing Grammatical Error Correction with Stage-wise Typed Edit Tagging",
+      "why_now": "While GEC is a mature NLP field, improving interpretability and efficiency remains a key goal. STAGEET offers a fresh architectural perspective on sequence-to-edit models, which is valuable for engineers working on text generation and correction tasks, particularly in resource-constrained or highly regulated environments."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2608.28609"
+      ],
+      "date": "2026-09-01",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2608.28609"
+      ],
+      "suggested_outline": [
+        "The Missing Half: Why Text-Only Agent Memory Fails",
+        "Introducing Parametric Multimodal User Memory",
+        "Architecture: Vision-Language Grounding and Dedicated Encoders",
+        "Storing and Retrieving Perceptual Cues as Inline Tokens",
+        "Measuring the Impact: Recall Across Five Modalities",
+        "Implications for Personalized and Embodied AI Agents",
+        "Challenges and Future Directions in Multimodal Memory Systems"
+      ],
+      "summary": "This topic focuses on a novel approach to equipping personalized AI agents with a 'perceptual half' of memory, beyond just text-based transcripts. It proposes a parametric multimodal user memory system that stores identity keys from dedicated encoders (e.g., for voice or face) as inline tokens, accessible via attention during generation. This tackles the limitation of current text-only memories that discard crucial perceptual information, leading to more robust and personalized agent interactions across modalities and contexts like varying age or lighting.",
+      "title": "Parametric Multimodal User Memory for Personalized AI Agents",
+      "why_now": "As AI agents become more sophisticated and aim for deeper personalization, the limitations of text-only memory are becoming apparent. This research offers a concrete, technical solution for integrating multimodal perceptual memory, which is a frontier in agentic AI development."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.28624"
+      ],
+      "date": "2026-09-01",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.28624"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Clinical Data Summarization with LLMs",
+        "Limitations of Traditional RAG in Medical Contexts",
+        "MA-RAG Architecture: Decomposing Clinical Reasoning with Agents",
+        "Structured Fact Extraction and Verification Mechanisms",
+        "Evaluation: Objective Metrics (Fact Precision, Temporal Fidelity) and Expert Review",
+        "Implementation Details and Practical Considerations for Clinical AI",
+        "Conclusion: Towards More Reliable and Explainable AI in Healthcare"
+      ],
+      "summary": "This topic explores MA-RAG, a multi-agent retrieval-augmented generation framework designed for summarizing complex, longitudinal clinical data, specifically for Parkinson's disease. It addresses common LLM limitations like factual inaccuracy and temporal inconsistency by decomposing clinical reasoning into domain-specialized agents, integrating structured fact extraction, and employing a final verification stage. The post would delve into the architecture, the role of different agents, and objective evaluation metrics (Fact Precision, Hallucination Rate, Temporal Fidelity) showing significant improvements over traditional RAG.",
+      "title": "Multi-Agent RAG for Robust Clinical Summarization in Parkinson's Disease",
+      "why_now": "The paper introduces a novel approach to RAG for highly sensitive and complex domains like clinical medicine, addressing critical issues like hallucination and factual consistency which are current challenges in applied LLM engineering. The multi-agent architecture is a growing trend for robust LLM applications."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2608.28629"
+      ],
+      "date": "2026-09-01",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2608.28629"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Design Defect Management in BIM",
+        "Bridging BIM Data and LLMs: Component-Balanced Chunking",
+        "Prompt Engineering for Defect Identification: Rule Injection and Few-Shot RAG",
+        "Mitigating Hallucinations: Key Identifier Validation and Token-Length Thresholds",
+        "Experimental Results: Accuracy and Efficacy of Repair Suggestions",
+        "Building an End-to-End Prototype for BIM Defect Resolution",
+        "Future Implications for AI-Driven Design and Construction"
+      ],
+      "summary": "This post would explore an integrated framework leveraging domain-specific large language models for intelligent identification and repair of design defects within Building Information Modeling (BIM). It details methods to bridge BIM data with LLMs using component-balanced chunking, prompt learning with rule injection and RAG, and a crucial hallucination control strategy combining key identifier validation and token-length thresholds. This offers a generalized, efficient solution for a complex engineering problem, demonstrating high accuracy in defect identification and reasonable repair suggestions.",
+      "title": "Domain-Specific LLMs for Automated Design Defect Identification and Repair in BIM",
+      "why_now": "The application of LLMs to highly specialized, structured domains like engineering (BIM) is a significant practical development. The paper's focus on hallucination control and domain-specific RAG is directly relevant to applied AI engineers building reliable solutions in critical industries."
+    },
     {
       "angle": "theoretical",
       "citations": [
