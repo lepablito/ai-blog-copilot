@@ -1,6 +1,76 @@
 {
-  "generated_at": "2026-09-01T06:13:03+00:00",
+  "generated_at": "2026-09-02T05:39:10+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.00066"
+      ],
+      "date": "2026-09-02",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.00066"
+      ],
+      "suggested_outline": [
+        "Introduction to LLM Quantization and NVFP4",
+        "The Problem of Activation Outliers in NVFP4",
+        "Understanding Collateral Quantization Error",
+        "How OCGQuant's Outlier-Companion Grouping Works",
+        "Performance Benefits: WikiText-2 Perplexity and Downstream Accuracy",
+        "Practical Implementation Considerations and Code Availability",
+        "Conclusion: The Impact on Efficient LLM Deployment"
+      ],
+      "summary": "This post would delve into OCGQuant, a novel post-training quantization method that addresses the challenge of activation outliers in NVFP4, an efficient low-bit inference format. It explains how 'Outlier-Companion Grouping' adaptively pairs outlier channels with low-magnitude ones to reduce 'Collateral Quantization Error', leading to better perplexity and downstream accuracy for models like Llama3 and Qwen3 while maintaining inference speed and memory efficiency. The article would provide a practical guide for engineers looking to optimize LLM inference.",
+      "title": "OCGQuant: Improving NVFP4 Quantization for LLM Inference",
+      "why_now": "The paper was submitted on August 30, 2026 (within the last 48 hours), presenting a new, practical method for LLM inference optimization that directly addresses a known challenge in low-bit quantization."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.00058"
+      ],
+      "date": "2026-09-02",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.00058"
+      ],
+      "suggested_outline": [
+        "The Challenge of High-Performance CUDA Kernel Development",
+        "LLMs for Code Generation: Beyond General Purpose",
+        "Introducing CUDA-Harness: Text2CUDA with Agentic Capabilities",
+        "Intermediate-Structured Generation: Bridging Semantics and Implementation",
+        "Combating Reward Hacking with Synthesis-Based Verification",
+        "Implications for AI Engineers: Automating Hardware-Aware Optimization",
+        "Future Directions and Limitations",
+        "Conclusion: The Path to AI-Generated High-Performance Computing"
+      ],
+      "summary": "This post will explore CUDA-Harness, a novel framework that leverages LLM agents for generating and optimizing high-performance CUDA kernels directly from natural language. It will detail the 'Intermediate-Structured Generation' approach which bridges high-level semantic understanding with low-level kernel implementation. The article will also discuss how CUDA-Harness addresses reward hacking challenges in Text2CUDA by employing 'Synthesis-Based Verification', offering insights into pushing the boundaries of AI-driven code generation for specialized hardware.",
+      "title": "CUDA-Harness: Agentic LLMs for CUDA Kernel Generation and Optimization",
+      "why_now": "The CUDA-Harness paper, submitted on August 30, 2026, presents a significant advancement in using LLMs for specialized code generation and optimization, a high-value area for performance-critical AI applications."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.00038"
+      ],
+      "date": "2026-09-02",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.00038"
+      ],
+      "suggested_outline": [
+        "The Rise of LLM Agents and the Need for Robust Evaluation",
+        "The Default: Outcome-Only Evaluation and Its Limitations",
+        "Introducing 'trajectory-judge': Uncovering Silent Faults and Tampering",
+        "Comparing Evaluation Methods: Outcome-Only vs. Step-Rubric Judges",
+        "The Cost-Recall Trade-off in Agent Evaluation",
+        "Designing Better Evaluation Benchmarks for LLM Agents",
+        "Conclusion: Towards More Transparent and Reliable Agent Development"
+      ],
+      "summary": "This post will critically examine the common practice of 'outcome-only' evaluation for LLM agents, highlighting its structural blindness to how an agent arrives at its final answer. Using insights from the 'trajectory-judge' paper, it will demonstrate how this method misses 'silent' faults and can be gamed by agents. The article will advocate for more robust, step-rubric-based evaluation methods and discuss the trade-offs in cost and recall, providing a practical guide for designing more effective agent evaluation benchmarks.",
+      "title": "Beyond Outcome-Only: The Pitfalls of Evaluating LLM Agents with trajectory-judge",
+      "why_now": "The 'trajectory-judge' paper, submitted on August 29, 2026, introduces a timely and critical analysis of LLM agent evaluation, a rapidly evolving and challenging area for practitioners."
+    },
     {
       "angle": "theoretical",
       "citations": [
