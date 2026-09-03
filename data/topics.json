@@ -1,6 +1,108 @@
 {
-  "generated_at": "2026-09-02T05:39:10+00:00",
+  "generated_at": "2026-09-03T05:38:34+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://news.ycombinator.com/item?id=49542310"
+      ],
+      "date": "2026-09-03",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://news.ycombinator.com/item?id=49542310"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Web Scraping for LLMs",
+        "The Vision: AI-Friendly JSON for Every Page",
+        "Proposed Schema and Key Data Points (Title, Content, Entities, etc.)",
+        "Technical Benefits: Improved Accuracy, Reduced Noise, Efficient Parsing",
+        "Impact on LLM Training and Retrieval Pipelines",
+        "Implementation Considerations: Server-Side Generation, Head Link Tags",
+        "Challenges and Counterarguments (Maintenance, Standards, Adoption)",
+        "Conclusion: A Future of Structured Data for the Semantic Web"
+      ],
+      "summary": "This post would explore the proposal of every web page exposing an 'AI-friendly JSON representation' of its content. It would argue for the engineering benefits of providing structured, clean data (canonical URL, title, main content, entities, etc.) to AI systems, reducing the need for noisy HTML parsing and improving LLM accuracy, recommendations, and citations. The post would discuss the technical considerations, potential schemas, and the impact on AI data pipelines and web development practices.",
+      "title": "The Case for AI-Friendly JSON: Structuring Web Content for Enhanced LLM Understanding",
+      "why_now": "A recent Hacker News discussion directly poses the question 'Should every web page expose an AI-friendly JSON representation?', indicating a live, practical debate and a potential future direction for web content engineering to better serve AI systems."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.01788",
+        "https://arxiv.org/abs/2609.01772"
+      ],
+      "date": "2026-09-03",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.01788",
+        "https://arxiv.org/abs/2609.01772"
+      ],
+      "suggested_outline": [
+        "Introduction: Beyond Literal Meaning – The Importance of Pragmatics",
+        "The Gap in LLM Evaluation: English-Centric Benchmarks",
+        "Deep Dive: VakyArth – Evaluating Pragmatic Competence in Indic Languages",
+        "Understanding Cultural Nuance: MemeCULT-1K and Humor Comprehension",
+        "Systematic Failures and Cultural Knowledge Gaps in Multilingual LLMs",
+        "Designing Diagnostic Evaluations for Cross-Cultural Understanding",
+        "Challenges in Data Collection and Annotation for Diverse Languages",
+        "Conclusion: Towards Culturally Intelligent and Globally Competent LLMs"
+      ],
+      "summary": "This post would delve into the significant challenges and recent advancements in evaluating LLMs for pragmatic competence, especially across diverse linguistic and cultural contexts beyond English. Drawing on new benchmarks like VakyArth (Indic languages) and MemeCULT-1K (South Asian memes), it would discuss the limitations of current evaluation methods, the importance of understanding implicit meanings, cultural conventions, and humor, and the systematic failures observed in multilingual LLMs. It would advocate for new diagnostic evaluation frameworks to build truly globally aware AI.",
+      "title": "Evaluating Pragmatic Competence: The Frontier of Cross-Cultural LLM Benchmarking",
+      "why_now": "Several new arXiv papers (VakyArth, MemeCULT-1K) introduce the first pragmatic and cultural benchmarks for non-English and low-resource languages, highlighting a critical and currently underserved area in LLM evaluation and development."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.01798"
+      ],
+      "date": "2026-09-03",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.01798",
+        "https://news.ycombinator.com/item?id=49542310"
+      ],
+      "suggested_outline": [
+        "Introduction: The Growing Need for Energy-Efficient On-Device LLMs",
+        "The Energy Footprint of LLM Inference: Prefill vs. Decode",
+        "Impact of Prompt Cognitive Load on Energy Consumption",
+        "The Role of Phrasing Patterns and Token Usage in Energy Efficiency",
+        "Empirical Findings and Case Studies from Recent Research",
+        "Strategies for Model-Aware Prompt Design",
+        "Tools and Techniques for Profiling On-Device LLM Energy Usage",
+        "Conclusion: Towards Sustainable Edge AI with Smart Prompting"
+      ],
+      "summary": "This post would delve into the critical, yet underexplored, aspect of prompt design's impact on the energy consumption of on-device LLMs. It would discuss how properties like cognitive load and phrasing patterns influence energy usage during prefill and decode phases, providing empirical insights and practical strategies for 'model-aware prompt design' to achieve energy-efficient inference without sacrificing performance on mobile or edge devices. This is crucial for wider adoption of LLMs in resource-constrained environments.",
+      "title": "Energy-Aware Prompt Engineering: Optimizing On-Device LLM Inference",
+      "why_now": "A new arXiv paper directly investigates 'How Do Prompt Variations Affect Energy Consumption in On-Device LLMs?', highlighting a timely and practical concern for engineers deploying LLMs on edge devices, where energy efficiency is paramount."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.01658",
+        "https://arxiv.org/abs/2609.01687"
+      ],
+      "date": "2026-09-03",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.01658",
+        "https://arxiv.org/abs/2609.01687",
+        "https://news.ycombinator.com/item?id=49545792"
+      ],
+      "suggested_outline": [
+        "Introduction: The Limits of Simple RAG and the Need for Robustness",
+        "Understanding Error Propagation in Multi-Hop RAG",
+        "Deep Dive: Step-level Process Reward Optimization (PRO-Step)",
+        "Ensuring Grounded Responses: Learning Evidence Sufficiency Boundaries",
+        "Advanced Retrieval Techniques: Beyond Single-Pass Vector Search",
+        "Implementation Challenges and Best Practices",
+        "Evaluating Robust RAG Systems: New Metrics and Methodologies",
+        "Conclusion: Building Production-Ready RAG for Complex Queries"
+      ],
+      "summary": "This post would explore sophisticated RAG (Retrieval Augmented Generation) patterns that move beyond simple vector search, focusing on techniques like step-level process reward optimization, learning evidence sufficiency boundaries, and multi-hop reasoning. It would argue for the necessity of these advanced strategies to achieve robust, accurate, and contextually rich responses from LLMs in complex, real-world scenarios, detailing their technical implementation and performance benefits, particularly addressing error propagation and selective answering.",
+      "title": "Beyond Basic Retrieval: Advanced RAG Strategies for Robust LLM Applications",
+      "why_now": "Recent arXiv papers introduce novel techniques like 'PRO-Step' and 'Evidence Sufficiency Boundary Training' for RAG, indicating a significant advancement in making RAG more reliable and robust for multi-hop reasoning, directly addressing known limitations of simpler RAG implementations."
+    },
     {
       "angle": "practical",
       "citations": [
