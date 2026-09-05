@@ -1,6 +1,107 @@
 {
-  "generated_at": "2026-09-03T05:38:34+00:00",
+  "generated_at": "2026-09-05T05:33:33+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.03438"
+      ],
+      "date": "2026-09-05",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.03438"
+      ],
+      "suggested_outline": [
+        "The Rise of GUI Agents and the Problem of Overcompliance",
+        "Defining 'Execution-Biased Overcompliance' and Its Risks",
+        "Introducing CONFLICTGUI: A Benchmark for Conflict-Aware Termination",
+        "Types of Conflicts: Instruction-Internal and Instruction-GUI Context",
+        "Introducing CONFLICTGUARD: An Inference-Time Framework",
+        "Feasibility Verification Protocol: Assessing Instruction Logic and GUI Evidence",
+        "Conditional Action Modulation: Steering Agents Towards Termination",
+        "Experimental Results Across Widely-Used Agents",
+        "Implications for Designing Safer and More Reliable GUI Agents",
+        "Conclusion: Balancing Autonomy with Robust Error Handling"
+      ],
+      "summary": "GUI agents often exhibit 'execution-biased overcompliance,' blindly acting even on conflicting or infeasible instructions. This post will introduce CONFLICTGUI, a benchmark for studying conflict-aware termination, and CONFLICTGUARD, an inference-time framework to mitigate this issue. CONFLICTGUARD aligns an agent's feasibility awareness with its action generation through a verification protocol and conditional action modulation, steering agents toward termination-oriented behavior when conflicts arise, thus improving safety and reliability.",
+      "title": "When Not to Act: Enabling Conflict-Aware Termination for Multimodal GUI Agents",
+      "why_now": "The recent arXiv publication of CONFLICTGUI and CONFLICTGUARD directly addresses a critical safety and robustness issue for GUI agents, which are becoming increasingly prevalent, making it a highly relevant topic for developers."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.03494"
+      ],
+      "date": "2026-09-05",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.03494"
+      ],
+      "suggested_outline": [
+        "The KV Cache Bottleneck in Long-Output LLM Reasoning",
+        "Limitations of Existing Fixed-Budget KV Compression Methods",
+        "Introducing GrowPage: On-Demand KV Budgeting Framework",
+        "Dual-Timescale Query Summaries: Capturing Attention Behaviors",
+        "Dynamic Capacity Adjustment: Compressing vs. Acquiring Pages",
+        "Integration with PagedAttention for Continuous Batching and Prefix Caching",
+        "Performance Benefits on Reasoning Benchmarks Across Models",
+        "Implementation Details and Deployment Considerations",
+        "Conclusion: Future of Efficient LLM Serving Architectures"
+      ],
+      "summary": "Long-output reasoning workloads in LLMs make the Key-Value (KV) cache a major memory bottleneck. This post will explore 'GrowPage', an innovative on-demand KV budgeting framework that treats KV capacity as a runtime resource. Unlike fixed-budget methods, GrowPage dynamically adjusts KV capacity by maintaining dual-timescale query summaries and acquiring additional physical pages when needed. It integrates with PagedAttention to preserve continuous batching and prefix caching, offering significant efficiency gains for LLM serving.",
+      "title": "Optimizing LLM Serving: On-Demand KV Budgeting with GrowPage",
+      "why_now": "The new arXiv paper on 'GrowPage' directly tackles the critical and evolving challenge of KV cache management for long-output LLM reasoning, a major concern for anyone deploying LLMs in production."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.03340"
+      ],
+      "date": "2026-09-05",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.03340"
+      ],
+      "suggested_outline": [
+        "The Challenge of Stale Plans in Distributed LLM-Agent Teams",
+        "Why State Freshness Alone Isn't Enough: The Problem Statement",
+        "Introducing PlanFence: A Dependency-Scoped Action-Validation Protocol",
+        "How Plans Cite Records and Executors Validate Dependencies",
+        "Replanning and Blocking Mechanisms for Incomplete Validation",
+        "Experimental Results: PlanFence vs. Freshness-Only Executors",
+        "Trade-offs: Proactive Synchronization vs. PlanFence in Churning Environments",
+        "Practical Implications for Designing Reliable Multi-Agent Systems",
+        "Conclusion: Towards More Robust and Coherent Agent Orchestration"
+      ],
+      "summary": "Distributed LLM-agent teams face a critical challenge: acting on stale plans even when shared memory is fresh. This post will introduce 'PlanFence', a dependency-scoped action-validation protocol that ensures agents only execute actions based on valid, up-to-date plans. It will explain how PlanFence works by having plans cite the exact public records used and validating only relevant records before execution, preventing invalid actions and improving overall system reliability, especially in high-churn environments.",
+      "title": "Ensuring Robustness in Multi-Agent Systems: Dependency-Scoped Plan Validation",
+      "why_now": "The concept of 'stale-plan execution' and the proposed 'PlanFence' protocol for dependency-scoped validation, published recently on arXiv, directly addresses a significant reliability concern in the increasingly complex multi-agent LLM systems, making it highly relevant."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.03236"
+      ],
+      "date": "2026-09-05",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.03236"
+      ],
+      "suggested_outline": [
+        "Introduction: The Latency Problem in Tool-Using LLM Agents",
+        "Understanding Speculative Actions (SA) as a Baseline",
+        "Introducing Speculative Macro Commit (SMC): Architecture and Workflow",
+        "The Two-Tier Agent System: Drafter and Actor Models",
+        "Macro Library: Mining and Reusing Action Skeletons",
+        "How SMC Reduces Wall-Clock Time: Mechanism Deep Dive",
+        "Performance Benchmarks and Real-World Impact (e.g., Telecom, AppWorld)",
+        "Implementation Considerations and Open-Source Availability",
+        "Conclusion: Future Directions for Faster Agent Execution"
+      ],
+      "summary": "This post will delve into Speculative Macro Commit (SMC), a novel runtime mechanism designed to reduce the wall-clock time of tool-using LLM agents. It leverages a two-tier system with a fast speculative drafter and an authoritative actor to predict and pre-execute action chains, significantly cutting down on serial action-observation turns. The article will explain how SMC mines recurring multi-action skeletons and commits pre-executed steps, offering a practical approach to latency reduction beyond single-step speculative actions.",
+      "title": "Boosting LLM Agent Speed with Speculative Macro Commit",
+      "why_now": "The recent publication of 'Speculative Macro Commit for Faster Tool-Using Agents' on arXiv introduces a new technique to address a core performance bottleneck in LLM agents, making it a timely topic for practitioners."
+    },
     {
       "angle": "practical",
       "citations": [
