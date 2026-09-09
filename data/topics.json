@@ -1,6 +1,76 @@
 {
-  "generated_at": "2026-09-06T05:46:34+00:00",
+  "generated_at": "2026-09-09T05:53:24+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/paguasmar/veloxml-deploy"
+      ],
+      "date": "2026-09-09",
+      "estimated_effort": "large",
+      "sources": [
+        "https://github.com/paguasmar/veloxml-deploy"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenges of LLM Deployment",
+        "What is VeloxML and Why Does It Matter?",
+        "Key Benefits: Cost Efficiency (Scale-to-Zero, Spot Instances) and Data Privacy",
+        "How VeloxML Works: Architecture and Underlying Technologies (SkyPilot, Truss)",
+        "Step-by-Step Guide: Deploying an LLM with VeloxML on AWS",
+        "Use Cases: Private APIs, Custom Embeddings, Agent Backends",
+        "Comparison to Other Deployment Methods (Managed Services, Kubernetes)",
+        "Conclusion: Taking Control of Your LLM Infrastructure"
+      ],
+      "summary": "This post would provide a practical guide and technical overview of VeloxML, a new CLI and deployment engine that enables engineers to self-host open-source LLMs directly within their AWS/GCP accounts. It would highlight the benefits of scale-to-zero capabilities for cost efficiency, enhanced data privacy by keeping models and data within the user's VPC, and the simplified deployment process compared to traditional methods. The post would include a walk-through of deploying a model.",
+      "title": "VeloxML: Self-Hosting Open-Source LLMs on AWS with Scale-to-Zero for Cost Efficiency and Data Privacy",
+      "why_now": "The VeloxML project, recently showcased on GitHub (and appearing on Hacker News), offers a novel and practical approach to LLM deployment with strong benefits around cost and data sovereignty, making it highly relevant for engineers looking to move beyond managed services."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://mhacevedo.com/posts/the-discovery-problem"
+      ],
+      "date": "2026-09-09",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://mhacevedo.com/posts/the-discovery-problem"
+      ],
+      "suggested_outline": [
+        "Introduction: The Unseen Potential of LLMs",
+        "What is the 'Discovery Problem'?",
+        "The Grand Canyon Metaphor: Bridging the Gap Between Experts and Novices",
+        "Limitations of Current Interfaces: Blank Prompts and Generic Templates",
+        "Why AI Should Reveal Its Own Capabilities",
+        "Towards More Discoverable AI: Context, Guidance, and Intelligent Interfaces",
+        "Conclusion: Designing for AI's Full Potential"
+      ],
+      "summary": "This post would explore the 'discovery problem' in AI, where the vast capabilities of LLMs remain largely invisible to average users because they don't know what to ask. It would discuss why current interfaces (like blank prompts or generic templates) fail to reveal the full potential of AI, drawing parallels to Alan Kay's Grand Canyon metaphor. The article would argue for systemic solutions to make AI capabilities more discoverable and contextually relevant.",
+      "title": "The AI Discovery Problem: Unlocking LLM Capabilities Beyond the Blank Prompt",
+      "why_now": "A recent blog post (Sept 3, 2026) highlights this fundamental bottleneck in AI adoption, arguing that as AI capabilities advance, the user interface and interaction models have not kept pace, making it a timely discussion for improving practical AI applications."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai"
+      ],
+      "date": "2026-09-09",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai"
+      ],
+      "suggested_outline": [
+        "Introduction: The New Frontier of AI-Powered Threats",
+        "From Prompting to Autonomy: How Adversaries Are Using Agentic AI",
+        "Case Study: Rapid Credential Harvesting Campaigns",
+        "Targeting AI Assets: Proprietary Models, APIs, and Cloud Infrastructure",
+        "Expanding Software Supply Chain Risks with AI-Assisted Coding",
+        "Defensive Strategies for Applied AI Engineers",
+        "Conclusion: Staying Ahead in the AI Security Landscape"
+      ],
+      "summary": "This post would detail how threat actors are evolving from basic prompting to using agentic AI workflows and AI-enabled automation to conduct cyberattacks. It would cover the observed shift to faster credential harvesting campaigns, targeting of proprietary AI models and APIs, and the expansion of software supply chain risks due to AI-assisted coding. Practitioners need to understand these new attack vectors to bolster their defenses.",
+      "title": "Adversarial AI: The Rise of Agentic AI in Cyberattacks and Supply Chain Risks",
+      "why_now": "Google Threat Intelligence Group's latest report in Q2 2026 details a significant observed shift in adversarial tactics to agentic AI workflows, including a mass credential harvesting campaign executed in under six hours, and new methods to trick AI coding assistants and LLM security scanners."
+    },
     {
       "angle": "theoretical",
       "citations": [
