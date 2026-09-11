@@ -1,6 +1,100 @@
 {
-  "generated_at": "2026-09-10T05:49:39+00:00",
+  "generated_at": "2026-09-11T05:47:37+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.10810"
+      ],
+      "date": "2026-09-11",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.10810"
+      ],
+      "suggested_outline": [
+        "The Challenge of Overcorrection in LLM GEC",
+        "Taxonomy-Based Instructions for Bounded Editing",
+        "The Surprising Benefit of Batching: Attention Dilution as a Regularizer",
+        "LLM-Assisted Prompt Optimization Techniques",
+        "Experimental Results and Performance Gains",
+        "Implementing These Strategies in Your GEC Pipeline",
+        "Limitations and Future Work"
+      ],
+      "summary": "This post would explore novel prompt-based techniques to address the common issue of overcorrection in zero- and few-shot LLM-based Grammatical Error Correction (GEC). It would detail how taxonomy-based instructions, larger context windows through batching, and LLM-assisted prompt optimization can significantly reduce unwanted edits, bringing prompt-based solutions closer to fine-tuned model performance without the heavy infrastructure demands.",
+      "title": "Minimizing Overcorrections in LLM-based Grammatical Error Correction: Advanced Prompting and Batching Strategies",
+      "why_now": "The paper provides a practical, prompt-based solution to a persistent problem in LLM-powered GEC, offering immediate utility for practitioners looking to improve text quality without resource-intensive fine-tuning."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.10830"
+      ],
+      "date": "2026-09-11",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.10830"
+      ],
+      "suggested_outline": [
+        "Introduction to Membership Inference and LLM Memorization Concerns",
+        "The Novelty: Verified Training Data and Duplication Counts (OLMo-2, Pythia)",
+        "Methodology: Measuring Exposure Trace with Two-Model Comparison",
+        "Key Finding 1: Faint Trace for Ordinary Text Duplication",
+        "Key Finding 2: Strong Trace Only for Highly Duplicated, Famous Sentences",
+        "Implications for Data Privacy and LLM Auditing",
+        "Confounding Factors: Fame vs. Memorization",
+        "Conclusion: Re-evaluating LLM Memorization Risks"
+      ],
+      "summary": "This post would analyze a groundbreaking study that directly investigates membership inference in LLMs by using models (OLMo-2, Pythia) with publicly published training corpora and exact duplication counts. It reveals that while faint traces of exposure exist for ordinary text, strong membership evidence only appears for highly duplicated, famous sentences, suggesting that memorization is far less pervasive for typical data than often assumed, and is confounded by inherent 'fame' of the text.",
+      "title": "Demystifying LLM Memorization: Verified Duplication Counts and Membership Evidence",
+      "why_now": "This paper offers the first direct, verifiable evidence on LLM membership inference using known training data, providing crucial insights into privacy, memorization, and the interpretability of 'cheap prediction' in LLMs."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.10715"
+      ],
+      "date": "2026-09-11",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.10715"
+      ],
+      "suggested_outline": [
+        "Introduction: The limitations of Next-Token Prediction (NTP)",
+        "What is Next Concept Prediction (NCP)?",
+        "NCP-ArchPreview Architecture: Latent Space and Concept Module",
+        "Joint Training: NCP and NTP in Harmony",
+        "Training Efficiency and Performance Benchmarks (vs. OLMo-3-7B)",
+        "Implications for Future LLM Architectures and Data Efficiency",
+        "Practical Considerations and Potential Applications"
+      ],
+      "summary": "This post would delve into NCP-ArchPreview, a new latent-space language model that pushes autoregressive pretraining beyond standard next-token prediction (NTP). It introduces Next Concept Prediction (NCP) to predict discrete, multi-token concepts, aiming for more efficient training and improved performance. The post would explain how NCP builds a product-quantized concept vocabulary from hidden states and integrates it with token-level generation, offering a new paradigm for LLM pretraining.",
+      "title": "Beyond Next-Token Prediction: Exploring Latent Space Language Models with Next Concept Prediction (NCP)",
+      "why_now": "The introduction of NCP-ArchPreview as the largest demonstration of a latent-space language model to date, showing comparable performance to OLMo-3-7B with significantly fewer training tokens, marks a notable architectural and training efficiency advancement."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.10922"
+      ],
+      "date": "2026-09-11",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.10922"
+      ],
+      "suggested_outline": [
+        "The Vision: Autonomous Research in MLOps",
+        "Challenges of Industry-Scale Recommender Systems Development",
+        "Auto-RecSys: A Framework for Automated Experimentation",
+        "Key Harness Designs: Distributed Async, Centralized Memory, Cognitive-Procedural Separation",
+        "How LLMs Guide Research in Auto-RecSys",
+        "Case Studies and Performance Gains",
+        "Building Your Own Autonomous ML Research System",
+        "Future Directions and Limitations"
+      ],
+      "summary": "This post would detail Auto-RecSys, an autonomous research system designed to automate hypothesis generation, experiment execution, and iterative refinement for industry-scale recommender models. It addresses challenges like long feedback loops and system complexity through distributed asynchronous execution, centralized cross-server memory, and cognitive-procedural separation, offering a robust framework for MLOps engineers.",
+      "title": "Auto-RecSys: Architecting Autonomous Research Agents for Scalable Recommender System Development",
+      "why_now": "The paper presents a concrete, scalable solution for automating the research and development cycle for large-scale ML systems, particularly recommender systems, which is highly relevant for MLOps and applied AI engineers."
+    },
     {
       "angle": "practical",
       "citations": [
