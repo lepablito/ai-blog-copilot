@@ -1,6 +1,121 @@
 {
-  "generated_at": "2026-09-12T05:36:02+00:00",
+  "generated_at": "2026-09-16T05:53:20+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.15991"
+      ],
+      "date": "2026-09-16",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.15991"
+      ],
+      "suggested_outline": [
+        "The Tokenization Dilemma: Vocabulary vs. Variation",
+        "Introducing The Functionalizer: Opcodes and Operands",
+        "How Lossless Decomposition Works (Casing, Diacritics, Repetition)",
+        "Benefits: Smaller Vocabularies and Corpus Coverage",
+        "Performance Insights: Code Compression vs. Prose Inflation",
+        "Preliminary Downstream Evaluations and Future Potential",
+        "Implementing Functionalizer: A Practical Guide"
+      ],
+      "summary": "Traditional subword tokenizers often compromise between vocabulary size and handling orthographic variations (e.g., 'hello' vs 'Hello'). The Functionalizer proposes a lossless pre-tokenizer framework that decomposes words into canonical base tokens and parametric transformation operators (opcodes). This method significantly reduces vocabulary size, improves code syntax validity, and offers a more structurally aware approach to language modeling, particularly beneficial for code-heavy applications.",
+      "title": "The Functionalizer: A Lossless Approach to Subword Tokenization for Efficiency and Fidelity",
+      "why_now": "Released on arXiv within the last 48 hours, this paper presents a novel and practical pre-tokenization technique that promises to enhance LLM efficiency and representation quality, especially relevant given the increasing focus on tokenization costs and code generation."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.16053"
+      ],
+      "date": "2026-09-16",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.16053"
+      ],
+      "suggested_outline": [
+        "The Limitations of Current LLM Agent Memory Systems",
+        "Inspired by Cognitive Neuroscience: Memory Reconsolidation",
+        "Introducing REALM: A Reconsolidation-Evolution Framework",
+        "Autonomous Memory Organization: Heterogeneous Cognitive Graphs",
+        "Adaptive Retrieval: Graph-Search Atoms",
+        "Continual Reconsolidation: Evolving Memory with Retrieval Feedback",
+        "Performance Benchmarks and Future Directions for Agentic Memory"
+      ],
+      "summary": "Existing LLM agent memory systems typically treat retrieval as the endpoint, neglecting feedback to evolve memory. Inspired by cognitive neuroscience, REALM (Reconsolidation-Evolution Agentic Long-term Memory) models memory as a continual lifecycle. It autonomously organizes memories into a heterogeneous cognitive graph, retrieves evidence via adaptive graph-search atoms, and continually reconsolidates memories based on retrieval feedback, significantly outperforming baselines in long-term interaction tasks.",
+      "title": "REALM: Reconsolidation-Evolution Agentic Long-Term Memory for LLM Agents",
+      "why_now": "Published on arXiv within the last 48 hours, this paper introduces a significant advancement in LLM agent memory systems, moving beyond static retrieval to a dynamic, reconsolidation-driven approach. This is highly relevant for engineers building more capable and robust long-term AI agents."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.15992"
+      ],
+      "date": "2026-09-16",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.15992"
+      ],
+      "suggested_outline": [
+        "The Challenge of LLM Inference Costs in Multi-Model Setups",
+        "Introducing Inference Networks: A Graph-Based Framework",
+        "The Optimal Activation Policy: Threshold-Based Routing",
+        "Confidence Estimation Mechanisms for Discriminative and Generative Tasks",
+        "Experimental Results: Demonstrating Substantial Cost Reductions",
+        "Designing Your Own LLM Inference Network",
+        "Practical Considerations and Deployment Strategies"
+      ],
+      "summary": "Leveraging multiple LLMs for inference often lacks a principled cost-performance strategy. This paper introduces 'inference networks,' a graph-based framework for optimal model activation. It proves that for a series of LLM experts, an optimal policy has a threshold structure: route simple queries to cheaper models and escalate to more capable, costly ones only if confidence falls below a defined threshold. This method offers substantial cost reductions while meeting performance targets for both discriminative and generative tasks.",
+      "title": "Optimizing LLM Inference Costs with Adaptive Activation Policies in Inference Networks",
+      "why_now": "Published on arXiv in the last 48 hours, this research offers a clear, mathematically-backed strategy for managing LLM inference costs in multi-model deployments, a critical practical concern for engineers deploying LLMs at scale."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.15994"
+      ],
+      "date": "2026-09-16",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.15994"
+      ],
+      "suggested_outline": [
+        "The Hidden Vulnerability: LLM Probes vs. Typos",
+        "Understanding Latent Undertow: Rotational Shifts in Hidden States",
+        "The Impact on Prompt-Injection Probes",
+        "Introducing the KV-Cache Fork: A Novel Mitigation Strategy",
+        "Why the KV-Cache Fork Works: Exploiting Spatial Decay",
+        "Comparative Analysis: KV-Cache Fork vs. Perturbation-Augmented Training",
+        "Implementing and Testing Robust LLM Probes"
+      ],
+      "summary": "While LLMs are robust to typos in user input, internal 'probes' designed to detect malicious prompts are surprisingly vulnerable. Ordinary typos cause significant shifts in the model's hidden states, severely degrading probe accuracy. This paper introduces a 'KV-cache fork' as a novel mitigation: appending a short, fixed suffix allows the probe to read tokens downstream of the perturbation, effectively closing 95% of the accuracy gap caused by typos, significantly outperforming perturbation-augmented training.",
+      "title": "Latent Undertow: How Typos Evade LLM Safety Probes and a KV-Cache Fork Solution",
+      "why_now": "This paper, recently published on arXiv, highlights a critical, previously under-recognized vulnerability in LLM safety mechanisms and proposes a highly effective, practical solution (KV-cache fork), directly addressing a pressing concern for LLM security and robustness."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.15990"
+      ],
+      "date": "2026-09-16",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.15990"
+      ],
+      "suggested_outline": [
+        "Introduction: The Paradox of Few-Shot Degradation",
+        "The Problem with 'Raw Shift' Metrics",
+        "Introducing 'Content Delta': A Deeper Look at Representation Changes",
+        "Behavioral Evidence: Task-Dependent Degradation",
+        "Causal Confirmation: Masking Demonstrations",
+        "Implications for Prompt Engineering and Model Understanding",
+        "Practical Takeaways: How to Use 'Content Delta' for Better Few-Shot Learning"
+      ],
+      "summary": "Few-shot prompting can surprisingly degrade LLM performance. This paper introduces 'content delta', a novel metric that isolates the representational shift caused by the *content* of few-shot demonstrations, rather than just their length. It reveals that models benefiting from few-shot learning actually restructure their internal representations more, challenging prior assumptions and offering a new lens to diagnose and mitigate performance degradation in few-shot settings.",
+      "title": "Beyond Superficial Shifts: Understanding Few-Shot Degradation with 'Content Delta'",
+      "why_now": "Published on arXiv within the last 48 hours, this paper introduces a new diagnostic tool ('content delta') and a causal understanding for a common, perplexing LLM behavior (few-shot degradation), offering a fresh perspective for practitioners struggling with few-shot performance."
+    },
     {
       "angle": "practical",
       "citations": [
