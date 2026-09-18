@@ -1,6 +1,80 @@
 {
-  "generated_at": "2026-09-16T05:53:20+00:00",
+  "generated_at": "2026-09-18T05:46:50+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.19150"
+      ],
+      "date": "2026-09-18",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.19150"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Stylistic Control in LLMs",
+        "Limitations of Manual Prompt Engineering for Style",
+        "The 'Sampling Reveals Style' Methodology: PCA on Activations",
+        "How to Discover Stylistic Axes (Training-Free Approach)",
+        "Interpreting and Labeling Stylistic Dimensions",
+        "Model Dependence and Discoverability Nuances",
+        "Practical Applications for Advanced Prompt Engineering",
+        "Beyond Style: Potential for Other Latent Dimension Discovery",
+        "Conclusion: Towards More Expressive and Controllable LLMs"
+      ],
+      "summary": "This post would explore a training-free, unsupervised method for discovering and controlling stylistic dimensions in LLM outputs. It would detail how repeated sampling at elevated temperatures, followed by PCA on hidden activations, can reveal 'stylistic axes'. The article would discuss the practical implications for advanced prompt engineering, enabling fine-grained control over tone, formality, and other stylistic elements without needing supervised data or explicit fine-tuning, along with model-dependent discoverability.",
+      "title": "Unsupervised Stylistic Control: Discovering LLM Stylistic Axes with Sampling and PCA",
+      "why_now": "The arXiv paper 'Sampling Reveals Style: Unsupervised, Training-Free Discovery of Prompt-Conditional Stylistic Axes in LLM Activations' was published within the last 48 hours, offering a novel and practical approach to a common challenge in LLM output generation: controlling style."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.19156"
+      ],
+      "date": "2026-09-18",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.19156"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of LLM Reasoning and Error Accumulation",
+        "Limitations of Traditional Fine-tuning (Imitation Learning)",
+        "Reflective Recovery: The Core Idea (Self-Supervised Error Correction)",
+        "Mechanism: How Failed Trajectories Become Training Data",
+        "Empirical Results and Performance Gains",
+        "Implementation Considerations for Applied AI Engineers",
+        "Potential Applications and Future Directions",
+        "Conclusion: Towards More Robust and Self-Correcting LLMs"
+      ],
+      "summary": "This post would explore 'Reflective Recovery', a novel self-supervised method to enhance LLM reasoning by explicitly training models to correct their own mistakes. It would delve into how failed reasoning attempts can be transformed into valuable training data, enabling LLMs to recognize and recover from erroneous intermediate states, thereby improving robustness and reducing cumulative errors in complex tasks. The post would cover the mechanism, potential applications, and empirical benefits over traditional imitation learning.",
+      "title": "Self-Supervised LLM Recovery: Learning from Reasoning Mistakes",
+      "why_now": "The paper 'Reflective Recovery: A Self-Supervised Method for Reasoning by Learning from Mistakes' was published on arXiv within the last 48 hours, presenting a new approach to a persistent problem in LLM development: improving reasoning and error correction."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.19158"
+      ],
+      "date": "2026-09-18",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.19158"
+      ],
+      "suggested_outline": [
+        "Introduction: The Bottleneck of Knowledge Integration in LLMs",
+        "Beyond RAG: The Need for Decoupled Knowledge Access",
+        "VisKG-LM Architecture: Knowledge Graphs as Visual Memory",
+        "Offline Compilation and Cached Representation",
+        "Inference Mechanism: LLM Reasoning with Visual KG Memory",
+        "Advantages: Efficiency, Scalability, and Interpretability",
+        "Implementation Challenges and Considerations",
+        "Comparative Analysis with Traditional KG-LLM Integration",
+        "Future Directions: Expanding Visual KG Memory Applications"
+      ],
+      "summary": "This post would introduce VisKG-LM, a novel architecture that decouples knowledge graph encoding from language reasoning by compiling retrieved subgraphs into visual memory (images). It would discuss how this approach allows for offline, cached knowledge representation, which is then consulted by the LLM's final layer. The focus would be on the architectural implications, efficiency gains, and how this method addresses challenges in integrating structured knowledge with LLMs for tasks like multiple-choice question answering.",
+      "title": "Compiling Knowledge Graphs to Visual Memory for Enhanced LLM QA",
+      "why_now": "The arXiv preprint 'VisKG-LM: Compiling Knowledge Graphs into Visual Memory for Multiple-Choice Question Answering' was released in the last 48 hours, offering a fresh, innovative perspective on knowledge integration for LLMs, moving beyond conventional RAG methods."
+    },
     {
       "angle": "practical",
       "citations": [
