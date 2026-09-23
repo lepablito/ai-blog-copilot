@@ -1,6 +1,98 @@
 {
-  "generated_at": "2026-09-20T05:59:55+00:00",
+  "generated_at": "2026-09-23T05:47:52+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.25008"
+      ],
+      "date": "2026-09-23",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.25008"
+      ],
+      "suggested_outline": [
+        "Introduction: Why Rust for LLM Training?",
+        "The Current Landscape: Rust ML Frameworks (Candle, Burn)",
+        "Key Challenges and a 'Failure Taxonomy' for Rust Training",
+        "A Deep Dive into Gradient Verification Disciplines",
+        "Performance and Efficiency Gains: What Rust Offers",
+        "Overcoming Development Hurdles: An Engineer's Perspective",
+        "Future of Rust in LLM Development"
+      ],
+      "summary": "An experience report details the challenges and successes of pretraining a language model entirely in Rust, bypassing common Python/PyTorch frameworks. This post would delve into the specific 'failure taxonomy' of Rust ML frameworks (Candle, Burn) for training, the verification discipline required to catch silent gradient issues, and the implications for engineers seeking to build high-performance, low-level AI infrastructure without Python's overhead. It offers practical insights into the current state of Rust in ML training.",
+      "title": "Training LLMs in Rust: Lessons from Building a Language Model End-to-End Without Python/PyTorch",
+      "why_now": "The recent publication of an experience report detailing end-to-end LLM training in Rust highlights the growing maturity and challenges of non-Python ML stacks, making it a timely topic for practitioners interested in performance and low-level control."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.25049"
+      ],
+      "date": "2026-09-23",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.25049"
+      ],
+      "suggested_outline": [
+        "Introduction: The Problem of LLM Over-Refusal",
+        "Mechanistic Analysis: Identifying Hypersensitive Safety Heads",
+        "Understanding Attention Entanglement and Routing Conflicts",
+        "Semantic Routing Calibration (SRC): A Training-Free Solution",
+        "How SRC Works: Dynamic Suppression and Logits Fusion",
+        "Experimental Results and Impact on Safety vs. Utility",
+        "Practical Implementation and Deployment Considerations"
+      ],
+      "summary": "Safety-aligned LLMs often suffer from 'over-refusal,' incorrectly rejecting benign instructions. This post would explore the mechanistic analysis identifying 'Hypersensitive Safety Heads' and their attention entanglement as a root cause. It would then detail Semantic Routing Calibration (SRC), a lightweight, training-free inference framework that dynamically suppresses these heads and uses a dual-branch logits fusion to restore trustworthy reasoning, offering practical strategies for improving LLM safety and usability.",
+      "title": "Mitigating LLM Over-Refusal: Dynamic Semantic Routing Calibration for Safer AI",
+      "why_now": "The new arXiv paper offers a mechanistic explanation and a training-free solution for LLM over-refusal, a pervasive practical issue, making this a highly timely and actionable topic."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.25053"
+      ],
+      "date": "2026-09-23",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.25053"
+      ],
+      "suggested_outline": [
+        "Introduction: The Limits of KV Cache and the Need for Memory Transfer",
+        "Understanding Hybrid Language Model Architectures",
+        "LatentPort: How Cross-Model Recurrent State Transfer Works",
+        "Technical Deep Dive: Gated DeltaNet (GDN) and State Package",
+        "Experimental Results: NLL Reduction and Performance Gains",
+        "Practical Implications for LLM Deployment and Continuous Learning",
+        "Future Research Directions and Challenges"
+      ],
+      "summary": "A novel technique, LatentPort, demonstrates the ability to transfer live recurrent memory (beyond just KV cache) between differently sized hybrid language models (e.g., 4B to 9B Qwen3.5) without requiring the target model to re-read the context. This theoretical and practical advancement offers significant implications for efficient model handoff, continuous learning, and dynamic model scaling in production environments, potentially reducing inference costs and improving context management for long-running AI agents.",
+      "title": "Beyond KV Cache: Cross-Model Recurrent Memory Transfer for Hybrid Language Models",
+      "why_now": "The recent arXiv paper introduces a novel and significant advancement in LLM memory transfer, addressing a fundamental challenge in dynamic model deployment and long-context handling, making it highly relevant."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.25047"
+      ],
+      "date": "2026-09-23",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.25047"
+      ],
+      "suggested_outline": [
+        "Introduction: The Vision of Autonomous AI Development",
+        "Framing Model Building as a Tree Search Problem",
+        "Limitations of Prior Autonomous AI Agents",
+        "AIBuildAI-2.5: Innovations in Efficiency",
+        "LLM-Guided Search Rules and Node Ranking",
+        "Resource-Aware Scheduling and Dynamic Model Serving",
+        "Implications for MLOps, AutoML, and AI Research"
+      ],
+      "summary": "The AIBuildAI-2.5 system represents a significant step towards autonomous AI model development by framing it as an LLM-guided tree search problem. This technical post would explore the three key efficiency weaknesses in prior approaches and how AIBuildAI-2.5 addresses them through improved search rules, resource-aware job scheduling, and dynamic model serving. It would provide insights into using LLM agents for MLOps, AutoML, and the future of self-improving AI systems.",
+      "title": "AIBuildAI-2.5: LLM-Guided Tree Search for Autonomous AI Model Development",
+      "why_now": "The release of AIBuildAI-2.5, an advanced agentic system for autonomous AI model development, highlights current innovations in using LLMs for MLOps and AutoML, making it a relevant and forward-looking practical topic."
+    },
     {
       "angle": "practical",
       "citations": [
