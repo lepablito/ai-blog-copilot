@@ -1,6 +1,78 @@
 {
-  "generated_at": "2026-09-23T05:47:52+00:00",
+  "generated_at": "2026-09-24T06:05:56+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.27156"
+      ],
+      "date": "2026-09-24",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.27156"
+      ],
+      "suggested_outline": [
+        "Introduction: The Cost of Verbose LLM Reasoning",
+        "Current Approaches to Reasoning Efficiency and Their Limitations",
+        "Introducing RECAP: Redundancy-Aware Credit Assignment via Propagation",
+        "Technical Breakdown: Structural Responsibility and Step Efficacy",
+        "How RECAP Reshapes Reinforcement Learning for Reasoning",
+        "Empirical Results: Accuracy-Efficiency Trade-offs on Math Benchmarks",
+        "Implications for LLM Deployment and Cost Optimization",
+        "Conclusion: Towards Smarter, Leaner LLM Reasoning"
+      ],
+      "summary": "This post would explore RECAP (REdundancy-aware Credit Assignment via Propagation), a new method for improving the efficiency of large reasoning models by identifying and reducing redundant steps in their reasoning traces. It introduces 'structural responsibility' and 'step efficacy' to assign credit based on a step's downstream role and contribution to the correct solution. By modeling inter-step semantic dependencies, RECAP significantly reduces reasoning tokens (8%-31%) while improving accuracy, offering a path to more cost-effective and faster LLM inference without sacrificing performance.",
+      "title": "RECAP: Assigning Credit for Redundancy-Aware Efficient LLM Reasoning",
+      "why_now": "The paper was submitted to arXiv on September 22, 2026, highlighting a very recent advancement in optimizing LLM reasoning. As LLM usage scales, efficiency in token usage directly impacts operational costs and inference latency, making this a critical and timely topic for applied engineers."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.27173"
+      ],
+      "date": "2026-09-24",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.27173"
+      ],
+      "suggested_outline": [
+        "Introduction: The Context Challenge in Large-Scale LLM Reasoning",
+        "Limitations of Ad-Hoc Context Management",
+        "Relevance Realization: A Cognitive Theory for AI Systems",
+        "Introducing R3Con: Principles for Effective Context Representation",
+        "Technical Deep Dive: How R3Con Operationalizes These Principles",
+        "R3Con in Action: Outperforming Baselines and Reducing Model Scale Dependency",
+        "Practical Implications: Building Frontier-Level AI with Smaller Models",
+        "Conclusion: The Future of Context-Aware LLM Systems"
+      ],
+      "summary": "This post would discuss R3Con, a framework for designing AI systems that construct effective context representations for LLMs reasoning over vast, heterogeneous information sources. Drawing on the cognitive theory of relevance realization, it proposes concrete principles to move beyond ad-hoc context design. R3Con demonstrates that principled context representation can significantly reduce reliance on model scale, enabling smaller models (e.g., 4B and 9B) to outperform much larger 35B baselines, and achieve frontier-level performance at lower costs.",
+      "title": "R3Con: Principled Context Representation for Large-Scale LLM Reasoning",
+      "why_now": "The paper was submitted to arXiv on September 23, 2026, making it a very recent development. With LLM context windows growing and the need to process increasingly large and complex datasets, principled approaches to context management are crucial for both performance and cost-effectiveness."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.26913"
+      ],
+      "date": "2026-09-24",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.26913"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Multi-LLM Deployment",
+        "Beyond Simple Routing: Why Dense Collaboration Isn't Always the Answer",
+        "Introducing COMED: Controlled Model Escalation for Deliberation",
+        "Technical Deep Dive: Anchor Self-Consistency, Router Margin, and Peer Probes",
+        "The Rescue-Harm Decomposition: Quantifying Collaboration Benefits",
+        "Performance Gains and Efficiency: Case Studies (MedQA, HLE)",
+        "Implementing COMED: Practical Considerations for Engineers",
+        "Conclusion: The Future of Hybrid Multi-LLM Systems"
+      ],
+      "summary": "This post would delve into COMED (Controlled Model Escalation for Multi-LLM Deliberation), a novel approach for combining the strengths of multiple LLMs. It addresses the trade-off between simple model routing and dense, always-on collaboration, showing how selective collaboration can improve accuracy (e.g., +10.7% on MedQA) while reducing token usage compared to dense collaboration. The technical argument would focus on its use of anchor self-consistency, router margin, and a lightweight peer probe to decide when escalation to a collaborating model is beneficial, formalizing this with a rescue-harm decomposition.",
+      "title": "COMED: Bridging Routing and Collaboration for Efficient Multi-LLM Inference",
+      "why_now": "The paper was submitted to arXiv on September 22, 2026, making it a very recent development in multi-LLM inference strategies. The increasing complexity and cost of LLM deployments make efficient orchestration methods like COMED highly timely."
+    },
     {
       "angle": "practical",
       "citations": [
