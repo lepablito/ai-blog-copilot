@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-09-24T06:05:56+00:00",
+  "generated_at": "2026-09-25T06:04:47+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://realarcherl.github.io/posts/prompt_injection/"
+      ],
+      "date": "2026-09-25",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://realarcherl.github.io/posts/prompt_injection/"
+      ],
+      "suggested_outline": [
+        "Introduction: What is Indirect Prompt Injection (IPI) and why it matters for agents.",
+        "The Shifting Landscape: How newer LLMs are becoming more resilient (citing Gray Swan and Lakera benchmarks).",
+        "In-Lab vs. Real-World Attacks: The gap between benchmark performance and practical threats.",
+        "Specific Vulnerabilities: Tool descriptions, external text, and model delegation.",
+        "Mitigation Strategies for Developers: Best practices for building robust agentic applications.",
+        "Conclusion: The continuous arms race and future outlook."
+      ],
+      "summary": "This post would delve into the current state of indirect prompt injection attacks against modern Large Language Models, leveraging recent benchmark data (e.g., from Gray Swan and Lakera) to show how newer models are improving their resistance. It will highlight that while 'in-lab' attacks are harder, practical threats persist, especially in agentic applications and with older models. The post will also cover specific vulnerabilities related to tool descriptions and external text handling, offering concrete advice for developers building LLM-powered agents.",
+      "title": "The Evolving Threat of Indirect Prompt Injection in Advanced LLMs",
+      "why_now": "Recent benchmarks (April and September 2026 data cited in the article) show significant improvements in LLM resistance to indirect prompt injection from leading models, making it timely to assess the evolving threat landscape and provide updated practical guidance."
+    },
     {
       "angle": "theoretical",
       "citations": [
