@@ -1,6 +1,121 @@
 {
-  "generated_at": "2026-09-27T06:29:41+00:00",
+  "generated_at": "2026-09-28T06:37:31+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.30439"
+      ],
+      "date": "2026-09-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.30439"
+      ],
+      "suggested_outline": [
+        "The Growing Need for Privacy in Multi-Speaker ASR",
+        "Introducing Target Speaker Unlearning (TSU-ASR)",
+        "The Enrollment-Conditioned Gating (ECG) Module: How It Works",
+        "Dynamic Opt-Out: Unlearning at Inference Time Without Retraining",
+        "Performance Analysis: Transcription Accuracy for Opt-Out vs. Retained Speakers",
+        "Deployment Scenarios: Video Conferencing and Beyond",
+        "Implementing Privacy-Preserving ASR in Your Applications"
+      ],
+      "summary": "This post would explore the novel concept of Target Speaker Unlearning (TSU-ASR) in a fully end-to-end framework for multi-speaker ASR and diarization. It would introduce the Enrollment-Conditioned Gating (ECG) module, a lightweight, attachable component to frozen dual-stream speech LLMs, enabling dynamic, inference-time opt-out for specific speakers without retraining. This offers a practical solution for privacy concerns in applications like video conferencing, allowing users to prevent their speech from being transcribed.",
+      "title": "Inference-Time Target Speaker Unlearning for Privacy in ASR",
+      "why_now": "Published within the last 48 hours, this paper presents a highly practical and ethically significant development. Dynamic, inference-time speaker unlearning directly addresses privacy concerns in real-world ASR deployments, a feature increasingly demanded by users and regulations."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.30293"
+      ],
+      "date": "2026-09-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.30293"
+      ],
+      "suggested_outline": [
+        "The Tool Overload Problem: Why Current Agent Tool Discovery Doesn't Scale",
+        "Introducing Cartograph: A Federated Approach to Tool Discovery",
+        "Mechanism 1: Operator-Attested Capability Cards for Trust and Efficiency",
+        "Mechanism 2: Rift - Confusable Cluster Analysis for Improved Retrieval",
+        "Mechanism 3: Two-Stage Retrieval for Scalable Tool Ranking",
+        "Performance Deep Dive: How Cartograph Reduces Tokens and Boosts R@5",
+        "Implementing Federated Tool Discovery in Your Agent Architecture"
+      ],
+      "summary": "This article would explore the scalability challenge of tool discovery for AI agents in federated environments, where loading every tool definition becomes prohibitively expensive. It would introduce Cartograph, a novel framework leveraging operator-attested capability cards, confusable-cluster analysis (Rift), and two-stage retrieval to enable efficient and accurate tool discovery, drastically reducing token usage and improving retrieval accuracy for complex agent systems.",
+      "title": "Federated Tool Discovery for AI Agents: The Cartograph Approach",
+      "why_now": "Published recently, this paper addresses a critical, emerging scaling problem for AI agents as they integrate with more tools and services. Cartograph offers a concrete, novel engineering solution with reported performance gains."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.30297"
+      ],
+      "date": "2026-09-28",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.30297"
+      ],
+      "suggested_outline": [
+        "The Cold-Start Challenge for Conversational AI Agents",
+        "Spotify's Solution: A Pipeline for Synthetic Data Generation",
+        "From Single-Turn to Multi-Turn: Crafting Realistic Conversations",
+        "The Self-Improvement Loop: Variance-Based Contrastive Optimization",
+        "Iterative Refinement with a Coding Agent: Automating Error Correction",
+        "Impact in Production: Accelerating Iteration and Quality Gains",
+        "Applying Synthetic Data and Self-Improvement to Your Agent Projects"
+      ],
+      "summary": "This post will detail Spotify's approach to building and improving conversational recommendation agents, focusing on how they overcome the cold-start problem. It will cover their pipeline for generating multi-turn synthetic data from single-turn prompts and their self-improvement loop, which combines variance-based contrastive optimization with iterative refinement through a coding agent to automatically identify and fix planning and tool-use errors, leading to significant quality improvements and faster iteration cycles.",
+      "title": "Bootstrapping Conversational Agents: Spotify's Synthetic Data and Self-Improvement Loops",
+      "why_now": "The paper, from Spotify and published very recently, provides a real-world, production-proven methodology for agent development, especially valuable for cold-start scenarios and continuous improvement, making it highly relevant for engineers building conversational AI."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2609.30289"
+      ],
+      "date": "2026-09-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.30289"
+      ],
+      "suggested_outline": [
+        "The Problem with Flat Memory: Why LLM Agents Forget What's Valid",
+        "Introducing HiCoMER: Hierarchical Collaborative Memory for Agents",
+        "Team vs. Individual Memories: A Structured Approach",
+        "Mechanisms for Validity Maintenance and Evolution",
+        "Validity-Aware Retrieval: Prioritizing Current Consensus",
+        "Case Studies: Improving Agent Responses in Collaborative Settings",
+        "Designing More Intelligent and Reliable LLM Agent Memory Systems"
+      ],
+      "summary": "This article will tackle the limitations of current LLM agent memory systems that treat all memories equally, often retrieving outdated or conflicting information. It will introduce HiCoMER, a framework for hierarchical collaborative memory management and validity-aware retrieval. The post will explain how maintaining the validity of team and individual memories and prioritizing currently valid information addresses a critical flaw in agent reasoning, particularly in collaborative scenarios.",
+      "title": "Beyond Semantic Relevance: Hierarchical Memory for Validity-Aware LLM Agents",
+      "why_now": "This recently published paper introduces a novel and crucial concept for advanced LLM agents: memory validity. As agent complexity grows, managing heterogeneous and evolving memories becomes a core engineering challenge, which HiCoMER directly addresses."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.30290"
+      ],
+      "date": "2026-09-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.30290"
+      ],
+      "suggested_outline": [
+        "Introduction: The Hidden Costs of LLM-as-Judge Failures",
+        "Case Study: Text-to-SQL Pipeline and GPT-4o-mini's Low Agreement",
+        "Unpacking 'GRADE-HALLUCINATION': Why LLMs Over-Flag",
+        "The Solution: Benchmarking, Self-Hosted Models (Qwen3.6-27B), and Ensemble Strategies",
+        "Practical Audit Recipe: How to Measure and Improve Your LLM-as-Judge",
+        "Cost-Benefit Analysis: Performance vs. Inference Costs",
+        "Conclusion: Building Robust and Reliable LLM Evaluation Systems"
+      ],
+      "summary": "This post would delve into the critical, often overlooked problem of LLM-as-judge failures in production pipelines, specifically in text-to-SQL. It would expose the 'GRADE-HALLUCINATION' mechanism causing over-flagging and demonstrate how a cheaper, self-hosted model can significantly outperform commercial APIs like GPT-4o-mini, offering practical steps for auditing and repairing these systems to achieve higher agreement with human annotators and substantial cost savings.",
+      "title": "Auditing and Repairing LLM-as-Judge Failures in Production",
+      "why_now": "The paper, published in the last 48 hours, highlights a specific, measurable failure mode ('GRADE-HALLUCINATION') in a common production LLM use case (LLM-as-judge) and offers concrete, cost-effective solutions, making it highly timely for practitioners."
+    },
     {
       "angle": "practical",
       "citations": [
