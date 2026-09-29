@@ -1,6 +1,53 @@
 {
-  "generated_at": "2026-09-28T06:37:31+00:00",
+  "generated_at": "2026-09-29T06:45:49+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://claude.dev/blog/automating-eval-design-and-hillclimbing/"
+      ],
+      "date": "2026-09-29",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://claude.dev/blog/automating-eval-design-and-hillclimbing/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Evaluating LLMs",
+        "Principles of Good Eval Design: Beyond Jagged Capabilities",
+        "Avoiding Overfitting: Strategies for Reliable Benchmarking",
+        "The Hillclimbing Workflow: Iterative Optimization for Prompts and Parameters",
+        "Practical Application with Claude Code's `build-eval` and `hillclimb` Commands",
+        "Case Study: Cost Reduction and Performance Improvement",
+        "Conclusion: Building Trustworthy LLM Applications"
+      ],
+      "summary": "This post will delve into the principles and practical application of designing effective evaluations for LLM-powered applications. It will cover strategies to avoid common pitfalls like overfitting to benchmarks, ensuring evaluations truly reflect production performance. Furthermore, it will explore 'hillclimbing' techniques to iteratively improve LLM prompts and configurations, balancing performance and cost, using concrete examples from the `claude-api skill`.",
+      "title": "Robust LLM Evaluation and Hillclimbing: Preventing Overfitting and Optimizing Performance",
+      "why_now": "The article details a new guided workflow and tool (`claude-api skill`) for automating eval design and hillclimbing, making robust LLM optimization more accessible and systematic for practitioners."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://www.practicalsystems.io/blog/fable-opus-sonnet-claude-code-subagent-routing"
+      ],
+      "date": "2026-09-29",
+      "estimated_effort": "large",
+      "sources": [
+        "https://www.practicalsystems.io/blog/fable-opus-sonnet-claude-code-subagent-routing"
+      ],
+      "suggested_outline": [
+        "Introduction: The Hidden Costs of Agentic LLMs",
+        "The Problem: Fable Doing Opus's Job (and Your Bill Paying for It)",
+        "The Hierarchical Agent 'Org Chart': Fable, Opus, Sonnet, Haiku",
+        "Context Management: Keeping Bulky Output Out of Expensive Contexts",
+        "Delegation Rules: Who Spawns Whom (and Why it Matters)",
+        "Cost Metrics: Understanding Effective Tokens and Real-World Savings",
+        "Practical Implementation: Prompting for Delegation and Verification",
+        "Conclusion: Building Efficient and Scalable Agent Systems"
+      ],
+      "summary": "This article will break down a practical architecture for building cost-effective multi-agent LLM systems by strategically delegating tasks to different models based on their capabilities and pricing (e.g., Fable for planning, Opus for complex work, Sonnet for implementation, Haiku for lookups). It will focus on managing context efficiently to minimize expensive token re-reads and outline an 'org chart' for agent collaboration, complete with cost metrics and real-world examples.",
+      "title": "Optimizing Multi-Agent LLM Costs: A Hierarchical Approach to Model Delegation",
+      "why_now": "The article provides a detailed, battle-tested framework for multi-agent orchestration that directly addresses the high operational costs associated with powerful LLMs, a critical concern for practitioners as agentic workflows become more common."
+    },
     {
       "angle": "practical",
       "citations": [
