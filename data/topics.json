@@ -1,6 +1,73 @@
 {
-  "generated_at": "2026-09-29T06:45:49+00:00",
+  "generated_at": "2026-09-30T06:34:20+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.31660"
+      ],
+      "date": "2026-09-30",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.31660"
+      ],
+      "suggested_outline": [
+        "Introduction: The RAG Component Conundrum",
+        "The Interplay: Parsers, Chunkers, and Embeddings",
+        "Case Study: Indian Government Regulatory Documents",
+        "Key Findings: Interaction Effects and Performance Pitfalls",
+        "Practical Recommendations for RAG Engineers",
+        "Conclusion: Towards Holistic RAG Design"
+      ],
+      "summary": "This post would delve into the critical, often overlooked, interactions between document parsers, chunking strategies, and embedding models in Retrieval-Augmented Generation (RAG) pipelines. It would argue that joint evaluation of these components is essential for robust RAG performance, especially across diverse document types. The discussion will highlight how component choices are not independent and can lead to significant performance differences.",
+      "title": "Optimizing RAG Pipelines: Beyond Simple Component Swaps",
+      "why_now": "A recent factorial study empirically demonstrated the significant interactions between RAG components (parsers, chunkers, embeddings) across different regulatory documents, revealing that no single retriever family dominates and that component choices interact significantly, pushing beyond the common practice of independent component selection."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.31688"
+      ],
+      "date": "2026-09-30",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2609.31688"
+      ],
+      "suggested_outline": [
+        "The Challenge of LLM Output Diversity and Mode Collapse",
+        "Introducing DRY-SFT: A Two-Stage Self-Supervised Approach",
+        "How DRY-SFT Works: Sequential Generation and Independent Fine-Tuning",
+        "Empirical Results: Significant Gains in Pass@K and Structural Diversity",
+        "When and Why DRY-SFT is Most Effective",
+        "Implementing DRY-SFT in Your LLM Workflows"
+      ],
+      "summary": "This post will introduce DRY-SFT, a novel self-supervised fine-tuning method designed to significantly increase the diversity and coverage of LLM outputs, particularly in verifiable domains like coding and math. It will explain how generating sequential, distinct solutions and then fine-tuning on them without explicit rewards or verifiers can overcome 'mode collapse' and improve the probability of finding a correct answer among multiple attempts.",
+      "title": "Don't Repeat Yourself: Self-Supervised Fine-Tuning for Increased LLM Output Diversity",
+      "why_now": "A new paper introduces 'Don't Repeat Yourself Supervised Fine-Tuning' (DRY-SFT), a simple yet effective self-supervised method to boost output diversity and coverage in LLMs, showing substantial gains in benchmarks like HumanEval+ and MBPP+ in the last 48 hours."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2609.31663"
+      ],
+      "date": "2026-09-30",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2609.31663"
+      ],
+      "suggested_outline": [
+        "The Persistent Challenge of Knowledge Graph Construction",
+        "Leveraging Small LLMs for Industrial Knowledge Extraction",
+        "The Ontology-Driven Pipeline: From Text to Triples",
+        "Schema-Guided Prompting and Quantized Models: Key to Success",
+        "Case Study: Power-Grid Incident Reports",
+        "Practical Implications for Enterprise AI",
+        "Conclusion: Democratizing Knowledge Graph Creation"
+      ],
+      "summary": "This article will explore a pipeline for constructing ontology-driven knowledge graphs from unstructured industrial text using compact, locally deployable open-source Large Language Models (LLMs). It will detail how reusable prompting strategies and external knowledge bases can address challenges like domain specificity and scarce annotated resources, demonstrating the feasibility of such an approach for real-world applications.",
+      "title": "Building Knowledge Graphs with Compact LLMs: An Ontology-Driven Approach",
+      "why_now": "A recent study demonstrates the successful application of compact (7B-32B parameters) open-source LLMs with schema-guided prompting for ontology-driven knowledge graph construction from industrial text, offering a practical, locally deployable solution for a challenging domain-specific problem."
+    },
     {
       "angle": "practical",
       "citations": [
