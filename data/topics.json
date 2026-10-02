@@ -1,6 +1,102 @@
 {
-  "generated_at": "2026-09-30T06:34:20+00:00",
+  "generated_at": "2026-10-02T06:55:24+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.00007"
+      ],
+      "date": "2026-10-02",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.00007"
+      ],
+      "suggested_outline": [
+        "Introduction: The Case for On-Device AI and NER",
+        "Challenges of On-Device Deployment: Latency, Cost, Data Locality",
+        "Overview of Model Paradigms for NER: Classical, Encoder-based, Generative LLMs",
+        "Key Evaluation Axes: Accuracy, Latency, Output Validity, Confidence",
+        "The Role of Silver Gold and Human Gold in Evaluation",
+        "Practical Selection Criteria for On-Device NER Models",
+        "Case Studies: Successful On-Device Deployments",
+        "Conclusion: Towards More Efficient and Private AI Applications"
+      ],
+      "summary": "The demand for on-device AI, particularly for tasks like Named-Entity Recognition (NER), is growing due to privacy, latency, and cost concerns. This post would analyze a recent study comparing classical taggers, encoder specialists, and generative LLMs for on-device NER across accuracy, latency, and output validity. It will provide a practitioner's guide to evaluating and selecting models for deployment without human annotation, highlighting the trade-offs between model size, performance, and deployability.",
+      "title": "On-Device NER: A Deployability Study for Efficient and Localized AI",
+      "why_now": "A new arXiv paper offers a comprehensive deployability study for on-device NER, providing critical insights into evaluating model performance, cost, and reliability in real-world, local deployment scenarios."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.00202"
+      ],
+      "date": "2026-10-02",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.00202"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Peril of Synthetic Data in LLM Training",
+        "Understanding RLHF and Synthetic RLVR Corpora",
+        "The Problem of Data Artifacts and Model Shortcuts",
+        "Causal Auditing Methodology: Detecting Provenance Exploitation",
+        "Analyzing Surface Statistics and Paraphrase-Matched Controls",
+        "Case Study: Auditing GooseReason-0.7M",
+        "Implications for Synthetic Data Generation Best Practices",
+        "Conclusion: Building Robust Models on Genuine Signals"
+      ],
+      "summary": "Synthetic data plays a crucial role in training large language models, especially for Reinforcement Learning from Human Feedback (RLHF). However, the way synthetic distractors are generated can introduce 'data artifacts' that models might exploit as shortcuts instead of learning the intended correctness. This post would delve into a causal auditing approach that investigates whether models learn provenance over genuine correctness, using techniques like paraphrase-matched control corpora and surface statistics to uncover subtle biases in synthetic RLVR datasets.",
+      "title": "Causal Auditing of Synthetic Data: Avoiding Shortcuts in RLHF Corpora",
+      "why_now": "A recent arXiv paper provides a novel causal auditing framework for synthetic RLVR corpora, addressing a pressing concern for engineers relying on synthetic data to train robust and unbiased LLMs."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.00054"
+      ],
+      "date": "2026-10-02",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2610.00054"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of LLM Judges and the Need for Rigorous Evaluation",
+        "The 'First Token Is Not the Verdict' Problem: A Hidden Distortion",
+        "Understanding Position Bias in LLM Evaluation",
+        "Mechanism of Distortion: When Judges Don't Lead with a Verdict",
+        "Quantifying the Impact: Accuracy vs. Position Bias",
+        "Recommendations for More Reliable LLM Judge Evaluation",
+        "Beyond Logit-Based Readouts: Full Generation for Trustworthy Judgments",
+        "Conclusion: Ensuring Fairness and Accuracy in Automated LLM Assessment"
+      ],
+      "summary": "Evaluating Large Language Models often relies on 'LLM judges,' where the verdict is sometimes inferred from the first generated token. This post would explore a recent finding that this 'first token' readout can significantly distort position bias, overstating it by as much as 42 points, particularly when judges don't lead with a verdict token. It will explain the mechanism behind this distortion and offer practical advice for more robust and accurate LLM judge evaluation, moving beyond cheap but misleading proxies.",
+      "title": "Beyond the First Token: Understanding and Mitigating Distortions in LLM Judge Evaluation",
+      "why_now": "A new arXiv paper reveals a critical methodological flaw in a common practice of LLM judge evaluation, providing timely insights for anyone building or relying on automated LLM evaluation systems."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.00316"
+      ],
+      "date": "2026-10-02",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.00316"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Pitfalls of Document-Grounded Voice Agents",
+        "Understanding Hallucinations and Grounding in LLMs",
+        "Introducing DuplexSpeechBench-Document Grounding (DSB-DG)",
+        "Dissecting the Three Failure Modes: Context Saturation, Grounding Decay, Proactive Grounding",
+        "Automatic Evaluation Metrics: Accuracy, Hallucination, Latency",
+        "Practical Implications for RAG and Agent Development",
+        "Strategies for Mitigating Grounding Failures and Hallucinations",
+        "Conclusion: Building More Reliable Voice Agents"
+      ],
+      "summary": "Voice agents, while offering low-latency interaction, struggle with faithfully grounding responses in external documents and are prone to hallucinations. This post would dissect the DuplexSpeechBench-Document Grounding (DSB-DG) benchmark, explaining its three failure modes (Context Saturation, Grounding Decay, Proactive Grounding) and its fully automatic evaluation of grounding accuracy, hallucination, and response latency. It will provide insights for practitioners building robust document-grounded voice agents and RAG systems.",
+      "title": "Benchmarking Document Grounding and Hallucinations in Voice Agents: A Deep Dive into DuplexSpeechBench-DG",
+      "why_now": "The introduction of DuplexSpeechBench-DG provides a new, comprehensive benchmark for a critical challenge in voice agents and RAG systems, offering concrete metrics and failure modes for engineers to address."
+    },
     {
       "angle": "practical",
       "citations": [
