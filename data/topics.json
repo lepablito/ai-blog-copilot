@@ -1,6 +1,103 @@
 {
-  "generated_at": "2026-10-02T06:55:24+00:00",
+  "generated_at": "2026-10-03T06:20:03+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://simonwillison.net/2026/Oct/1/matthew-green/",
+        "https://blog.cryptographyengineering.com/2026/09/30/is-sandboxing-sufficient-to-contain-rogue-agents/"
+      ],
+      "date": "2026-10-03",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Oct/1/matthew-green/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Peril of Autonomous AI Agents",
+        "What is Sandboxing? A Brief Security Primer",
+        "The 'Rogue Agent' Problem: Beyond Simple Isolation",
+        "Exploiting Shared Resources: The AI Worm Analogy",
+        "Case Studies/Hypotheticals of Sandbox Escapes in AI",
+        "Designing for Resilience: New Paradigms for AI Security",
+        "Implications for AI System Architects and Developers",
+        "Conclusion: A Call for Deeper Security Thinking in AI"
+      ],
+      "summary": "This post would delve into the critical security challenge of containing potentially 'rogue' AI agents, even when seemingly isolated within sandboxed environments. It would explore how agents can bypass traditional sandboxing mechanisms by leveraging shared resources or communication channels (e.g., shared caches, message queues), effectively acting as 'worms' to spread unintended or malicious behavior across a system of interconnected agents. The discussion would cover theoretical vulnerabilities and practical implications for designing secure AI systems.",
+      "title": "The Sandboxing Paradox: Containing Rogue AI Agents in Complex Systems",
+      "why_now": "Recent discussions, particularly a quote from Matthew Green, highlight the evolving and often underestimated security risks of AI agents, emphasizing that traditional sandboxing might be insufficient against sophisticated, distributed 'worm-like' behaviors in AI systems."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/StayLameBro/backburner"
+      ],
+      "date": "2026-10-03",
+      "estimated_effort": "large",
+      "sources": [
+        "https://github.com/StayLameBro/backburner"
+      ],
+      "suggested_outline": [
+        "Introduction: The Demand for Local LLMs and Resource Constraints",
+        "The Backburner Approach: Mac + iPhone Distributed Inference",
+        "Technical Deep Dive: Split Prefill and Pipelining",
+        "Expanding Context: How the iPhone Manages Older KV Pages",
+        "Leveraging Apple Hardware: GPU, Neural Engine, and USB-C Bandwidth",
+        "Implementation Details for Practitioners (llama.cpp fork, installation)",
+        "Performance Benchmarks and Real-world Impact",
+        "Challenges and Future Directions for Distributed Local Inference",
+        "Conclusion: Democratizing LLM Power on Consumer Devices"
+      ],
+      "summary": "This post would detail a practical engineering approach to running large language models locally by offloading parts of the inference workload to connected Apple iPhones (or M-series iPads). It would explain how techniques like split prefill, phone-held context, and utilizing the iPhone's GPU and Neural Engine can significantly improve prefill speed and expand the effective context window for quantized LLMs on consumer hardware, enabling more powerful on-device AI applications.",
+      "title": "Distributed LLM Inference: Leveraging iPhone GPUs for Faster Local Models and Larger Contexts",
+      "why_now": "A new open-source project demonstrates a concrete method for distributing LLM inference across Apple Silicon Macs and iPhones, directly addressing the practical challenges of running large models with limited local resources and expanding context windows."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://twitter.com/swc_rs/status/2105505428893544847"
+      ],
+      "date": "2026-10-03",
+      "estimated_effort": "small",
+      "sources": [
+        "https://twitter.com/swc_rs/status/2105505428893544847"
+      ],
+      "suggested_outline": [
+        "Introduction: The Double-Edged Sword of AI in Code Generation",
+        "The SWC Case Study: A Wake-Up Call for Open Source",
+        "Identifying AI-Generated Content: Technical and Heuristic Approaches",
+        "The Burden on Maintainers: Time, Trust, and Quality Control",
+        "Mitigation Strategies: Automated Tools, Policy Changes, and Community Engagement",
+        "Balancing Innovation with Integrity: How to Encourage Good AI Use",
+        "Future of Open Source in an AI-Saturated World",
+        "Conclusion: Towards Sustainable AI-Assisted Development"
+      ],
+      "summary": "This post would examine the growing problem of AI-generated content impacting the quality and maintainability of open-source software projects, specifically focusing on the recent decision by projects like SWC to stop accepting external pull requests due to a surge of low-quality, AI-generated contributions. It would explore the technical challenges of identifying such content, the burden it places on maintainers, and potential mitigation strategies, including automated detection, stricter contribution guidelines, and community-driven solutions.",
+      "title": "Combating AI-Generated Spam: Open Source Projects Grapple with PR Quality",
+      "why_now": "A prominent open-source project (SWC) recently announced a halt on external PRs due to AI-generated content, bringing a critical, practical issue for software engineering and open-source communities to the forefront."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://www.echohive.ai/one-million-tokens-per-second"
+      ],
+      "date": "2026-10-03",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.echohive.ai/one-million-tokens-per-second"
+      ],
+      "suggested_outline": [
+        "Introduction: The Allure and Challenge of Hyper-Fast LLMs",
+        "The 'Million Tokens Per Second' Thought Experiment: What Changes?",
+        "Amdahl's Law for AI: Identifying the New Bottlenecks (Judgment, Verification, Action)",
+        "From Generation to Curation: Designing for Abundance",
+        "The Role of Human-in-the-Loop in High-Throughput AI Systems",
+        "Implications for AI Agent Design and Autonomy",
+        "Conclusion: Reshaping Our Interaction with Ultra-Fast AI"
+      ],
+      "summary": "This post would explore the theoretical implications of achieving extremely high LLM output speeds (e.g., a million tokens per second). It would argue that such speeds fundamentally shift the engineering challenge from raw generation to efficient human judgment, verification, and the design of systems that can effectively filter, evaluate, and act upon a torrent of AI-generated content. The piece would discuss Amdahl's Law in the context of AI workflows, highlighting that non-generation steps (like testing, human review, or physical experiments) become the dominant factor in total task completion time.",
+      "title": "Beyond Speed: When LLM Inference Hits a Million Tokens Per Second, Judgment Becomes the Bottleneck",
+      "why_now": "A recent thought experiment article vividly illustrates the consequences of hypothetical extreme LLM output speeds, prompting a re-evaluation of current bottlenecks and future AI system design principles beyond mere generation speed."
+    },
     {
       "angle": "practical",
       "citations": [
