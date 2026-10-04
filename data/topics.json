@@ -1,6 +1,74 @@
 {
-  "generated_at": "2026-10-03T06:20:03+00:00",
+  "generated_at": "2026-10-04T06:44:32+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/"
+      ],
+      "date": "2026-10-04",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/"
+      ],
+      "suggested_outline": [
+        "The Rising Cost of Autonomous AI Agents",
+        "Why Soft Caps Aren't Enough: The Case for Hard Limits",
+        "Industry Responses: AWS and Google Cloud's New Spending Controls",
+        "How to Implement and Monitor Hard Budget Caps in Your Projects",
+        "Future Implications: Agent-Assisted Cost Management",
+        "Conclusion: Building Financially Responsible AI Systems"
+      ],
+      "summary": "As AI agents become more prevalent, controlling their operational costs is paramount. This post would discuss the critical need for 'hard budget caps' in pay-per-usage AI services and APIs, where runaway agents can incur significant, unexpected expenses. It will highlight recent industry moves by AWS and Google Cloud to introduce such features, demonstrating how practitioners can implement and leverage these controls to prevent financial overruns.",
+      "title": "Implementing Hard Budget Caps for AI Agent Deployments",
+      "why_now": "The article highlights that AWS and Google Cloud have recently introduced (or are rolling out) hard spending limits, making this a timely discussion on a rapidly evolving feature for managing AI agent costs. The increasing adoption of AI agents makes cost control a more pressing concern."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://huggingface.co/blog/microsoft/thinkingbox"
+      ],
+      "date": "2026-10-04",
+      "estimated_effort": "large",
+      "sources": [
+        "https://huggingface.co/blog/microsoft/thinkingbox"
+      ],
+      "suggested_outline": [
+        "The Illusion of Success: Why Tool Calls Aren't Enough",
+        "Introducing ThinkingBox: A State-Based Benchmark for Agent Reliability",
+        "Pass@1 vs. Pass@20: The Consistency Gap",
+        "Failure Signatures: Common Pitfalls in Agent Execution",
+        "Cost of Consistency: Economic Implications of Unreliable Agents",
+        "Practical Strategies for Building More Dependable AI Agents",
+        "Conclusion: Towards Truly Robust AI Systems"
+      ],
+      "summary": "This post would delve into the limitations of traditional AI agent evaluation metrics like pass@1 and introduce Microsoft and Hugging Face's ThinkingBox benchmark. ThinkingBox assesses agent reliability by verifying actual backend state changes and side effects, rather than just successful tool calls or correct-sounding responses. It would explore the significant gap between an agent's one-time capability and its consistent, reliable performance across multiple runs, and discuss the implications for deploying robust AI agents in real-world business workflows.",
+      "title": "Beyond Pass@1: Benchmarking AI Agent Reliability with ThinkingBox",
+      "why_now": "The release of the ThinkingBox benchmark provides a new, more rigorous methodology for evaluating AI agent reliability, directly addressing a critical challenge in agent deployment. The finding that many agents fail consistency checks despite successful single attempts highlights an immediate, actionable problem for practitioners."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://huggingface.co/blog/allenai/astabrief"
+      ],
+      "date": "2026-10-04",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://huggingface.co/blog/allenai/astabrief"
+      ],
+      "suggested_outline": [
+        "The Challenge of Scientific Text Generation with LLMs",
+        "Introducing AstaBrief 8B: Design Goals and Architecture",
+        "Training Methodology: SFT and DPO for Domain Adaptation",
+        "Achieving Speed and Quality: The One-Pass Generation Approach",
+        "The Importance of Grounding and Citation in Scientific AI",
+        "Open-Source Impact: Democratizing Scientific AI Tools",
+        "Conclusion: Lessons for Building Specialized LLMs"
+      ],
+      "summary": "This post will explore AstaBrief 8B, an open-source language model developed by AllenAI and Hugging Face, specifically designed for fast and accurate scientific report generation. It will detail the training methodology, focusing on supervised fine-tuning (SFT) and direct preference optimization (DPO) with real user queries and citation-focused filtering. The article would highlight how AstaBrief achieves significant speed improvements while maintaining quality, and discuss the broader implications of building domain-specific open-weights models for scientific work.",
+      "title": "AstaBrief: Open-Sourcing a Fast, Grounded LLM for Scientific Report Generation",
+      "why_now": "The open-sourcing of AstaBrief and its training data provides a concrete example and resource for practitioners interested in building or fine-tuning domain-specific LLMs for complex, evidence-grounded tasks. The discussion of SFT/DPO and the one-pass generation approach offers timely technical insights."
+    },
     {
       "angle": "theoretical",
       "citations": [
