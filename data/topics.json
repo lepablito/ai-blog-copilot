@@ -1,6 +1,95 @@
 {
-  "generated_at": "2026-10-04T06:44:32+00:00",
+  "generated_at": "2026-10-05T06:49:24+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.02713"
+      ],
+      "date": "2026-10-05",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.02713"
+      ],
+      "suggested_outline": [
+        "The Challenge of KV Cache Management in LLMs",
+        "Why Fixed KV Cache Policies Fall Short",
+        "Introducing WakeKV: A Reactive and Reversible Approach",
+        "Technical Details: CPU Reservoir and Dynamic Residency",
+        "Performance Gains: Improved Throughput and Quality",
+        "Implementing WakeKV: FlexiCache/vLLM Integration",
+        "Conclusion: Smarter KV Caching for Production LLMs"
+      ],
+      "summary": "Current KV-cache compression techniques typically classify attention heads once and maintain that classification throughout generation, despite empirical evidence that head behaviors change dynamically. WakeKV proposes a novel reactive residency policy that moves 'cooling' (less active) heads to a recoverable CPU reservoir instead of freezing or permanently evicting their state. This approach consistently improves miss rates and, when implemented with FlexiCache/vLLM on Mistral-7B, demonstrates improved throughput while preserving LongBench quality, offering a practical solution for efficient long-context inference.",
+      "title": "WakeKV: Reactive KV Cache Management for Dynamic Attention Head Behavior",
+      "why_now": "The paper was submitted to arXiv on October 2, 2026, presenting a fresh, practical solution to a critical problem in LLM inference efficiency, especially for long contexts, directly impacting deployment costs and performance."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [],
+      "date": "2026-10-05",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.02665"
+      ],
+      "suggested_outline": [
+        "Diffusion Models in NLP: From Discrete to Continuous",
+        "The Limitations of Discrete Diffusion Language Models",
+        "Introducing Sigma: A Large-Scale Continuous dLM",
+        "Technical Deep Dive: Latent Trajectories, Denoising, and Embedding Geometry",
+        "Leveraging Pre-trained AR Models and Classifier-Free Guidance",
+        "Performance on Reasoning and Coding Benchmarks",
+        "Implications for Steerable LLM Inference and Future Research"
+      ],
+      "summary": "While discrete diffusion language models (dLMs) offer fast parallel decoding, their non-smooth, high-dimensional space complicates trajectory steering for reasoning. Sigma introduces the first large-scale (3B/8B) continuous dLM, built on steerable, low-dimensional ODE/SDE latent trajectories. By jointly denoising Gaussian-corrupted token embeddings and learning an optimal embedding geometry, Sigma achieves competitive performance with state-of-the-art discrete models on math reasoning and coding benchmarks. This continuous approach, leveraging pre-trained autoregressive model weights and emphasizing classifier-free guidance, opens new avenues for steerable and accelerated inference in LLMs.",
+      "title": "Sigma: Large Language Continuous Diffusion Models for Steerable Reasoning",
+      "why_now": "The paper was submitted to arXiv on October 1, 2026, marking a significant theoretical and practical advancement in the architecture of language models, moving towards continuous diffusion models for enhanced steerability and reasoning capabilities."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.02425"
+      ],
+      "date": "2026-10-05",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.02425"
+      ],
+      "suggested_outline": [
+        "Introduction: The Limitations of Static LLM Evaluation",
+        "The Rise of LLM Agents and the Need for Dynamic Assessment",
+        "Introducing XiangqiBench: A Closed-Loop Evaluation Framework",
+        "Key Findings: The Conversion, Consistency, and Simulation Gaps",
+        "Implications for LLM Agent Development and Deployment",
+        "Future Directions in Agent Benchmarking"
+      ],
+      "summary": "Traditional LLM evaluations often credit models for generating a correct answer (e.g., a move in a game) but fail to assess an agent's ability to execute a plan in a dynamic, multi-turn environment with an opponent. XiangqiBench introduces an executable benchmark for Chinese chess that measures an LLM agent's success in delivering checkmate against an engine defender in a closed-loop setting. The research reveals significant 'conversion,' 'consistency,' and 'simulation' gaps, highlighting that finding the right move doesn't guarantee winning the game, and emphasizing the need for outcome-based agent evaluations.",
+      "title": "Beyond Static Evaluation: Closed-Loop Benchmarking for LLM Agents with XiangqiBench",
+      "why_now": "The paper was submitted to arXiv on October 1, 2026, making it a very recent development that challenges current LLM agent evaluation paradigms and proposes a new, more rigorous method."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.02472"
+      ],
+      "date": "2026-10-05",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.02472"
+      ],
+      "suggested_outline": [
+        "The Problem of Long-Term Memory in LLM Assistants",
+        "Limitations of Flat Memory Stores and Fixed Granularity",
+        "Introducing APDMem: Hierarchical Memory with Progressive Disclosure",
+        "The Four Layers of APDMem's Memory Architecture",
+        "How the Agent-Controlled Controller Works at Inference",
+        "Adaptive Cost-Fidelity Trade-offs and Performance Benefits",
+        "Building More Intelligent and Efficient LLM Assistants"
+      ],
+      "summary": "Personalized LLM assistants require efficient retrieval of sparse evidence from extensive conversation histories. APDMem (Agent-controlled Progressive Disclosure Memory) introduces a hierarchical memory architecture that uses progressive disclosure for retrieval. It stores conversation history in four layers (thematic summaries, key facts, turn-level notes, raw messages) and uses an inference-time controller to drill down only when necessary, creating an adaptive cost-fidelity trade-off. This approach achieves strong performance on long-context memory reasoning benchmarks while significantly reducing the amount of conversation history accessed, making long-term memory more practical and efficient.",
+      "title": "APDMem: Hierarchical, Agent-Controlled Progressive Disclosure for Long-Term LLM Memory",
+      "why_now": "The paper was submitted to arXiv on October 1, 2026, offering a timely and innovative solution to the long-standing challenge of managing long-term memory for LLMs, which is crucial for building effective personalized assistants."
+    },
     {
       "angle": "practical",
       "citations": [
