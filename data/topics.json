@@ -1,6 +1,100 @@
 {
-  "generated_at": "2026-10-05T06:49:24+00:00",
+  "generated_at": "2026-10-06T07:27:24+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.04002"
+      ],
+      "date": "2026-10-06",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.04002"
+      ],
+      "suggested_outline": [
+        "Introduction: Deconstructing the LLM Architecture",
+        "What are Trainable Input Embeddings and Why Do We Use Them?",
+        "The Alternative: Fixed Minimal Token Codes",
+        "Experimental Setup and Comparison at Scale",
+        "Analyzing Performance: Where Learned Embeddings Excel, and Where Fixed Codes Suffice",
+        "Implications for Model Size, Training, and Inference",
+        "Future Directions: Beyond Traditional Embeddings",
+        "Conclusion: Re-evaluating Foundational Components"
+      ],
+      "summary": "This post would delve into the fundamental question of whether a trainable input embedding table is a mandatory component for substantial language modeling capabilities. It would analyze research comparing models with learned embeddings against those using fixed minimal token codes, discussing the implications for model parameter count, training efficiency, and overall performance, particularly at 1.7B-class scale.",
+      "title": "The Role of Trainable Input Embeddings: Are They Truly Necessary for LLMs?",
+      "why_now": "The investigation into the necessity of trainable input embeddings challenges a core assumption in LLM architecture, offering insights into potential parameter reduction and efficiency gains, which is crucial for resource-constrained deployments and foundational model research. (Note: The provided source is dated 2026, but the technical question is fundamental and ongoing.)"
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.03902"
+      ],
+      "date": "2026-10-06",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.03902"
+      ],
+      "suggested_outline": [
+        "Introduction: The Dynamic Nature of Agent Knowledge",
+        "The Problem of Changing Evidence: Revocation and Replacement",
+        "Memory Management Strategies: Re-reading vs. Repair",
+        "Cost Analysis: Token Budgets for Ingest, Revision, and Use",
+        "Case Study: Medication and Problem List Tasks",
+        "Comparing Full Re-reading, Caching, and Local Repair",
+        "Optimizing for Efficiency and Accuracy in Agent Memory",
+        "Conclusion: Building Robust and Adaptable LLM Agents"
+      ],
+      "summary": "This post would address the critical challenge of managing an LLM agent's knowledge base when underlying evidence changes (revocation or replacement). It would explore different strategies such as full re-reading, source-filtered re-reading, caching, rebuilding, and graph-local repair, evaluating their token costs and effectiveness in maintaining accurate agent memory, particularly in dynamic environments like medical record processing.",
+      "title": "Managing Knowledge in LLM Agents: Memory Repair, Re-reading, and Cost Efficiency",
+      "why_now": "As LLM agents become more sophisticated and deployed in dynamic information environments, efficient and accurate memory management, especially when evidence changes, becomes a paramount practical concern for reliability and cost. (Note: The provided source is dated 2026, but the technical problem is highly relevant for current agentic AI systems.)"
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.03802"
+      ],
+      "date": "2026-10-06",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2610.03802"
+      ],
+      "suggested_outline": [
+        "Introduction: The Value of Fine-Grained Emotion in App Reviews",
+        "Challenges: The Problem of Severe Class Imbalance",
+        "LLM Approaches: Encoder Fine-tuning vs. Decoder Few-Shot Prompting",
+        "Mitigation Strategies: Loss Reweighting, Resampling, Data Augmentation",
+        "Empirical Study and Results",
+        "Best Practices for Imbalanced Fine-Grained Classification",
+        "Conclusion: Towards More Nuanced User Feedback Analysis"
+      ],
+      "summary": "This post would explore the application of Large Language Models for fine-grained emotion classification in mobile app reviews, a task crucial for requirements engineering. It would highlight the empirical challenges posed by severe class imbalance in real-world data and discuss various mitigation strategies, including encoder-only fine-tuning, decoder-only few-shot prompting, loss reweighting, resampling, and generative data augmentation.",
+      "title": "Fine-Grained Emotion Classification with LLMs: Tackling Class Imbalance in App Reviews",
+      "why_now": "Applying LLMs to highly specific, real-world NLP tasks like fine-grained emotion classification in user-generated content is a practical challenge. The focus on class imbalance and various mitigation techniques offers valuable insights for practitioners working with imbalanced datasets. (Note: The provided source is dated 2026, but the technical problem and solutions are evergreen in applied NLP.)"
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.04047"
+      ],
+      "date": "2026-10-06",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.04047"
+      ],
+      "suggested_outline": [
+        "Introduction: The Context Window Bottleneck",
+        "What is Periscope? A Training-Free Approach",
+        "How Periscope Works: Local and Strided Spans",
+        "Efficiency and Scalability: Extending Context with Reduced Cost",
+        "Performance on LongBench v2 and Other Evaluations",
+        "Practical Applications and Limitations",
+        "Conclusion: New Horizons for Frozen LLMs"
+      ],
+      "summary": "This post would explore 'Periscope', a training-free inference method designed to extend the effective context window of frozen language models. It would detail how Periscope factorizes long text reads using local and strided spans, allowing models to process significantly longer documents for tasks like document relevance or option support, and analyze its efficiency gains and accuracy on benchmarks like LongBench v2.",
+      "title": "Extending Frozen LLMs Beyond Their Context Window with Periscope",
+      "why_now": "The introduction of a novel, training-free method to overcome a fundamental limitation (context window) in LLMs is a significant practical development for deploying these models in real-world scenarios, offering efficiency and scalability without costly retraining. (Note: The provided source is dated 2026, but the technical approach remains relevant if it were a recent development.)"
+    },
     {
       "angle": "practical",
       "citations": [
