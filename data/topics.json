@@ -1,6 +1,100 @@
 {
-  "generated_at": "2026-10-06T07:27:24+00:00",
+  "generated_at": "2026-10-08T07:14:23+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.08794"
+      ],
+      "date": "2026-10-08",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.08794"
+      ],
+      "suggested_outline": [
+        "Introduction: The Underestimated Role of Tokenizers in LLMs",
+        "Why a New Benchmark? Limitations of Existing Evaluations",
+        "Inside Tokka-Bench: Metrics and Methodology (Bytes per token, unique token coverage, subword fertility, word-split rate, vocabulary composition)",
+        "Key Findings: What Tokka-Bench Reveals About Popular Tokenizers (GPT-2, Llama 3.1, Gemma 3, Qwen3, Kimi K2)",
+        "Practical Implications for LLM Developers (Multilingual models, code models, efficiency)",
+        "Conclusion: Towards More Informed Tokenizer Selection"
+      ],
+      "summary": "This new open-source framework, Tokka-Bench, offers a multi-metric evaluation for subword tokenizers across 100 natural and 20 programming languages. It provides insights into how vocabulary allocation strategy impacts tokenizer quality more than raw vocabulary size, and notes the convergence of programming language efficiency in recent tokenizers. A post would explore the framework's metrics, comparative findings for popular tokenizers (GPT-2, Llama 3.1, etc.), and the practical implications for choosing or designing tokenizers for multilingual or code-centric LLM applications.",
+      "title": "Tokka-Bench: A New Standard for Evaluating LLM Tokenizers Across Languages",
+      "why_now": "The release of Tokka-Bench and its comprehensive evaluation provides a timely, standardized tool and fresh insights into a fundamental component of LLMs that is often overlooked in popular discourse."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.08833"
+      ],
+      "date": "2026-10-08",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.08833"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of Diffusion Models in Language Generation",
+        "Understanding Masked Diffusion Language Models (MDLMs)",
+        "The Problem of Confidence Drift: When Early Decisions Go Wrong",
+        "Introducing CoDR: A Training-Free Solution",
+        "How CoDR Works: K-Partition Probing and Dynamic Remasking",
+        "Experimental Results: Improving Accuracy Across Tasks and Backbones",
+        "Advantages and Limitations of CoDR",
+        "Conclusion: Enhancing Reliability in Diffusion-Based Language Models"
+      ],
+      "summary": "Masked Diffusion Language Models (MDLMs) often suffer from 'confidence drift,' where early token commitments, made under sparse context, become misaligned with later, denser context, leading to error propagation. CoDR (Confidence Drift Remasking) offers a novel, training-free, and sampler-agnostic refinement pass to detect and remask tokens the model no longer endorses. This post would explain the phenomenon of confidence drift, detail CoDR's mechanism using k-partition probing, and demonstrate its effectiveness in improving accuracy across various tasks and MDLMs with modest overhead.",
+      "title": "CoDR: A Training-Free Fix for Confidence Drift in Diffusion Language Models",
+      "why_now": "Diffusion models are gaining traction beyond image generation, entering language modeling. Addressing fundamental issues like confidence drift with an efficient, training-free solution is a significant and timely technical advancement for this emerging LLM paradigm."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.08858"
+      ],
+      "date": "2026-10-08",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.08858"
+      ],
+      "suggested_outline": [
+        "Introduction: The Bottleneck of LLM Inference",
+        "Revisiting Low-Rank Compression: Basics and Limitations",
+        "Introducing LRCC: Conditional Computation for Dynamic Compression",
+        "How LRCC Works: Routers, Nested Paths, and Training-Free Optimization",
+        "Performance Gains: Benchmarks on Llama and Qwen Models",
+        "Practical Benefits: Improved Accuracy and Perplexity at Matched Latency",
+        "Implementation Considerations and Future Directions",
+        "Conclusion: Smarter Compression for Wider Deployment"
+      ],
+      "summary": "Low-Rank Conditional Computation (LRCC) introduces a novel approach to optimize LLM inference by integrating token-dependent computation with low-rank compression. Unlike static methods that apply uniform compression, LRCC trains lightweight routers per Transformer block to dynamically select nested low-rank paths, significantly improving predictive performance and perplexity at matched latency. This post would explain the LRCC mechanism, its advantages over conventional low-rank compression, and its practical impact on deploying models like Llama and Qwen for more efficient inference without specialized kernels.",
+      "title": "Boosting LLM Efficiency with Low-Rank Conditional Computation (LRCC)",
+      "why_now": "The increasing demand for deploying LLMs on various hardware necessitates continuous innovation in inference efficiency. LRCC offers a recent, training-free advancement that directly addresses this by improving upon established compression techniques."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.09033"
+      ],
+      "date": "2026-10-08",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.09033"
+      ],
+      "suggested_outline": [
+        "Introduction: The Unseen Attack Surface of LLMs",
+        "The Problem with Canonical Safety Evaluations",
+        "Introducing ASRD: A Dataset for Adversarial Surface-Form Robustness",
+        "The Quad-State Evaluation Rubric: Classifying LLM Responses",
+        "Observed Failure Modes: Hallucination, Collapse, and Language Drift",
+        "Case Studies: Emojis, Leetspeak, and Encoded Strings",
+        "Practical Defenses and Mitigation Strategies",
+        "Conclusion: Building Robust LLMs for the Real World"
+      ],
+      "summary": "Standard LLM safety evaluations often overlook the diverse and sometimes adversarial nature of real-world inputs, such as emojis, leetspeak, or encoded strings. This topic explores the Adversarial Surface-Form Robustness Dataset (ASRD) and its Quad-State Evaluation Rubric, revealing how open-weight LLMs react to these non-canonical inputs. A post would detail the types of surface-form variations, the observed failure modes (e.g., hallucinated benignity, structural collapse), and practical strategies for engineers to build more robust and secure LLM applications against such vulnerabilities.",
+      "title": "Beyond Plain Text: Evaluating LLM Safety Against Non-Canonical Inputs",
+      "why_now": "As LLMs are integrated into more user-facing applications, understanding their robustness to non-standard and potentially malicious inputs is paramount for security and reliability, a gap that ASRD directly addresses."
+    },
     {
       "angle": "theoretical",
       "citations": [
