@@ -1,6 +1,80 @@
 {
-  "generated_at": "2026-10-08T07:14:23+00:00",
+  "generated_at": "2026-10-09T07:18:41+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.10871"
+      ],
+      "date": "2026-10-09",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.10871"
+      ],
+      "suggested_outline": [
+        "Introduction: The Quadratic Cost of Attention and the Need for Sparsity",
+        "Current Limitations of Sparse Attention: The 'Bag of Values' Fallacy",
+        "The Matrix Approximation View: Why Attention is a Structured Problem",
+        "Introducing MASA: Matrix Approximation Sparse Attention",
+        "Technical Deep Dive: How MASA Calculates Approximation Error Reduction",
+        "Integrating MASA with Existing Sparse Attention Frameworks",
+        "Empirical Evidence: Consistent Accuracy Gains Across Benchmarks",
+        "Implications for LLM Efficiency and Performance Optimization",
+        "Conclusion: A New Paradigm for Sparse Attention Design"
+      ],
+      "summary": "This post will introduce a new theoretical framework for understanding sparse attention in Large Language Models, arguing that it should be treated as a matrix approximation problem rather than simply selecting the largest values. It will explain how current sparse attention methods often miss the structured nature of the attention matrix and present Matrix Approximation Sparse Attention (MASA). MASA offers a theory-grounded plug-in correction that measures how much each sparse unit reduces matrix-product approximation error, leading to consistent accuracy gains across various sparse attention methods and LLM backbones without altering sparse kernels or budgets.",
+      "title": "Sparse Attention Reimagined: From Bag of Values to Matrix Approximation",
+      "why_now": "The paper, published on arXiv on October 7, 2026, fundamentally re-evaluates a core component of LLM efficiency (sparse attention), offering both a new theoretical understanding and a practical method (MASA) to improve existing techniques."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.10845"
+      ],
+      "date": "2026-10-09",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.10845"
+      ],
+      "suggested_outline": [
+        "Introduction: The LLM Context Window Bottleneck",
+        "Understanding KV State and its Computational Cost",
+        "Galahad-KV: A Novel Approach to Long-Term Memory",
+        "Technical Deep Dive: How KV State Offloading Works (NVMe, Encryption, vLLM Integration)",
+        "Performance Metrics: Speed, Energy, and Accuracy Gains",
+        "Implementation Considerations and Limitations (Storage, Latency, Model Dependence)",
+        "Practical Applications for Applied AI Engineers",
+        "Conclusion: Reshaping LLM Architectures for Extended Context"
+      ],
+      "summary": "This post will delve into `galahad-kv`, a novel memory layer that enables large language models to effectively utilize a 50-million-token window by offloading and retrieving key-value (KV) state to local NVMe disk. It will explain how this method bypasses the quadratic cost of recomputing KV state, leading to significantly faster inference (2.8x-4.3x) and reduced GPU energy consumption (8.8x-12.3x) compared to traditional recomputation, while maintaining high accuracy for facts stored millions of tokens earlier.",
+      "title": "Implementing Real Long-Term Memory for LLMs with KV State Offloading",
+      "why_now": "The paper was submitted to arXiv on October 7, 2026, presenting a concrete, implementable solution (public package `galahad-kv`) to a long-standing challenge in LLM deployment: extending context windows efficiently and cost-effectively."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.10827"
+      ],
+      "date": "2026-10-09",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.10827"
+      ],
+      "suggested_outline": [
+        "Introduction: The Allure and Limits of Frontier LLMs",
+        "The Case for Small Language Models (SLMs) in Specific Domains",
+        "Case Study: Grammar Concept Annotation for Second-Language Acquisition",
+        "Methodology: Data Curation, Fine-Tuning Qwen3.5, and Adapter Weights",
+        "Performance Comparison: SLM vs. GPT-5.4/5.6 Sol (Precision, Recall, Cost)",
+        "Achieving 16x Cost Reduction and Improved Business Metrics",
+        "When to Choose SLMs over Frontier Models: A Decision Framework",
+        "Practical Tips for Fine-Tuning and Deployment",
+        "Conclusion: Strategic Model Selection for Applied AI"
+      ],
+      "summary": "This post will explore how fine-tuned small language models (SLMs) can significantly outperform and be more cost-effective than large, general-purpose 'frontier models' for specialized annotation tasks. Using the example of grammar concept annotation, it will detail how a 0.8B Qwen3.5 model, fine-tuned on curated data, achieved superior precision and recall compared to GPT-5.4 and GPT-5.6 Sol, while reducing serving costs by approximately 16x. The post will discuss the methodology of data preparation and fine-tuning that makes SLMs a compelling choice for enterprise-scale deployment.",
+      "title": "Fine-Tuning Small Language Models: Outperforming Frontier Models for Niche Annotation Tasks",
+      "why_now": "The arXiv paper, published on October 7, 2026, provides recent, empirical evidence and a deployed example demonstrating that smaller, fine-tuned models can be a superior solution for specific tasks, directly challenging the 'bigger is always better' perception of LLMs."
+    },
     {
       "angle": "theoretical",
       "citations": [
