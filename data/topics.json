@@ -1,6 +1,102 @@
 {
-  "generated_at": "2026-10-09T07:18:41+00:00",
+  "generated_at": "2026-10-10T06:55:19+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://sqlite.org/vec1/doc/trunk/doc/vec1.md"
+      ],
+      "date": "2026-10-10",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://sqlite.org/vec1/doc/trunk/doc/vec1.md"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for Local Vector Search",
+        "What is Vec1 and How it Works (ANN in SQLite)",
+        "Setting up Vec1: Installation and Basic Usage",
+        "Practical Applications: Edge AI, Local RAG, and Desktop Apps",
+        "Performance Considerations and Benchmarks (where applicable)",
+        "Integrating Vec1 with LLM Workflows",
+        "Limitations and Future Directions",
+        "Conclusion: Democratizing Vector Search for Developers"
+      ],
+      "summary": "This post would explore Vec1, a new extension bringing native approximate nearest neighbor (ANN) vector search directly into SQLite. It would discuss the implications for developing Retrieval-Augmented Generation (RAG) applications on edge devices, for local-first software, and for simplifying deployment by embedding vector capabilities directly within an application's database. The post would cover how to use Vec1, its performance characteristics, and practical use cases where a full-fledged vector database is overkill.",
+      "title": "Vec1: Native Vector Search in SQLite for Edge and Local RAG",
+      "why_now": "The official release of Vec1 within SQLite's trunk makes native, performant vector search available in a widely used, embedded database, significantly lowering the barrier to entry for local and edge RAG applications. This is a fresh development that enables new architectural patterns."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.10549"
+      ],
+      "date": "2026-10-10",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.10549"
+      ],
+      "suggested_outline": [
+        "Introduction: The Enterprise Data Bottleneck for AI Agents",
+        "Understanding 'Synthesis Through Simulation' (STS)",
+        "How LLM Agents Generate Valid Data in Simulated Environments",
+        "The Role of the 'Generalist Populator' in STS",
+        "Advantages over Traditional Data Synthesis Methods",
+        "Implications for Training and Evaluating Tool-Calling Agents",
+        "Challenges and Future Research Directions",
+        "Conclusion: A New Frontier for Enterprise AI Data"
+      ],
+      "summary": "This post would dive into 'Synthesis Through Simulation' (STS), a novel schema-free data synthesis paradigm where an LLM agent generates data by executing operations against policy-enforcing APIs within simulated enterprise environments. It would explain how STS guarantees structural validity by construction, decouples validity enforcement from distribution modeling, and addresses challenges of distributional fidelity and synthesis scalability using a 'Generalist Populator' agent. This has significant implications for training and evaluating tool-calling agents where real data is scarce or restricted.",
+      "title": "Synthesis Through Simulation: Generating Enterprise Data with Agentic LLMs",
+      "why_now": "The recent arXiv paper introduces a new, fundamentally different approach to synthetic data generation, particularly for enterprise use cases. This shifts the paradigm from traditional statistical synthesis to agent-driven simulation, addressing key limitations of prior methods and offering a path to scalable, valid data for AI development."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.10786"
+      ],
+      "date": "2026-10-10",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.10786"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Long-Horizon Planning for AI Agents",
+        "Limitations of Autoregressive Planning in Dynamic Environments",
+        "Introducing Plan-and-Patch: Diffusion Models for Planning",
+        "How dLLMs Generate and Repair Plans through Unmasking",
+        "Key Advantages: Robustness, Adaptability, and Partial Repair",
+        "Comparing Diffusion vs. Autoregressive Planners (e.g., DreamReasoner vs. Qwen3)",
+        "Practical Implications for Agent Design and Deployment",
+        "Conclusion: Towards More Resilient AI Agents"
+      ],
+      "summary": "This post would explore 'Plan-and-Patch,' a new plan-and-act framework that uses diffusion language models (dLLMs) for generating and repairing structured, program-like plans for long-horizon agents. It would detail how dLLMs can generate plans through parallel unmasking and, critically, repair specific regions of a plan while keeping the surrounding steps fixed, leading to more robust and adaptable agent behavior in dynamic environments where assumptions can be invalidated. This offers a significant improvement over purely autoregressive planning for complex tasks.",
+      "title": "Plan-and-Patch: Diffusion Language Models for Robust Agentic Planning",
+      "why_now": "The new arXiv paper introduces 'Plan-and-Patch,' a novel method that significantly improves agent planning and repair capabilities using diffusion models. This is a timely development as agentic AI systems are increasingly deployed in complex, real-world scenarios requiring robust, adaptable planning beyond initial generation."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.11005"
+      ],
+      "date": "2026-10-10",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.11005"
+      ],
+      "suggested_outline": [
+        "Introduction: The Evolving Landscape of LLM Safety",
+        "What are Narrative Wrapping Attacks and Why They Work",
+        "GUISE: A Cross-Language Benchmark for Evasion",
+        "Understanding the Model's Internal Representation Shifts",
+        "AXIS: A Novel Defense Mechanism (Preference Optimization, Rotation, Commitment)",
+        "Implementing and Evaluating Defenses in Practice",
+        "Best Practices for Building More Robust LLM Safety Layers",
+        "Conclusion: Towards Truly Safety-Aligned LLMs"
+      ],
+      "summary": "This post would analyze the vulnerability of safety-aligned LLMs to 'narrative wrapping' attacks, where harmful requests are disguised within role-play or story contexts to bypass refusal mechanisms. It would introduce GUISE, a new cross-language benchmark for systematically studying this vulnerability, and detail AXIS, a proposed defense combining preference optimization with a rotation objective and a commitment objective. The post would offer practical insights for developers building safer LLM applications.",
+      "title": "Combatting LLM Refusal Evasion: A Deep Dive into Narrative Wrapping Attacks and Defenses",
+      "why_now": "The recent arXiv paper 'How Narrative Wrapping Affects LLM Refusal' explicitly identifies and quantifies a critical, widespread safety vulnerability in LLMs and proposes a concrete defense. This is highly relevant for practitioners concerned with deploying robust and safe AI systems, as it moves beyond anecdotal observations to systematic analysis and solutions."
+    },
     {
       "angle": "theoretical",
       "citations": [
