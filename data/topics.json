@@ -1,6 +1,29 @@
 {
-  "generated_at": "2026-10-11T07:00:05+00:00",
+  "generated_at": "2026-10-12T07:12:42+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/LogneBudo/llmxray"
+      ],
+      "date": "2026-10-12",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://github.com/LogneBudo/llmxray",
+        "https://news.ycombinator.com/item?id=50047180"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for Local LLM Observability",
+        "Key Features of LLMxRay for the AI Engineer",
+        "Deep Dive: The Cache Lab and KV Cache Optimization (with practical examples)",
+        "Beyond Cache: Quality Analysis, Cost Tracking, and Protocol Observatory",
+        "Getting Started with LLMxRay: Installation and First Steps",
+        "Conclusion: Empowering Local LLM Development"
+      ],
+      "summary": "This post will introduce LLMxRay as a crucial open-source tool for AI engineers working with local LLMs. It will detail how its features—real-time token streaming, quality analysis, performance profiling, and cost tracking—address common pain points. A key focus will be on the 'Cache Lab' and its ability to identify and quantify KV cache inefficiencies, demonstrating how engineers can achieve significant performance gains (e.g., 3.5x faster prefill) by optimizing prompt structure for cache reuse.",
+      "title": "LLMxRay: The Open-Source Observability Tool Revolutionizing Local LLM Performance Tuning",
+      "why_now": "The tool was recently featured on Hacker News ('Show HN') and explicitly mentions compatibility with the latest Ollama versions (0.40.x), indicating active development and timely relevance. Its 'Cache Lab' feature, new in 0.6.0, directly addresses a performance bottleneck that is becoming more understood and critical for local LLM deployment."
+    },
     {
       "angle": "practical",
       "citations": [
