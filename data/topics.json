@@ -1,6 +1,31 @@
 {
-  "generated_at": "2026-10-12T07:12:42+00:00",
+  "generated_at": "2026-10-13T07:36:18+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://www.latent.space/p/claude-dynamic-workflows"
+      ],
+      "date": "2026-10-13",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.latent.space/p/claude-dynamic-workflows"
+      ],
+      "suggested_outline": [
+        "Introduction: The Bottleneck of Multi-Agent Orchestration",
+        "What are Dynamic Workflows? A Shift from Roster-Based to Self-Orchestrated Agents",
+        "Lessons from Unix: Why OS Principles Apply to AI Agents",
+        "How It Works: Lead Agents, Orchestration Programs, and Task Division",
+        "Practical Implications for Developers: Tackling Ambitious Workloads",
+        "Key Engineering Considerations: Budgeting, Visibility, and Inter-Agent Communication",
+        "The Role of 'Dreaming' and Hill-Climbing for Agent Self-Improvement",
+        "Trade-offs: Cost vs. Effectiveness in Dynamic Workflows",
+        "Conclusion: The Future of Autonomous Agent Systems"
+      ],
+      "summary": "This post will explore Anthropic's new 'dynamic workflows' feature for Claude agents, which allows agents to self-orchestrate and determine their own multi-agent topology for ambitious tasks. It will delve into how this approach, drawing lessons from Unix and Linux, simplifies complex multi-agent system design for developers by automating the planning, execution, and information flow between sub-agents, while also discussing the challenges of budgeting, self-improvement ('dreaming'), and inter-agent communication.",
+      "title": "Anthropic's Dynamic Workflows: Orchestrating Claude Agents with OS Principles",
+      "why_now": "The 'dynamic workflows' feature was announced recently ('on Friday' relative to the article's publication) at the AI Engineer New York conference, making it a timely and relevant development in multi-agent orchestration."
+    },
     {
       "angle": "practical",
       "citations": [
