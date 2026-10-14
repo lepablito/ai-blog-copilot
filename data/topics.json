@@ -1,6 +1,98 @@
 {
-  "generated_at": "2026-10-13T07:36:18+00:00",
+  "generated_at": "2026-10-14T06:00:12+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b"
+      ],
+      "date": "2026-10-14",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b"
+      ],
+      "suggested_outline": [
+        "Introduction: The Imperative for On-Device AI",
+        "Technical Underpinnings: Quantization, Pruning, and Efficient Architectures",
+        "Case Study 1: Google DeepMind's On-Device Scam Detection with Gemma",
+        "Case Study 2: LiquidAI's LFM2.5-24B-A2B for Private Agent Deployment",
+        "Engineering Challenges: Resource Constraints, Latency, and Model Updates",
+        "Privacy and Security Benefits of Local Inference",
+        "Future Outlook: The Edge AI Ecosystem",
+        "Conclusion"
+      ],
+      "summary": "Recent developments highlight significant progress in running powerful LLMs directly on user devices, enabling enhanced privacy and efficiency. This post would explore the technical innovations behind this trend, such as Google DeepMind's on-device Gemma models for scam detection and LiquidAI's LFM2.5-24B-A2B. It will delve into the engineering challenges, solutions like model quantization and optimized inference engines, and the practical implications for edge AI and privacy-preserving applications, including the benefits of zero cloud data egress.",
+      "title": "The Rise of On-Device AI: Engineering for Private and Efficient LLM Applications",
+      "why_now": "Google DeepMind's collaboration with the Singapore Government on on-device scam detection and LiquidAI's release of LFM2.5-24B-A2B in the last 48 hours demonstrate significant advancements and real-world applications of on-device AI, making it a timely topic."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+        "https://simonwillison.net/2026/Oct/13/llm-gemini/",
+        "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+        "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+        "https://deepmind.google/blog/introducing-gemini-4-argon/",
+        "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
+        "https://simonwillison.net/2026/Oct/12/llm-meta-ai/"
+      ],
+      "date": "2026-10-14",
+      "estimated_effort": "large",
+      "sources": [
+        "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+        "https://simonwillison.net/2026/Oct/13/llm-gemini/",
+        "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+        "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+        "https://deepmind.google/blog/introducing-gemini-4-argon/",
+        "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
+        "https://simonwillison.net/2026/Oct/12/llm-meta-ai/"
+      ],
+      "suggested_outline": [
+        "Introduction: A New Wave of Frontier Models",
+        "Gemini 4 Argon: Capabilities, Responsible Development, and Robotics Applications",
+        "Meta Muse Wonder: Performance Benchmarks and 'Fable Class' Models",
+        "Evaluating Frontier Models: Beyond Traditional Metrics (Vals AI, Artificial Analysis)",
+        "Architectural Insights: What Makes These Models Powerful?",
+        "Practical Integration Challenges for Developers",
+        "Ethical Considerations and Safety in Advanced LLMs",
+        "Conclusion: The Evolving Landscape of Large Language Models"
+      ],
+      "summary": "The recent releases of Google's Gemini 4 Argon and Meta's Muse Wonder (including Muse Wonder Full) mark new milestones in frontier LLM capabilities. This post would move beyond mere announcement hype to critically examine the reported advancements, specific use cases (e.g., robotics, on-device), and the methods used to evaluate their performance (e.g., Vals AI Benchmarks, Artificial Analysis scores). It will discuss the practical implications for developers integrating these models, as well as the theoretical insights into model architecture and training that enable these new capabilities.",
+      "title": "Beyond Benchmarks: Understanding New Frontier Models (Gemini 4 Argon & Meta Muse Wonder)",
+      "why_now": "Multiple articles in the past 48 hours announced and discussed Gemini 4 Argon and Meta Muse Wonder, providing context on their capabilities, responsible development, and specific applications, making a critical examination timely."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
+        "https://simonwillison.net/2026/Oct/13/geoffrey-huntley/",
+        "https://www.latent.space/p/claude-dynamic-workflows",
+        "https://blog.msar.me/ai-writes-most-of-the-code-now-where-does-that-leave-us"
+      ],
+      "date": "2026-10-14",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
+        "https://simonwillison.net/2026/Oct/13/geoffrey-huntley/",
+        "https://www.latent.space/p/claude-dynamic-workflows",
+        "https://blog.msar.me/ai-writes-most-of-the-code-now-where-does-that-leave-us"
+      ],
+      "suggested_outline": [
+        "Introduction: The Inevitable Rise of AI Agents in Development",
+        "The Challenge of Scale: Managing High-Velocity AI Contributions",
+        "Case Study: Anthropic's Source Control Redesign",
+        "Guiding Agents: From Prompts to Pre-Commit Hooks and Diagnostic Libraries",
+        "Dynamic Workflows: Orchestrating Complex Agentic Tasks",
+        "Human-Agent Collaboration: New Paradigms for Software Engineers",
+        "Tooling and Infrastructure for Agent-Driven Development",
+        "Conclusion: The Future of Software Engineering"
+      ],
+      "summary": "As AI agents increasingly contribute to code generation and development, traditional software engineering practices are being re-evaluated. This post would analyze how companies like Anthropic are adapting their source control and development pipelines to manage the high volume of AI-generated changes. It will cover strategies for guiding agents (e.g., pre-commit hooks, diagnostic libraries), coordinating complex agentic workflows, and the implications for human-agent collaboration in a rapidly evolving codebase.",
+      "title": "Agentic Engineering: Adapting Workflows for AI-Driven Development",
+      "why_now": "Anthropic's detailed account of redesigning their source control due to a massive increase in agent-driven code changes, combined with recent discussions on coordinating agents and guiding their behavior, highlight a critical, current engineering challenge."
+    },
     {
       "angle": "practical",
       "citations": [
