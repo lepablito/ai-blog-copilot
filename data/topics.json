@@ -1,6 +1,78 @@
 {
-  "generated_at": "2026-10-14T06:00:12+00:00",
+  "generated_at": "2026-10-15T05:47:02+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.19026"
+      ],
+      "date": "2026-10-15",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.19026"
+      ],
+      "suggested_outline": [
+        "Introduction: The KV-Cache Bottleneck in Long-Context LLMs",
+        "Understanding Sparse Attention and its Limitations",
+        "Introducing Joint Subspace Sparse Attention (JSSA)",
+        "Theoretical Deep Dive: Subspace Learning for Accurate Token Selection",
+        "Practical Implementation: The Gather-Free Indexed-Attention Kernel",
+        "Performance Benchmarks: Throughput and Accuracy Gains",
+        "Implications for Applied AI Engineers and Future Work",
+        "Conclusion"
+      ],
+      "summary": "This post would delve into Joint Subspace Sparse Attention (JSSA), a novel method to significantly reduce KV-cache traffic during long-context LLM decoding. It would explain how JSSA learns a shared low-dimensional query-key subspace for accurate token selection and utilizes a gather-free indexed-attention kernel for efficient execution, leading to up to 6.43x decoding throughput improvement at 128K context. The article would break down the theoretical underpinnings and practical benefits for engineers deploying LLMs.",
+      "title": "Joint Subspace Sparse Attention: Boosting LLM Decoding Throughput for Long Contexts",
+      "why_now": "The paper was submitted on October 13, 2026 (within the last 48 hours), presenting a new, efficient method for long-context LLM decoding, directly addressing a critical performance bottleneck that engineers face."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.19184"
+      ],
+      "date": "2026-10-15",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.19184"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Reliable LLM Code Generation",
+        "The Problem with Traditional Prompt Optimization",
+        "HERO's Approach: Harnessing Execution Evidence",
+        "Stage 1: Offline Harness Optimization with Verification",
+        "Stage 2: Test-Time Refinement for Instance-Specific Improvement",
+        "Case Studies: SQL, Cypher, and Python Benchmarks",
+        "Implementing HERO in Your Development Workflow",
+        "Conclusion: Towards More Robust AI-Generated Code"
+      ],
+      "summary": "This post would explore HERO (Harnessing Evidence for Refinement and Optimization), a method that significantly enhances LLM performance in program generation tasks (e.g., text-to-SQL, text-to-Python). HERO combines offline learning of reusable prompt updates with test-time refinement using direct execution feedback, allowing for robust validation of changes and preventing regressions. It offers a practical framework for engineers to improve the reliability and accuracy of AI-generated code.",
+      "title": "HERO: Execution-Verified Prompt Optimization for Robust Code Generation",
+      "why_now": "The HERO paper was submitted on October 13, 2026 (within the last 48 hours), offering a novel and practical approach to improve the critical task of LLM-based code generation through automated, execution-verified prompt optimization."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.19185"
+      ],
+      "date": "2026-10-15",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.19185"
+      ],
+      "suggested_outline": [
+        "Introduction: The 'Pre-Scientific' State of LLM Evaluation",
+        "Why Evaluation Setups Matter: Impact on Model Development",
+        "The Framework: Investigating 8 Key Aspects of Evaluation",
+        "Meta-Measures for Reliability: Monotonicity, Non-Randomness, Consistency",
+        "Key Findings and Concrete Recommendations for Engineers",
+        "How Model Scale Influences Optimal Evaluation Setups",
+        "Building a More Scientific Approach to LLM Benchmarking",
+        "Conclusion: Actionable Insights for Robust Evaluation"
+      ],
+      "summary": "This article would tackle the often-overlooked challenge of robust LLM evaluation. It would analyze a new framework that systematically investigates eight aspects of evaluation setups (e.g., task formulation, number of in-context examples) using meta-measures like monotonicity and ranking consistency. The post would provide concrete, data-backed recommendations for engineers to select reliable evaluation methodologies, highlighting how optimal setups can vary with model scale and task type, moving LLM evaluation towards a more scientific practice.",
+      "title": "Beyond Guesswork: Choosing Reliable Evaluation Setups for LLM Benchmarking",
+      "why_now": "The paper was submitted on October 13, 2026 (within the last 48 hours), providing timely, structured guidance on a fundamental and often ad-hoc aspect of LLM development: reliable evaluation. This is crucial for engineers to make informed decisions about model training and deployment."
+    },
     {
       "angle": "practical",
       "citations": [
