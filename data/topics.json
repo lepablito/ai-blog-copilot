@@ -1,6 +1,83 @@
 {
-  "generated_at": "2026-10-15T05:47:02+00:00",
+  "generated_at": "2026-10-18T05:41:49+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://sphinx-six-theta.vercel.app/",
+        "https://news.ycombinator.com/item?id=50137490"
+      ],
+      "date": "2026-10-18",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://sphinx-six-theta.vercel.app/",
+        "https://news.ycombinator.com/item?id=50137490"
+      ],
+      "suggested_outline": [
+        "The Paradox of AI Code Generation: Speed vs. Understanding",
+        "Introducing Sphinx: Bridging the Understanding Gap",
+        "How Sphinx Works: A Git Hook for Critical Scenarios",
+        "Technical Deep Dive: Integration with Existing Workflows (Codex, Claude Code)",
+        "Real-World Scenarios: Preventing Double Charges and Edge Cases",
+        "Security and Trust: What Sphinx Does and Doesn't Access",
+        "Implementing Sphinx: A Practitioner's Guide",
+        "Conclusion: Cultivating Deeper Understanding in an AI-Driven World"
+      ],
+      "summary": "This post would introduce Sphinx, a FOSS Git hook that quizzes developers on their AI-generated code's behavior under edge cases before it ships. It argues for outsourcing thinking but not understanding, and how this tool enhances developer comprehension and mitigates risks in agent-assisted workflows by forcing a human to consider failure scenarios, thereby improving the robustness of AI-generated code.",
+      "title": "Sphinx: A Git Hook for AI-Assisted Code Understanding and Risk Mitigation",
+      "why_now": "Sphinx was recently showcased as a 'Show HN' project, demonstrating a novel, open-source approach to a critical problem in AI-assisted development: ensuring human understanding and accountability for code written by agents. Its FOSS nature and direct applicability make it timely."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://www.malwarebytes.com/blog/ai/2026/10/phishing-emails-are-baiting-your-ai-assistant"
+      ],
+      "date": "2026-10-18",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.malwarebytes.com/blog/ai/2026/10/phishing-emails-are-baiting-your-ai-assistant",
+        "https://news.ycombinator.com/item?id=50137490"
+      ],
+      "suggested_outline": [
+        "Introduction: The New Frontier of Phishing – Targeting AI Assistants",
+        "How Phishing Emails 'Bait' AI: Prompt Injection and Data Exfiltration",
+        "Case Studies: Examples of AI Assistant Compromise",
+        "Understanding the Attack Surface: Where AI Integrations are Vulnerable",
+        "Defense Strategies: Hardening AI Assistants Against Malicious Inputs",
+        "Best Practices for Secure AI Deployment and User Education",
+        "The Role of AI in Detecting AI-Targeted Attacks",
+        "Conclusion: A Proactive Stance on AI Security"
+      ],
+      "summary": "This post would explore the emerging threat of phishing emails 'baiting' AI assistants, highlighting how malicious actors are crafting inputs to trick AI tools into revealing sensitive information or performing unintended actions. It would cover the mechanisms of such attacks (e.g., prompt injection, data exfiltration via AI summaries) and practical defense strategies for securing AI assistant integrations in enterprise environments.",
+      "title": "Securing AI Assistants: Protecting Against Phishing and Prompt Injection Attacks",
+      "why_now": "Malwarebytes recently published an article explicitly detailing how phishing campaigns are evolving to target AI assistants, underscoring an immediate and growing security concern for organizations adopting AI tools. This makes the topic highly relevant for practitioners needing to secure their AI deployments."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://claude.dev/blog/solving-code-review-at-anthropic/",
+        "https://simonwillison.net/2026/Oct/16/code-review/"
+      ],
+      "date": "2026-10-18",
+      "estimated_effort": "large",
+      "sources": [
+        "https://claude.dev/blog/solving-code-review-at-anthropic/",
+        "https://simonwillison.net/2026/Oct/16/code-review/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of AI-Generated Code Volume",
+        "Rethinking Code Review: From Gatekeeper to Continuous Feedback",
+        "The Multi-Layered AI Review Process at Anthropic",
+        "Key Components: CLAUDE.md, REVIEW.md, and Verification",
+        "Automated Bug Finding and Security Reviews",
+        "Human-in-the-Loop: Optimizing Attention and Measuring Impact",
+        "Practical Takeaways for Applied AI Engineers",
+        "Conclusion: The Future of Code Quality with AI"
+      ],
+      "summary": "This post would delve into Anthropic's approach to scaling code review using AI agents, where Claude reviews and fixes code continuously, much like a spell-checker. It would explore how they've optimized for human attention, reduced revert rates, and implemented multi-layered AI reviews (pre-PR, security, bug-finding) to handle the immense volume of agent-generated code, fundamentally changing the 'when' and 'how' of code review.",
+      "title": "Anthropic's AI-Driven Code Review: Shifting from Human Gatekeepers to Continuous Machine Feedback",
+      "why_now": "Anthropic recently published a detailed blog post outlining their evolved, AI-first code review process, including specific metrics and methodologies (e.g., 'CLAUDE.md', 'REVIEW.md' files for agent guidance). This provides concrete, actionable insights for practitioners."
+    },
     {
       "angle": "theoretical",
       "citations": [
