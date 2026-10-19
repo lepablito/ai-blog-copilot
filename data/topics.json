@@ -1,6 +1,107 @@
 {
-  "generated_at": "2026-10-18T05:41:49+00:00",
+  "generated_at": "2026-10-19T05:59:15+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.22454"
+      ],
+      "date": "2026-10-19",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.22454"
+      ],
+      "suggested_outline": [
+        "Introduction to Mixture-of-Experts (MoE) Models",
+        "The Challenge of MoE Inference Cost: Prefill Expert Reduction",
+        "Methodology: Token-, Layer-, and Attention-Path Interventions",
+        "Key Findings: Identifying Sensitive Prompt Regions",
+        "Case Studies: Qwen3-30B-A3B and DeepSeek-V2-Lite",
+        "Mechanisms of Damage: Attention Mass, Norm, Activations",
+        "Practical Strategies for Mitigating Performance Loss",
+        "Future Directions for MoE Optimization",
+        "Conclusion: Balancing Efficiency and Accuracy in MoE Serving"
+      ],
+      "summary": "This article would delve into the specific mechanisms by which reducing the number of active experts during the prefill phase impacts Mixture-of-Experts (MoE) model performance. It would focus on identifying critical prompt tokens or sections (e.g., chat templates, instruction tokens) that disproportionately contribute to F1 loss when expert reduction is applied, offering insights into how to strategically manage expert allocation to mitigate performance degradation while still achieving cost savings.",
+      "title": "Unpacking MoE Inference: Where Prefill Expert Reduction Hits Hardest",
+      "why_now": "With MoE models gaining traction for their scalability, understanding the nuances of inference optimization, particularly 'prefill expert reduction,' is crucial for practical deployment. This research (despite the future timestamp) provides specific, actionable insights into where efficiency gains come at the highest cost, making it highly relevant now."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.22507",
+        "https://arxiv.org/abs/2610.22511"
+      ],
+      "date": "2026-10-19",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.22507",
+        "https://arxiv.org/abs/2610.22511"
+      ],
+      "suggested_outline": [
+        "Introduction: The Growing Need for Agent Evaluation Beyond Benchmarks",
+        "The Limitations of Current Agent Evaluation Methods",
+        "REALCLI: A Benchmark for Human-Agent Collaboration in CLI",
+        "AuditKIT: A Unified Framework for Comprehensive Agent Audits",
+        "Key Dimensions of Agent Evaluation: Collaboration, Reliability, Performance",
+        "Case Studies: Identifying Capability Gaps in Frontier Agents",
+        "Implications for Agent Development and Deployment",
+        "Best Practices for Building Trustworthy Agentic Systems",
+        "Conclusion: The Path to Reliable AI Agents"
+      ],
+      "summary": "This post would discuss the critical need for unified and comprehensive evaluation frameworks for AI agents, moving beyond simple task completion metrics. It would highlight new benchmarks like REALCLI, which assesses human-agent collaboration quality in complex command-line interface tasks, and AuditKIT, a flexible spine for combining various evaluation aspects (accuracy, runtime, tool-use, retrieval). The argument would be that current agents exhibit significant capability gaps in collaboration and that robust, multi-dimensional evaluation is essential for their trustworthy deployment.",
+      "title": "Towards Robust Evaluation of AI Agents: Benchmarking Human-Agent Collaboration and System Audits",
+      "why_now": "As AI agents become more sophisticated and are deployed in interactive, real-world scenarios, the inadequacy of traditional benchmarks is becoming apparent. New work (despite future timestamps) on evaluating collaborative quality and providing unified audit trails directly addresses the immediate need for more reliable and transparent agent assessment."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.22428"
+      ],
+      "date": "2026-10-19",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.22428"
+      ],
+      "suggested_outline": [
+        "Introduction: The Hidden Cost of Embeddings in LLMs",
+        "The Problem: Embedding Table Dominance in Small Models",
+        "A Novel Solution: Frozen, Compact Vocabularies",
+        "How it Works: PCA, Binarisation, and Fixed Embeddings",
+        "Performance Analysis: Speed, Memory, and Accuracy Trade-offs",
+        "Implications for Edge AI and Resource-Constrained Deployment",
+        "Practical Steps for Implementation and Experimentation",
+        "Conclusion: Rethinking LLM Architecture for Efficiency"
+      ],
+      "summary": "This post would explore a novel approach to significantly reduce the size and computational cost of language models by replacing large, trainable embedding tables with a frozen, compact (16 MB) vocabulary derived from principal-component projection and sign binarisation. It would argue that for many tasks, this method offers comparable or superior performance to traditional learned embeddings, particularly for smaller, faster models and those deployed on resource-constrained devices, enabling substantial memory and speed improvements.",
+      "title": "Optimizing LLM Embeddings: The Case for Frozen, Small Vocabularies",
+      "why_now": "Recent research (as indicated by the arXiv preprint, despite its future timestamp) directly challenges the assumption that large, trainable embedding layers are always necessary, proposing a method that could drastically improve LLM efficiency and deployment feasibility in the immediate term."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.22529"
+      ],
+      "date": "2026-10-19",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.22529"
+      ],
+      "suggested_outline": [
+        "Introduction: The LLM Divide for Low-Resource Languages",
+        "Challenges of Generic Multilingual Models (Tokenization, Context Efficiency)",
+        "Pearl-Chat: A Case Study in Native Luganda LLM Engineering",
+        "From First Principles: JAX, Flax NNX, and Functional State Decomposition",
+        "Optimizing Tokenization for Agglutinative Languages",
+        "Data Curation and Preprocessing for Low-Resource Settings",
+        "Achieving Performance: Compression, Speed, and Memory Footprint",
+        "Broader Implications for Linguistic Diversity in AI",
+        "Conclusion: A Blueprint for Inclusive LLM Development"
+      ],
+      "summary": "This article would detail the technical challenges and solutions involved in building large language models from scratch for low-resource languages, using the Pearl-Chat (Luganda) project as a case study. It would focus on optimizing tokenizer design (e.g., byte-level BPE for agglutinative languages), leveraging modern deep learning frameworks (JAX and Flax NNX for functional state decomposition and SPMD parallelism), and curating high-quality datasets to achieve efficient and performant models that overcome the limitations of multilingual models on under-represented languages.",
+      "title": "Engineering Low-Resource LLMs: Lessons from Pearl-Chat for Native Luganda",
+      "why_now": "While most LLM development focuses on high-resource languages, there's a growing push for equitable AI. This recent work (despite the future timestamp) provides a detailed, 'first principles' technical blueprint for engineers looking to build effective LLMs for low-resource languages, addressing critical issues like tokenizer efficiency and computational penalties."
+    },
     {
       "angle": "practical",
       "citations": [
