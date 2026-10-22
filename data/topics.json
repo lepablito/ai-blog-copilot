@@ -1,6 +1,111 @@
 {
-  "generated_at": "2026-10-19T05:59:15+00:00",
+  "generated_at": "2026-10-22T05:57:36+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.28673",
+        "https://arxiv.org/abs/2610.28838",
+        "https://arxiv.org/abs/2610.28897",
+        "https://arxiv.org/abs/2610.28823"
+      ],
+      "date": "2026-10-22",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.28673",
+        "https://arxiv.org/abs/2610.28838",
+        "https://arxiv.org/abs/2610.28897",
+        "https://arxiv.org/abs/2610.28823"
+      ],
+      "suggested_outline": [
+        "Introduction: The Global Challenge of Multi-Lingual LLMs",
+        "Efficient Adaptation: Freezing Weights and Low-Rank Adapters for New Languages",
+        "Data Strategies: Leveraging Parallel and Monolingual Data for Multi-Lingual Pretraining and Fine-tuning",
+        "Case Study: Adapting for Dialectal Arabic Speech Recognition",
+        "Safety and Alignment: Understanding Refusal Directions in Low-Resourced Languages",
+        "Evaluation Challenges for Multi-Lingual Models",
+        "Best Practices for Production Deployment",
+        "Conclusion: Towards Truly Global LLM Capabilities"
+      ],
+      "summary": "This post would explore the technical aspects of adapting LLMs for multiple languages, focusing on efficient fine-tuning techniques (like adapters), the challenges of data availability (parallel data usage), and the critical issue of ensuring safety alignment (refusal behaviors) across low-resource languages. It would provide practical guidance for engineers deploying LLMs globally, drawing insights from recent research on speech encoders, pretraining strategies, and cross-lingual safety.",
+      "title": "Practical Multi-Lingual LLM Adaptation: Strategies for Diverse Languages and Safety",
+      "why_now": "Several recent arXiv papers (published 2026-10-22 in the provided data) address different facets of multilingual LLM deployment, from efficient adaptation to data strategies and safety alignment, indicating a surge in practical research for global LLM applications."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.28819",
+        "https://arxiv.org/abs/2610.28886"
+      ],
+      "date": "2026-10-22",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.28819",
+        "https://arxiv.org/abs/2610.28886"
+      ],
+      "suggested_outline": [
+        "Introduction: The Criticality of Reliable Structured LLM Outputs",
+        "The Challenge of Instruction Following: Beyond Simple Prompts",
+        "LIFT-Bench: A New Paradigm for Evaluating and Training with Scoped Constraints",
+        "Methods for Enforcing Structured Outputs (Grammar-based, Prompting, etc.)",
+        "Ensuring Reliability: Metamorphic Testing for LLM Judges and Structured Responses",
+        "Practical Implementations and Frameworks",
+        "Common Pitfalls and How to Avoid Them",
+        "Conclusion: Building Trustworthy LLM-Powered Workflows"
+      ],
+      "summary": "This post would focus on the technical challenges and solutions for ensuring LLMs reliably follow complex instructions and generate outputs in specific structured formats (e.g., JSON outlines, API calls). It would cover novel benchmarks and training methodologies that incorporate 'scoped constraints' to prevent reward hacking, and discuss testing frameworks like metamorphic testing for LLM judges that rely on such structured outputs.",
+      "title": "Engineering Robust LLM Outputs: Mastering Instruction Following and Structured Formats",
+      "why_now": "New research (both papers published 2026-10-22 in the provided data) highlights the complexity of robust instruction following and structured output generation, offering new benchmarks and testing methods crucial for building reliable LLM applications."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.28895"
+      ],
+      "date": "2026-10-22",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2610.28895"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Cross-Tokenizer Knowledge Transfer",
+        "Understanding Logits Distillation and its Limitations with Different Tokenizers",
+        "Common-Support Distillation (CSD): A Technical Deep Dive",
+        "Constructing Shared Support: One-to-One vs. Other Alignments",
+        "The Role of the Autoregressive Chain Rule in CSD",
+        "Benefits and Applications: Model Compression, Specialization, and Interoperability",
+        "Implementation Considerations",
+        "Conclusion: Towards More Flexible LLM Ecosystems"
+      ],
+      "summary": "This post would dive into the technical details of Common-Support Distillation (CSD), a novel logits-based framework designed to facilitate knowledge transfer between LLMs that use different tokenizers. It would explain how CSD constructs a shared support to align teacher and student distributions, overcoming the challenges of varying vocabularies and segmentation, enabling more effective model compression and specialization.",
+      "title": "Bridging Tokenizers: Common-Support Distillation for Efficient Knowledge Transfer",
+      "why_now": "The recent arXiv paper (published 2026-10-22 in the provided data) presents a unified and robust solution for a long-standing technical challenge in knowledge distillation, opening new avenues for efficient LLM development and deployment across diverse model ecosystems."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.28767",
+        "https://arxiv.org/abs/2610.28799"
+      ],
+      "date": "2026-10-22",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.28767",
+        "https://arxiv.org/abs/2610.28799"
+      ],
+      "suggested_outline": [
+        "Introduction: The Limitations of Aggregate LLM Scores",
+        "Cognitive Diagnosis Models (CDMs): A Primer for LLM Evaluation",
+        "SkillEval Framework: Automatic Skill Discovery and Per-Skill Ability Estimation",
+        "Practical Applications: LLM Routing and Targeted Improvement",
+        "Connecting Evaluation to Interpretability: Tracing Internal Knowledge",
+        "Challenges and Future Directions in Granular LLM Assessment",
+        "Conclusion: Towards More Insightful LLM Development"
+      ],
+      "summary": "This post would delve into advanced methods for evaluating LLMs that move beyond single aggregate scores. It would introduce frameworks like SkillEval, which leverage cognitive diagnosis models and LLM meta-cognitive capabilities to discover interpretable skills and estimate per-skill abilities, providing a more granular understanding of model strengths and weaknesses. It would also touch on how to map internal LLM representations to human-understandable concepts for better interpretability.",
+      "title": "Beyond Scalar Scores: Skill-Based LLM Evaluation via Cognitive Diagnosis Models",
+      "why_now": "The SkillEval paper (published 2026-10-22 in the provided data) offers a novel, more informative framework for LLM evaluation, addressing a critical need for better understanding and debugging of complex models. Complementary work on LLM interpretability also emerged."
+    },
     {
       "angle": "theoretical",
       "citations": [
