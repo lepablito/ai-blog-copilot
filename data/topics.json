@@ -1,6 +1,75 @@
 {
-  "generated_at": "2026-10-22T05:57:36+00:00",
+  "generated_at": "2026-10-23T05:55:07+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.30154"
+      ],
+      "date": "2026-10-23",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2610.30154"
+      ],
+      "suggested_outline": [
+        "Introduction: The Enduring Role of Recurrent Networks",
+        "Deconstructing baseVultra: Reallocating Recurrent Capacity",
+        "Architectural Innovations: Candidate Generation and Lightweight Gates",
+        "Performance Analysis: Compact Regimes vs. Full-Gate Cells",
+        "Implications for Efficiency and Edge Deployment",
+        "Potential Future Directions for Recurrent Architectures",
+        "Conclusion: A Fresh Look at RNN Design"
+      ],
+      "summary": "This post would analyze baseVultra, a novel compact recurrent cell that reallocates computational capacity from traditional gate transforms to candidate generation. By concentrating the dense recurrent budget on a single H x H matrix and using O(H) diagonal interactions for gates, baseVultra achieves competitive performance against LSTMs and GRUs, particularly in compact settings. This offers insights into designing more efficient recurrent networks for streaming sequence modeling.",
+      "title": "baseVultra: A Compact Approach to Recurrent Neural Network Design",
+      "why_now": "The paper was submitted to arXiv within the last 48 hours, introducing a new, more compact recurrent network architecture with potential implications for efficient model design."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.30435"
+      ],
+      "date": "2026-10-23",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.30435"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Hallucination and Premature Search in LLM Agents",
+        "Understanding Search-State Awareness: Why It Matters for RAG",
+        "How SARL Works: Dual Reward Design for Self-Assessment",
+        "Key Benefits: Reduced Hallucinations, Improved Efficiency, Stable Training",
+        "Practical Implications for Applied AI Engineers",
+        "Comparing SARL to Existing RAG Optimization Techniques",
+        "Conclusion: The Future of Autonomous LLM Agents"
+      ],
+      "summary": "This post would explore SARL, a new reinforcement learning framework designed to give LLM search agents 'search-state awareness.' By learning what information has been obtained and what is still missing, SARL helps reduce hallucinations and prevent premature search termination in RAG systems, leading to more reliable and efficient information retrieval and synthesis. It offers significant improvements in multi-hop reasoning and deep research benchmarks.",
+      "title": "Self-Assessment Reinforcement Learning for Smarter LLM Search Agents",
+      "why_now": "The paper was submitted to arXiv within the last 48 hours, presenting a novel RL framework to address a critical, ongoing challenge in RAG and LLM agent development."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.30344"
+      ],
+      "date": "2026-10-23",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.30344"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenges of Language Adaptation for LLMs",
+        "AQL-Lite's Data-Centric Approach: Quality Curation Pipeline",
+        "The Partial-Parameter CPT Recipe: RS-LoRA and Unfrozen Blocks",
+        "Performance Gains: Efficiency vs. Full-Parameter CPT",
+        "Real-World Impact: Deploying LLMs in Low-Resource Languages",
+        "Implementation Considerations for Applied AI Engineers",
+        "Conclusion: A Practical Path to Multilingual LLM Excellence"
+      ],
+      "summary": "This topic would delve into AQL-Lite, a framework for efficiently adapting multilingual LLMs to specific languages like Modern Standard Arabic. It combines a quality-first data curation pipeline with a partial-parameter continual pretraining (CPT) recipe using RS-LoRA adapters. This approach significantly reduces training time and resources while achieving performance comparable to full-parameter CPT, offering a practical solution for deploying LLMs in diverse linguistic contexts.",
+      "title": "AQL-Lite: Efficient Continual Pretraining for Language-Specific LLM Adaptation",
+      "why_now": "The paper was submitted to arXiv within the last 48 hours, providing a timely and resource-efficient method for language-specific LLM adaptation, a common pain point for practitioners."
+    },
     {
       "angle": "practical",
       "citations": [
