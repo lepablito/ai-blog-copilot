@@ -1,6 +1,77 @@
 {
-  "generated_at": "2026-10-25T05:54:09+00:00",
+  "generated_at": "2026-10-26T05:58:09+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2610.31820"
+      ],
+      "date": "2026-10-26",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.31820"
+      ],
+      "suggested_outline": [
+        "The Need for LLM Confidence in Trustworthy AI",
+        "Traditional Confidence Estimation: Costs and Challenges",
+        "Introduction to RL Critics and Value Functions",
+        "The Equivalence Proof: Confidence as a Value Prediction",
+        "Practical Implications: How to Reuse Your RL Critic",
+        "Performance and Calibration Benchmarks",
+        "Limitations and Future Research Directions",
+        "Conclusion: A 'Free Lunch' for Trustworthy LLMs"
+      ],
+      "summary": "This post would explain how the critic component of a Reinforcement Learning (RL) trained Large Language Model can be repurposed as an 'off-the-shelf' confidence estimator without additional training. It would delve into the theoretical equivalence between confidence estimation and value function learning in RL, demonstrating how this can provide reliable confidence scores throughout generation, including intermediate reasoning steps, across various domains like math, code, and tool calling.",
+      "title": "Leveraging RL Critics for 'Free' LLM Confidence Estimation",
+      "why_now": "A recent arXiv paper proves the equivalence between confidence estimation and critic training in RL-trained LLMs, offering a novel and efficient way to obtain confidence scores for deployed models without extra computation."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://news.ycombinator.com/item?id=50238759"
+      ],
+      "date": "2026-10-26",
+      "estimated_effort": "small",
+      "sources": [
+        "https://news.ycombinator.com/item?id=50238759"
+      ],
+      "suggested_outline": [
+        "Introduction: The 'Dumbing Down' Phenomenon in LLMs",
+        "User Reports and Anecdotal Evidence: The Case of Opus 5.5",
+        "Potential Causes of Performance Degradation (Model Drift, Silent Updates, Data Shifts)",
+        "The Challenge of Detecting and Quantifying Degradation",
+        "Strategies for Proactive Monitoring and Evaluation",
+        "A/B Testing and Canary Deployments for LLM Updates",
+        "Building Robust Feedback Loops with Users",
+        "Conclusion: Maintaining Reliability in a Dynamic AI Landscape"
+      ],
+      "summary": "This post would investigate the phenomenon of perceived performance degradation in large language models, using recent user reports about Claude Opus 5.5 as a case study. It would discuss potential causes such as model drift, silent updates, changes in underlying data distributions, or shifts in user expectations. The post would propose a framework for practitioners to detect, diagnose, and potentially mitigate such issues in production LLMs, emphasizing robust monitoring and evaluation strategies.",
+      "title": "Diagnosing LLM Performance Degradation: A Case Study on Claude Opus 5.5",
+      "why_now": "Recent, active discussions on Hacker News about the perceived decline in performance of a prominent LLM (Claude Opus 5.5) highlight a pressing practical concern for engineers deploying and relying on these models."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.31840"
+      ],
+      "date": "2026-10-26",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.31840"
+      ],
+      "suggested_outline": [
+        "Introduction: The Latency Problem in Agentic LLMs",
+        "Understanding Speculative Decoding for Tool Calls",
+        "What is SPECMEM? Live Memory Management Explained",
+        "Architectural Components: Per-User Stores, LRU Eviction, Side-Effect Gate",
+        "Performance Gains: Speedup and Acceptance Rate Improvements",
+        "Implementation Challenges and Best Practices",
+        "Use Cases and Future Directions for Faster Agents"
+      ],
+      "summary": "This post would explore SPECMEM, a novel approach to accelerate agentic LLM tool-calling by maintaining a live, per-user memory of past tool calls. It would explain how speculative decoding, combined with this dynamic memory management and a side-effect gate, significantly reduces latency and improves efficiency in multi-session, multi-user environments without altering the model's output. The post would delve into the practical benefits and implementation considerations for deploying such systems.",
+      "title": "Accelerating Agentic LLMs: Live Memory Management with SPECMEM for Faster Tool Calling",
+      "why_now": "The recent arXiv paper introduces SPECMEM, a practical and effective method to address the growing latency and cost of agentic LLM tool calling, making it highly relevant for engineers deploying such systems."
+    },
     {
       "angle": "practical",
       "citations": [
