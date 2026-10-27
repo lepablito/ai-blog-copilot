@@ -1,6 +1,78 @@
 {
-  "generated_at": "2026-10-26T05:58:09+00:00",
+  "generated_at": "2026-10-27T06:09:02+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.32997"
+      ],
+      "date": "2026-10-27",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2610.32997"
+      ],
+      "suggested_outline": [
+        "The Promise and Cost of ASR Fine-Tuning (e.g., Whisper)",
+        "The Problem: Too Much Data, Too Few Resources",
+        "Introducing Embedding-Based Subset Selection",
+        "How it Works: From Audio to Embeddings to K-Center Selection",
+        "Case Studies: Hebrew and Danish Performance Improvements",
+        "Analyzing Lexical Diversity: Why it Matters",
+        "Practical Guidelines for ASR Data Selection",
+        "Conclusion: Fine-Tuning Smarter, Not Harder"
+      ],
+      "summary": "This post will examine 'Whispering Wisely,' a new embedding-based subset selection method for efficient fine-tuning of Automatic Speech Recognition (ASR) models like OpenAI's Whisper. It addresses the challenge of high fine-tuning costs when large transcribed audio datasets are available by using Whisper's pretrained encoder to map audio samples into an embedding space, then applying a greedy k-center algorithm to select diverse and representative subsets. This method significantly improves upon random sampling, especially for smaller training budgets.",
+      "title": "Whispering Wisely: Smart Data Selection for ASR Fine-Tuning with Embeddings",
+      "why_now": "The paper was submitted on October 5, 2026, offering a practical, data-centric strategy for optimizing ASR model fine-tuning, a common task for practitioners adapting powerful models like Whisper to new domains or languages."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.33015"
+      ],
+      "date": "2026-10-27",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.33015"
+      ],
+      "suggested_outline": [
+        "The Growing Need for Long-Term Memory in LLM Agents",
+        "The Cost Problem: Why Current Memory Architectures Struggle",
+        "Introducing SLICE-Mem: A Lightweight Solution",
+        "Key Components: Salience-Gated Admission and Predicate-Centered Extraction",
+        "Online vs. Offline Processing: Minimizing Generative LLM Calls",
+        "Performance and Cost Savings: Benchmarks and Results",
+        "Designing Memory Systems for Production LLM Agents",
+        "Conclusion: Smarter Memory for Smarter Agents"
+      ],
+      "summary": "This post will delve into SLICE-Mem, a lightweight memory framework designed to make LLM agents more efficient and less costly. It tackles the substantial inference costs and latency introduced by repeated LLM calls for memory admission, extraction, and organization. SLICE-Mem achieves this by combining a salience-guided classifier for user turn retention and a semantic-dependency-based extractor for concise memory entries, largely avoiding generative LLM calls in its online pipeline.",
+      "title": "SLICE-Mem: Building Efficient and Cost-Effective Memory for LLM Agents",
+      "why_now": "The paper was submitted on October 8, 2026, directly addressing a critical bottleneck in the real-world deployment of LLM agents: the high cost and latency of managing long-term memory, offering a concrete, evaluated solution."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.33006"
+      ],
+      "date": "2026-10-27",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.33006"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Long Contexts in LLMs",
+        "Current Approaches to Context Compression: Limitations of Transformers",
+        "Introducing Boa Compressor: Mamba to the Rescue",
+        "How Boa Works: State-Space Encoding and Distillation Training",
+        "Performance Benchmarks: Speed and Compression Ratios",
+        "Practical Implications for LLM Deployment",
+        "Implementing Boa: A Plug-and-Play Solution",
+        "Conclusion: Towards More Efficient Long-Context LLMs"
+      ],
+      "summary": "This post would explore the Boa Compressor, a novel method for online context compression in large language models using Mamba state-space models (SSMs). It offers a plug-and-play solution that encodes arbitrary-length contexts in linear time, significantly reducing latency and computational costs associated with long-context inference in LLMs compared to traditional Transformer-based methods. The article would detail how distillation training enables a frozen LLM to operate effectively on these compressed representations.",
+      "title": "Boa Compressor: Linear-Time Context Compression for LLMs with Mamba SSMs",
+      "why_now": "The paper was submitted on October 7, 2026, introducing a new, significantly faster approach to a critical LLM scaling problem (context window limitations and inference cost) that has been a major research focus."
+    },
     {
       "angle": "theoretical",
       "citations": [
