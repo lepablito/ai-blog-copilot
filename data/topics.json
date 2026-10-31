@@ -1,6 +1,75 @@
 {
-  "generated_at": "2026-10-29T06:56:34+00:00",
+  "generated_at": "2026-10-31T06:52:46+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://news.ycombinator.com/item?id=50313539"
+      ],
+      "date": "2026-10-31",
+      "estimated_effort": "small",
+      "sources": [
+        "https://news.ycombinator.com/item?id=50313539"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise vs. Reality of LLM API Reliability",
+        "Case Study: Unreliable API Calls and Wasted Tokens",
+        "Why LLM API Failures are Costly for Engineers",
+        "Client-Side Strategies for Robust Error Handling",
+        "Monitoring and Cost Management in an Unpredictable Environment",
+        "Designing for Idempotency and Resilience with LLMs",
+        "Advocating for Better API Guarantees and Tooling"
+      ],
+      "summary": "This post would address a critical practical issue faced by AI engineers: the unreliable performance of some LLM APIs leading to wasted token consumption and failed tasks. It would analyze scenarios where API infrastructure failures result in charges for incomplete or erroneous operations, explore the lack of robust retry mechanisms, and discuss strategies for client-side error handling, cost monitoring, and potential workarounds to mitigate financial and operational losses when dealing with non-idempotent and often opaque LLM API interactions.",
+      "title": "The Hidden Costs of Unreliable LLM APIs: A Deep Dive into Token Consumption and Error Handling",
+      "why_now": "A recent Hacker News discussion highlights ongoing issues with Claude's API consuming limits despite infrastructure failures. This is a recurring pain point for practitioners, making a timely post on managing LLM API unreliability highly relevant."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2606.03979"
+      ],
+      "date": "2026-10-31",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2606.03979"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Continual Learning in LLMs",
+        "The 'Sleep' Paradigm: Inspiration from Human Cognition",
+        "Memory Consolidation: Knowledge Seeding and Generalized Distillation",
+        "Dreaming: Self-Improvement through Reinforcement Learning and Synthetic Data",
+        "Experimental Results and Implications for Long-Horizon Tasks",
+        "Architectural Considerations for 'Sleep'-Enabled LLMs",
+        "Future Directions and Open Questions"
+      ],
+      "summary": "This topic explores a novel 'Sleep' paradigm for Large Language Models (LLMs) that enables continual learning, memory consolidation, and self-improvement. Inspired by human learning, it involves distilling short-term memories into stable long-term knowledge via 'Knowledge Seeding' (a generalized distillation process with RL-based imitation learning) and a 'Dreaming' phase where the model generates synthetic data for rehearsal and refinement. This approach aims to address the challenge of effectively transferring in-context knowledge to long-term parameters, offering a significant theoretical advancement for future LLM architectures.",
+      "title": "Language Models Need Sleep: A New Paradigm for Continual Learning and Self-Improvement",
+      "why_now": "The paper was submitted in June 2026 and revised in July 2026, making it a recent academic development. Its appearance on Hacker News signals growing interest in this novel approach to LLM training and architecture, moving beyond traditional fine-tuning."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out"
+      ],
+      "date": "2026-10-31",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for AI Data Governance",
+        "What is the New AI Scraping Opt-Out Standard?",
+        "How it Works: The 'Policy Token' in robots.txt",
+        "Implementation for Data Providers: A Step-by-Step Guide",
+        "Implications for AI Engineers: Data Sourcing and Compliance",
+        "Challenges and Limitations of the New Standard",
+        "The Future of Web Scraping and AI Training Data"
+      ],
+      "summary": "Major AI players including OpenAI, Google, Microsoft, and Anthropic are adopting a new, unified standard for websites to opt out of AI scraping. This 'policy token' placed in robots.txt allows publishers to signal their AI training preferences across multiple crawlers, simplifying data governance. This post would detail how data providers can implement this standard and what it means for AI engineers who rely on scraped data, discussing the technical implications, potential challenges, and the evolving landscape of data sourcing for LLMs.",
+      "title": "Implementing the New AI Scraping Opt-Out Standard: A Practical Guide for Data Providers and AI Engineers",
+      "why_now": "The announcement of major AI companies backing this standard (with implementations planned for 'coming months' or next year) makes this a timely topic for practitioners to understand and prepare for. It represents a significant shift in data sourcing ethics and mechanics."
+    },
     {
       "angle": "theoretical",
       "citations": [
