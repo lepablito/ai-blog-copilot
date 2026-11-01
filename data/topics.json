@@ -1,6 +1,85 @@
 {
-  "generated_at": "2026-10-31T06:52:46+00:00",
+  "generated_at": "2026-11-01T07:21:01+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://simonwillison.net/2026/Oct/30/nesformer/",
+        "https://divagr.com/blog/qwenputer"
+      ],
+      "date": "2026-11-01",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Oct/30/nesformer/",
+        "https://divagr.com/blog/qwenputer"
+      ],
+      "suggested_outline": [
+        "Introduction: LLMs as Universal Computers?",
+        "The NESformer Concept: What it is and How it Works",
+        "Encoding CPU State and Logic into LLM Weights",
+        "The Role of Prompts in Guiding Emulation",
+        "Technical Challenges: Speed, Memory, and Determinism",
+        "Inspiration from Qwenputer: A Precedent for LLM-based Emulation",
+        "Broader Implications: LLMs for System Simulation and Novel Architectures",
+        "Limitations and Future Research Directions",
+        "Conclusion: Redefining LLM Capabilities"
+      ],
+      "summary": "This post will explore the fascinating technical feat of 'NESformer,' where a Nintendo Entertainment System's 6502 CPU and RAM were encoded into the weights of a Qwen3.5-4B LLM, allowing it to 'run' NES ROMs. It will delve into the theoretical implications of using LLMs for unconventional computation, how a CPU's state and logic can be represented within a neural network, and the challenges and limitations (e.g., speed) of such an approach, opening discussions on the boundaries of what LLMs can compute.",
+      "title": "NESformer: Emulating a 6502 CPU within an LLM's Weights",
+      "why_now": "The recent public demonstration and discussion around 'NESformer' highlights a novel and thought-provoking application of LLMs, pushing the boundaries of their perceived computational capabilities beyond traditional language tasks."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://latent.space/p/arca/"
+      ],
+      "date": "2026-11-01",
+      "estimated_effort": "large",
+      "sources": [
+        "https://latent.space/p/arca/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Pitfalls of Production AI Agents",
+        "Defining Long-Horizon Agentic Workflows",
+        "Persistent Memory Architectures for State Management",
+        "Building a Custom Agent Harness: Model Routing and Tool Orchestration",
+        "Human-in-the-Loop: Designing for Oversight and Decision Points",
+        "Ensuring Safety and Compliance: Deterministic Guardrails and Verification",
+        "Securing Agent-Generated Code Execution in Sensitive Environments",
+        "Feedback Loops and Meta-Agents for Continuous Improvement",
+        "Case Study: Arca's Financial Services Implementation",
+        "Conclusion: Towards Reliable and Responsible AI Agents in Production"
+      ],
+      "summary": "This article will dissect the practical engineering challenges and solutions for deploying AI agents in complex, long-running, and high-stakes environments, drawing insights from Arca's use of agents in financial wealth management. It will focus on critical aspects such as designing robust persistent memory systems for multi-day tasks, building custom agent harnesses for intelligent model routing and tool use, implementing human-in-the-loop guardrails for safety and compliance, and securing agent-generated code execution in sensitive contexts.",
+      "title": "Engineering Long-Horizon AI Agents: Lessons from Arca's Financial Workflows",
+      "why_now": "The recent interview with Arca's lead AI Engineer provides timely, real-world insights into the production deployment of AI agents handling complex, long-horizon tasks, offering valuable lessons for practitioners moving beyond experimental agentic systems."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
+        "https://www.parameter.ai/labs/we-found-a-gap-at-openai"
+      ],
+      "date": "2026-11-01",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
+        "https://www.parameter.ai/labs/we-found-a-gap-at-openai"
+      ],
+      "suggested_outline": [
+        "Introduction: The Importance of LLM Security",
+        "Overview of the ChatGPT Artifacts/HTML Previews Feature",
+        "The Initial Breach: Bypassing the Sandbox via `postMessage()` and `innerHTML`",
+        "The Reflection Attack: Leveraging YouTube oEmbed for XSS",
+        "Achieving Account Takeover: Data Exfiltration and Session Hijacking",
+        "Lessons Learned: Defensive Strategies for Interactive AI Applications",
+        "Best Practices for Secure iframe Integration and Content Sanitization",
+        "Conclusion: The Evolving Landscape of AI Security"
+      ],
+      "summary": "This post would dissect the multi-stage attack chain that allowed an account takeover on ChatGPT. It will explain how a sandboxed iframe was bypassed, how `postMessage()` was misused to inject HTML via `innerHTML` into the parent page, and the ingenious use of a YouTube oEmbed endpoint to reflect JavaScript, ultimately leading to data exfiltration and account compromise. The article will highlight critical lessons for developers building interactive AI applications and handling untrusted content.",
+      "title": "Beyond the Sandbox: A Technical Deep Dive into the ChatGPT Account Takeover Exploit",
+      "why_now": "The recent disclosure of this complex vulnerability by Parameter Labs, detailed in a timely blog post, provides a fresh and highly relevant case study for applied AI engineers on the real-world security challenges of LLM platforms."
+    },
     {
       "angle": "practical",
       "citations": [
