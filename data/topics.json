@@ -1,6 +1,78 @@
 {
-  "generated_at": "2026-11-01T07:21:01+00:00",
+  "generated_at": "2026-11-02T07:33:41+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.40747"
+      ],
+      "date": "2026-11-02",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2610.40747"
+      ],
+      "suggested_outline": [
+        "Introduction: The Vision of Autonomous Computer-Use Agents",
+        "The Hybrid Challenge: Combining Visual and Code Interaction",
+        "Mage-VL-Cowork Architecture: A 4B Parameter Breakthrough",
+        "The Five-Stage Progressive Training Curriculum Explained",
+        "Mage-CUA-Forge: Scaling Task Generation for Complex Environments",
+        "Evolving Harnesses: The Key to High-Quality Trajectories",
+        "Achieving SOTA on OSWorld-Verified: Performance and Efficiency",
+        "Implications for On-Device Intelligence and Agent Development",
+        "Conclusion: Towards Truly Capable AI Assistants"
+      ],
+      "summary": "This post will explore Mage-VL-Cowork, a 4B parameter hybrid computer-use agent (CUA) capable of seamlessly combining visual GUI interaction with code and terminal execution. It will detail the five-stage progressive training curriculum and the Mage-CUA-Forge system, which generates a vast array of desktop and web tasks. The article will highlight the importance of evolving teacher harnesses and specialized CUA harnesses to achieve state-of-the-art performance in complex computer-use scenarios, pushing the frontier of on-device intelligence.",
+      "title": "Mage-VL-Cowork: Training Hybrid Computer-Use Agents for GUI and Code Interaction",
+      "why_now": "The 'Mage-VL-Cowork' paper, released within the last 48 hours, presents a comprehensive and highly effective training recipe for advanced computer-use agents, offering significant practical insights for engineers developing autonomous systems."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.41147"
+      ],
+      "date": "2026-11-02",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.41147"
+      ],
+      "suggested_outline": [
+        "Introduction: The Fine-Tuning Paradox – Specialization vs. Generalization",
+        "What is Catastrophic Forgetting and Why Does it Matter?",
+        "Traditional Approaches and Their Limitations",
+        "Introducing HyperRepair: An Inference-Time Solution",
+        "How HyperRepair Works: Hypernetworks, Activation Fingerprints, and RSNs",
+        "Benefits for Practitioners: Maintaining General Capabilities Without Retraining",
+        "Implementation Considerations and Future Directions",
+        "Conclusion: Towards More Robust and Versatile LLMs"
+      ],
+      "summary": "Fine-tuning large language models often leads to 'catastrophic forgetting,' where models lose general capabilities while specializing in a target domain. This post will introduce HyperRepair, a novel framework that recovers these forgotten general capabilities without re-training or additional optimization during fine-tuning. It achieves this by learning a hypernetwork to generate a prompt-conditioned Repairing Side Net (RSN) that applies selective corrections at inference time, offering a generalizable solution for unseen adaptation domains.",
+      "title": "HyperRepair: Combating Catastrophic Forgetting in Fine-Tuned LLMs at Inference Time",
+      "why_now": "The recent publication of the 'HyperRepair' paper on arXiv introduces a novel, inference-cost-only solution to a long-standing problem in LLM fine-tuning, making it highly relevant for engineers looking to maintain model versatility."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2610.40966"
+      ],
+      "date": "2026-11-02",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2610.40966"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Peril of RAG Abstention",
+        "The Problem with 'No Gold Documents': A Deep Dive into Benchmark Flaws",
+        "Case Study: How Stronger Retrievers Worsen the Problem",
+        "Understanding False Misses: Where Answers Hide",
+        "Proposed Solution: Scoring Refusals Against Content Labels",
+        "Practical Steps for Better RAG Evaluation",
+        "Conclusion: Building More Reliable Conversational AI"
+      ],
+      "summary": "This post will delve into how common RAG evaluation benchmarks, particularly those relying on incomplete relevance judgments, can significantly distort the assessment of a system's ability to abstain from answering. It will explain that stronger retrievers can exacerbate this issue, leading to an overestimation of unanswerable questions. The post will advocate for scoring refusals against actual content labels rather than the mere absence of gold documents, providing practical implications for engineers building robust RAG systems.",
+      "title": "Evaluating RAG Systems: Why Current Benchmarks Underestimate Abstention and How to Fix It",
+      "why_now": "A new arXiv paper, 'Better Retrievers, Worse Labels,' published within the last 48 hours, rigorously demonstrates and quantifies the distortion caused by incomplete relevance judgments in RAG benchmarks, offering a timely critique and a path forward for practitioners."
+    },
     {
       "angle": "theoretical",
       "citations": [
