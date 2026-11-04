@@ -1,6 +1,78 @@
 {
-  "generated_at": "2026-11-03T07:48:20+00:00",
+  "generated_at": "2026-11-04T07:26:19+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.03852"
+      ],
+      "date": "2026-11-04",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.03852"
+      ],
+      "suggested_outline": [
+        "Introduction: The High Cost of LLM Reasoning",
+        "What is Reasoning History Compaction?",
+        "How Compaction Reduces Token Usage and Cost",
+        "Implementation Strategies for Open-Weight Models",
+        "Case Studies and Performance Benchmarks",
+        "Trade-offs: Quality vs. Efficiency",
+        "Conclusion: A Path to More Economical LLM Agents"
+      ],
+      "summary": "This topic explores a novel, training-free method to reduce the cost and verbosity of LLM reasoning traces in agentic systems. By rewriting and compacting prior reasoning into concise state records, this technique aims to shorten future reasoning steps, thereby cutting token usage and computational expenses. The post would delve into the causal effects of this compaction on future generation and overall agent cost, offering insights for practitioners seeking to optimize their LLM-powered agents.",
+      "title": "Reasoning History Compaction: Reducing LLM Agent Costs Without Retraining",
+      "why_now": "The paper was submitted to arXiv within the last 48 hours, presenting a fresh, practical solution to the ongoing challenge of high LLM inference costs and efficiency for agentic workflows."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.03992"
+      ],
+      "date": "2026-11-04",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.03992"
+      ],
+      "suggested_outline": [
+        "The KV Cache Bottleneck in Long-Context LLMs",
+        "Introduction to Quantization and Key Rotation for KV Caches",
+        "Why Traditional Rotation Falls Short: The Problem of Spiky vs. Flat Pieces",
+        "FlagRot Explained: Selective Rotation Mechanism",
+        "Implementation Details and Integration with Systems like vLLM",
+        "Performance Gains: Reduced KL Divergence and Improved RULER/LongBench Scores",
+        "Practical Benefits for LLM Deployment and Cost Savings",
+        "Conclusion: Towards More Efficient Long-Context Inference"
+      ],
+      "summary": "This post would detail FlagRot, a technique designed to significantly shrink KV caches in large language models by enabling more effective low-bit quantization. It selectively applies rotation to key-value cache components, addressing the limitations of uniform rotation, which can introduce new errors. By improving the accuracy of 2-bit and 4-bit KV caches, FlagRot offers a practical solution to reduce memory footprint and boost performance for long-context LLM inference, especially relevant for vLLM users.",
+      "title": "FlagRot: Optimizing Low-Bit KV Caches for Long-Context LLM Inference",
+      "why_now": "Published on arXiv within the last 48 hours, FlagRot directly tackles the critical issue of KV cache efficiency for long-context LLMs, a pressing practical concern for deployment."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.03868"
+      ],
+      "date": "2026-11-04",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.03868"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of Multi-Agent LLM Systems",
+        "Challenges in Multi-Agent Collaboration and Shared Contexts",
+        "EvoGroup: A Self-Evolving Architecture for Group Agents",
+        "Key Components: Confidence-based Trajectory Selection and Self-Reflection",
+        "Adaptive Progressive Disclosure and Bucketed Analysis for Knowledge Synthesis",
+        "How EvoGroup Revises and Adapts its Harness",
+        "Implications for Designing Scalable and Robust AI Teams",
+        "Future Directions and Open Research Questions",
+        "Conclusion: Towards Truly Intelligent Collective AI"
+      ],
+      "summary": "This topic introduces EvoGroup, a framework that allows multi-agent LLM systems to self-evolve and adapt within shared contexts. Unlike traditional memory systems focused on individual users, EvoGroup aims to capture and leverage group-level knowledge and relationships, starting from a minimal cold start. The post would delve into its mechanisms for selecting informative trajectories, eliciting self-reflections, and synthesizing high-level findings to guide harness revision, providing a theoretical and architectural blueprint for building more robust and adaptive AI teams.",
+      "title": "EvoGroup: A Self-Evolving Harness for Robust Multi-Agent LLM Systems",
+      "why_now": "The arXiv submission within the last 48 hours highlights a cutting-edge theoretical and architectural approach to designing and managing complex multi-agent LLM systems, an increasingly important area of AI research and application."
+    },
     {
       "angle": "practical",
       "citations": [
