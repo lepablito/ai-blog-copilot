@@ -1,6 +1,121 @@
 {
-  "generated_at": "2026-11-04T07:26:19+00:00",
+  "generated_at": "2026-11-06T07:51:14+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.05720"
+      ],
+      "date": "2026-11-06",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.05720"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Pitfalls of LLM Agents with Search",
+        "Drawing Parallels: Cognitive Biases in Human and AI Reasoning",
+        "The Controlled Search Harness: Methodology for Bias Detection",
+        "Key Findings: Order Effects, Initial Hypotheses, and Dead-End Histories",
+        "Stage-Resolved Analysis: Pinpointing Where Errors Occur",
+        "Implications for Agent Design: Mitigating Bias in LLM Workflows",
+        "Practical Interventions and Future Research Directions"
+      ],
+      "summary": "This research delves into how cognitive biases, such as result order and initial hypotheses, influence the search and reasoning processes of LLM agents. By using a controlled search harness, the study reveals that agents' final answers are sensitive to initial evidence order during active search and that 'dead-end histories' can reduce strategy switching. Understanding these biases is crucial for developing more reliable and less error-prone LLM agents.",
+      "title": "Understanding Cognitive Biases in Search-Equipped LLM Agents",
+      "why_now": "The paper, published recently, provides new empirical evidence and a controlled methodology to analyze cognitive biases in LLM agents, offering critical insights for agent design and debugging."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.05539"
+      ],
+      "date": "2026-11-06",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2611.05539"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Peril of LLMs in OCR Correction",
+        "The Problem of Over-Correction: When LLMs Break What Isn't Broken",
+        "Introducing EditVeto: A Post-Rewrite Veto Gate",
+        "How EditVeto Works: Character Alignment and Block-Level Gating",
+        "Experimental Results: Improving Various Rewriters",
+        "Implementing EditVeto: Architectural Considerations",
+        "Beyond OCR: Applying the 'Rewrite, Then Veto' Paradigm"
+      ],
+      "summary": "This technical development proposes 'EditVeto,' a post-processing technique to improve LLM-based OCR correction. While LLMs are powerful at repairing noisy transcripts, they often introduce new errors by changing already correct text. EditVeto acts as a veto gate after a full LLM rewrite, intelligently reverting character-aligned edits that are likely incorrect. This method significantly reduces erroneous corrections and improves overall accuracy, especially for historical documents.",
+      "title": "Rewrite, Then Veto: A Post-Correction Strategy for LLM-Based OCR",
+      "why_now": "The paper, newly published, offers a practical and effective engineering solution to a common problem with LLM over-correction in a specific application domain, making it highly relevant for practitioners."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.05596"
+      ],
+      "date": "2026-11-06",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.05596"
+      ],
+      "suggested_outline": [
+        "Introduction: The RAG Dilemma – One Retriever Doesn't Fit All",
+        "Limitations of Current Retriever Routing Strategies",
+        "How RAGCompass Works: Passage-Based Reranking for Generalization",
+        "Contrastive Fine-tuning and Architectural Details",
+        "Performance Gains: Outperforming Baselines and LLM-based Routers",
+        "Practical Applications: Building More Robust and Adaptive RAG Systems",
+        "Implementation Considerations and Future Work"
+      ],
+      "summary": "RAGCompass introduces a novel approach to improve Retrieval-Augmented Generation (RAG) by dynamically selecting the most suitable retriever for a given query. Unlike existing routers that are limited to a fixed set of retrievers or specific corpora, RAGCompass uses a contrastively fine-tuned reranker that evaluates the retrieved passage sets themselves, allowing it to generalize to unfamiliar retrievers and new datasets. This significantly enhances RAG system performance and adaptability.",
+      "title": "RAGCompass: Generalizable Retriever Routing for Enhanced RAG Systems",
+      "why_now": "The paper, released in the last 48 hours, presents a significant improvement in RAG routing, addressing a key limitation of existing systems regarding generalizability and performance across diverse retrievers and corpora."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.05731"
+      ],
+      "date": "2026-11-06",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.05731"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for Proactive LLM Agents",
+        "Retrospective vs. Prospective Memory: A Cognitive Distinction",
+        "Introducing Pro-Memory: Architecture and Components",
+        "Maintaining Intentions and Deciding When to Act",
+        "Updating Intention States and Learning from Experience",
+        "Experimental Validation and Use Cases for Proactive Agents",
+        "Engineering Proactive Agents: Challenges and Opportunities"
+      ],
+      "summary": "This paper introduces Pro-Memory, a novel memory framework for LLM agents that moves beyond traditional retrospective memory to incorporate 'prospective memory.' Inspired by human cognition, Pro-Memory allows agents to retain future-directed intentions and act on them when appropriate opportunities arise, even without explicit prompts. This separation of intention maintenance from activation decision-making is a fundamental step towards building truly proactive and autonomous LLM agents.",
+      "title": "Pro-Memory: Enabling Proactive Behavior in LLM Agents with Prospective Memory",
+      "why_now": "The introduction of Pro-Memory in the last 48 hours represents a significant architectural advancement for LLM agents, addressing a core limitation in their ability to plan and execute long-term goals autonomously."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.05386"
+      ],
+      "date": "2026-11-06",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.05386"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of SLMs and the Challenge of Long Contexts",
+        "Beyond Retrieval: Why Reconstruction Matters for SLM Memory",
+        "Introducing SRRM: A Dual-Task Benchmark",
+        "The Memory Preservation Ratio (MPR): Quantifying Performance Gaps",
+        "Experimental Insights from Qwen2.5 Models",
+        "Implications for Applied AI Engineering: Designing Robust SLM Applications",
+        "Future Directions and Limitations"
+      ],
+      "summary": "This topic explores a new benchmark, SRRM (Simple Retrieval-Reconstruction Memory), designed to evaluate the long-context memory capabilities of Small Language Models (SLMs). Unlike previous benchmarks focusing solely on retrieval, SRRM also measures 'Global Information Reconstruction,' revealing that SLMs' ability to reconstruct information deteriorates much faster than their retrieval accuracy as context length increases. This highlights a critical, often overlooked, limitation of SLMs in real-world applications.",
+      "title": "Benchmarking Long-Context Memory for Small Language Models with SRRM",
+      "why_now": "The introduction of a new benchmark and metric (Memory Preservation Ratio) in the last 48 hours provides a novel way to assess SLM performance, crucial for their growing deployment on consumer-grade hardware."
+    },
     {
       "angle": "practical",
       "citations": [
