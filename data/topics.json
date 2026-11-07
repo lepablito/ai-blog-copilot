@@ -1,6 +1,77 @@
 {
-  "generated_at": "2026-11-06T07:51:14+00:00",
+  "generated_at": "2026-11-07T07:00:30+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://argonautlabs.ai/",
+        "https://news.ycombinator.com/item?id=50401869"
+      ],
+      "date": "2026-11-07",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://argonautlabs.ai/",
+        "https://news.ycombinator.com/item?id=50401869"
+      ],
+      "suggested_outline": [
+        "Introduction: The Demand for Local LLM Performance",
+        "Understanding LLM Inference Bottlenecks: Prefill vs. Decode",
+        "Leveraging Mixture-of-Experts (MoE) for Efficiency",
+        "Read-Ahead Staging: Predicting and Preparing for the Next Layer",
+        "Continuous Prefill Readers: Keeping the GPU Fed",
+        "Case Study: Performance Gains and Hardware Considerations",
+        "Practical Tips for Implementing and Benchmarking Optimizations",
+        "Conclusion: Unlocking Desktop-Class LLM Power"
+      ],
+      "summary": "This post will explore practical, software-only techniques for significantly improving local LLM inference speeds, drawing insights from recent performance optimizations. It will focus on concepts like Mixture-of-Experts (MoE) handling, read-ahead staging, and continuous prefill readers, demonstrating how these methods can boost both prefill and decode token rates on commodity hardware.",
+      "title": "Optimizing Local LLM Inference: Practical Techniques for Faster Prefill and Decode",
+      "why_now": "The increasing capability of smaller, locally deployable LLMs makes inference efficiency on a single GPU a critical practical concern for engineers, and recent reports highlight specific techniques yielding significant gains."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/"
+      ],
+      "date": "2026-11-07",
+      "estimated_effort": "large",
+      "sources": [
+        "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of Efficient Large Models",
+        "Inkling 2 Small: Key Specifications and Performance",
+        "Architectural Deep Dive: Multimodal MoE and 1M Context",
+        "The NVFP4 Advantage: Accelerating Training to 68 Hours",
+        "Alignment Challenges: Learning to Circumvent Guardrails",
+        "Implications for Future Model Development and Open-Weights Landscape",
+        "Conclusion: Balancing Scale, Efficiency, and Safety"
+      ],
+      "summary": "This post will break down the technical achievements of Thinking Machines' Inkling 2 Small, a 594B-total/17B-active multimodal Mixture-of-Experts (MoE) model. It will cover the rapid training process (68 hours on 12T NVFP4 tokens), its 1M context window, and discuss the architectural choices that enable its competitive performance, including the challenges of alignment during training.",
+      "title": "Inkling 2 Small: Inside the Training and Architecture of a High-Performance MoE Model",
+      "why_now": "The recent announcement and detailed breakdown of Inkling 2 Small's training specifics, performance benchmarks, and architectural details provide a timely case study in efficient, large-scale multimodal model development and the ongoing challenges of alignment."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://www.anthropic.com/research/components-of-agent-memory"
+      ],
+      "date": "2026-11-07",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.anthropic.com/research/components-of-agent-memory"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of LLM Agent Memory",
+        "From Logs to Long-Term Knowledge: The 'Dreaming' Mechanism",
+        "The Art of Forgetting: How LLMs Learn Salience",
+        "Case Studies: CL-Bench and Pokémon Red Evaluations",
+        "Practical Implications for Agent Design and Development",
+        "Conclusion: Towards More Autonomous and Capable Agents"
+      ],
+      "summary": "This post will deep-dive into Anthropic's research on enhancing LLM agent memory, focusing on their 'dreaming' mechanism for offline consolidation and how models learn to judge 'salience' to filter relevant information. It will explore how these techniques move beyond simple context windows to enable more effective long-term learning and task execution for AI agents, drawing parallels with human memory formation.",
+      "title": "Beyond Context Windows: Anthropic's 'Dreaming' and Salience for Robust LLM Agent Memory",
+      "why_now": "Anthropic's recent publication directly addresses a critical and active research area in agentic AI: developing robust, long-term memory solutions beyond the limitations of context windows, with concrete examples and evaluations."
+    },
     {
       "angle": "theoretical",
       "citations": [
