@@ -1,6 +1,82 @@
 {
-  "generated_at": "2026-11-07T07:00:30+00:00",
+  "generated_at": "2026-11-08T07:09:57+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/DivyanshGolyan/rui",
+        "https://news.ycombinator.com/item?id=50391446"
+      ],
+      "date": "2026-11-08",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://github.com/DivyanshGolyan/rui",
+        "https://news.ycombinator.com/item?id=50391446"
+      ],
+      "suggested_outline": [
+        "The Rise of Multi-Agent Systems and Their Resource Demands",
+        "The Memory Problem: Why Traditional Agent Architectures Fail at Scale",
+        "Introducing Rui: A Shared Host, Memory-Efficient Architecture",
+        "Key Design Principles: Shared Context and State Management",
+        "Technical Deep Dive: How Rui Achieves 2.5MB for 100 Agents",
+        "Implementing Agent Workflows with Rui",
+        "Trade-offs and Considerations for High-Density Agent Deployments",
+        "Conclusion: Towards Scalable and Cost-Effective Agent Orchestration"
+      ],
+      "summary": "This post would analyze the engineering challenges and solutions for running a large number of LLM agents concurrently with extreme memory efficiency. It will focus on the architectural decision of using a shared host and database for state management, rather than separate processes per agent. The post will detail how this approach enables orchestrating hundreds of agents using only a few megabytes of RAM, a critical factor for scalable agent deployments and reducing operational costs.",
+      "title": "Rui: Orchestrating Hundreds of LLM Agents with Minimal Memory Footprint",
+      "why_now": "As multi-agent systems gain traction, the computational and memory overhead of running many agents becomes a significant bottleneck. Rui's approach offers a timely solution to this scaling challenge, demonstrating a practical path to efficient agent orchestration."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://github.com/ImpossibleComputing/jacq"
+      ],
+      "date": "2026-11-08",
+      "estimated_effort": "large",
+      "sources": [
+        "https://github.com/ImpossibleComputing/jacq"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for Custom LLM Optimization",
+        "Beyond Frameworks: Why a DSL for CUDA Kernels?",
+        "Understanding Jacq: Model and Kernel Descriptions",
+        "The Compilation Pipeline: From .jac to CUDA",
+        "Key Features: Standalone Runtimes and vLLM Integration",
+        "Case Study: Optimizing a TinyLlama Inference with Jacq",
+        "Benefits for Applied AI Engineers: Performance, Flexibility, Experimentation",
+        "Challenges and Future Directions in Custom Kernel Development",
+        "Conclusion: Empowering Low-Level LLM Engineering"
+      ],
+      "summary": "This post would explore Jacq, a domain-specific language (DSL) and compiler that translates readable model and kernel descriptions into optimized CUDA code. It will cover how engineers can use Jacq to define custom LLM architectures and specific kernel behaviors, generating standalone inference runtimes or integrating with frameworks like vLLM. The focus will be on the technical details of model IR, CUDA code generation, and the benefits of fine-grained control over GPU operations for performance and experimentation.",
+      "title": "Jacq: A DSL for Custom CUDA Kernel Generation in LLM Inference",
+      "why_now": "The demand for highly optimized and specialized LLM inference continues to grow, pushing the boundaries beyond off-the-shelf libraries. Jacq offers a timely tool for engineers to gain lower-level control, enabling custom optimizations and rapid experimentation with novel model architectures and kernel designs."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://www.tinyfish.ai/blog/inside-tinyresearch"
+      ],
+      "date": "2026-11-08",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.tinyfish.ai/blog/inside-tinyresearch"
+      ],
+      "suggested_outline": [
+        "Introduction: The Agent Reliability Gap",
+        "The Core Research Loop: A Deeper Dive",
+        "Step 1: Deconstructing Complex Questions",
+        "Step 2: Intelligent Source Selection and Ranking (Beyond Naive Search)",
+        "Step 3: Live Reading and Claim Extraction with Attribution",
+        "Step 4: Iterative Refinement and Gap Analysis",
+        "Ensuring Factual Correctness and Credibility",
+        "Domain Controls: Steering the Agent's Focus",
+        "Conclusion: Building Trustworthy Autonomous Agents"
+      ],
+      "summary": "This post would explore the architectural patterns for building LLM agents that can reliably perform complex research tasks. It will delve into breaking down questions, smart source selection and ranking, live reading, claim extraction with source attribution, and iterative refinement loops. The core argument is that robust agents require more than just chaining LLM calls; they need a structured, evidence-driven process to ensure factual correctness and credibility, making them suitable for integration into larger, automated workflows.",
+      "title": "Architecting Reliable LLM Research Agents: Beyond Naive Prompting Loops",
+      "why_now": "The increasing adoption of LLM agents highlights their limitations in reliability and factuality when built with simple prompt chaining. This article provides a timely, practical blueprint for addressing these issues, moving beyond hype to actionable engineering."
+    },
     {
       "angle": "practical",
       "citations": [
