@@ -1,6 +1,103 @@
 {
-  "generated_at": "2026-11-08T07:09:57+00:00",
+  "generated_at": "2026-11-10T08:14:20+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.08684"
+      ],
+      "date": "2026-11-10",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.08684"
+      ],
+      "suggested_outline": [
+        "Introduction: The Hidden Costs of LLM Overload",
+        "The Problem with Retries and Transient Spikes",
+        "Why Cancellation Falls Short: Experimental Evidence",
+        "Deep Dive into vLLM's Behavior Under Overload",
+        "The Role of Prompt Token Accounting and Aborted Executions",
+        "Proposed Solutions: Retry Budgets and Request Coalescing",
+        "Designing Robust LLM Serving Infrastructure",
+        "Conclusion: Beyond Simple Cancellation"
+      ],
+      "summary": "LLM inference engines struggle to recover from transient overloads, even with cancellation mechanisms, due to client retries. This paper demonstrates that cancellation alone is insufficient, leading to low service delivery (12-38%). It reveals that vLLM's prompt-token accounting is flawed and that many aborted executions consume significant compute. The research proposes that effective overload control requires considering retry-induced executions and evaluating solutions like retry budgeting and request coalescing.",
+      "title": "Rethinking LLM Engine Overload: Why Cancellation Isn't Enough for Recovery",
+      "why_now": "Published on November 5, 2026, this research tackles a critical, often misunderstood operational challenge in scaling LLM inference, providing insights directly applicable to system architecture and reliability for engineers."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.08647"
+      ],
+      "date": "2026-11-10",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.08647"
+      ],
+      "suggested_outline": [
+        "Introduction: The New Frontier of Model Editing",
+        "What is Intra-Weight Injection and Why is it Gradient-Free?",
+        "Applications: From Lexical Associations to Output Formats",
+        "Introducing IWIBench: A Benchmark for Model Editing",
+        "Evaluating Frontier Models: Who Can Edit and How Well?",
+        "The Uneven Landscape of Intra-Weight Injection Capabilities",
+        "Mechanisms and Strategies Models Employ for Editing",
+        "Future Directions: Implications for Model Control and Interpretability",
+        "Conclusion: A Paradigm Shift in LLM Customization"
+      ],
+      "summary": "Intra-weight injection allows one model to directly modify the weights of another model without gradients, enabling behavioral changes like altering lexical associations or enforcing output formats. IWIBench is introduced as the first systematic benchmark to evaluate this capability. The evaluation reveals sharply diverging capabilities across frontier models, suggesting this is a recently acquired and uneven skill. This emerging field offers a potent approach to gradient-free behavior modification.",
+      "title": "Gradient-Free Intra-Weight Injection: Direct Model Editing for Behavioral Control",
+      "why_now": "The paper, submitted on November 5, 2026, highlights an emerging and powerful capability in advanced AI models – direct, gradient-free weight editing. This represents a significant shift in how model behavior can be controlled and is a cutting-edge topic for engineers interested in advanced model customization."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.08644"
+      ],
+      "date": "2026-11-10",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.08644"
+      ],
+      "suggested_outline": [
+        "Introduction: The Frustration of 'Forgetful' Agents",
+        "The Problem: Why Current Memory Systems Fall Short",
+        "Introducing Decision Context (forge_dc): Architecture and Mechanism",
+        "How Behavioral Rules are Captured and Applied",
+        "Evaluating forge_dc: DC-Bench and Performance Gains",
+        "Implications for Agent Design and User Experience",
+        "Practical Steps for Implementing Persistent Learning",
+        "Conclusion: Towards More Intelligent and Adaptable Agents"
+      ],
+      "summary": "LLM agents often fail to learn from user corrections across sessions, repeating the same mistakes. 'Decision Context' introduces a system (forge_dc) that captures behavioral signals from human corrections and tool-call failures, compiling them into imperative 'RULE' directives. These rules are then injected at relevant decision points, significantly improving agent compliance (from 55% to 95%) with fewer tokens, moving beyond just factual memory to procedural knowledge.",
+      "title": "Beyond Fact Memory: Enabling Persistent Behavioral Learning in LLM Agents",
+      "why_now": "The paper was submitted on November 5, 2026, and directly addresses a common frustration for practitioners building LLM-powered agents: the lack of persistent behavioral learning, offering a concrete architectural solution."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.08640"
+      ],
+      "date": "2026-11-10",
+      "estimated_effort": "small",
+      "sources": [
+        "https://arxiv.org/abs/2611.08640"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Best-of-N Selection",
+        "Human Intuition: Pairwise Comparisons and Aspect-based Judgment",
+        "What is Aspect-wise Pairwise Tournaments (APT)?",
+        "How APT Works: Verifiers, Aspects, and Tournament Structure",
+        "Performance Gains: Outperforming Baselines on Reasoning Tasks",
+        "User Steerability and Alignment without Retraining",
+        "Implementing APT in Your LLM Pipeline",
+        "Conclusion: Smarter Selection for Better LLM Outputs"
+      ],
+      "summary": "Improving LLM reasoning often involves generating multiple candidates and selecting the best one. This paper introduces Aspect-wise Pairwise Tournaments (APT), a novel, training-free method that mimics human decision-making by comparing candidates pairwise across specific, natural language-defined aspects. APT significantly outperforms traditional methods like self-consistency and reward models, especially on open-ended tasks, and allows users to steer selection towards desired properties without retraining or regeneration.",
+      "title": "Aspect-wise Pairwise Tournaments: A Human-Inspired Approach to LLM Output Selection",
+      "why_now": "Submitted on November 5, 2026, APT offers a practical, zero-shot method to enhance LLM output quality and alignment with user preferences, which is immediately useful for practitioners deploying LLMs in complex applications."
+    },
     {
       "angle": "practical",
       "citations": [
