@@ -1,6 +1,99 @@
 {
-  "generated_at": "2026-11-10T08:14:20+00:00",
+  "generated_at": "2026-11-11T07:41:10+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.13058",
+        "https://arxiv.org/abs/2611.13059"
+      ],
+      "date": "2026-11-11",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.13058",
+        "https://arxiv.org/abs/2611.13059"
+      ],
+      "suggested_outline": [
+        "The Hidden Cost of LLM Tokenization: A Multilingual Problem",
+        "Quantifying the 'Indic Token Tax' (GPT-4o, GPT-4, etc.)",
+        "Impact on Cost, Speed, and Context Window Capacity",
+        "Introducing Havon v4/v5: A Multi-Word Tokenizer Solution",
+        "How Havon Achieves Token Count Reductions (BPE, SuperBPE, pre-tokenization)",
+        "Comparative Analysis: Havon vs. GPT-4o Tokenizer Performance",
+        "Practical Steps for Engineers: Choosing or Developing Efficient Tokenizers"
+      ],
+      "summary": "This post would analyze the significant cost and performance disparities faced by non-English languages, particularly Indic languages, due to inefficient tokenization in commercial LLM APIs like GPT-4o. It would quantify the 'token tax' and its financial implications, then introduce a new multi-word tokenizer (Havon v4/v5) that drastically reduces token counts for many languages, including English, offering a practical solution for more equitable and efficient multilingual LLM deployments. The post would compare tokenization strategies and their real-world impact.",
+      "title": "The 'Token Tax': Addressing Multilingual Cost & Performance Disparity with Next-Gen Tokenizers",
+      "why_now": "Two related papers were published within the last 48 hours (November 9, 2026), highlighting a critical issue in multilingual LLM deployment and proposing a concrete solution, making it highly relevant for practitioners working on global applications."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.13107"
+      ],
+      "date": "2026-11-11",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.13107"
+      ],
+      "suggested_outline": [
+        "The Challenge of LLM Reasoning Errors and Propagation",
+        "Limitations of Current Error Detection Methods (Post-hoc, Verifier LLMs)",
+        "Introducing Online, Deterministic Verification",
+        "How it Works: Validating Steps with External Code (e.g., CAS)",
+        "Case Study: Symbolic Mathematics and ASyMoB Benchmark",
+        "Benefits: Accuracy, Token Efficiency, and Complementary Improvement",
+        "Implementing Real-Time Error Correction in Your LLM Pipeline"
+      ],
+      "summary": "This post would explore a novel approach to improving the reliability of LLM reasoning by implementing real-time, deterministic error correction. It would discuss how many reasoning steps can be instantly validated by external code (e.g., a computer algebra system for symbolic math), allowing models to self-correct immediately without restarting or relying on another LLM. The article would highlight the benefits in accuracy, token efficiency, and the complementary nature of this method to ongoing LLM advancements, particularly for sensitive applications.",
+      "title": "Real-Time Error Correction for LLM Reasoning with Deterministic Verification",
+      "why_now": "The paper was published within the last 48 hours (November 9, 2026), offering a fresh, practical, and efficient method to enhance LLM reliability, which is a constant concern for applied engineers."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.12901"
+      ],
+      "date": "2026-11-11",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.12901"
+      ],
+      "suggested_outline": [
+        "Introduction to Multimodal Diffusion LMs and the Hallucination Problem",
+        "The 'Entropy Spike' Observation: When and Why Hallucinations Occur",
+        "StepRefine: A Step-Aware Decoding Strategy",
+        "Mechanism: Switching Between Discrete Denoising and Latent Refinement",
+        "Experimental Results and Impact on MDLMs",
+        "Practical Implications for Deploying Reliable Multimodal AI"
+      ],
+      "summary": "This post would explore a novel decoding strategy, StepRefine, designed to reduce hallucinations in Multimodal Diffusion Language Models (MDLMs). It focuses on identifying 'entropy spikes' during iterative denoising, which are linked to hallucinations, and switching between discrete denoising and continuous latent refinement to preserve diverse reasoning hypotheses. The article would discuss the theoretical underpinnings and practical implementation of this plug-and-play method for improving MDLMs' reliability.",
+      "title": "Mitigating Hallucinations in Multimodal Diffusion LMs with Step-Aware Decoding",
+      "why_now": "The paper was published within the last 48 hours (November 11, 2026), presenting a new, direct method to address a persistent and critical problem in multimodal AI: hallucinations."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.12903"
+      ],
+      "date": "2026-11-11",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.12903"
+      ],
+      "suggested_outline": [
+        "The Necessity of Context Compression in LLMs",
+        "The Hidden Danger: Silent Evidence Loss",
+        "Introducing SELD: How it Works (without training or labels)",
+        "The Principle of Shifting Answer Preferences",
+        "Building SEL-Pairs: A Benchmark for Evaluation",
+        "Quantitative and Qualitative Results of SELD",
+        "Implications for Robust RAG and LLM Deployments"
+      ],
+      "summary": "This post would detail SELD (Silent Evidence Loss Detector), a training-free, label-free method for identifying when critical evidence is inadvertently removed during context compression, even if the LLM's final answer remains unchanged. It would explain how SELD works by comparing a reader model's unsaid answer preferences before and after compression to reveal hidden evidence loss, which is crucial for ensuring the reliability and trustworthiness of RAG systems and other LLM applications relying on compressed contexts.",
+      "title": "Detecting Silent Evidence Loss in LLM Context Compression with SELD",
+      "why_now": "The paper was published within the last 48 hours (November 11, 2026), introducing a novel and practical approach to a critical, often overlooked, problem in LLM context management."
+    },
     {
       "angle": "practical",
       "citations": [
