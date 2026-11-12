@@ -1,6 +1,108 @@
 {
-  "generated_at": "2026-11-11T07:41:10+00:00",
+  "generated_at": "2026-11-12T08:11:03+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+        "https://latent.space/p/ainews-d-day-decision-models-day/",
+        "https://simonwillison.net/2026/Nov/10/llm-gemini/"
+      ],
+      "date": "2026-11-12",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://latent.space/p/ainews-d-day-decision-models-day/",
+        "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+        "https://simonwillison.net/2026/Nov/10/llm-gemini/"
+      ],
+      "suggested_outline": [
+        "Introduction: Beyond General-Purpose LLMs",
+        "What Are Decision Models?",
+        "Key Players: Jev, OpenAI, and Google's Gemini Decision 1",
+        "Technical Deep Dive: Input, Output, and Pricing",
+        "Multi-Modality in Decision Making",
+        "Practical Use Cases and Integration Strategies",
+        "Comparing Decision Models: Cost, Confidence, and Capabilities",
+        "Challenges and Future Directions"
+      ],
+      "summary": "Google's new Gemini Decision 1 API, alongside existing offerings from Jev and OpenAI, signals a significant shift towards specialized 'decision models.' These models are optimized for specific question types (yes/no, choice, rubric-scoring) and offer multi-modal input capabilities, enabling more precise and cost-effective automation of decision-making processes compared to general-purpose LLMs. An Applied AI Engineer should understand how to integrate and leverage these models for practical applications, including their unique output formats (e.g., probabilities for yes/no questions).",
+      "title": "The Rise of Decision Models: A New Paradigm for AI-driven Automation",
+      "why_now": "Google's launch of Gemini Decision 1 API makes this a competitive and rapidly evolving space, following Jev and OpenAI's earlier entries into this specialized model category. This marks a clear trend towards dedicated models for structured decision tasks."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://huggingface.co/blog/qvac/botpsy",
+        "https://apps.apple.com/th/app/openpocket/id6833028114"
+      ],
+      "date": "2026-11-12",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://huggingface.co/blog/qvac/botpsy",
+        "https://apps.apple.com/th/app/openpocket/id6833028114"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise of On-Device AI",
+        "Why On-Device LLMs? Privacy, Latency, Cost",
+        "Case Study: BotPsy and Sub-Billion-Parameter Models",
+        "Underlying Technologies: Apple MLX and Open-Weight LLMs",
+        "Engineering Challenges: Quantization, Optimization, and Performance",
+        "Designing Agentic Workflows for Constrained Environments",
+        "User Experience and Interaction Patterns",
+        "Future of Edge AI and Personal Assistants"
+      ],
+      "summary": "The development of BotPsy, an on-device personal assistant powered by a sub-billion-parameter agentic language model, showcases the growing viability of running sophisticated LLM capabilities directly on mobile devices. This trend is driven by advancements like Apple's MLX framework and aims to address privacy, latency, and cost concerns associated with cloud-based inference, opening new avenues for truly personalized and always-available AI experiences.",
+      "title": "BotPsy: Sub-Billion-Parameter Agentic LLMs for On-Device Personal Assistants",
+      "why_now": "The recent release of BotPsy and the OpenPocket iOS app (running LLMs like Qwen3.5 locally via MLX) demonstrates practical, user-facing applications of on-device LLMs, indicating a maturation of the technology beyond research papers."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/"
+      ],
+      "date": "2026-11-12",
+      "estimated_effort": "large",
+      "sources": [
+        "https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Compute Imperative in LLM Scaling",
+        "Anthropic's 'Unconventional' Multi-Chip Bet",
+        "Engineering Challenges of Heterogeneous Hardware",
+        "The Role of Compute Multipliers and Effective Compute",
+        "Agentic Automation: Claude Porting Its Own Kernels",
+        "Implications for LLM Infrastructure Design",
+        "Achieving Vendor Neutrality and Cost Efficiency",
+        "Future Outlook: Recursive Self-Improvement in Compute Optimization"
+      ],
+      "summary": "Anthropic's 'unconventional' multi-chip strategy, training and serving Claude across AWS Trainium, Google TPUs, NVIDIA GPUs, and AMD GPUs, offers crucial insights into building resilient and cost-efficient LLM infrastructure. This approach, driven by a focus on 'compute multipliers' and agentic automation for kernel porting, highlights the engineering challenges and benefits of abstracting LLM workloads across diverse hardware ecosystems, moving beyond vendor lock-in and optimizing for total effective compute.",
+      "title": "Anthropic's Multi-Chip Strategy: Engineering LLM Infrastructure for Heterogeneous Hardware",
+      "why_now": "Anthropic's IPO roadshow video revealed previously unreleased details about their compute strategy, emphasizing its strategic importance and the technical breakthroughs (like agent-driven kernel porting) that enable it. This provides a timely case study for infrastructure engineers."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://deepmind.google/blog/introducing-alphaproof-code/"
+      ],
+      "date": "2026-11-12",
+      "estimated_effort": "large",
+      "sources": [
+        "https://deepmind.google/blog/introducing-alphaproof-code/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Grand Challenge of Software Verification",
+        "What is Formal Verification and Why is it Hard?",
+        "AlphaProof Code: An AI Agent for Proof Generation",
+        "Case Study: Verifying Signal's Core Encryption with Lean",
+        "Technical Deep Dive: How AI Generates Mathematical Proofs",
+        "Implications for Software Security and Reliability",
+        "The Intersection of AI, Logic, and Programming Languages",
+        "Challenges and the Path Towards General-Purpose AI Verification"
+      ],
+      "summary": "DeepMind's AlphaProof Code, which used AI agents to write millions of lines of Lean proofs to verify Signal's core encryption, represents a significant theoretical and practical leap in formal verification. This demonstrates how AI can automate and scale the creation of rigorous mathematical proofs for complex software systems, enhancing security and reliability in critical applications, and pushing the boundaries of what's possible in automated reasoning and code correctness.",
+      "title": "AlphaProof Code: AI Agents Achieving Breakthroughs in Formal Software Verification",
+      "why_now": "The announcement of AlphaProof Code's successful verification of Signal's encryption, a real-world, highly sensitive system, highlights a major milestone in AI's capability for formal verification and automated theorem proving."
+    },
     {
       "angle": "practical",
       "citations": [
