@@ -1,6 +1,99 @@
 {
-  "generated_at": "2026-11-12T08:11:03+00:00",
+  "generated_at": "2026-11-13T07:46:19+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [],
+      "date": "2026-11-13",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.14925"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of Conversational LLM Agents",
+        "The Challenge: Multi-Turn Dialogue and Context Retention",
+        "Introducing ToolTurns: A New Benchmark for Agentic AI",
+        "Benchmark Design: Underspecified Requests, Follow-ups, and Tools",
+        "Key Findings: Performance Gaps in Sequential Tool Use",
+        "Leveraging the User Simulator for Agent Development",
+        "Best Practices for Building Robust Multi-Turn Agents",
+        "Conclusion: The Path to Truly Conversational AI"
+      ],
+      "summary": "This new benchmark, ToolTurns, evaluates LLM agents on their ability to use tools effectively within multi-turn, context-dependent dialogues. It identifies that agents perform significantly worse on follow-up requests compared to initial ones, highlighting challenges in retaining conversational context, clarification, and sequential tool use. The benchmark and its accompanying user simulator provide a robust framework for assessing and improving agent performance in real-world conversational settings.",
+      "title": "ToolTurns: Benchmarking LLM Agents in Complex Multi-Turn Conversations",
+      "why_now": "Recent release of a new, comprehensive benchmark for LLM agents, which is crucial for advancing agentic AI development and evaluating real-world performance."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.14700"
+      ],
+      "date": "2026-11-13",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.14700"
+      ],
+      "suggested_outline": [
+        "Introduction: The Bottlenecks of Traditional User Research",
+        "Leveraging LLMs for Persona Simulation: A New Paradigm",
+        "The Framework: Defining Cohorts, Stimuli, and Metrics",
+        "Execution Infrastructure: Large-Scale Concurrent Runs and Auditable Logging",
+        "Case Studies: Real-World Applications Across Industries",
+        "Benefits: Accelerating Design Iteration and Data-Driven Decisions",
+        "Challenges and Best Practices for Implementing Persona Simulations",
+        "Conclusion: Revolutionizing Product Development with Simulated Users"
+      ],
+      "summary": "This framework leverages simulated users (personas) to conduct controlled experiments for user research and system testing. By translating real-world industry inquiries into experiments with LLM-driven personas, it addresses bottlenecks in recruiting specialized participants and repeating studies. The methodology supports large-scale concurrent runs across various interaction environments and distills simulated responses into testable design hypotheses, offering a data-driven approach to product development and decision-making.",
+      "title": "Persona Simulation with LLMs: Probing What-If Scenarios for Product Design",
+      "why_now": "Recent research introduces a practical framework for leveraging LLMs in product design and user research, a growing area of application for AI engineers."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.14980"
+      ],
+      "date": "2026-11-13",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.14980"
+      ],
+      "suggested_outline": [
+        "Introduction: The Debugging Nightmare of Multi-Agent LLMs",
+        "Why Traditional Debugging Fails for Agentic Systems",
+        "Introducing CoLFA: A Collaboration-Guided Approach",
+        "How CoLFA Works: Handoff-Guided Step Expansion and Cross-Referenced Content",
+        "Benefits: Improved Accuracy and Reduced Token Cost",
+        "Practical Applications: Identifying Root Causes in Complex Workflows",
+        "Implementing Failure Attribution in Your Agent Systems",
+        "Conclusion: Towards More Robust and Explainable AI Agents"
+      ],
+      "summary": "As LLM-based multi-agent systems become more complex, debugging their failures is increasingly difficult due to interleaved steps and cluttered logs. CoLFA (Collaboration-Guided Lightweight Failure Attribution) proposes a novel approach that uses collaboration cues within agent interactions to efficiently trace error formation. By organizing attribution input based on how results are formed and passed between agents, CoLFA helps pinpoint the decisive error step and the responsible agent, reducing token cost and improving localization accuracy.",
+      "title": "CoLFA: Debugging Multi-Agent LLM Systems with Collaboration-Guided Failure Attribution",
+      "why_now": "New research addresses a critical and growing pain point in the development and deployment of multi-agent LLM systems, offering practical solutions for debugging and explainability."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.14661"
+      ],
+      "date": "2026-11-13",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.14661"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Peril of LLM Self-Correction",
+        "The Problem with Simple Abstention: Beyond 'I Don't Know'",
+        "Experimental Setup: Probing Threshold Compliance in Open LLMs",
+        "Key Findings: Insensitivity to Thresholds and Format Dependencies",
+        "Why Models Struggle: Instruction Following vs. True Calibration",
+        "Implications for Applied AI: Building Trustworthy & Safe LLM Systems",
+        "Future Directions: Towards Calibrated and Confident LLMs"
+      ],
+      "summary": "This paper investigates how open language models respond to explicit instructions to abstain from answering when their probability of being correct is below a stated threshold. It finds that simply adding an 'I abstain' option drastically increases abstention rates, but models are largely insensitive to changes in the threshold value itself. This reveals a gap between instruction following and true confidence calibration, with significant implications for building reliable and trustworthy LLM applications.",
+      "title": "Abstention Is Not Threshold Compliance: LLM Reliability Beyond Simple Thresholds",
+      "why_now": "New research published on arXiv in the last 48 hours, highlighting critical issues in LLM self-assessment and reliability that directly impact practical system deployment."
+    },
     {
       "angle": "practical",
       "citations": [
