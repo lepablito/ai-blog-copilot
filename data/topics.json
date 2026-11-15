@@ -1,6 +1,80 @@
 {
-  "generated_at": "2026-11-13T07:46:19+00:00",
+  "generated_at": "2026-11-15T07:45:00+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://pytorch.org/blog/hardware-agnostic-models-in-vllm/"
+      ],
+      "date": "2026-11-15",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://pytorch.org/blog/hardware-agnostic-models-in-vllm/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Dilemma of LLM Serving: Performance vs. Portability",
+        "vLLM's Current State: Abstractions, `torch.compile`, and OOT Extensibility",
+        "The Problem: Diverging Architectures and Hardware-Specific Optimizations",
+        "The Rise of \"Flat\" Models and Incompatibilities",
+        "The Solution: Introducing Hardware-Agnostic Layers",
+        "Technical Deep Dive: How the New Layers Work",
+        "Implications for LLM Developers and Operators",
+        "Conclusion: Balancing the Frontier with Broad Accessibility"
+      ],
+      "summary": "This post would explore vLLM's new 'hardware-agnostic' layers, introduced to maintain portability and `torch.compile` compatibility amidst a shift towards hardware-specific optimizations for frontier models. It would explain the trade-offs between maximizing performance on cutting-edge GPUs and ensuring broad support for diverse hardware and older models, offering insights into how vLLM balances these competing demands in LLM inference.",
+      "title": "Enabling Hardware-Agnostic LLM Serving in vLLM: A Deep Dive into New Layers",
+      "why_now": "vLLM is actively changing its internal implementation and introducing these new layers, making it a timely and critical development for users facing LLM deployment challenges across varied hardware."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://huggingface.co/blog/ibm-granite/granite-4-2"
+      ],
+      "date": "2026-11-15",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://huggingface.co/blog/ibm-granite/granite-4-2"
+      ],
+      "suggested_outline": [
+        "Introduction: The Evolution of IBM's Granite LLMs",
+        "Granite 4.2 Overview: Reasoning, Agentic Capabilities, and Model Sizes",
+        "Architectural Choices: GQA, RoPE, SwiGLU, RMSNorm",
+        "Multi-Phase Pre-Training: From Scratch to 512K Context",
+        "Supervised Fine-Tuning (SFT): Data Curation, Quality Control, and Training Details",
+        "The Multi-Stage Reinforcement Learning (RL) Pipeline",
+        "Agentic RL: Learning to Use Tools in Sandboxed Environments",
+        "Key Features: Thinking Modes and Native Tool Calling",
+        "Lessons Learned from Building a Production LLM Family",
+        "Conclusion: Implications for Enterprise AI"
+      ],
+      "summary": "This post would provide a technical deep dive into the development of IBM's Granite 4.2 LLM family, covering its architecture, multi-phase pre-training (15T tokens, 512K context), supervised fine-tuning (SFT) with diverse agentic and non-agentic data, and a multi-stage reinforcement learning (RL) pipeline. It would highlight how agentic RL teaches models to use tools in sandboxed environments and the implementation of features like thinking/non-thinking modes and native tool calling.",
+      "title": "Deconstructing Granite 4.2: IBM's Technical Approach to Building Reasoning and Agentic LLMs",
+      "why_now": "The Granite 4.2 models and their technical details have been recently released, offering a fresh case study on how a major player builds production-grade reasoning and agentic LLMs."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://www.nikita-pavlichenko.com/blog/every-llm-architecture-change"
+      ],
+      "date": "2026-11-15",
+      "estimated_effort": "large",
+      "sources": [
+        "https://www.nikita-pavlichenko.com/blog/every-llm-architecture-change"
+      ],
+      "suggested_outline": [
+        "Introduction: The Architecture Conundrum in LLMs",
+        "The Challenge of Comparative Architecture Research",
+        "Methodology: A Mega-Ablation Study (Setup, Data, Hardware, Metrics)",
+        "Key Architectural Innovations Explored (e.g., MoE, Attention Variants, Normalization)",
+        "Surprising Findings and What *Really* Works",
+        "Scaling Laws and Extrapolation: Limitations and Insights",
+        "Practical Takeaways for LLM Designers and Engineers",
+        "Disclaimer and Future Work"
+      ],
+      "summary": "This post would analyze an extensive empirical study that evaluates over 1,000 LLM architecture changes since 2020 under a unified setup. It investigates which architectural innovations (e.g., fine-grained MoE, linear attention, hyper-connections) genuinely improve performance (loss per parameter, serving cost) and how they scale. The post would delve into the methodology, the challenges of comparing architectures, and the key findings, offering practitioners insights into effective architectural choices.",
+      "title": "Beyond Hype: Empirical Evaluation of LLM Architecture Changes Since 2020",
+      "why_now": "The study was recently published (within the last 48 hours, based on the Hacker News timestamp), offering fresh empirical data on a topic often dominated by theoretical claims or disparate benchmarks."
+    },
     {
       "angle": "practical",
       "citations": [],
