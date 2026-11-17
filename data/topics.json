@@ -1,6 +1,79 @@
 {
-  "generated_at": "2026-11-15T07:45:00+00:00",
+  "generated_at": "2026-11-17T08:59:49+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.18583"
+      ],
+      "date": "2026-11-17",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.18583"
+      ],
+      "suggested_outline": [
+        "Introduction: Beyond Overt Harms—The Challenge of Subtle LLM Biases",
+        "Defining Epistemic Infantilization: What It Is and Why It Matters",
+        "Methodology: Constructing Counterfactual Datasets for Bias Detection",
+        "Introducing IBI and EARS: Quantifying Technical Depth and Tone",
+        "Case Studies: How Infantilization Manifests (e.g., in scientific domains)",
+        "The 'Inclusion Tax' and its Ethical Implications",
+        "Mitigation Strategies: Shifting from Simplification to Adaptation",
+        "Conclusion: Designing for True Epistemic Accessibility"
+      ],
+      "summary": "This post would delve into the concept of 'epistemic infantilization'—an identity-conditioned reduction in technical depth when users disclose disabilities. It would detail the methodology for quantifying this bias using metrics like the Infantilization Bias Index (IBI) and Epistemic Accessibility Response Score (EARS). The article would discuss the implications for inclusive AI design, arguing for format adaptation over content simplification, and provide insights into how practitioners can identify and mitigate such subtle biases in LLM applications.",
+      "title": "Uncovering Epistemic Infantilization in LLMs: A New Frontier in Bias Analysis",
+      "why_now": "The recent arXiv paper (August 2026, appearing in RSS feed within 48 hours) highlights a previously overlooked but critical form of bias, providing new metrics and a framework for analysis that is highly relevant to ethical AI development."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.18585"
+      ],
+      "date": "2026-11-17",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.18585"
+      ],
+      "suggested_outline": [
+        "Introduction: The Challenge of Robust LLM Agents",
+        "Understanding Existing Bottlenecks in Agent Evolution",
+        "Introducing Trident: Read, Route, Patch Explained",
+        "Boundary-Aware Memory Reading: Improving Experience Utilization",
+        "Diversity-Aware Candidate Routing: Enhancing Behavioral Exploration",
+        "Order-Aware Insertion-Based Updating: Consistent Harness Evolution",
+        "Performance Benchmarks and Real-World Impact",
+        "Implementation Considerations for Applied Engineers",
+        "Conclusion: Building More Capable and Resilient Agents"
+      ],
+      "summary": "This post would explore the 'Trident' framework, focusing on its three core contributions: boundary-aware memory reading, diversity-aware candidate routing, and order-aware insertion-based updating. It would explain how these techniques address common bottlenecks in LLM agent evolution (memory retrieval overemphasis, redundant candidates, inconsistent rewriting) to improve long-horizon interactive decision-making. The discussion would cover practical implementation considerations and how these methods lead to more robust and performant agents across various tasks.",
+      "title": "Robust Test-Time Evolution for LLM Agents with 'Read, Route, Patch'",
+      "why_now": "The recent publication on arXiv (August 2026, appearing in RSS feed within 48 hours) introduces a novel and significant advancement in LLM agent robustness, a critical and actively developing area for practitioners."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.18601"
+      ],
+      "date": "2026-11-17",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.18601"
+      ],
+      "suggested_outline": [
+        "Introduction: The Evolving Landscape of LLM Adversarial Attacks",
+        "Beyond Prompt Engineering: Linguistic Style as an Attack Vector",
+        "Quantifying the Impact: How Style Affects Attack Success Rates",
+        "The Lightweight Single-Pass Attack Framework",
+        "Mechanistic Insights: Why Style Disrupts Refusal Mechanisms",
+        "Developing Style-Aware Defenses: Direct Preference Optimization (DPO)",
+        "Practical Implications for LLM Red Teaming and Security",
+        "Conclusion: Building Robustness Against Subtle Adversaries"
+      ],
+      "summary": "This post would explore the novel finding that linguistic style can act as a systematic and overlooked attack surface for jailbreaking LLMs. It would discuss how stylistic rewrites of harmful prompts can dramatically increase Attack Success Rates, and introduce a lightweight attack framework. Crucially, the article would also cover the mechanistic analysis revealing disrupted refusal representations and present a style-aware Direct Preference Optimization (DPO) defense, offering both a new vulnerability and a practical countermeasure for LLM safety engineers.",
+      "title": "Linguistic Style as a Hidden Attack Surface: Advanced LLM Jailbreaking and Defenses",
+      "why_now": "The recent arXiv paper (September 2026, appearing in RSS feed within 48 hours) reveals a significant new dimension in LLM adversarial robustness, offering both a novel attack vector and a practical defense, making it highly timely for applied AI safety."
+    },
     {
       "angle": "practical",
       "citations": [
