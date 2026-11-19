@@ -1,6 +1,105 @@
 {
-  "generated_at": "2026-11-17T08:59:49+00:00",
+  "generated_at": "2026-11-19T08:36:57+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.23835"
+      ],
+      "date": "2026-11-19",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.23835"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for Faster LLM Inference",
+        "Speculative Decoding: A Primer",
+        "The 'NarrowSpec' Innovation: Reducing Draft Hidden Width",
+        "Architectural Changes and Implementation Details",
+        "Performance Benchmarks: Speedups and Acceptance Rates",
+        "Practical Considerations for Deployment",
+        "Limitations and Future Work",
+        "Conclusion: Towards More Efficient LLM Serving"
+      ],
+      "summary": "This post would explore the practical implications and implementation details of 'NarrowSpec', a new method for improving speculative decoding efficiency in LLMs. It would detail how reducing the draft model's hidden width can lead to significant speedups (1.06-1.44x) without compromising accuracy, discussing the architectural changes and performance benefits on various hardware. The focus would be on how applied AI engineers can leverage this technique for more efficient LLM serving in production.",
+      "title": "Optimizing LLM Inference with Narrow-Width Speculative Decoding",
+      "why_now": "The recent arXiv paper 'NarrowSpec: Draft Hidden Width Need Not Match the Target in Speculative Decoding' introduces a novel and immediately actionable technique for LLM inference optimization, directly addressing a critical performance bottleneck for practitioners."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.23403"
+      ],
+      "date": "2026-11-19",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.23403"
+      ],
+      "suggested_outline": [
+        "Introduction: Beyond Black-Box LLM Agents",
+        "What is Mechanistic Interpretability?",
+        "Tracing Reasoning: How LLMs Form and Revise Internal Representations",
+        "Case Study: Iterated Games and Commitment to Incorrect Beliefs",
+        "Techniques for Probing LLM Internal States",
+        "Diagnosing and Preventing Agent Failure Modes",
+        "Implications for Building More Reliable and Trustworthy Agents",
+        "Conclusion: The Future of Agent Development"
+      ],
+      "summary": "This post would delve into the burgeoning field of mechanistic interpretability as applied to LLM agents, focusing on understanding their internal reasoning processes and diagnosing failure modes. Drawing on insights from research like 'Tracking Representations in LLM Reasoning Traces', it would explain techniques for analyzing internal representations, identifying decision-making pathways, and understanding why agents commit to incorrect beliefs. The article would argue for the necessity of this deeper understanding to build more robust, reliable, and debuggable AI agents, moving beyond black-box observations.",
+      "title": "Mechanistic Interpretability for LLM Agents: Tracing Reasoning and Diagnosing Failure Modes",
+      "why_now": "The arXiv paper 'Tracking Representations in LLM Reasoning Traces for Iterated Games' offers a timely exploration into the mechanistic interpretability of LLM agents, providing crucial insights into their internal workings and failure points, which is vital for advancing agent reliability."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.23386"
+      ],
+      "date": "2026-11-19",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.23386"
+      ],
+      "suggested_outline": [
+        "Introduction: The Memory Challenge of Large Language Models",
+        "N-gram Embeddings: A Review",
+        "The Problem with Layer-Specific N-gram Tables",
+        "Introducing Chorus: Shared Embeddings with Layer-wise Adaptation",
+        "Technical Architecture and Design Choices",
+        "Memory Savings and Performance Gains",
+        "Implementation Considerations and Integration",
+        "Impact on LLM Deployment and Scalability",
+        "Conclusion: Towards More Accessible Large Models"
+      ],
+      "summary": "This post would detail the 'Chorus' approach to N-gram embeddings, a significant architectural improvement for memory efficiency in LLMs. It would explain how sharing a single set of N-gram embedding tables across layers, combined with layer-wise adaptation, can drastically reduce memory footprint (up to 87% smaller tables) while maintaining or improving model quality. The article would cover the technical design, implementation benefits, and the trade-offs involved, providing practical insights for engineers optimizing LLM deployment on resource-constrained hardware.",
+      "title": "Chorus: Designing Memory-Efficient N-gram Embeddings for Large Language Models",
+      "why_now": "The recent arXiv paper 'Chorus: Shared N-gram Embeddings with Layer-wise Adaptation' presents a substantial advancement in memory-efficient LLM architectures, offering an 87% reduction in embedding table size, which is highly relevant for cost-effective and scalable deployment."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.23530",
+        "https://arxiv.org/abs/2611.23601"
+      ],
+      "date": "2026-11-19",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.23530",
+        "https://arxiv.org/abs/2611.23601"
+      ],
+      "suggested_outline": [
+        "Introduction: The Enduring Problem of LLM Hallucinations",
+        "Understanding Hallucination Drivers: Factual Prevalence and Knowledge-Context Conflict",
+        "Pre-Deployment Mitigation: Data Curation and Fine-Tuning for Factual Accuracy",
+        "In-Deployment Mitigation: Advanced RAG and Prompt Engineering Techniques",
+        "Evaluating Hallucinations: Introducing Frameworks like FutureBench",
+        "Measuring and Monitoring Hallucination Rates in Production",
+        "Case Studies and Best Practices",
+        "Conclusion: Building More Reliable LLM Applications"
+      ],
+      "summary": "This post would provide a comprehensive guide to advanced techniques for reducing and rigorously evaluating LLM hallucinations, moving beyond basic prompt engineering. It would integrate insights from recent research on factual prevalence and knowledge-context conflict, discussing methods like robust RAG implementations, fine-tuning for factual consistency, and utilizing new evaluation frameworks like 'FutureBench' to measure and monitor hallucination rates in real-world applications. The goal is to equip engineers with a toolkit for building more trustworthy LLM systems.",
+      "title": "Advanced Strategies for Mitigating and Evaluating LLM Hallucinations in Production",
+      "why_now": "Two recent arXiv papers, 'Dreaming Up Authors' and 'FutureBench', highlight the persistent challenge of LLM hallucinations and introduce new ways to understand and evaluate them, indicating an ongoing and critical need for practical mitigation and measurement strategies for applied engineers."
+    },
     {
       "angle": "theoretical",
       "citations": [
