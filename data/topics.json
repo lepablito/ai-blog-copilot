@@ -1,6 +1,102 @@
 {
-  "generated_at": "2026-11-19T08:36:57+00:00",
+  "generated_at": "2026-11-20T08:20:47+00:00",
   "topics": [
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.24943"
+      ],
+      "date": "2026-11-20",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.24943"
+      ],
+      "suggested_outline": [
+        "Introduction: The Misleading Simplicity of 'Token Count'",
+        "Classical Computational Complexity vs. LLM Inference",
+        "The Divergence: Why Token Length Isn't Enough",
+        "Introducing LLM Complexity: Defining a New Metric",
+        "Measuring LLM Complexity: The Accuracy-Token Curve",
+        "Consistency Across Models: Stable Task Rankings",
+        "Implications for Model Design and Optimization",
+        "Conclusion: A New Lens for LLM Efficiency"
+      ],
+      "summary": "Traditional metrics for LLM inference efficiency often equate token length with computational cost, but this analogy is flawed. This post would introduce 'LLM Complexity,' a new metric that quantifies problem difficulty from the perspective of LLMs by characterizing the area under the accuracy-token curve. It would explain why inference-time token usage doesn't monotonically align with classical time complexity and demonstrate how this new metric can provide stable notions of task difficulty across diverse models, offering a more principled framework for understanding and optimizing LLM inference.",
+      "title": "Rethinking LLM Inference Efficiency: Beyond Token Length to 'LLM Complexity'",
+      "why_now": "The arXiv paper 'LLM Complexity: Towards a Computational Complexity View of Large Language Model Inference' (arXiv:2611.24943) proposes a fundamental shift in how we measure and understand LLM inference cost and complexity, with significant theoretical and practical implications."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.24969"
+      ],
+      "date": "2026-11-20",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.24969"
+      ],
+      "suggested_outline": [
+        "Introduction: The KV Cache Bottleneck in Long-Context LLMs",
+        "Understanding KV Cache Mechanics and Current Limitations",
+        "Traditional Eviction Strategies: LRU, LFU, and Heuristics",
+        "Introducing Global Importance Estimation: Personalized PageRank for KV Cache",
+        "How Attention Graphs Inform Token Importance",
+        "Benchmarking PRKV: Performance vs. Memory Trade-offs",
+        "Implementation Considerations and Integration Challenges",
+        "Conclusion: Future Directions in Memory-Efficient LLM Inference"
+      ],
+      "summary": "Memory consumption of the Key-Value (KV) cache is a critical bottleneck for deploying large language models with long context windows. This post would explore advanced, training-free KV cache eviction methods, focusing on techniques like global importance estimation using Personalized PageRank over attention-induced graphs. It would delve into how these methods propagate importance beyond simple recency or instantaneous attention, offering a favorable accuracy-memory trade-off for scalable long-context inference, even under aggressive compression ratios.",
+      "title": "Optimizing Long-Context LLM Inference: Advanced KV Cache Eviction Strategies",
+      "why_now": "The recent publication of the arXiv paper 'Global Importance Estimation for KV Cache Eviction' (arXiv:2611.24969) introduces a novel approach to a pressing practical problem in LLM deployment."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.25123"
+      ],
+      "date": "2026-11-20",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.25123"
+      ],
+      "suggested_outline": [
+        "Introduction: The Context Window Problem for LLM Agents",
+        "Limitations of Current Memory Strategies: Summarization vs. Retrieval",
+        "Introducing GrepMem: A Simple, Lossless Alternative",
+        "Architecture of GrepMem: Plain-Text Log and Regex Search",
+        "Why Lossless Memory Matters: Avoiding Information Discard",
+        "Benchmarking GrepMem: Accuracy on Long-Term Tasks",
+        "Practical Implementation and Overhead Analysis",
+        "Conclusion: Enabling More Capable and Reliable LLM Agents"
+      ],
+      "summary": "As LLM agents tackle increasingly complex, long-horizon tasks, managing their memory beyond the context window becomes crucial. This post would analyze 'GrepMem', a simple, lossless, and index-free memory mechanism. It focuses on how an append-only plain-text log combined with regular-expression search can enable on-demand recall of an agent's complete history, avoiding the pitfalls of lossy summarization or complex retrieval indexes, and significantly improving accuracy on long-stream recall and agent-trajectory question answering.",
+      "title": "Lossless Memory Management for Long-Horizon LLM Agents: The GrepMem Approach",
+      "why_now": "The arXiv paper 'Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents' (arXiv:2611.25123) offers a practical, low-overhead solution to a fundamental challenge in building robust LLM agents."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.24963"
+      ],
+      "date": "2026-11-20",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.24963"
+      ],
+      "suggested_outline": [
+        "Introduction: The Enduring Quest for Better LLM Architectures",
+        "Beyond Vanilla Transformers: The Role of Local Mixing",
+        "Deep Dive into Canon Layers: Mechanism and Benefits",
+        "Gated Linear Attention Revisited: GLA5 and GDN2 Improvements",
+        "Comparative Analysis: Canon Layers vs. Mamba2 and Gated DeltaNet",
+        "Pretraining Efficiency Gains: Token Savings and MMLU Accuracy",
+        "Understanding Hidden Weaknesses in Standard Benchmarks",
+        "Conclusion: Guiding Principles for Future LLM Architecture Design"
+      ],
+      "summary": "Beyond the standard Transformer, recent research reveals that architectural nuances like 'Canon layers' and improved gated linear attention variants (GLA5, GDN2) can significantly impact LLM pretraining efficiency and performance. This post would dive into these architectural modifications, explaining how local token mixing and low-rank output gates can save substantial pretraining tokens for the same MMLU accuracy at scales up to 8B parameters. It would compare these to other architectures like Mamba2, highlighting that simpler linear models, when augmented correctly, can match or even outperform more complex designs.",
+      "title": "Architectural Innovations in LLMs: The Impact of Canon Layers and Gated Linear Attention at Scale",
+      "why_now": "The arXiv paper 'Physics of Language Models: Part 4.2, Canon Layers at Scale where Synthetic Pretraining Resonates in Reality' (arXiv:2611.24963) provides empirical evidence for the significant impact of specific architectural components at large scales, offering deep technical insights into model design."
+    },
     {
       "angle": "practical",
       "citations": [
