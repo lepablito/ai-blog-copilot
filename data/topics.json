@@ -1,6 +1,31 @@
 {
-  "generated_at": "2026-11-20T08:20:47+00:00",
+  "generated_at": "2026-11-21T08:11:20+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://latent.space/p/formal-verification/"
+      ],
+      "date": "2026-11-21",
+      "estimated_effort": "large",
+      "sources": [
+        "https://latent.space/p/formal-verification/"
+      ],
+      "suggested_outline": [
+        "Introduction: The Problem of LLM Slop in Code Generation",
+        "What is Formal Verification and Why Now?",
+        "Key Technologies: Lean, SMT Solvers (cvc5), and AI Provers",
+        "Case Studies: &Truth, Harmonic's Aristotle, Axiom Math's AxiomProver",
+        "LLM-Scaled Formal Verification: Feasibility and Efficiency Gains",
+        "Practical Applications: Cybersecurity and Memory Safety",
+        "The 'Veri-Coding' Workflow: Shifting Developer Focus",
+        "Challenges and Future Outlook for AI-Assisted Verification",
+        "Conclusion: Towards More Trustworthy AI-Generated Code"
+      ],
+      "summary": "The proliferation of 'slop' (low-quality output) from LLMs in code generation necessitates robust correctness checks. This post would explore how AI, particularly in conjunction with proof assistants like Lean and SMT solvers, is making formal verification more accessible and scalable. It would cover techniques used by companies like &Truth, Harmonic, and Theorem to generate and check mathematical proofs for software correctness, addressing challenges like memory safety and providing security guarantees at an 'LLM-scaled' level. The article would also touch on the shift towards 'veri-coding' where developers focus more on specification and less on debugging AI-generated code.",
+      "title": "Combating LLM 'Slop' with AI-Assisted Formal Verification",
+      "why_now": "The article 'The War Against Slop and an Emerging Weapon to Fight it: Formal Verification' was published in the last 48 hours, detailing new approaches and companies entering this space, and highlighting recent advancements in LLMs' ability to assist in formalizing proofs (e.g., Riemann Hypothesis proofs involving Claude/Lean). The direct mention of 'LLM-scaled formal verification' by Theorem and Anthropic makes this highly timely for AI engineers."
+    },
     {
       "angle": "theoretical",
       "citations": [
