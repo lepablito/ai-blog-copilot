@@ -1,6 +1,83 @@
 {
-  "generated_at": "2026-11-21T08:11:20+00:00",
+  "generated_at": "2026-11-22T07:55:21+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://vxlang.org/blog/handing-the-ptx-back-to-the-compiler.html",
+        "https://www.rightnowai.co/blog/bit-identical-fp4-moe-kernels-on-blackwell"
+      ],
+      "date": "2026-11-22",
+      "estimated_effort": "large",
+      "sources": [
+        "https://vxlang.org/blog/handing-the-ptx-back-to-the-compiler.html",
+        "https://www.rightnowai.co/blog/bit-identical-fp4-moe-kernels-on-blackwell"
+      ],
+      "suggested_outline": [
+        "Introduction: The Need for Speed in LLM Inference",
+        "The Performance Bottleneck: Understanding LLM Operations",
+        "MLIR: A Framework for Compiler Infrastructure",
+        "Case Study 1: Replacing PTX with MLIR for Kernel Optimization",
+        "Custom Kernels for Specific Architectures (e.g., Nvidia Blackwell)",
+        "Case Study 2: Accelerating MoE Expert GEMMs with FP4 Kernels",
+        "Practical Steps: How to Identify and Optimize Bottlenecks",
+        "Tools and Frameworks for Low-Level Optimization",
+        "Conclusion: Pushing the Boundaries of LLM Performance"
+      ],
+      "summary": "This post would dive into the crucial role of low-level compiler infrastructure like MLIR and custom kernel development for achieving significant performance gains in LLM inference. It would explain how replacing high-level abstractions with optimized assembly or domain-specific intermediate representations can drastically reduce execution time and memory footprint, especially for complex operations like Generalized Matrix Multiplications (GEMMs) in Mixture-of-Experts (MoE) models, making LLMs more feasible for real-world deployment.",
+      "title": "Practical Low-Level Optimizations for LLM Inference: MLIR and Custom Kernels",
+      "why_now": "Recent reports directly demonstrate substantial performance improvements (e.g., 'cutting asm regions from 499 to 81' with MLIR, and '5.1x to 7.5x faster expert GEMMs' for MoE on new Nvidia hardware), highlighting the immediate practical value of these optimization techniques for engineers."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://latent.space/p/formal-verification/"
+      ],
+      "date": "2026-11-22",
+      "estimated_effort": "large",
+      "sources": [
+        "https://latent.space/p/formal-verification/"
+      ],
+      "suggested_outline": [
+        "Introduction: The 'Slop' Problem in Complex Software and AI",
+        "What is Formal Verification and Why It Matters for AI",
+        "Traditional Formal Methods vs. AI-Assisted Verification",
+        "Case Study: Using Proof Assistants (e.g., Lean) with AI",
+        "Applying Formal Verification to AI Systems: Components and Models",
+        "Challenges and Limitations of Formal Verification in AI",
+        "The Future of Provably Correct and Safe AI",
+        "Conclusion: A Paradigm Shift for AI Reliability"
+      ],
+      "summary": "This post would explore the growing intersection of AI and formal verification, arguing that mathematical proof-based methods are becoming an essential 'weapon' against 'slop' and unreliability in complex AI systems. It would discuss how AI itself can assist in the formal verification process (e.g., using proof assistants like Lean), and conversely, how formal methods can be applied to ensure the correctness and safety of AI models and critical components, moving towards more robust and provably correct AI.",
+      "title": "Formal Verification: A New Frontier for AI Safety and Reliability with AI Assistance",
+      "why_now": "The recent emergence of discussions around 'Formal Verification' as a tool to fight 'slop' in software, explicitly mentioning AI's role in automating this process with tools like Lean, positions this as a cutting-edge theoretical and practical development for ensuring AI system integrity."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+        "https://openai.com/index/combatting-adversarial-distillation"
+      ],
+      "date": "2026-11-22",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+        "https://openai.com/index/combatting-adversarial-distillation"
+      ],
+      "suggested_outline": [
+        "Introduction: The Vulnerable AI Supply Chain",
+        "Understanding AI Supply Chain Risks: Data, Models, and Deployment",
+        "Canary Tokens: A Practical Approach to Detecting Data Exfiltration",
+        "Adversarial Distillation: How Attackers Extract Model Capabilities",
+        "OpenAI's Layered Approach to Combatting Adversarial Distillation",
+        "Implementing Safeguards: Training, Detection, and Enforcement",
+        "Best Practices for Securing Your AI Assets",
+        "Conclusion: Building Trustworthy and Resilient AI Systems"
+      ],
+      "summary": "This article would address the critical, often overlooked aspect of securing the AI supply chain, from training data to deployed models. It would explore practical techniques like 'Canary Tokens' for detecting unauthorized data use or model exfiltration, and strategies to combat 'adversarial distillation' aimed at extracting model capabilities. The post would provide actionable insights for engineers to harden their AI systems against intellectual property theft and malicious attacks.",
+      "title": "AI Supply Chain Security: Protecting Models from Adversarial Distillation and Data Leaks",
+      "why_now": "Discussions on 'AI Supply Chain Security' using canary tokens and OpenAI's public communication on 'combatting adversarial distillation' demonstrate a heightened industry focus on robust security measures for AI assets, making this a timely and crucial topic for practitioners."
+    },
     {
       "angle": "practical",
       "citations": [
