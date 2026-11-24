@@ -1,6 +1,75 @@
 {
-  "generated_at": "2026-11-22T07:55:21+00:00",
+  "generated_at": "2026-11-24T10:48:50+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.28519"
+      ],
+      "date": "2026-11-24",
+      "estimated_effort": "large",
+      "sources": [
+        "https://arxiv.org/abs/2611.28519"
+      ],
+      "suggested_outline": [
+        "Introduction: The challenges of multi-hop RAG and the need for efficiency",
+        "Understanding SupportChain: Hop decomposition, quote grounding, and trace calibration",
+        "The Aggregation Mechanism: How 'support' leads to better answers",
+        "Performance Analysis: Achieving SOTA with smaller models (e.g., 9B reader)",
+        "Practical Implications: Deploying efficient multi-hop RAG systems",
+        "Comparison with Existing RAG Architectures",
+        "Conclusion: The future of cost-effective and accurate RAG"
+      ],
+      "summary": "This post will explore SupportChain, a novel approach for multi-hop Retrieval-Augmented Generation (RAG) that achieves state-of-the-art results with smaller language models. It focuses on splitting questions into hops, binding answers to quoted sentences, estimating execution reliability from traces, and merging results based on 'support'. This method significantly improves RAG performance on multi-hop datasets without requiring large language models for indexing, making it highly relevant for efficient, resource-constrained deployments.",
+      "title": "SupportChain: Multi-Hop RAG with Small Models and Trace-Calibrated Aggregation",
+      "why_now": "The SupportChain paper, published in the last 48 hours, presents a significant advancement in multi-hop RAG, particularly for smaller models, offering a practical path to more efficient and powerful RAG systems."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.28349"
+      ],
+      "date": "2026-11-24",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.28349"
+      ],
+      "suggested_outline": [
+        "Introduction: The importance of structured outputs in LLM applications",
+        "Speculative Decoding: A primer on its benefits and limitations for structured generation",
+        "Grammar-as-a-Draft: How grammars become a 'second drafter'",
+        "Technical Deep Dive: Merging proposals and skipping logit computations",
+        "Performance Gains: Increased acceptance length and efficiency",
+        "Implementation Details: Integrating GaaD into serving runtimes (e.g., vllm-torchtpu)",
+        "Practical Use Cases: Faster JSON, tool calls, and API generation",
+        "Conclusion: A step forward for reliable and fast structured LLM output"
+      ],
+      "summary": "This article will explain Grammar-as-a-Draft (GaaD), a technique that significantly enhances speculative decoding for generating structured outputs (e.g., JSON, regexes, tool calls) from LLMs. By treating the grammar itself as a 'second drafter' and merging grammar-forced tokens with the speculative drafter's proposals, GaaD prevents invalid token proposals and increases acceptance length, leading to faster and more reliable structured output generation. This is a direct win for engineers building applications requiring reliable API calls or data serialization from LLMs.",
+      "title": "Grammar-as-a-Draft: Boosting Speculative Decoding for Structured LLM Outputs",
+      "why_now": "The GaaD paper introduces a novel, efficient method for speculative decoding specific to structured outputs, directly addressing a common pain point in LLM application development, published very recently."
+    },
+    {
+      "angle": "theoretical",
+      "citations": [
+        "https://arxiv.org/abs/2611.28038"
+      ],
+      "date": "2026-11-24",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.28038"
+      ],
+      "suggested_outline": [
+        "Introduction: The growing importance of LLM safety and red teaming",
+        "The Problem: Inconsistent definitions of 'harm' and varied evaluation metrics",
+        "Case Studies: How different evaluators yield divergent conclusions",
+        "Proposed Solutions: Explicit harmfulness criteria and evaluator validation",
+        "Implications for Practitioners: Building more robust safety benchmarks",
+        "Conclusion: Moving towards standardized and reliable LLM safety evaluation"
+      ],
+      "summary": "This post would delve into the critical inconsistencies in how 'harmfulness' is defined and evaluated in LLM red-teaming studies. It will argue that relying on varied automated evaluators and ill-defined criteria leads to unreliable comparisons between models. The post will advocate for explicit harmfulness criteria and transparent validation of evaluators, providing a framework for practitioners to improve their own safety evaluations.",
+      "title": "Beyond Refusal: Standardizing Harmfulness Evaluation in LLM Red Teaming",
+      "why_now": "The recent arXiv paper highlights a systemic issue in LLM safety evaluation, urging a re-evaluation of current red-teaming practices which directly impacts the reliability and trustworthiness of LLM deployments."
+    },
     {
       "angle": "practical",
       "citations": [
