@@ -1,6 +1,98 @@
 {
-  "generated_at": "2026-11-24T10:48:50+00:00",
+  "generated_at": "2026-11-25T09:44:23+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://arxiv.org/abs/2611.30624"
+      ],
+      "date": "2026-11-25",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://arxiv.org/abs/2611.30624"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of LLM Agents and Their Security Implications",
+        "What is Tool-Call Smuggling?",
+        "The Root Cause: Inconsistent JSON Parsing Across the Stack",
+        "Demonstrating the Attack: Examples and Impact",
+        "Mitigation Strategies: Single-Pass Parsing and Schema Enforcement",
+        "Best Practices for Secure LLM Agent Development",
+        "Conclusion: Building Trustworthy Agentic Systems"
+      ],
+      "summary": "This topic explores a novel security vulnerability in LLM agent systems arising from inconsistent JSON parsing across different components (providers, gateways, SDKs, guards, executors). The attack, dubbed 'tool-call smuggling,' allows an attacker to approve one tool call while a different, potentially malicious, call is executed, bypassing security checks and audit logs. The post would detail the six identified ways the same bytes can yield different calls and propose mitigation strategies.",
+      "title": "Tool-Call Smuggling: A New Attack Vector for LLM Agents",
+      "why_now": "The concept of 'tool-call smuggling' was introduced in an arXiv paper submitted on November 23, 2026, making it a very recent and critical security development for anyone building or deploying LLM agents."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/AryabhattaLabs/agent-tool-result-reducer"
+      ],
+      "date": "2026-11-25",
+      "estimated_effort": "small",
+      "sources": [
+        "https://github.com/AryabhattaLabs/agent-tool-result-reducer"
+      ],
+      "suggested_outline": [
+        "The Context Window Bottleneck: A Reality for LLM Agents",
+        "Why Large Tool Results Are a Problem",
+        "Techniques for Context Reduction: Summarization, Filtering, Compression",
+        "Introducing 'agent-tool-result-reducer' and Similar Approaches",
+        "Implementing Context Management in Your Agent Pipeline",
+        "Best Practices for Designing Tools with Context in Mind",
+        "Conclusion: Maximizing Agent Effectiveness with Smart Context Management"
+      ],
+      "summary": "This topic addresses a common practical problem in LLM agent engineering: managing large JSON tool results that exceed the LLM's context window. It would explore techniques and tools, like the 'agent-tool-result-reducer' Show HN, designed to summarize, filter, or compress tool outputs effectively without losing critical information, enabling agents to process complex information and make informed decisions.",
+      "title": "Strategies for Fitting Large Tool Results into LLM Context Windows",
+      "why_now": "A 'Show HN' on November 24, 2026, presented a tool specifically designed to reduce large JSON tool results for LLM context windows, indicating a current and pressing practical challenge for developers."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/emilioSp/pi-maestro"
+      ],
+      "date": "2026-11-25",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://github.com/emilioSp/pi-maestro"
+      ],
+      "suggested_outline": [
+        "The Challenges of Unreliable LLM Agents",
+        "Introducing Spec-Driven Development for Agents (Pi-maestro)",
+        "Core Concepts: Defining Expected Behavior, Implementation Agents, Verification Agents",
+        "How Structured Handoffs and Deterministic Tools Improve Reliability",
+        "Implementing Pi-maestro in Your Agent Workflow",
+        "Case Studies and Practical Benefits",
+        "Conclusion: Towards More Robust and Predictable Agents"
+      ],
+      "summary": "This post would introduce 'Pi-maestro,' a framework for spec-driven development of LLM agents designed to overcome common challenges like agents skipping steps or failing to verify results. It proposes a workflow where expected behavior is defined, one agent implements it, and another independently checks it, using deterministic tools to control transitions and ensure structured handoffs. This approach aims to bring more engineering rigor to agent development.",
+      "title": "Spec-Driven Development for Reliable LLM Agents",
+      "why_now": "A 'Show HN' on November 24, 2026, introduced Pi-maestro, highlighting a timely and practical solution to improve the reliability and predictability of LLM agents, a growing concern for practitioners."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://mole.so/"
+      ],
+      "date": "2026-11-25",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://mole.so/"
+      ],
+      "suggested_outline": [
+        "The Challenge of Hallucination and Factual Accuracy in LLMs",
+        "Introducing Verifiable Research Agents: The 'Mole' Approach",
+        "Technical Deep Dive: How Source Tracing and Claim Verification Works",
+        "Architecting Agents for Fact-Checking and Disagreement Flagging",
+        "Use Cases: Academic Research, Business Intelligence, Journalism",
+        "Limitations and Future Directions",
+        "Conclusion: Empowering LLMs with Trustworthy Information Retrieval"
+      ],
+      "summary": "This post would delve into the development of LLM agents, like 'Mole,' that can trace claims to their original sources and identify disagreements between them. It would discuss the technical challenges of fact-checking, hallucination mitigation, and building agents capable of deep, verifiable research by parsing sources, extracting claims, and comparing them against verbatim quotes. This is crucial for applications requiring high factual accuracy.",
+      "title": "Building Verifiable LLM Research Agents with Source Tracing",
+      "why_now": "The release of v0.3.0 of 'Mole,' an open-source research agent that traces claims to their origins, was announced on Hacker News on November 24, 2026, highlighting an immediate development in building more reliable and verifiable AI systems."
+    },
     {
       "angle": "practical",
       "citations": [
