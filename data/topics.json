@@ -1,6 +1,85 @@
 {
-  "generated_at": "2026-11-25T09:44:23+00:00",
+  "generated_at": "2026-11-28T08:48:41+00:00",
   "topics": [
+    {
+      "angle": "practical",
+      "citations": [
+        "https://huggingface.co/blog/video-trainium3"
+      ],
+      "date": "2026-11-28",
+      "estimated_effort": "large",
+      "sources": [
+        "https://huggingface.co/blog/video-trainium3"
+      ],
+      "suggested_outline": [
+        "Introduction: The Promise and Challenge of LLM Video Generation on Specialized Hardware",
+        "LTX-2.5 and Trainium3: The Setup",
+        "Initial Hurdles: Why the Model Didn't Run (and ran slowly)",
+        "Making it Work: Tensor Parallelism for Model Fit",
+        "Making it Fast: Sequence Parallelism for Throughput and Resolution",
+        "Host-Device Synchronization: The Low-Hanging Fruit for Performance",
+        "Lessons Learned: Graph Sizing, CPU Checks, and Stable Tracing",
+        "Achieving Parity: Comparing Trainium3 Performance to API Benchmarks",
+        "Future Outlook and Unresolved Issues",
+        "Conclusion: Practical Takeaways for Accelerator-Specific LLM Deployment"
+      ],
+      "summary": "This post would explore the practical challenges and solutions encountered when deploying and optimizing large language models for video generation on AWS Trainium3 NeuronCores. It would detail the necessity and implementation of tensor and sequence parallelism, strategies for managing graph sizes, and techniques for synchronizing host CPU operations with device computations to achieve competitive inference speeds. The focus would be on the engineering effort required to bridge the gap between model functionality and hardware-accelerated performance.",
+      "title": "Optimizing LLM-based Video Generation on AWS Trainium3: A Deep Dive into Parallelism and Host-Device Synchronization",
+      "why_now": "The Hugging Face blog post, published within the last 48 hours, provides a detailed, firsthand account of the engineering work involved in achieving significant performance gains on cutting-edge AI accelerators (Trainium3) for a complex task like video generation. It's a fresh case study on hardware-specific optimization."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://github.com/slashman413/cowork"
+      ],
+      "date": "2026-11-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://github.com/slashman413/cowork",
+        "https://news.ycombinator.com/item?id=50675433"
+      ],
+      "suggested_outline": [
+        "Introduction: The Agent Orchestration Problem",
+        "What is Cowork? An Overview",
+        "Core Architecture: Task Queues, Workers, and State Management",
+        "Key Features for AI Coding Agents (e.g., persistent state, retry mechanisms)",
+        "Setting Up Cowork: A Practical Guide",
+        "Integrating Agents with Cowork: Code Examples",
+        "Benefits: Scalability, Observability, and Reliability",
+        "Comparison to Other Orchestration Tools (Celery, temporal.io, etc.)",
+        "Use Cases and Future Directions",
+        "Conclusion: Empowering Production-Grade AI Agent Workflows"
+      ],
+      "summary": "This post would introduce Cowork, an open-source, self-hosted task queue and orchestration server designed specifically for AI coding agents. It would delve into the architecture and practical benefits of managing agent workflows, task distribution, and state persistence in a self-contained environment. The article would explain how engineers can use Cowork to build more robust, scalable, and observable AI agent systems, highlighting its role in moving agent development from experimental scripts to production-ready applications.",
+      "title": "Cowork: Building Self-Hosted Task Queues and Orchestration for AI Coding Agents",
+      "why_now": "The 'Show HN' launch of Cowork within the last 48 hours signals a new open-source tool directly addressing the growing need for robust infrastructure to manage AI agents, a critical practical challenge for many developers."
+    },
+    {
+      "angle": "practical",
+      "citations": [
+        "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench"
+      ],
+      "date": "2026-11-28",
+      "estimated_effort": "medium",
+      "sources": [
+        "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench"
+      ],
+      "suggested_outline": [
+        "Introduction: The Rise of Local LLM Inference and AMD's Role",
+        "What is Llama.cpp and GGML?",
+        "Understanding the New AMD Benchmark Dashboard",
+        "Interpreting Benchmarks: Tokens/Second, Memory Usage, and Quantization",
+        "Optimizing Llama.cpp for AMD Ryzen CPUs: Core Settings and Compilation Flags",
+        "Leveraging Radeon GPUs with ROCm: Configuration and Performance Tips",
+        "Practical Performance Comparisons: Ryzen vs. Radeon for Different Models",
+        "Troubleshooting Common Issues in Local AMD Setups",
+        "Future of Llama.cpp and AMD Integration",
+        "Conclusion: Getting the Most Out of Your AMD Hardware for LLMs"
+      ],
+      "summary": "This post would analyze the newly introduced llama.cpp benchmark dashboard for AMD Ryzen CPUs and Radeon GPUs, providing practical insights for engineers looking to run large language models locally on consumer-grade AMD hardware. It would explain the significance of these benchmarks, how to interpret them, and offer guidance on optimizing llama.cpp configurations for different AMD processors and graphics cards. The article would serve as a practical guide for maximizing performance and efficiency for local LLM inference on a widely available hardware ecosystem.",
+      "title": "Benchmarking Llama.cpp on AMD Ryzen and Radeon: A Guide for Local LLM Inference",
+      "why_now": "The Hugging Face blog post announcing the llama.cpp benchmark dashboard for AMD hardware, published within the last 48 hours, provides timely and specific data for a significant portion of the consumer hardware market, directly impacting practitioners doing local LLM development."
+    },
     {
       "angle": "practical",
       "citations": [
